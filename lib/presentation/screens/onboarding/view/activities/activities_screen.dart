@@ -16,24 +16,24 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   final fitnessLevel = [
     FitnessLevel(
         level: 0,
-        image: 'assets/activity_vectors/more_active.png',
+        image: 'assets/images/activity_images/more_active.png',
         title: 'Little or No Activity',
         subtitle: 'Mostly sitting through the day (eg. Desk Job, Bank Teller)'),
     FitnessLevel(
         level: 1,
-        image: 'assets/activity_vectors/more_active.png',
+        image: 'assets/images/activity_images/more_active.png',
         title: 'Lightly Active',
         subtitle:
             'Mostly standing through the day (eg. Sales Associate, Teacher)'),
     FitnessLevel(
         level: 2,
-        image: 'assets/activity_vectors/more_active.png',
+        image: 'assets/images/activity_images/more_active.png',
         title: 'Moderately Active',
         subtitle:
             'Mostly walking or doing physical activities through the day (eg. Tour Guide, Waiter)'),
     FitnessLevel(
         level: 3,
-        image: 'assets/activity_vectors/more_active.png',
+        image: 'assets/images/activity_images/more_active.png',
         title: 'Very Active',
         subtitle:
             'Mostly doing heavy physical activities through the day (eg. Gym Instructor, Construction Worker)'),
@@ -191,11 +191,11 @@ class ActiveIcons extends StatelessWidget {
                   ? Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Image.asset('assets/activity_vectors/flame_active.png'),
+                        Image.asset('assets/images/activity_images/flame_active.png'),
                         Image.asset(
-                            'assets/activity_vectors/flame_inactive.png'),
+                            'assets/images/activity_images/flame_inactive.png'),
                         Image.asset(
-                            'assets/activity_vectors/flame_inactive.png')
+                            'assets/images/activity_images/flame_inactive.png')
                       ],
                     )
                   : activityLevel == 2
@@ -203,11 +203,11 @@ class ActiveIcons extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Image.asset(
-                                'assets/activity_vectors/flame_active.png'),
+                                'assets/images/activity_images/flame_active.png'),
                             Image.asset(
-                                'assets/activity_vectors/flame_active.png'),
+                                'assets/images/activity_images/flame_active.png'),
                             Image.asset(
-                                'assets/activity_vectors/flame_inactive.png')
+                                'assets/images/activity_images/flame_inactive.png')
                           ],
                         )
                       : activityLevel == 3
@@ -215,22 +215,22 @@ class ActiveIcons extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Image.asset(
-                                    'assets/activity_vectors/flame_active.png'),
+                                    'assets/images/activity_images/flame_active.png'),
                                 Image.asset(
-                                    'assets/activity_vectors/flame_active.png'),
+                                    'assets/images/activity_images/flame_active.png'),
                                 Image.asset(
-                                    'assets/activity_vectors/flame_active.png'),
+                                    'assets/images/activity_images/flame_active.png'),
                               ],
                             )
                           : Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Image.asset(
-                                    'assets/activity_vectors/flame_inactive.png'),
+                                    'assets/images/activity_images/flame_inactive.png'),
                                 Image.asset(
-                                    'assets/activity_vectors/flame_inactive.png'),
+                                    'assets/images/activity_images/flame_inactive.png'),
                                 Image.asset(
-                                    'assets/activity_vectors/flame_inactive.png')
+                                    'assets/images/activity_images/flame_inactive.png')
                               ],
                             ))),
     );
