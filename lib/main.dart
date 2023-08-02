@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/fitness_level/view/activities_screen.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/activities/activities_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
