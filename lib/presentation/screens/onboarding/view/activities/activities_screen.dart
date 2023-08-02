@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
 import '../../../../utils/app_colors.dart';
-import '../model/fitness_model.dart';
+import '../../model/fitness_model.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   const ActivitiesScreen({super.key});
