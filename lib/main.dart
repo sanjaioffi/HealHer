@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/activities/activities_screen.dart';
-
+import 'package:heal_her/presentation/screens/onboarding/view/onboard_activities/activities_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'HealHer-SmartBand',
       theme: ThemeData(
         fontFamily: 'Poppins',
@@ -22,7 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
