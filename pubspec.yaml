@@ -1,23 +1,7 @@
 name: heal_her
 description: A new Flutter project.
- 
- 
 publish_to: 'none'  
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 version: 1.0.0+1
-
 environment:
   sdk: '>=3.0.5 <4.0.0'
 
@@ -33,9 +17,6 @@ dependencies:
   shared_preferences: ^2.2.0
   get: ^4.6.5
 
-
-   
-   
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
 
@@ -55,6 +36,9 @@ dev_dependencies:
 
  
 flutter:
+  assets:
+    - assets/images/
+
 
    
    
