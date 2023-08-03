@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/activities_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/medical_condition.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/targets_screen.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: ActivitiesScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

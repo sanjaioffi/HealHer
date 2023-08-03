@@ -33,10 +33,7 @@ List<String> options = [
   'Relationship stress',
 ];
 
-void save_data() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setStringList('medical condition', tags);
-}
+
 
 class _MedicalConditionPageState extends State<MedicalConditionPage> {
   @override
