@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(
                 width: 300,
                 child: Text(
-                  ' Empowering Women\'s Safety & overall Wellness with Ayurvedic Smartwatch.',
+                  ' Empowering Women\'s Safety & overall Wellness with HealHer SmartBand.',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 15),
                 ),
@@ -58,7 +58,6 @@ class WelcomeScreen extends StatelessWidget {
               Image.asset('assets/images/welcome.png'),
               ElevatedButton(
                   onPressed: () {}, child: Center(child: Text('Get Started'))),
-              SizedBox(height: 20),
               RichText(
                   text: TextSpan(children: [
                 TextSpan(
