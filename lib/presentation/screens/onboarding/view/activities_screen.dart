@@ -1,14 +1,15 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import '../../../../utils/app_colors.dart';
-import '../../model/fitness_model.dart';
+import '../../../utils/app_colors.dart';
+import '../model/fitness_model.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   const ActivitiesScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
+ 
   _ActivitiesScreenState createState() => _ActivitiesScreenState();
 }
 
@@ -16,7 +17,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   final fitnessLevel = [
     FitnessLevel(
         level: 0,
-        image: 'assets/images/activity_images/more_active.png',
+        image: 'assets/images/activity_images/no_activity.png',
         title: 'Little or No Activity',
         subtitle: 'Mostly sitting through the day (eg. Desk Job, Bank Teller)'),
     FitnessLevel(

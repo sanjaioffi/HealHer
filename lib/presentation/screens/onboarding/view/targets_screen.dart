@@ -2,16 +2,16 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../utils/app_colors.dart';
+import '../../../utils/app_colors.dart';
 
-class TargetsPage extends StatefulWidget {
-  TargetsPage({super.key});
+class TargetsScreen extends StatefulWidget {
+  TargetsScreen({super.key});
   Set<int> selectedLevels = {};
   @override
-  _TargetsPageState createState() => _TargetsPageState();
+  _TargetsScreenState createState() => _TargetsScreenState();
 }
 
-class _TargetsPageState extends State<TargetsPage> {
+class _TargetsScreenState extends State<TargetsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,15 +31,12 @@ class _TargetsPageState extends State<TargetsPage> {
             const SizedBox(
               height: 10,
             ),
-            const SizedBox(
-              width: 250,
-              child: Text(
-                "Let us know how we can help you",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
+            const Text(
+              "Let us know how we can help you",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(
@@ -55,7 +52,7 @@ class _TargetsPageState extends State<TargetsPage> {
               height: 20,
             ),
             CustomCard(
-              bgImage: 'assets/images/targets_images/night.jpg',
+              bgImage: 'assets/images/targets_images/orange_bg.jpg',
               iconImage: 'assets/images/targets_images/food.png',
               text: 'Weight loss',
               onCheckboxChanged: (bool? newValue) {
@@ -77,7 +74,7 @@ class _TargetsPageState extends State<TargetsPage> {
               },
             ),
             CustomCard(
-              bgImage: 'assets/images/targets_images/green.jpg',
+              bgImage: 'assets/images/targets_images/green_bg.jpg',
               iconImage: 'assets/images/targets_images/nutirition.png',
               text: 'Track my nutrition',
               onCheckboxChanged: (bool? newValue) {
@@ -88,7 +85,7 @@ class _TargetsPageState extends State<TargetsPage> {
               },
             ),
             CustomCard(
-              bgImage: 'assets/images/targets_images/night.jpg',
+              bgImage: 'assets/images/targets_images/fitness_bg.jpg',
               iconImage: 'assets/images/targets_images/muscle.png',
               text: 'Improve overall fitness',
               onCheckboxChanged: (bool? newValue) {
@@ -98,27 +95,11 @@ class _TargetsPageState extends State<TargetsPage> {
                 print(widget.selectedLevels);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: AppColor.purplyBlue,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Center(
-                  child: Text(
-                    'select',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                )),
-            SizedBox(
+            ElevatedButton(onPressed: () {}, child: const Text('select')),
+            const SizedBox(
               height: 20,
             )
           ],
