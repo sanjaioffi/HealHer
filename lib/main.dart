@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/activities_screen.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/last_period_date_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/medical_condition.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/period_length_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/targets_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/welcome_screen.dart';
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: WelcomeScreen(),
+      home: LastPeriodDateScreen(),
     );
   }
 }

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../controller/medical_condition_controller.dart';
 
-class MedicalConditionPage extends StatefulWidget {
-  const MedicalConditionPage({Key? key}) : super(key: key);
+class MedicalConditionScreen extends StatefulWidget {
+  const MedicalConditionScreen({Key? key}) : super(key: key);
 
   @override
-  State<MedicalConditionPage> createState() => _MedicalConditionPageState();
+  State<MedicalConditionScreen> createState() => _MedicalConditionScreenState();
 }
 
 List<String> tags = [];
@@ -33,9 +32,7 @@ List<String> options = [
   'Relationship stress',
 ];
 
-
-
-class _MedicalConditionPageState extends State<MedicalConditionPage> {
+class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -75,9 +72,6 @@ class _MedicalConditionPageState extends State<MedicalConditionPage> {
                         fontSize: 15,
                         fontWeight: FontWeight.normal,
                       )),
-                  const SizedBox(
-                    height: 50,
-                  ),
                   const Divider(),
                   Center(
                       child: Wrap(
