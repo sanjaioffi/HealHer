@@ -12,12 +12,15 @@ class StepIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      "STEP $step / 7",
-      style: const TextStyle(
-        color: AppColor.purplyBlue,
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20.0),
+      child: Text(
+        "STEP $step / 7",
+        style: const TextStyle(
+          color: AppColor.purplyBlue,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

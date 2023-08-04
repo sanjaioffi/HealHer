@@ -8,6 +8,7 @@ ThemeData buildTheme() {
     iconTheme: const IconThemeData(size: 20, color: Colors.black),
     elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(
+          minimumSize: MaterialStatePropertyAll(Size(double.maxFinite, 50)),
           backgroundColor: MaterialStatePropertyAll(
             AppColor.heavyPurplyBlue,
           ),
