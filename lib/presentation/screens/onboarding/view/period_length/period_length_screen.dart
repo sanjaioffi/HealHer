@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
 class PeriodLengthScreen extends StatefulWidget {
@@ -14,10 +17,12 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildOnBoardNavBar(context),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
+              StepIndicator(step: 6),
               SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/onboard-period.png')),
@@ -96,7 +101,7 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
               SizedBox(
                 height: 100,
               ),
-              ElevatedButton(onPressed: () {}, child: Text('Next'))
+              ContinueElevatedButton()
             ],
           ),
         ),

@@ -2,14 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import '../../../utils/app_colors.dart';
-import '../model/fitness_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
+import '../../../../utils/app_colors.dart';
+import '../../model/fitness_model.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   const ActivitiesScreen({super.key});
 
   @override
- 
   _ActivitiesScreenState createState() => _ActivitiesScreenState();
 }
 
@@ -44,133 +45,120 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: buildOnBoardNavBar(context),
         body: SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 100),
-            const Text(
-              'STEP 1/7',
-              style: TextStyle(
-                  color: AppColor.purplyBlue,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-              width: 350,
-              child: Text(
-                "What's your current fitness level?",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            CarouselSlider.builder(
-              itemCount: fitnessLevel.length,
-              itemBuilder: (BuildContext context, int itemIndex, int i) =>
-                  Padding(
-                padding: const EdgeInsets.symmetric(vertical: 0.5),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: AppColor.lightPurplrBlue,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                StepIndicator(step: 3),
+                const SizedBox(
                   width: 350,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        ActiveIcons(
-                          activityLevel: fitnessLevel[itemIndex].level,
-                        ),
-                        Expanded(
-                          child: Image.asset(
-                            fitnessLevel[itemIndex].image,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: AppColor.purplyBlue,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        Text(
-                          fitnessLevel[itemIndex].title,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        Text(fitnessLevel[itemIndex].subtitle,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.normal,
-                            )),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        Container(
-                            width: 170,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: AppColor.purplyBlue,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'select',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            )),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                      ],
+                  child: Text(
+                    "What's your current fitness level?",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-              ),
-              options: CarouselOptions(
-                  viewportFraction: 0.7,
-                  height: 450,
-                  autoPlay: false,
-                  enlargeCenterPage: true,
-                  enableInfiniteScroll: false,
-                  onPageChanged: (index, reason) {
-                    _currentIndex = index;
-                    setState(() {});
-                  }),
+                const SizedBox(
+                  height: 20,
+                ),
+                CarouselSlider.builder(
+                  itemCount: fitnessLevel.length,
+                  itemBuilder: (BuildContext context, int itemIndex, int i) =>
+                      Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 0.5),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColor.lightPurplrBlue,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: 350,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            ActiveIcons(
+                              activityLevel: fitnessLevel[itemIndex].level,
+                            ),
+                            Expanded(
+                              child: Image.asset(
+                                fitnessLevel[itemIndex].image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: AppColor.purplyBlue,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            Text(
+                              fitnessLevel[itemIndex].title,
+                              style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Text(fitnessLevel[itemIndex].subtitle,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.normal,
+                                )),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Container(
+                                width: 170,
+                                height: 50,
+                                child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'select',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                      ),
+                                    ))),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  options: CarouselOptions(
+                      viewportFraction: 0.7,
+                      height: 450,
+                      autoPlay: false,
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: false,
+                      onPageChanged: (index, reason) {
+                        _currentIndex = index;
+                        setState(() {});
+                      }),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                DotIndicator(currentIndex: _currentIndex)
+              ],
             ),
-            const SizedBox(
-              height: 15,
-            ),
-            DotIndicator(currentIndex: _currentIndex)
-          ],
-        ),
-      ),
-    ));
+          ),
+        ));
   }
 }
 
@@ -192,7 +180,8 @@ class ActiveIcons extends StatelessWidget {
                   ? Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Image.asset('assets/images/activity_images/flame_active.png'),
+                        Image.asset(
+                            'assets/images/activity_images/flame_active.png'),
                         Image.asset(
                             'assets/images/activity_images/flame_inactive.png'),
                         Image.asset(
@@ -246,7 +235,8 @@ class DotIndicator extends StatelessWidget {
   final Color activeDotColor;
   final Color inactiveDotColor;
 
-  const DotIndicator({super.key, 
+  const DotIndicator({
+    super.key,
     required this.currentIndex,
     this.dotCount = 4,
     this.dotSize = 10.0,

@@ -1,5 +1,8 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
 class LastPeriodDateScreen extends StatefulWidget {
@@ -13,13 +16,15 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildOnBoardNavBar(context),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/onboard-period_date.png')),
+              StepIndicator(step: 7),
+              // SizedBox(
+              //     height: 250,
+              //     child: Image.asset('assets/images/onboard-period_date.png')),
               SizedBox(
                 width: 350,
                 child: Text(
@@ -59,9 +64,15 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
                   calendarType: CalendarDatePicker2Type.single,
                 ),
                 value: [],
-                onValueChanged: (dates) => [] = dates,
+                // onValueChanged: (dates) => [] = dates,
               ),
-              ElevatedButton(onPressed: () {}, child: Text('Next'))
+              SizedBox(
+                height: 10,
+              ),
+              ContinueElevatedButton(),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),

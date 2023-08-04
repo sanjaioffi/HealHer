@@ -1,8 +1,11 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
 
-import '../../../utils/app_colors.dart';
+import '../../../../utils/app_colors.dart';
 
 class TargetsScreen extends StatefulWidget {
   TargetsScreen({super.key});
@@ -15,97 +18,88 @@ class _TargetsScreenState extends State<TargetsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: buildOnBoardNavBar(context),
         body: SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 100),
-            const Text(
-              'STEP 1/7',
-              style: TextStyle(
-                  color: AppColor.purplyBlue,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                StepIndicator(step: 2),
+                const Text(
+                  "Let us know how we can help you",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text('You always can change this later',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                    )),
+                const SizedBox(
+                  height: 20,
+                ),
+                CustomCard(
+                  bgImage: 'assets/images/targets_images/orange_bg.jpg',
+                  iconImage: 'assets/images/targets_images/food.png',
+                  text: 'Weight loss',
+                  onCheckboxChanged: (bool? newValue) {
+                    newValue!
+                        ? widget.selectedLevels.add(1)
+                        : widget.selectedLevels.remove(1);
+                    print(widget.selectedLevels);
+                  },
+                ),
+                CustomCard(
+                  bgImage: 'assets/images/targets_images/night.jpg',
+                  iconImage: 'assets/images/targets_images/sleeping.png',
+                  text: 'Better sleeping habit',
+                  onCheckboxChanged: (bool? newValue) {
+                    newValue!
+                        ? widget.selectedLevels.add(2)
+                        : widget.selectedLevels.remove(2);
+                    print(widget.selectedLevels);
+                  },
+                ),
+                CustomCard(
+                  bgImage: 'assets/images/targets_images/green_bg.jpg',
+                  iconImage: 'assets/images/targets_images/nutirition.png',
+                  text: 'Track my nutrition',
+                  onCheckboxChanged: (bool? newValue) {
+                    newValue!
+                        ? widget.selectedLevels.add(3)
+                        : widget.selectedLevels.remove(3);
+                    print(widget.selectedLevels);
+                  },
+                ),
+                CustomCard(
+                  bgImage: 'assets/images/targets_images/fitness_bg.jpg',
+                  iconImage: 'assets/images/targets_images/muscle.png',
+                  text: 'Improve overall fitness',
+                  onCheckboxChanged: (bool? newValue) {
+                    newValue!
+                        ? widget.selectedLevels.add(4)
+                        : widget.selectedLevels.remove(4);
+                    print(widget.selectedLevels);
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ContinueElevatedButton(),
+                const SizedBox(
+                  height: 20,
+                )
+              ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              "Let us know how we can help you",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('You always can change this later',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal,
-                )),
-            const SizedBox(
-              height: 20,
-            ),
-            CustomCard(
-              bgImage: 'assets/images/targets_images/orange_bg.jpg',
-              iconImage: 'assets/images/targets_images/food.png',
-              text: 'Weight loss',
-              onCheckboxChanged: (bool? newValue) {
-                newValue!
-                    ? widget.selectedLevels.add(1)
-                    : widget.selectedLevels.remove(1);
-                print(widget.selectedLevels);
-              },
-            ),
-            CustomCard(
-              bgImage: 'assets/images/targets_images/night.jpg',
-              iconImage: 'assets/images/targets_images/sleeping.png',
-              text: 'Better sleeping habit',
-              onCheckboxChanged: (bool? newValue) {
-                newValue!
-                    ? widget.selectedLevels.add(2)
-                    : widget.selectedLevels.remove(2);
-                print(widget.selectedLevels);
-              },
-            ),
-            CustomCard(
-              bgImage: 'assets/images/targets_images/green_bg.jpg',
-              iconImage: 'assets/images/targets_images/nutirition.png',
-              text: 'Track my nutrition',
-              onCheckboxChanged: (bool? newValue) {
-                newValue!
-                    ? widget.selectedLevels.add(3)
-                    : widget.selectedLevels.remove(3);
-                print(widget.selectedLevels);
-              },
-            ),
-            CustomCard(
-              bgImage: 'assets/images/targets_images/fitness_bg.jpg',
-              iconImage: 'assets/images/targets_images/muscle.png',
-              text: 'Improve overall fitness',
-              onCheckboxChanged: (bool? newValue) {
-                newValue!
-                    ? widget.selectedLevels.add(4)
-                    : widget.selectedLevels.remove(4);
-                print(widget.selectedLevels);
-              },
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(onPressed: () {}, child: const Text('select')),
-            const SizedBox(
-              height: 20,
-            )
-          ],
-        ),
-      ),
-    ));
+          ),
+        ));
   }
 }
 

@@ -14,19 +14,19 @@ AppBar buildOnBoardNavBar(BuildContext context) {
         Navigator.pop(context);
       },
     ),
-    title: Container(
-      decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(
-        Radius.circular(20),
-      )),
-      width: 100,
-      child: const LinearProgressIndicator(
-        minHeight: 4,
-        backgroundColor: AppColor.babyPurplyBlue,
-        color: AppColor.heavyPurplyBlue,
-        value: .1,
+    title: SizedBox(
+      width: double.maxFinite,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: const LinearProgressIndicator(
+          minHeight: 7,
+          backgroundColor: AppColor.babyPurplyBlue,
+          color: AppColor.heavyPurplyBlue,
+          value: .1,
+        ),
       ),
     ),
+    actions: const [SizedBox(width: 50)],
     centerTitle: true,
   );
 }

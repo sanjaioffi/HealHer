@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -56,8 +57,10 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               Image.asset('assets/images/welcome.png'),
-              ElevatedButton(
-                  onPressed: () {}, child: Center(child: Text('Get Started'))),
+              ContinueElevatedButton(),
+              SizedBox(
+                height: 10,
+              ),
               RichText(
                   text: TextSpan(children: [
                 TextSpan(

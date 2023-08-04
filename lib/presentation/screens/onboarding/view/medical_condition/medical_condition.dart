@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
-import '../controller/medical_condition_controller.dart';
+import '../../controller/medical_condition_controller.dart';
 
 class MedicalConditionScreen extends StatefulWidget {
   const MedicalConditionScreen({Key? key}) : super(key: key);
@@ -35,25 +38,16 @@ List<String> options = [
 class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      appBar: buildOnBoardNavBar(context),
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(height: 100),
-                  const Text(
-                    'STEP 1/7',
-                    style: TextStyle(
-                        color: AppColor.purplyBlue,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  StepIndicator(step: 1),
                   const Text(
                     'Any medical issues that we need to be aware of?',
                     textAlign: TextAlign.center,
@@ -86,7 +80,8 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(onPressed: () {}, child: const Text('Next')),
+                  ContinueElevatedButton()
+                  //ElevatedButton(onPressed: () {}, child: const Text('Next')),
                 ],
               ),
             ),
