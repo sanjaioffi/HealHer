@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
-import '../../../../themes/app_colors.dart';
-import '../../../../widgets/button_style/common_button.dart';
+import '../../../../utils/app_colors.dart';
+import '../widgets/button_style/common_button.dart';
 
 class DateOfBirth extends StatefulWidget {
   DateOfBirth({super.key});

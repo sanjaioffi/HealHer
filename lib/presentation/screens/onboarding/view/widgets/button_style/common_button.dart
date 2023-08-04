@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../common/screen_utils/screen_size.dart';
-import '../../utils/app_colors.dart';
+import '../../../../../common/screen_utils/screen_size.dart';
+import '../../../../../utils/app_colors.dart';
 
 
 Widget commonButton(

@@ -16,10 +16,13 @@ dependencies:
     sdk: flutter
   shared_preferences: ^2.2.0
   get: ^4.6.5
-
+  flutter_ruler_picker: ^1.0.3
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
   calendar_date_picker2: ^0.5.2
+  scroll_snap_list: ^0.9.1
+  flutter_datetime_picker_bdaya: ^3.0.2
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
