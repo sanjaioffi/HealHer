@@ -1,98 +1,81 @@
 name: heal_her
 description: A new Flutter project.
-
-
-publish_to: 'none'
-
-
-
-
-
-
-
-
-
-
-
-
-
+publish_to: 'none'  
 version: 1.0.0+1
-
 environment:
   sdk: '>=3.0.5 <4.0.0'
 
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.7
-  scroll_snap_list: ^0.9.1
-  flutter_ruler_picker: ^1.0.3
-  flutter_datetime_picker_bdaya: ^3.0.2
-
-
-  carousel_slider: ^4.2.1
-  intl: ^0.18.1
   shared_preferences: ^2.2.0
   get: ^4.6.5
 
-
-  
-  
   cupertino_icons: ^1.0.2
+  carousel_slider: ^4.2.1
+  calendar_date_picker2: ^0.5.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  
-  
-  
-  
-  
+   
+   
+   
+   
+   
   flutter_lints: ^2.0.0
 
+ 
+ 
 
-
-
-
+ 
 flutter:
+  assets:
+    - assets/images/
+    - assets/images/activity_images/
+    - assets/images/targets_images/
+    - assets/gif/
 
-  
+
+   
+   
+   
   uses-material-design: true
 
+   
+   
+   
+   
 
+   
+   
 
+   
+   
 
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
+   
+   
+   
+   
+   
   fonts:
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins-Bold.ttf
-        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/font.ttf
+
         
-  
-  
-  
-  
-  
-  
-  
-  
+   
+   
+   
+   
+   
+   
+   
+   
