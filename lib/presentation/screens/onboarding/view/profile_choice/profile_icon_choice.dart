@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
-import '../../../common/screen_utils/screen_size.dart';
-import '../../../themes/app_colors.dart';
-import '../../button_style/common_button.dart';
+import '../../../../common/screen_utils/screen_size.dart';
+import '../../../../themes/app_colors.dart';
+import '../../../../widgets/button_style/common_button.dart';
 
 class ProfileChoice extends StatefulWidget {
   const  ProfileChoice({super.key});

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/screen_utils/screen_size.dart';
-
+import '../../../../common/screen_utils/screen_size.dart';
 import 'common/common_access.dart';
 
 class SignUp extends StatefulWidget {

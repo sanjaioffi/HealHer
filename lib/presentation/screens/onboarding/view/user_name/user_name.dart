@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../common/screen_utils/screen_size.dart';
-import '../../button_style/common_button.dart';
+import '../../../../common/screen_utils/screen_size.dart';
+import '../../../../widgets/button_style/common_button.dart';
 
 class UserName extends StatelessWidget {
   const UserName({super.key});

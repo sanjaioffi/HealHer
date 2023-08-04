@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
-// import 'package:horizontal_picker/horizontal_picker.dart';
 
-import '../../../common/screen_utils/screen_size.dart';
-import '../../../themes/app_colors.dart';
-import '../../button_style/common_button.dart';
-import '../activities_page.dart';
+import '../../../../common/screen_utils/screen_size.dart';
+import '../../../../themes/app_colors.dart';
+import '../../../../widgets/button_style/common_button.dart';
 
 class UserHeight extends StatefulWidget {
   const UserHeight({super.key});

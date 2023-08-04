@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../common/screen_utils/screen_size.dart';
-import '../../../../themes/app_colors.dart';
+import '../../../../../common/screen_utils/screen_size.dart';
+import '../../../../../utils/app_colors.dart';
+
 Row orWidget(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
