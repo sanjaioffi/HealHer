@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/notification/onboard_notification.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/region/onboard_region.dart';
 import 'package:heal_her/theme/build_theme.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'HealHer-SmartBand',
       theme: buildTheme(),
-      home: const OnBoardNotificationScreen(),
+      home: const OnboardRegionScreen(),
     );
   }
 }

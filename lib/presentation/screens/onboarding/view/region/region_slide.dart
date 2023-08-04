@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/gender/gender_tile.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/region/region_tile.dart';
 
-class GenderSlide extends StatelessWidget {
-  const GenderSlide({
+class RegionSlide extends StatelessWidget {
+  const RegionSlide({
     super.key,
   });
 
@@ -22,8 +22,8 @@ class GenderSlide extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              GenderTile(isMale: true),
-              GenderTile(isMale: false),
+              RegionTile(isSouth: true),
+              RegionTile(isSouth: false),
             ],
           ),
         ),

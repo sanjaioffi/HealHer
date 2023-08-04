@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/presentation/screens/onboarding/controller/gender_controller.dart';
 
 import '../../../../utils/app_colors.dart';
+import '../../controller/food_controller.dart';
 
-class GenderTile extends StatelessWidget {
-  const GenderTile({
+class FoodTile extends StatelessWidget {
+  const FoodTile({
     super.key,
-    required this.isMale,
+    required this.isSouthIndian,
   });
 
-  final bool isMale;
+  final bool isSouthIndian;
 
   static List<Color> unselectedLinearGradient = [
     AppColor.white,
@@ -24,12 +24,12 @@ class GenderTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(GenderController());
-    return GetX<GenderController>(
+    Get.put(FoodController());
+    return GetX<FoodController>(
       builder: (controller) {
         return GestureDetector(
           onTap: () {
-            controller.updateGender(isMale ? 0 : 1);
+            controller.updateGender(isSouthIndian ? 0 : 1);
           },
           child: Container(
             margin: const EdgeInsets.only(
@@ -41,9 +41,9 @@ class GenderTile extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
-                  colors: isMale && controller.gender[0] == 1
+                  colors: isSouthIndian && controller.foodType[0] == 1
                       ? selectedLinearGradient
-                      : !isMale && controller.gender[1] == 1
+                      : !isSouthIndian && controller.foodType[1] == 1
                           ? selectedLinearGradient
                           : unselectedLinearGradient),
               color: Colors.white,
@@ -70,18 +70,18 @@ class GenderTile extends StatelessWidget {
                   Image.asset(
                     height: 180,
                     fit: BoxFit.cover,
-                    isMale
-                        ? "assets/images/onboard_female.png"
-                        : "assets/images/onboard_male.png",
+                    isSouthIndian
+                        ? "assets/images/onboard_vegan.png"
+                        : "assets/images/onboard_non-vegan.png",
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    isMale ? "Female" : "Male",
+                    isSouthIndian ? "Vegan" : "Non Vegan",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isMale && controller.gender[0] == 1
+                      color: isSouthIndian && controller.foodType[0] == 1
                           ? Colors.white
-                          : !isMale && controller.gender[1] == 1
+                          : !isSouthIndian && controller.foodType[1] == 1
                               ? Colors.white
                               : AppColor.heavyPurplyBlue,
                       fontSize: 18,

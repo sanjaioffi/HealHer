@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/presentation/screens/onboarding/controller/gender_controller.dart';
 
 import '../../../../utils/app_colors.dart';
+import '../../controller/region_controller.dart';
 
-class GenderTile extends StatelessWidget {
-  const GenderTile({
+class RegionTile extends StatelessWidget {
+  const RegionTile({
     super.key,
-    required this.isMale,
+    required this.isSouth,
   });
 
-  final bool isMale;
+  final bool isSouth;
 
   static List<Color> unselectedLinearGradient = [
     AppColor.white,
@@ -24,12 +24,12 @@ class GenderTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(GenderController());
-    return GetX<GenderController>(
+    Get.put(RegionController());
+    return GetX<RegionController>(
       builder: (controller) {
         return GestureDetector(
           onTap: () {
-            controller.updateGender(isMale ? 0 : 1);
+            controller.updateGender(isSouth ? 0 : 1);
           },
           child: Container(
             margin: const EdgeInsets.only(
@@ -41,9 +41,9 @@ class GenderTile extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
-                  colors: isMale && controller.gender[0] == 1
+                  colors: isSouth && controller.regionType[0] == 1
                       ? selectedLinearGradient
-                      : !isMale && controller.gender[1] == 1
+                      : !isSouth && controller.regionType[1] == 1
                           ? selectedLinearGradient
                           : unselectedLinearGradient),
               color: Colors.white,
@@ -70,18 +70,18 @@ class GenderTile extends StatelessWidget {
                   Image.asset(
                     height: 180,
                     fit: BoxFit.cover,
-                    isMale
-                        ? "assets/images/onboard_female.png"
-                        : "assets/images/onboard_male.png",
+                    isSouth
+                        ? "assets/images/onboard_north.png"
+                        : "assets/images/onboard_south.png",
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    isMale ? "Female" : "Male",
+                    isSouth ? "North" : "South",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isMale && controller.gender[0] == 1
+                      color: isSouth && controller.regionType[0] == 1
                           ? Colors.white
-                          : !isMale && controller.gender[1] == 1
+                          : !isSouth && controller.regionType[1] == 1
                               ? Colors.white
                               : AppColor.heavyPurplyBlue,
                       fontSize: 18,

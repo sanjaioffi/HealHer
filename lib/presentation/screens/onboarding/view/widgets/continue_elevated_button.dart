@@ -7,12 +7,20 @@ class ContinueElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 60,
-      width: 250,
+      width: double.maxFinite,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 30,
+      ),
       child: ElevatedButton(
         onPressed: () {},
-        child: const Text("Continue"),
+        child: const Text(
+          "Continue",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

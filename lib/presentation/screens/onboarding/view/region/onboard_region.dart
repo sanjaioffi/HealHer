@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/screens/onboarding/model/dual_choice_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/region/region_slide.dart';
+
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/gender/gender_slide.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 
-class OnBoardGenderScreen extends StatelessWidget {
-  const OnBoardGenderScreen({super.key});
+class OnboardRegionScreen extends StatelessWidget {
+  const OnboardRegionScreen({super.key});
 
-  static DualChoiceModel genderModel = genderTypeModel;
+  static DualChoiceModel regionModel = stateTypeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,10 @@ class OnBoardGenderScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              StepIndicator(step: genderModel.stepCount),
-              TopTile(tileContent: genderModel.topTitleContent),
-              const GenderSlide(),
-              BottomTile(tileContent: genderModel.bottomTileContent),
+              StepIndicator(step: regionModel.stepCount),
+              TopTile(tileContent: regionModel.topTitleContent),
+              const RegionSlide(),
+              BottomTile(tileContent: regionModel.bottomTileContent),
               const SizedBox(
                 height: 50,
               ),

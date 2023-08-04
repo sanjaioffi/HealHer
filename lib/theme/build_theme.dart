@@ -9,7 +9,7 @@ ThemeData buildTheme() {
     elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(
-            AppColor.purplyBlue,
+            AppColor.heavyPurplyBlue,
           ),
           shape: MaterialStatePropertyAll(
             ContinuousRectangleBorder(
@@ -23,6 +23,5 @@ ThemeData buildTheme() {
           iconColor: MaterialStatePropertyAll(Colors.white)),
     ),
     scaffoldBackgroundColor: AppColor.bgColor,
-    // primaryColor: Colors.lightBlue[800],
   );
 }
