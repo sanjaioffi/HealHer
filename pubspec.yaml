@@ -45,6 +45,10 @@ flutter:
     - assets/images/activity_images/
     - assets/images/targets_images/
     - assets/gif/
+    - assets/png/
+    - assets/fonts/
+    - assets/svg/
+    - assets/
 
 
    

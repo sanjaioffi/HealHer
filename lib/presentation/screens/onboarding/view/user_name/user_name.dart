@@ -7,6 +7,7 @@ class UserName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenSize().init(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
