@@ -59,7 +59,7 @@ class OnBoardingNameScreen extends StatelessWidget {
             SizedBox(
               height: screenHeight(50),
             ),
-            // const ContinueElevatedButton(nextRoute: '/dob',),
+            const ContinueElevatedButton(nextRoute: '/dob',),
           ],
         ),
       ),

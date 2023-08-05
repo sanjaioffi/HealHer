@@ -27,6 +27,9 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
               //     height: 250,
               //     child: Image.asset('assets/images/onboard-period_date.png')),
               TopTile(tileContent: "When was the last day of your period?"),
+              SizedBox(
+                height: 50,
+              ),
               CalendarDatePicker2(
                 config: CalendarDatePicker2Config(
                   controlsTextStyle: const TextStyle(

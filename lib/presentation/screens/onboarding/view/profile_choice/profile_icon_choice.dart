@@ -54,9 +54,7 @@ class _ProfileChoiceState extends State<ProfileChoice> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            height: screenHeight(60),
-          ),
+          
           const StepIndicator(step: 11),
           const TopTile(
             tileContent: "Choose your Profile Image",
@@ -121,7 +119,9 @@ class _ProfileChoiceState extends State<ProfileChoice> {
           SizedBox(
             height: screenHeight(20),
           ),
-          const ContinueElevatedButton(nextRoute: '/notification',)
+          const ContinueElevatedButton(
+            nextRoute: '/notification',
+          )
         ],
       ),
     );

@@ -90,8 +90,8 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
                       ),
                     );
                   }),
-              const SizedBox(
-                height: 100,
+              SizedBox(
+                height: 10,
               ),
               ContinueElevatedButton(
                 nextRoute: '/last_period_date',
