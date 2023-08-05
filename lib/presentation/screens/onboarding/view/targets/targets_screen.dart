@@ -8,23 +8,24 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indic
 import '../../../../utils/app_colors.dart';
 
 class TargetsScreen extends StatefulWidget {
-  TargetsScreen({super.key});
-  Set<int> selectedLevels = {};
+  const TargetsScreen({super.key});
   @override
   _TargetsScreenState createState() => _TargetsScreenState();
 }
 
 class _TargetsScreenState extends State<TargetsScreen> {
+  Set<int> selectedLevels = {};
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildOnBoardNavBar(context),
+        appBar: buildOnBoardNavBar(context, 8),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                StepIndicator(step: 2),
+                const StepIndicator(step: 8),
                 const Text(
                   "Let us know how we can help you",
                   textAlign: TextAlign.center,
@@ -51,9 +52,9 @@ class _TargetsScreenState extends State<TargetsScreen> {
                   text: 'Weight loss',
                   onCheckboxChanged: (bool? newValue) {
                     newValue!
-                        ? widget.selectedLevels.add(1)
-                        : widget.selectedLevels.remove(1);
-                    print(widget.selectedLevels);
+                        ? selectedLevels.add(1)
+                        : selectedLevels.remove(1);
+                    print(selectedLevels);
                   },
                 ),
                 CustomCard(
@@ -62,9 +63,9 @@ class _TargetsScreenState extends State<TargetsScreen> {
                   text: 'Better sleeping habit',
                   onCheckboxChanged: (bool? newValue) {
                     newValue!
-                        ? widget.selectedLevels.add(2)
-                        : widget.selectedLevels.remove(2);
-                    print(widget.selectedLevels);
+                        ? selectedLevels.add(2)
+                        : selectedLevels.remove(2);
+                    print(selectedLevels);
                   },
                 ),
                 CustomCard(
@@ -73,9 +74,9 @@ class _TargetsScreenState extends State<TargetsScreen> {
                   text: 'Track my nutrition',
                   onCheckboxChanged: (bool? newValue) {
                     newValue!
-                        ? widget.selectedLevels.add(3)
-                        : widget.selectedLevels.remove(3);
-                    print(widget.selectedLevels);
+                        ? selectedLevels.add(3)
+                        : selectedLevels.remove(3);
+                    print(selectedLevels);
                   },
                 ),
                 CustomCard(
@@ -84,15 +85,15 @@ class _TargetsScreenState extends State<TargetsScreen> {
                   text: 'Improve overall fitness',
                   onCheckboxChanged: (bool? newValue) {
                     newValue!
-                        ? widget.selectedLevels.add(4)
-                        : widget.selectedLevels.remove(4);
-                    print(widget.selectedLevels);
+                        ? selectedLevels.add(4)
+                        : selectedLevels.remove(4);
+                    print(selectedLevels);
                   },
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                ContinueElevatedButton(),
+                const ContinueElevatedButton(),
                 const SizedBox(
                   height: 20,
                 )

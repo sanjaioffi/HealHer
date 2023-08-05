@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
-AppBar buildOnBoardNavBar(BuildContext context) {
+AppBar buildOnBoardNavBar(BuildContext context, int index) {
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0,
@@ -18,11 +18,11 @@ AppBar buildOnBoardNavBar(BuildContext context) {
       width: double.maxFinite,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: const LinearProgressIndicator(
+        child: LinearProgressIndicator(
           minHeight: 7,
           backgroundColor: AppColor.babyPurplyBlue,
           color: AppColor.heavyPurplyBlue,
-          value: .1,
+          value: index / 12,
         ),
       ),
     ),

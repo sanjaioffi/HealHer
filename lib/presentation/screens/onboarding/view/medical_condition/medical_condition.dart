@@ -39,7 +39,7 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 10),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -47,7 +47,7 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  StepIndicator(step: 1),
+                  const StepIndicator(step: 10),
                   const Text(
                     'Any medical issues that we need to be aware of?',
                     textAlign: TextAlign.center,
@@ -80,7 +80,7 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ContinueElevatedButton()
+                  const ContinueElevatedButton()
                   //ElevatedButton(onPressed: () {}, child: const Text('Next')),
                 ],
               ),
@@ -130,7 +130,7 @@ class _DynamicChipState extends State<DynamicChip> {
           label: Text(widget.name),
           backgroundColor:
               isImage1Visible ? AppColor.purplyBlue : AppColor.white,
-          avatar: isImage1Visible ? Icon(Icons.check) : null),
+          avatar: isImage1Visible ? const Icon(Icons.check) : null),
     );
   }
 }

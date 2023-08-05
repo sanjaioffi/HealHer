@@ -27,10 +27,10 @@ class _OnboardWeightState extends State<OnboardWeight> {
   Widget build(BuildContext context) {
     ScreenSize().init(context);
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 5),
       body: Column(
         children: [
-          const StepIndicator(step: 2),
+          const StepIndicator(step: 5),
           const TopTile(tileContent: "What's your Weight ?"),
           Container(
             height: screenHeight(250),

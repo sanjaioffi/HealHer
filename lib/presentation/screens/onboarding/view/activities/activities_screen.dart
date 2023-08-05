@@ -45,13 +45,13 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildOnBoardNavBar(context),
+        appBar: buildOnBoardNavBar(context, 9),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                StepIndicator(step: 3),
+                const StepIndicator(step: 9),
                 const SizedBox(
                   width: 350,
                   child: Text(
@@ -119,12 +119,12 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                             const SizedBox(
                               height: 30,
                             ),
-                            Container(
+                            SizedBox(
                                 width: 170,
                                 height: 50,
                                 child: ElevatedButton(
                                     onPressed: () {},
-                                    child: Text(
+                                    child: const Text(
                                       'select',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(

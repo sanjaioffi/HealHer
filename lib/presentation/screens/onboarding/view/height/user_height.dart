@@ -28,11 +28,11 @@ class _OnBoardHeightState extends State<OnBoardHeight> {
   Widget build(BuildContext context) {
     ScreenSize().init(context);
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 4),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const StepIndicator(step: 1),
+          const StepIndicator(step: 4),
           const TopTile(tileContent: "Tell us what's our hieght ?"),
           SizedBox(
             height: screenHeight(280),

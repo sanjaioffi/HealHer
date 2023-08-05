@@ -8,24 +8,24 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indic
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 import '../../../../common/screen_utils/screen_size.dart';
 
-class DateOfBirth extends StatefulWidget {
-  const DateOfBirth({super.key});
+class OnBoardingDOB extends StatefulWidget {
+  const OnBoardingDOB({super.key});
 
   @override
-  State<DateOfBirth> createState() => _DateOfBirthState();
+  State<OnBoardingDOB> createState() => _OnBoardingDOBState();
 }
 
-class _DateOfBirthState extends State<DateOfBirth> {
+class _OnBoardingDOBState extends State<OnBoardingDOB> {
   @override
   Widget build(BuildContext context) {
     ScreenSize().init(context);
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 2),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const StepIndicator(step: 1),
+            const StepIndicator(step: 2),
             const TopTile(tileContent: "What is your Date of Birth ?"),
             const ImageHolder(),
             SizedBox(height: screenHeight(30)),

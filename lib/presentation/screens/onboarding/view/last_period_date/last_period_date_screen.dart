@@ -16,16 +16,16 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 3),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              StepIndicator(step: 7),
+              const StepIndicator(step: 7),
               // SizedBox(
               //     height: 250,
               //     child: Image.asset('assets/images/onboard-period_date.png')),
-              SizedBox(
+              const SizedBox(
                 width: 350,
                 child: Text(
                   "When was the last day of your period?",
@@ -38,22 +38,22 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
               ),
               CalendarDatePicker2(
                 config: CalendarDatePicker2Config(
-                  controlsTextStyle: TextStyle(
+                  controlsTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  weekdayLabelTextStyle: TextStyle(
+                  weekdayLabelTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  yearTextStyle: TextStyle(
+                  yearTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  dayTextStyle: TextStyle(
+                  dayTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -63,14 +63,14 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
                   selectedDayHighlightColor: AppColor.heavyPurplyBlue,
                   calendarType: CalendarDatePicker2Type.single,
                 ),
-                value: [],
+                value: const [],
                 // onValueChanged: (dates) => [] = dates,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              ContinueElevatedButton(),
-              SizedBox(
+              const ContinueElevatedButton(),
+              const SizedBox(
                 height: 20,
               ),
             ],
