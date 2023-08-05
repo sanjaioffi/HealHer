@@ -41,7 +41,7 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 10),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -49,11 +49,12 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  StepIndicator(step: 1),
+                const StepIndicator(step: 10),
                   TopTile(
                     tileContent:
-                        'Any medical issues that we need to be aware of?',
-                  ),
+                        'Any medical issues that we need to be aware of?',),
+                  
+                  
                   BottomTile(
                       tileContent:
                           'Using this information, we can lead you safely and promptly to your fitness goal.'),

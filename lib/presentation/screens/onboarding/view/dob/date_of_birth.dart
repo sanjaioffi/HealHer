@@ -1,116 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/gender/onboard_gender.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/dob/dob_tile.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/dob/image_holder.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
-
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 import '../../../../common/screen_utils/screen_size.dart';
-import '../../../../utils/app_colors.dart';
-import '../widgets/button_style/common_button.dart';
 
-class DateOfBirth extends StatefulWidget {
-  DateOfBirth({super.key});
+class OnBoardingDOB extends StatefulWidget {
+  const OnBoardingDOB({super.key});
 
   @override
-  State<DateOfBirth> createState() => _DateOfBirthState();
+  State<OnBoardingDOB> createState() => _OnBoardingDOBState();
 }
 
-class _DateOfBirthState extends State<DateOfBirth> {
-  String date_of_birth = '';
-  String age = '';
-
+class _OnBoardingDOBState extends State<OnBoardingDOB> {
   @override
   Widget build(BuildContext context) {
     ScreenSize().init(context);
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: screenWidth(20)),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: screenHeight(100),
-              ),
-              Center(
-                child: SizedBox(
-                  height: screenHeight(400),
-                  width: screenWidth(400),
-                  child: Image.asset("assets/images/dob.png"),
-                ),
-              ),
-              SizedBox(height: screenHeight(35)),
-              const Text(
-                "Choose your data of birth.",
-                style: TextStyle(
-                    color: AppColor.black, fontWeight: FontWeight.w600),
-              ),
-              SizedBox(height: screenHeight(15)),
-              GestureDetector(
-                onTap: () {
-                  DatePickerBdaya.showDatePicker(context,
-                      showTitleActions: true,
-                      minTime: DateTime(1990, 1, 1),
-                      maxTime: DateTime.now(),
-                      theme: const DatePickerThemeBdaya(
-                        headerColor: Colors.white,
-                        backgroundColor: Colors.white,
-                        itemStyle: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
-                        doneStyle: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
-                      ), onConfirm: (date) {
-                    setState(() {
-                      date_of_birth = '${date.day}/${date.month}/${date.year}';
-                      age = calculateAge(date).toString();
-                    });
-                  }, currentTime: DateTime(2000, 7, 11), locale: LocaleType.en);
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: screenWidth(20)),
-                  height: screenHeight(55),
-                  width: screenWidth(250),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: AppColor.purplyBlue, width: 2),
-                    borderRadius: BorderRadius.circular(screenHeight(45)),
-                  ),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(date_of_birth,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: screenHeight(16))),
-                        const Icon(Icons.calendar_month_rounded)
-                      ]),
-                ),
-              ),
-              SizedBox(
-                height: screenWidth(150),
-              ),
-              ContinueElevatedButton(nextRoute: 'gender',)
-            ],
-          ),
+      appBar: buildOnBoardNavBar(context, 2),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const StepIndicator(step: 2),
+            const TopTile(tileContent: "What is your Date of Birth ?"),
+            const ImageHolder(),
+            SizedBox(height: screenHeight(30)),
+            const BottomTile(
+              tileContent:
+                  "To give personalised food diet plans. Please share your Date of Birth",
+            ),
+            const DobSelector(),
+            SizedBox(height: screenHeight(30)),
+            const ContinueElevatedButton(nextRoute: '/gender',),
+          ],
         ),
       ),
     );
-  }
-
-  int calculateAge(DateTime dob) {
-    final today = DateTime.now();
-    final year = today.year - dob.year;
-    final month = today.month - dob.month;
-    final day = today.day - dob.day;
-
-    if (month < 0) {
-      return year - 1;
-    } else if (month == 0 && day < 0) {
-      return year - 1;
-    } else {
-      return year;
-    }
   }
 }

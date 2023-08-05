@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/sign_up/common_access.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/sign_up/quick_sign_up.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/user_name/user_name.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
-import 'common/common_access.dart';
+
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -36,15 +38,11 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: screenHeight(35),
               ),
-              quickSign(
-                  appleProcess: () {},
-                  context: context,
-                  googleProcess: () {},
-                  microsoftProcess: () {}),
+              QuickSignUp(),
               SizedBox(
                 height: screenHeight(30),
               ),
-              orWidget(context),
+             CustomDivider(),
               SizedBox(
                 height: screenHeight(25),
               ),

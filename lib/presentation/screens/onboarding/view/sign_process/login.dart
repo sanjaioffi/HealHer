@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/notification/onboard_notification.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/sign_process/sign_up.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/sign_up/quick_sign_up.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/user_name/user_name.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/welcome/welcome_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
-import 'common/common_access.dart';
+import '../sign_up/common_access.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -45,15 +46,12 @@ class _LoginState extends State<Login> {
             passTextField(TextEditingController(), () {}),
             SizedBox(height: screenHeight(20)),
             ContinueElevatedButton(
-                nextRoute: '/notification',),
+              nextRoute: '/notification',
+            ),
             SizedBox(height: screenHeight(20)),
-            orWidget(context),
+            CustomDivider(),
             SizedBox(height: screenHeight(35)),
-            quickSign(
-                appleProcess: () {},
-                context: context,
-                googleProcess: () {},
-                microsoftProcess: () {}),
+            QuickSignUp(),
             SizedBox(height: screenHeight(50)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

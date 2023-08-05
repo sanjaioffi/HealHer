@@ -1,6 +1,5 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/height_and%20weight/user_height.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
@@ -18,34 +17,34 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 3),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              StepIndicator(step: 7),
+              const StepIndicator(step: 3),
               // SizedBox(
               //     height: 250,
               //     child: Image.asset('assets/images/onboard-period_date.png')),
               TopTile(tileContent: "When was the last day of your period?"),
               CalendarDatePicker2(
                 config: CalendarDatePicker2Config(
-                  controlsTextStyle: TextStyle(
+                  controlsTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  weekdayLabelTextStyle: TextStyle(
+                  weekdayLabelTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  yearTextStyle: TextStyle(
+                  yearTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  dayTextStyle: TextStyle(
+                  dayTextStyle: const TextStyle(
                     color: AppColor.black,
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -55,10 +54,10 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
                   selectedDayHighlightColor: AppColor.heavyPurplyBlue,
                   calendarType: CalendarDatePicker2Type.single,
                 ),
-                value: [],
+                value: const [],
                 // onValueChanged: (dates) => [] = dates,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ContinueElevatedButton(

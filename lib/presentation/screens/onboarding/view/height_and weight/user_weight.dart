@@ -4,8 +4,6 @@ import 'package:heal_her/presentation/screens/onboarding/view/food/onboard_food.
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
-import '../widgets/button_style/common_button.dart';
-
 class UserWeight extends StatefulWidget {
   const UserWeight({super.key});
 

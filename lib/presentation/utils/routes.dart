@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/height/user_height.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/weight/user_weight.dart';
 import '../screens/onboarding/view/activities/activities_screen.dart';
 import '../screens/onboarding/view/dob/date_of_birth.dart';
 import '../screens/onboarding/view/food/onboard_food.dart';
 import '../screens/onboarding/view/gender/onboard_gender.dart';
-import '../screens/onboarding/view/height_and weight/user_height.dart';
-import '../screens/onboarding/view/height_and weight/user_weight.dart';
 import '../screens/onboarding/view/last_period_date/last_period_date_screen.dart';
 import '../screens/onboarding/view/medical_condition/medical_condition.dart';
 import '../screens/onboarding/view/notification/onboard_notification.dart';
@@ -21,13 +21,13 @@ List<GetPage> routes = [
   GetPage(name: '/', page: () => const WelcomeScreen()),
   GetPage(name: '/signup', page: () => const SignUp()),
   GetPage(name: '/signin', page: () => const Login()),
-  GetPage(name: '/name', page: () => const UserName()),
-  GetPage(name: '/dob', page: () => DateOfBirth()),
+  GetPage(name: '/name', page: () => const OnBoardingNameScreen()),
+  GetPage(name: '/dob', page: () => const OnBoardingDOB()),
   GetPage(name: '/gender', page: () => const OnBoardGenderScreen()),
-  GetPage(name: '/period_legth', page: () => const PeriodLengthScreen()),
+  GetPage(name: '/period_length', page: () => const PeriodLengthScreen()),
   GetPage(name: '/last_period_date', page: () => const LastPeriodDateScreen()),
-  GetPage(name: '/height', page: () => const UserHeight()),
-  GetPage(name: '/weight', page: () => const UserWeight()),
+  GetPage(name: '/height', page: () => const OnBoardHeight()),
+  GetPage(name: '/weight', page: () => const OnboardWeight()),
   GetPage(name: '/food_type', page: () => const OnboardFoodScreen()),
   GetPage(name: '/region', page: () => const OnboardRegionScreen()),
   GetPage(name: '/targets', page: () => TargetsScreen()),

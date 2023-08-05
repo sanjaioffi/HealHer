@@ -11,12 +11,14 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: 60),
+              const SizedBox(
+                height: 20,
+              ),
               SizedBox(
                 width: 300,
                 child: RichText(
@@ -51,19 +53,19 @@ class WelcomeScreen extends StatelessWidget {
                           )),
                     ])),
               ),
-              BottomTile(
+              const BottomTile(
                   tileContent:
                       ' Empowering Women\'s Safety & overall Wellness with HealHer SmartBand.'),
               Image.asset('assets/images/welcome.png'),
-              ContinueElevatedButton(
+              const ContinueElevatedButton(
                 nextRoute: '/name',
               ),
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: 20,
               ),
               RichText(
                   text: TextSpan(children: [
-                TextSpan(
+                const TextSpan(
                     text: 'Already have an account? ',
                     style: TextStyle(
                       color: AppColor.black,
@@ -72,10 +74,10 @@ class WelcomeScreen extends StatelessWidget {
                 TextSpan(
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        Get.to(() => Login());
+                        Get.to(() => const Login());
                       },
                     text: ' SignIn',
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: AppColor.heavyPurplyBlue,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold))

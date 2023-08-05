@@ -49,15 +49,23 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildOnBoardNavBar(context),
+        appBar: buildOnBoardNavBar(context, 9),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                StepIndicator(step: 3),
-                TopTile(
-                  tileContent: "What's your current fitness level?",
+                const StepIndicator(step: 9),
+                const SizedBox(
+                  width: 350,
+                  child: Text(
+                    "What's your current fitness level?",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 10,

@@ -11,14 +11,14 @@ class DualChoiceModel {
 
 // Gender Model
 DualChoiceModel genderTypeModel = DualChoiceModel(
-  stepCount: 1,
+  stepCount: 3,
   topTitleContent: "Which one are you ?",
   bottomTileContent: "For personalised experience please choose your gender",
 );
 
 // FoodType Model
 DualChoiceModel foodTypeModel = DualChoiceModel(
-  stepCount: 2,
+  stepCount: 6,
   topTitleContent: "Which food do you prefer ?",
   bottomTileContent:
       "For personalised food diet recommendations please choose your food prefernce",
@@ -26,7 +26,7 @@ DualChoiceModel foodTypeModel = DualChoiceModel(
 
 // RegionModel
 DualChoiceModel stateTypeModel = DualChoiceModel(
-  stepCount: 3,
+  stepCount: 7,
   topTitleContent: "Which part do you belong ?",
   bottomTileContent:
       "For personalised seasonal recommendations please choose your region",

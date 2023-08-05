@@ -19,16 +19,16 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context),
+      appBar: buildOnBoardNavBar(context, 3),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              StepIndicator(step: 6),
+              const StepIndicator(step: 3),
               SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/onboard-period.png')),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               TopTile(tileContent: "How long is your period cycle?"),
@@ -53,7 +53,7 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: _selected_index == itemIndex
@@ -67,7 +67,7 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             _selected_index == itemIndex
-                                ? Text(
+                                ? const Text(
                                     'Days',
                                     style: TextStyle(
                                         color: AppColor.heavyPurplyBlue,
@@ -75,26 +75,26 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
                                         fontWeight: FontWeight.bold,
                                         fontSize: 17),
                                   )
-                                : SizedBox(),
+                                : const SizedBox(),
                             Text(
                               itemIndex.toString(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: AppColor.heavyPurplyBlue,
                                   letterSpacing: 1,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17),
                             ),
-                            SizedBox()
+                            const SizedBox()
                           ],
                         )),
                       ),
                     );
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               ContinueElevatedButton(
-                nextRoute: 'last_period_date',
+                nextRoute: '/last_period_date',
               ),
               SizedBox(
                 height: 10,

@@ -13,12 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      getPages: routes, 
+      getPages: routes,
       debugShowCheckedModeBanner: false,
       title: 'HealHer-SmartBand',
       theme: buildTheme(),
       initialRoute: '/',
-      
     );
   }
 }
