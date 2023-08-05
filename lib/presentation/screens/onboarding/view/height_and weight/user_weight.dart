@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/food/onboard_food.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
+
 class UserWeight extends StatefulWidget {
   const UserWeight({super.key});
 
@@ -175,7 +175,7 @@ class _UserWeightState extends State<UserWeight> {
             SizedBox(
               height: screenHeight(50),
             ),
-            ContinueElevatedButton(
+            const ContinueElevatedButton(
               nextRoute: '/food_type',
             )
           ],

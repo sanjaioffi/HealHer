@@ -18,9 +18,9 @@ void navigateWithAnimation(
     {required BuildContext context,
     required Widget Function() pageClass,
     required AnimationType animationType}) {
-  PageRouteBuilder<dynamic> _getPageRoute(Widget Function() pageClass) {
+  PageRouteBuilder<dynamic> getPageRoute(Widget Function() pageClass) {
     return PageRouteBuilder<dynamic>(
-      transitionDuration: Duration(milliseconds: 800),
+      transitionDuration: const Duration(milliseconds: 800),
       pageBuilder: (context, animation, secondaryAnimation) => pageClass(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         switch (animationType) {
@@ -28,24 +28,24 @@ void navigateWithAnimation(
             return FadeTransition(opacity: animation, child: child);
           case AnimationType.slideUp:
             return SlideTransition(
-                position:
-                    Tween<Offset>(begin: Offset(0.0, 1.0), end: Offset.zero)
-                        .animate(animation),
+                position: Tween<Offset>(
+                        begin: const Offset(0.0, 1.0), end: Offset.zero)
+                    .animate(animation),
                 child: child);
           case AnimationType.slideDown:
             return SlideTransition(
-                position:
-                    Tween<Offset>(begin: Offset(0.0, -1.0), end: Offset.zero)
-                        .animate(animation),
+                position: Tween<Offset>(
+                        begin: const Offset(0.0, -1.0), end: Offset.zero)
+                    .animate(animation),
                 child: child);
           case AnimationType.scale:
             return ScaleTransition(scale: animation, child: child);
           case AnimationType.customSlide:
             // Replace with your custom animation implementation
             return SlideTransition(
-                position:
-                    Tween<Offset>(begin: Offset(1.0, 0.0), end: Offset.zero)
-                        .animate(animation),
+                position: Tween<Offset>(
+                        begin: const Offset(1.0, 0.0), end: Offset.zero)
+                    .animate(animation),
                 child: child);
           case AnimationType.rotate:
             return RotationTransition(turns: animation, child: child);
@@ -76,5 +76,5 @@ void navigateWithAnimation(
     );
   }
 
-  Navigator.push(context, _getPageRoute(pageClass));
+  Navigator.push(context, getPageRoute(pageClass));
 }

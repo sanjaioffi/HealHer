@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/last_period_date/last_period_date_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
@@ -15,7 +14,7 @@ class PeriodLengthScreen extends StatefulWidget {
 }
 
 class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
-  int _selected_index = 20;
+  int selectedIndex = 20;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,20 +30,20 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
               const SizedBox(
                 height: 50,
               ),
-              TopTile(tileContent: "How long is your period cycle?"),
-              SizedBox(
+              const TopTile(tileContent: "How long is your period cycle?"),
+              const SizedBox(
                 height: 50,
               ),
               CarouselSlider.builder(
                   options: CarouselOptions(
-                    initialPage: _selected_index,
+                    initialPage: selectedIndex,
                     viewportFraction: 0.6,
                     height: 120,
                     enlargeCenterPage: true,
                     enableInfiniteScroll: false,
                     scrollDirection: Axis.vertical,
                     onPageChanged: (index, reason) => setState(() {
-                      _selected_index = index;
+                      selectedIndex = index;
                     }),
                   ),
                   itemCount: 30,
@@ -56,7 +55,7 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
                         margin: const EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: _selected_index == itemIndex
+                          color: selectedIndex == itemIndex
                               ? AppColor.lightPurplrBlue
                               : Colors.grey[200],
                         ),
@@ -66,7 +65,7 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
                             child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            _selected_index == itemIndex
+                            selectedIndex == itemIndex
                                 ? const Text(
                                     'Days',
                                     style: TextStyle(
@@ -90,13 +89,13 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
                       ),
                     );
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              ContinueElevatedButton(
+              const ContinueElevatedButton(
                 nextRoute: '/last_period_date',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
             ],

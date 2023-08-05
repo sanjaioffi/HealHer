@@ -32,11 +32,9 @@ class OnBoardGenderScreen extends StatelessWidget {
                 height: 50,
               ),
               GetX<GenderController>(builder: (controller) {
-                print("The routed route ${controller.isMale.value}");
                 return ContinueElevatedButton(
-                  nextRoute: controller.isMale.value
-                      ? '/height'
-                      : '/period_length',
+                  nextRoute:
+                      controller.isMale.value ? '/height' : '/period_length',
                 );
               }),
             ],

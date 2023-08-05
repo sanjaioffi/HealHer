@@ -5,12 +5,6 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.5 <4.0.0'
 
- 
- 
- 
- 
- 
- 
 dependencies:
   flutter:
     sdk: flutter
@@ -28,61 +22,19 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-   
-   
-   
-   
-   
   flutter_lints: ^2.0.0
 
- 
- 
-
- 
 flutter:
   assets:
     - assets/images/
     - assets/images/activity_images/
     - assets/images/targets_images/
-    - assets/gif/
-    - assets/png/
     - assets/fonts/
-    - assets/svg/
     - assets/
-
-
-   
-   
    
   uses-material-design: true
 
-   
-   
-   
-   
-
-   
-   
-
-   
-   
-
-   
-   
-   
-   
-   
   fonts:
     - family: Poppins
       fonts:
         - asset: assets/fonts/font.ttf
-
-        
-   
-   
-   
-   
-   
-   
-   
-   

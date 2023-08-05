@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/welcome/welcome_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
