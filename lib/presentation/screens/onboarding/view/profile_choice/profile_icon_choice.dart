@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
-import '../widgets/button_style/common_button.dart';
 
 class ProfileChoice extends StatefulWidget {
-  const  ProfileChoice({super.key});
+  const ProfileChoice({super.key});
 
   @override
   State<ProfileChoice> createState() => _ProfileChoiceState();
@@ -30,7 +30,7 @@ class _ProfileChoiceState extends State<ProfileChoice> {
     if (data.length == index) {
       return Container();
     }
-    return Container(
+    return SizedBox(
       height: 100,
       width: 150,
       child: Column(
@@ -168,11 +168,7 @@ class _ProfileChoiceState extends State<ProfileChoice> {
             SizedBox(
               height: screenHeight(50),
             ),
-            commonButton(
-                function: () {
-                   },
-                text: "Continue",
-                context: context)
+            const ContinueElevatedButton()
           ],
         ),
       ),
