@@ -1,8 +1,10 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/height_and%20weight/user_height.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
 class LastPeriodDateScreen extends StatefulWidget {
@@ -25,17 +27,7 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
               // SizedBox(
               //     height: 250,
               //     child: Image.asset('assets/images/onboard-period_date.png')),
-              SizedBox(
-                width: 350,
-                child: Text(
-                  "When was the last day of your period?",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              TopTile(tileContent: "When was the last day of your period?"),
               CalendarDatePicker2(
                 config: CalendarDatePicker2Config(
                   controlsTextStyle: TextStyle(
@@ -69,7 +61,9 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
               SizedBox(
                 height: 10,
               ),
-              ContinueElevatedButton(),
+              ContinueElevatedButton(
+                nextRoute: '/height',
+              ),
               SizedBox(
                 height: 20,
               ),

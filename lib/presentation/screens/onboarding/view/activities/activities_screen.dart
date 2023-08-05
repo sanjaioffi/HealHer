@@ -2,10 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 import '../../../../utils/app_colors.dart';
 import '../../model/fitness_model.dart';
+import 'active_icons.dart';
+import 'dot_indicator.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   const ActivitiesScreen({super.key});
@@ -52,19 +56,11 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 StepIndicator(step: 3),
-                const SizedBox(
-                  width: 350,
-                  child: Text(
-                    "What's your current fitness level?",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                TopTile(
+                  tileContent: "What's your current fitness level?",
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 10,
                 ),
                 CarouselSlider.builder(
                   itemCount: fitnessLevel.length,
@@ -119,19 +115,9 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                             const SizedBox(
                               height: 30,
                             ),
-                            Container(
-                                width: 170,
-                                height: 50,
-                                child: ElevatedButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      'select',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                      ),
-                                    ))),
+                            ContinueElevatedButton(
+                              nextRoute: 'medical_condition',
+                            ),
                             const SizedBox(
                               height: 30,
                             ),
@@ -159,108 +145,5 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
             ),
           ),
         ));
-  }
-}
-
-class ActiveIcons extends StatelessWidget {
-  const ActiveIcons({super.key, required this.activityLevel});
-  final int activityLevel;
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topLeft,
-      child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: activityLevel == 1
-                  ? Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset(
-                            'assets/images/activity_images/flame_active.png'),
-                        Image.asset(
-                            'assets/images/activity_images/flame_inactive.png'),
-                        Image.asset(
-                            'assets/images/activity_images/flame_inactive.png')
-                      ],
-                    )
-                  : activityLevel == 2
-                      ? Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Image.asset(
-                                'assets/images/activity_images/flame_active.png'),
-                            Image.asset(
-                                'assets/images/activity_images/flame_active.png'),
-                            Image.asset(
-                                'assets/images/activity_images/flame_inactive.png')
-                          ],
-                        )
-                      : activityLevel == 3
-                          ? Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Image.asset(
-                                    'assets/images/activity_images/flame_active.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_active.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_active.png'),
-                              ],
-                            )
-                          : Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Image.asset(
-                                    'assets/images/activity_images/flame_inactive.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_inactive.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_inactive.png')
-                              ],
-                            ))),
-    );
-  }
-}
-
-class DotIndicator extends StatelessWidget {
-  final int currentIndex;
-  final int dotCount;
-  final double dotSize;
-  final double spacing;
-  final Color activeDotColor;
-  final Color inactiveDotColor;
-
-  const DotIndicator({
-    super.key,
-    required this.currentIndex,
-    this.dotCount = 4,
-    this.dotSize = 10.0,
-    this.spacing = 10.0,
-    this.activeDotColor = AppColor.purplyBlue,
-    this.inactiveDotColor = Colors.grey,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(dotCount, (index) {
-        bool isActive = index == currentIndex;
-        return Container(
-          width: dotSize,
-          height: dotSize,
-          margin: EdgeInsets.symmetric(horizontal: spacing / 2),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: isActive ? activeDotColor : inactiveDotColor,
-          ),
-        );
-      }),
-    );
   }
 }

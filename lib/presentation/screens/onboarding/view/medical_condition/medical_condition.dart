@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/profile_choice/profile_icon_choice.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
 import '../../controller/medical_condition_controller.dart';
+import 'dynamic_chip.dart';
 
 class MedicalConditionScreen extends StatefulWidget {
   const MedicalConditionScreen({Key? key}) : super(key: key);
@@ -13,8 +17,6 @@ class MedicalConditionScreen extends StatefulWidget {
   @override
   State<MedicalConditionScreen> createState() => _MedicalConditionScreenState();
 }
-
-List<String> tags = [];
 
 // list of string options
 List<String> options = [
@@ -48,24 +50,13 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
               child: Column(
                 children: [
                   StepIndicator(step: 1),
-                  const Text(
-                    'Any medical issues that we need to be aware of?',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  TopTile(
+                    tileContent:
+                        'Any medical issues that we need to be aware of?',
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Text(
-                      'Using this information, we can lead you safely and promptly to your fitness goal.',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal,
-                      )),
+                  BottomTile(
+                      tileContent:
+                          'Using this information, we can lead you safely and promptly to your fitness goal.'),
                   const Divider(),
                   Center(
                       child: Wrap(
@@ -80,57 +71,15 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ContinueElevatedButton()
-                  //ElevatedButton(onPressed: () {}, child: const Text('Next')),
+                  ContinueElevatedButton(
+                    nextRoute: 'profile',
+                  )
                 ],
               ),
             ),
           ),
         ),
       ),
-    );
-  }
-}
-
-class DynamicChip extends StatefulWidget {
-  final String name;
-
-  const DynamicChip({super.key, required this.name});
-
-  @override
-  _DynamicChipState createState() => _DynamicChipState();
-}
-
-class _DynamicChipState extends State<DynamicChip> {
-  bool isImage1Visible = false;
-  final MedicalIssuesController medicalIssuesController =
-      Get.put(MedicalIssuesController());
-
-  void _toggleColor() {
-    medicalIssuesController.addMedicalIssue(widget.name);
-    if (tags.contains(widget.name)) {
-      tags.remove(widget.name);
-    } else {
-      tags.add(widget.name);
-    }
-    setState(() {
-      isImage1Visible = !isImage1Visible;
-    });
-
-    // print(tags);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _toggleColor,
-      child: Chip(
-          shadowColor: AppColor.heavyPurplyBlue,
-          elevation: 2,
-          label: Text(widget.name),
-          backgroundColor:
-              isImage1Visible ? AppColor.purplyBlue : AppColor.white,
-          avatar: isImage1Visible ? Icon(Icons.check) : null),
     );
   }
 }

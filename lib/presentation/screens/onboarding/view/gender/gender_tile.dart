@@ -29,7 +29,8 @@ class GenderTile extends StatelessWidget {
       builder: (controller) {
         return GestureDetector(
           onTap: () {
-            controller.updateGender(isMale ? 0 : 1);
+            controller.isMale.value = isMale;
+            print(controller.isMale.value);
           },
           child: Container(
             margin: const EdgeInsets.only(
@@ -40,12 +41,13 @@ class GenderTile extends StatelessWidget {
             width: 170,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.bottomLeft,
-                  colors: isMale && controller.gender[0] == 1
-                      ? selectedLinearGradient
-                      : !isMale && controller.gender[1] == 1
-                          ? selectedLinearGradient
-                          : unselectedLinearGradient),
+                begin: Alignment.bottomLeft,
+                colors: isMale && controller.isMale.value
+                    ? selectedLinearGradient
+                    : !isMale && !controller.isMale.value
+                        ? selectedLinearGradient
+                        : unselectedLinearGradient,
+              ),
               color: Colors.white,
               borderRadius: const BorderRadius.all(
                 Radius.circular(
@@ -71,17 +73,17 @@ class GenderTile extends StatelessWidget {
                     height: 180,
                     fit: BoxFit.cover,
                     isMale
-                        ? "assets/images/onboard_female.png"
-                        : "assets/images/onboard_male.png",
+                        ? "assets/images/onboard_male.png"
+                        : "assets/images/onboard_female.png",
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    isMale ? "Female" : "Male",
+                    isMale ? "Male" : "Female",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isMale && controller.gender[0] == 1
+                      color: isMale && controller.isMale.value
                           ? Colors.white
-                          : !isMale && controller.gender[1] == 1
+                          : !isMale && !controller.isMale.value
                               ? Colors.white
                               : AppColor.heavyPurplyBlue,
                       fontSize: 18,

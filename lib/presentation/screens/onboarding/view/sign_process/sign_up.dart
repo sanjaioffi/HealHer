@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/user_name/user_name.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
 import 'common/common_access.dart';
@@ -51,10 +53,8 @@ class _SignUpState extends State<SignUp> {
                 height: screenHeight(18),
               ),
               passTextField(TextEditingController(), () {}),
-              signButton(
-                      () {
-
-              }, 'Sign up', context),
+              SizedBox(height: screenHeight(20)),
+              ContinueElevatedButton(nextRoute: 'name',)
             ],
           ),
         ),

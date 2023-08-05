@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/screens/onboarding/model/dual_choice_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/food/food_slide.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/region/onboard_region.dart';
 
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
@@ -30,7 +31,7 @@ class OnboardFoodScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const ContinueElevatedButton(),
+              const ContinueElevatedButton(nextRoute: 'region',),
             ],
           ),
         ),

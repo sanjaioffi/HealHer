@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/controller/gender_controller.dart';
 import 'package:heal_her/presentation/screens/onboarding/model/dual_choice_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/height_and%20weight/user_height.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/period_length/period_length_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/gender/gender_slide.dart';
@@ -29,7 +33,14 @@ class OnBoardGenderScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const ContinueElevatedButton(),
+              GetX<GenderController>(builder: (controller) {
+                print("The routed route ${controller.isMale.value}");
+                return ContinueElevatedButton(
+                  nextRoute: controller.isMale.value
+                      ? '/height'
+                      : '/period_legth',
+                );
+              }),
             ],
           ),
         ),

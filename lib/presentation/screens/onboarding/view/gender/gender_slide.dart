@@ -22,8 +22,8 @@ class GenderSlide extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              GenderTile(isMale: true),
               GenderTile(isMale: false),
+              GenderTile(isMale: true),
             ],
           ),
         ),

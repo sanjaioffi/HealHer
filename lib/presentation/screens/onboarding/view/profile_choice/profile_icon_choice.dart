@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/notification/onboard_notification.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
@@ -168,11 +170,7 @@ class _ProfileChoiceState extends State<ProfileChoice> {
             SizedBox(
               height: screenHeight(50),
             ),
-            commonButton(
-                function: () {
-                   },
-                text: "Continue",
-                context: context)
+            ContinueElevatedButton(nextRoute: '/notification',)
           ],
         ),
       ),

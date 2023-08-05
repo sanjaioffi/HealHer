@@ -1,5 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/sign_process/login.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
@@ -48,16 +51,13 @@ class WelcomeScreen extends StatelessWidget {
                           )),
                     ])),
               ),
-              SizedBox(
-                width: 300,
-                child: Text(
-                  ' Empowering Women\'s Safety & overall Wellness with HealHer SmartBand.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15),
-                ),
-              ),
+              BottomTile(
+                  tileContent:
+                      ' Empowering Women\'s Safety & overall Wellness with HealHer SmartBand.'),
               Image.asset('assets/images/welcome.png'),
-              ContinueElevatedButton(),
+              ContinueElevatedButton(
+                nextRoute: '/name',
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -72,7 +72,7 @@ class WelcomeScreen extends StatelessWidget {
                 TextSpan(
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        print('Sign In');
+                        Get.to(() => Login());
                       },
                     text: ' SignIn',
                     style: TextStyle(

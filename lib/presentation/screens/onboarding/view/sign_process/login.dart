@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/notification/onboard_notification.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/sign_process/sign_up.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/user_name/user_name.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/welcome/welcome_screen.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
@@ -19,7 +25,8 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: screenWidth(20)),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Image.asset(
               'assets/png/back.png',
             ),
@@ -35,8 +42,11 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: screenHeight(18),
             ),
-            passTextField(TextEditingController(),(){}),
-            signButton((){},'Login',context),
+            passTextField(TextEditingController(), () {}),
+            SizedBox(height: screenHeight(20)),
+            ContinueElevatedButton(
+                nextRoute: '/notification',),
+            SizedBox(height: screenHeight(20)),
             orWidget(context),
             SizedBox(height: screenHeight(35)),
             quickSign(
@@ -54,7 +64,9 @@ class _LoginState extends State<Login> {
                   width: screenWidth(10),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => const SignUp());
+                  },
                   child: const Text('Register',
                       style: TextStyle(color: AppColor.purplyBlue)),
                 )

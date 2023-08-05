@@ -18,6 +18,7 @@ class TopTile extends StatelessWidget {
       ),
       child: Text(
         tileContent,
+        textAlign: TextAlign.center,
         style: const TextStyle(
           color: AppColor.black,
           fontSize: 25,

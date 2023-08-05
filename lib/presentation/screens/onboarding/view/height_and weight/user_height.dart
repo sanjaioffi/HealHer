@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/height_and%20weight/user_weight.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
@@ -177,10 +179,7 @@ class _UserHeightState extends State<UserHeight> {
             SizedBox(
               height: screenHeight(50),
             ),
-            commonButton(
-                function: () {},
-                text: "Continue",
-                context: context)
+           ContinueElevatedButton(nextRoute: '/weight',)
           ],
         ),
       ),

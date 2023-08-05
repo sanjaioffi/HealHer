@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/last_period_date/last_period_date_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
 class PeriodLengthScreen extends StatefulWidget {
@@ -29,17 +31,7 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
               SizedBox(
                 height: 50,
               ),
-              SizedBox(
-                width: 350,
-                child: Text(
-                  "How long is your period cycle?",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              TopTile(tileContent: "How long is your period cycle?"),
               SizedBox(
                 height: 50,
               ),
@@ -101,7 +93,12 @@ class _PeriodLengthScreenState extends State<PeriodLengthScreen> {
               SizedBox(
                 height: 100,
               ),
-              ContinueElevatedButton()
+              ContinueElevatedButton(
+                nextRoute: 'last_period_date',
+              ),
+              SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),
