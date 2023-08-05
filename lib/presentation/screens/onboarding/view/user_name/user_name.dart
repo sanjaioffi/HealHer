@@ -21,7 +21,7 @@ class OnBoardingNameScreen extends StatelessWidget {
             const StepIndicator(step: 1),
             const TopTile(tileContent: "Share your name with us !"),
             Image.asset(
-              'assets/png/happy.png',
+              "assets/images/dob.png",
               height: screenHeight(250),
               width: screenWidth(250),
             ),
@@ -59,7 +59,9 @@ class OnBoardingNameScreen extends StatelessWidget {
             SizedBox(
               height: screenHeight(50),
             ),
-            const ContinueElevatedButton(nextRoute: '/dob',),
+            const ContinueElevatedButton(
+              nextRoute: '/dob',
+            ),
           ],
         ),
       ),

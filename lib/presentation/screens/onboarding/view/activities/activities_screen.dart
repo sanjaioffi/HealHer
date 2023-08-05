@@ -5,7 +5,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
 import '../../../../utils/app_colors.dart';
 import '../../model/fitness_model.dart';
 import 'active_icons.dart';
@@ -67,7 +66,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CarouselSlider.builder(
@@ -123,7 +122,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                             const SizedBox(
                               height: 30,
                             ),
-                            ContinueElevatedButton(
+                            const ContinueElevatedButton(
                               nextRoute: 'medical_condition',
                             ),
                             const SizedBox(

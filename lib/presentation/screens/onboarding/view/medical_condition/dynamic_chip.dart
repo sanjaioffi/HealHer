@@ -9,7 +9,7 @@ class DynamicChip extends StatefulWidget {
   const DynamicChip({super.key, required this.name});
 
   @override
-  _DynamicChipState createState() => _DynamicChipState();
+  State createState() => _DynamicChipState();
 }
 
 class _DynamicChipState extends State<DynamicChip> {
@@ -45,7 +45,7 @@ class _DynamicChipState extends State<DynamicChip> {
           label: Text(widget.name),
           backgroundColor:
               isImage1Visible ? AppColor.purplyBlue : AppColor.white,
-          avatar: isImage1Visible ? Icon(Icons.check) : null),
+          avatar: isImage1Visible ? const Icon(Icons.check) : null),
     );
   }
 }

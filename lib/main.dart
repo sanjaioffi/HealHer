@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      defaultTransition: Transition.cupertino,
+      transitionDuration: const Duration(seconds: 1),
       getPages: routes,
       debugShowCheckedModeBanner: false,
       title: 'HealHer-SmartBand',

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/sign_up/common_access.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/sign_up/quick_sign_up.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/user_name/user_name.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
@@ -38,11 +37,11 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: screenHeight(35),
               ),
-              QuickSignUp(),
+              const QuickSignUp(),
               SizedBox(
                 height: screenHeight(30),
               ),
-             CustomDivider(),
+             const CustomDivider(),
               SizedBox(
                 height: screenHeight(25),
               ),
@@ -52,7 +51,7 @@ class _SignUpState extends State<SignUp> {
               ),
               passTextField(TextEditingController(), () {}),
               SizedBox(height: screenHeight(20)),
-              ContinueElevatedButton(nextRoute: 'name',)
+              const ContinueElevatedButton(nextRoute: 'name',)
             ],
           ),
         ),

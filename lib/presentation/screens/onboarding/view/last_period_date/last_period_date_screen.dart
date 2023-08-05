@@ -26,8 +26,8 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
               // SizedBox(
               //     height: 250,
               //     child: Image.asset('assets/images/onboard-period_date.png')),
-              TopTile(tileContent: "When was the last day of your period?"),
-              SizedBox(
+              const TopTile(tileContent: "When was the last day of your period?"),
+              const SizedBox(
                 height: 50,
               ),
               CalendarDatePicker2(
@@ -63,10 +63,10 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
               const SizedBox(
                 height: 10,
               ),
-              ContinueElevatedButton(
+              const ContinueElevatedButton(
                 nextRoute: '/height',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
             ],

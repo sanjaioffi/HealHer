@@ -30,7 +30,6 @@ class GenderTile extends StatelessWidget {
         return GestureDetector(
           onTap: () {
             controller.isMale.value = isMale;
-            print(controller.isMale.value);
           },
           child: Container(
             margin: const EdgeInsets.only(

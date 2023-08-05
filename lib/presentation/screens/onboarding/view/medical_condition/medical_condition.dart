@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/profile_choice/profile_icon_choice.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
-import 'package:heal_her/presentation/utils/app_colors.dart';
 
-import '../../controller/medical_condition_controller.dart';
 import 'dynamic_chip.dart';
 
 class MedicalConditionScreen extends StatefulWidget {
@@ -49,13 +45,12 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                const StepIndicator(step: 10),
-                  TopTile(
+                  const StepIndicator(step: 10),
+                  const TopTile(
                     tileContent:
-                        'Any medical issues that we need to be aware of?',),
-                  
-                  
-                  BottomTile(
+                        'Any medical issues that we need to be aware of?',
+                  ),
+                  const BottomTile(
                       tileContent:
                           'Using this information, we can lead you safely and promptly to your fitness goal.'),
                   const Divider(),
@@ -72,7 +67,7 @@ class _MedicalConditionScreenState extends State<MedicalConditionScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ContinueElevatedButton(
+                  const ContinueElevatedButton(
                     nextRoute: 'profile',
                   )
                 ],

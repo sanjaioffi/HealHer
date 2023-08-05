@@ -30,7 +30,7 @@ List<GetPage> routes = [
   GetPage(name: '/weight', page: () => const OnboardWeight()),
   GetPage(name: '/food_type', page: () => const OnboardFoodScreen()),
   GetPage(name: '/region', page: () => const OnboardRegionScreen()),
-  GetPage(name: '/targets', page: () => TargetsScreen()),
+  GetPage(name: '/targets', page: () => const TargetsScreen()),
   GetPage(name: '/activities', page: () => const ActivitiesScreen()),
   GetPage(
       name: '/medical_condition', page: () => const MedicalConditionScreen()),
