@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/home/view/steps_screen/steps_screen.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/height/user_height.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/weight/user_weight.dart';
 import '../screens/onboarding/view/activities/activities_screen.dart';
@@ -36,4 +37,5 @@ List<GetPage> routes = [
       name: '/medical_condition', page: () => const MedicalConditionScreen()),
   GetPage(name: '/profile', page: () => const ProfileChoice()),
   GetPage(name: '/notification', page: () => const OnBoardNotificationScreen()),
+  GetPage(name: '/steps', page: () => const StepsScreen()),
 ];
