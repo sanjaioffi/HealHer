@@ -32,9 +32,10 @@ class _OnboardWeightState extends State<OnboardWeight> {
         children: [
           const StepIndicator(step: 5),
           const TopTile(tileContent: "What's your Weight ?"),
-          Container(
+          Image.asset(
+            "assets/png/weight.png",
             height: screenHeight(250),
-            color: Colors.red,
+            width: screenWidth(250),
           ),
           SizedBox(
             height: screenHeight(15),
@@ -82,7 +83,9 @@ class _OnboardWeightState extends State<OnboardWeight> {
           SizedBox(
             height: screenHeight(50),
           ),
-          const ContinueElevatedButton(nextRoute: '/food_type',),
+          const ContinueElevatedButton(
+            nextRoute: '/food_type',
+          ),
         ],
       ),
     );

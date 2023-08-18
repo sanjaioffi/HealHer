@@ -21,7 +21,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   final fitnessLevel = [
     FitnessLevel(
         level: 0,
-        image: 'assets/images/activity_images/no_activity.png',
+        image: 'assets/images/activity_images/more_active.png',
         title: 'Little or No Activity',
         subtitle: 'Mostly sitting through the day (eg. Desk Job, Bank Teller)'),
     FitnessLevel(
@@ -66,6 +66,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                     ),
                   ),
                 ),
+                // Image.asset('assets/png/work.png'),
                 const SizedBox(
                   height: 10,
                 ),

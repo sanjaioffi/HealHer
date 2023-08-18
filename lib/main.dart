@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'HealHer-SmartBand',
       theme: buildTheme(),
-      // initialRoute: '/steps',
+      // initialRoute: '/',
       home: StepInsightsScreen(),
     );
   }

@@ -27,7 +27,11 @@ class _OnBoardingDOBState extends State<OnBoardingDOB> {
           children: [
             const StepIndicator(step: 2),
             const TopTile(tileContent: "What is your Date of Birth ?"),
-            const ImageHolder(),
+            Image.asset(
+              "assets/images/dob.png",
+              height: screenHeight(250),
+              width: screenWidth(250),
+            ),
             SizedBox(height: screenHeight(30)),
             const BottomTile(
               tileContent:
@@ -35,7 +39,9 @@ class _OnBoardingDOBState extends State<OnBoardingDOB> {
             ),
             const DobSelector(),
             SizedBox(height: screenHeight(30)),
-            const ContinueElevatedButton(nextRoute: '/gender',),
+            const ContinueElevatedButton(
+              nextRoute: '/gender',
+            ),
           ],
         ),
       ),

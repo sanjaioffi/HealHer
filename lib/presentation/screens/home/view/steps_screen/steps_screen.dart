@@ -1,5 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/home/view/steps_screen/steps_insights.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../../../utils/app_colors.dart';
 
@@ -34,17 +36,22 @@ class _StepsScreenState extends State<StepsScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Icon(Icons.arrow_back_ios_rounded),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: AppColor.lightPurplrBlue,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 12),
-                        child: Text(
-                          'Insight',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 17.0),
+                    InkWell(
+                      onTap: () {
+                        Get.to(() => const StepInsightsScreen());
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: AppColor.lightPurplrBlue,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 12),
+                          child: Text(
+                            'Insight',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17.0),
+                          ),
                         ),
                       ),
                     )
