@@ -4,7 +4,9 @@ import 'package:heal_her/presentation/utils/routes.dart';
 import 'package:heal_her/theme/build_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
