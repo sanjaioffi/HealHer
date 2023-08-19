@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/height/user_height.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/height/onboard_height.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/weight/user_weight.dart';
 import '../screens/onboarding/view/activities/activities_screen.dart';
 import '../screens/onboarding/view/dob/date_of_birth.dart';

@@ -5,4 +5,5 @@ OnboardingModel foodTypeModel = OnboardingModel(
   topTitleContent: "Which food do you prefer ?",
   bottomTileContent:
       "For personalised food diet recommendations please choose your food prefernce",
+  nextRoute: '',
 );

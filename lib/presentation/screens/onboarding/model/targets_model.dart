@@ -4,4 +4,5 @@ OnboardingModel userTargetsModel = OnboardingModel(
   stepCount: 8,
   topTitleContent: "Let us know how we should assist you",
   bottomTileContent: "",
+  nextRoute: '',
 );

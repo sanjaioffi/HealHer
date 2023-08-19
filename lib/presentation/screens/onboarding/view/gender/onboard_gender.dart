@@ -13,29 +13,29 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.d
 class OnBoardGenderScreen extends StatelessWidget {
   const OnBoardGenderScreen({super.key});
 
-  static OnboardingModel genderModel = genderTypeModel;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context, 3),
+      appBar: buildOnBoardNavBar(context, genderTypeModel.stepCount),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              StepIndicator(step: genderModel.stepCount),
-              TopTile(tileContent: genderModel.topTitleContent),
+              StepIndicator(step: genderTypeModel.stepCount),
+              TopTile(tileContent: genderTypeModel.topTitleContent),
               const GenderSlide(),
-              BottomTile(tileContent: genderModel.bottomTileContent),
+              BottomTile(tileContent: genderTypeModel.bottomTileContent),
               const SizedBox(height: 50),
-              GetX<GenderController>(builder: (controller) {
-                return ContinueElevatedButton(
-                  nextRoute:
-                      controller.isMale.value ? '/height' : '/period_length',
-                );
-              }),
+              GetX<GenderController>(
+                builder: (controller) {
+                  return ContinueElevatedButton(
+                    nextRoute:
+                        controller.isMale.value ? '/height' : '/period_length',
+                  );
+                },
+              ),
             ],
           ),
         ),

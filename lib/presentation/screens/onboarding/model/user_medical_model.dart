@@ -5,4 +5,5 @@ OnboardingModel userMedicalIssueModel = OnboardingModel(
   topTitleContent: "Kindly share your medical issues with us !",
   bottomTileContent:
       "Using the informmation we can lead you safely and promptly to your fitness goal,",
+  nextRoute: '',
 );

@@ -4,4 +4,5 @@ OnboardingModel fitnessModel = OnboardingModel(
   stepCount: 9,
   topTitleContent: "What's your current fitness level",
   bottomTileContent: "",
+  nextRoute: "",
 );

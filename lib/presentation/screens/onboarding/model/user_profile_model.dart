@@ -4,4 +4,5 @@ OnboardingModel userProfileModel = OnboardingModel(
   stepCount: 11,
   topTitleContent: "Choose your profile Image",
   bottomTileContent: "Choose your emoji to represt yourself in the application",
+  nextRoute: '',
 );
