@@ -24,5 +24,7 @@ ThemeData buildTheme() {
           iconColor: MaterialStatePropertyAll(Colors.white)),
     ),
     scaffoldBackgroundColor: AppColor.bgColor,
+    appBarTheme: const AppBarTheme(color: AppColor.black),
+    textTheme: const TextTheme(bodyLarge: TextStyle(color: AppColor.black))
   );
 }

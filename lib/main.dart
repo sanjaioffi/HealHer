@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/height_and%20weight/user_height.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/dob/date_of_birth.dart';
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
+import 'package:heal_her/presentation/screens/home/view/heart.dart';
 import 'package:heal_her/theme/build_theme.dart';
 
 
@@ -13,11 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenSize().init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'HealHer-SmartBand',
       theme: buildTheme(),
-      home: DateOfBirth(),
+      home: Heart(),
     );
   }
 }

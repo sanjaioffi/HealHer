@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               SizedBox(
                 width: 300,
                 child: RichText(
@@ -48,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                           )),
                     ])),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 300,
                 child: Text(
                   ' Empowering Women\'s Safety & overall Wellness with HealHer SmartBand.',
@@ -57,13 +57,13 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               Image.asset('assets/images/welcome.png'),
-              ContinueElevatedButton(),
-              SizedBox(
+              const ContinueElevatedButton(),
+              const SizedBox(
                 height: 10,
               ),
               RichText(
                   text: TextSpan(children: [
-                TextSpan(
+                const TextSpan(
                     text: 'Already have an account? ',
                     style: TextStyle(
                       color: AppColor.black,
@@ -75,7 +75,7 @@ class WelcomeScreen extends StatelessWidget {
                         print('Sign In');
                       },
                     text: ' SignIn',
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: AppColor.heavyPurplyBlue,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold))
