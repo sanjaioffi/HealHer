@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
 
 class ContinueElevatedButton extends StatelessWidget {
   const ContinueElevatedButton({
@@ -12,7 +13,9 @@ class ContinueElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth(8.0),
+      ),
       child: ElevatedButton(
         onPressed: () {
           Get.toNamed(nextRoute);

@@ -1,27 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
 
 import '../presentation/utils/app_colors.dart';
 
-ThemeData buildTheme() {
+ThemeData buildTheme(BuildContext context) {
   return ThemeData(
     fontFamily: 'Poppins',
-    iconTheme: const IconThemeData(size: 20, color: Colors.black),
-    elevatedButtonTheme: const ElevatedButtonThemeData(
+    iconTheme: IconThemeData(
+      size: screenHeight(20),
+      color: Colors.black,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-          minimumSize: MaterialStatePropertyAll(Size(double.maxFinite, 50)),
-          backgroundColor: MaterialStatePropertyAll(
-            AppColor.heavyPurplyBlue,
-          ),
-          shape: MaterialStatePropertyAll(
-            ContinuousRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  20,
-                ),
+        minimumSize: const MaterialStatePropertyAll(Size(double.maxFinite, 50)),
+        backgroundColor: const MaterialStatePropertyAll(
+          AppColor.heavyPurplyBlue,
+        ),
+        shape: MaterialStatePropertyAll(
+          ContinuousRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                screenWidth(20),
               ),
             ),
           ),
-          iconColor: MaterialStatePropertyAll(Colors.white)),
+        ),
+        iconColor: const MaterialStatePropertyAll(
+          Colors.white,
+        ),
+      ),
     ),
     scaffoldBackgroundColor: AppColor.bgColor,
   );

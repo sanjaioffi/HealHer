@@ -26,8 +26,9 @@ class _OnBoardHeightState extends State<OnBoardHeight> {
           StepIndicator(step: userHeightModel.stepCount),
           TopTile(tileContent: userHeightModel.topTitleContent),
           SizedBox(
-              height: screenHeight(280),
-              child: Image.asset("assets/png/height.png")),
+            height: screenHeight(280),
+            child: const Placeholder(),
+          ),
           const HeightPicker(),
           SizedBox(height: screenHeight(50)),
           ContinueElevatedButton(nextRoute: userHeightModel.nextRoute),

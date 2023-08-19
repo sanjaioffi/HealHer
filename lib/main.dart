@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       getPages: routes,
       debugShowCheckedModeBanner: false,
       title: 'HealHer-SmartBand',
-      theme: buildTheme(),
+      theme: buildTheme(context),
       initialRoute: '/',
     );
   }

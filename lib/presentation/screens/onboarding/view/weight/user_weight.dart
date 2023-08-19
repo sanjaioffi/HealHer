@@ -26,7 +26,10 @@ class _OnboardWeightState extends State<OnboardWeight> {
         children: [
           StepIndicator(step: weightModel.stepCount),
           TopTile(tileContent: weightModel.topTitleContent),
-          Container(height: screenHeight(250), color: Colors.red),
+          SizedBox(
+            height: screenHeight(250),
+            child: const Placeholder(),
+          ),
           const WeightPicker(),
           ContinueElevatedButton(nextRoute: weightModel.nextRoute),
         ],
