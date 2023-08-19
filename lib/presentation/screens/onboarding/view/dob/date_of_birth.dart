@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/dob_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/dob/dob_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/dob/image_holder.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
@@ -25,17 +26,14 @@ class _OnBoardingDOBState extends State<OnBoardingDOB> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const StepIndicator(step: 2),
-            const TopTile(tileContent: "What is your Date of Birth ?"),
+            StepIndicator(step: dobModel.stepCount),
+            TopTile(tileContent: dobModel.topTitleContent),
             const ImageHolder(),
             SizedBox(height: screenHeight(30)),
-            const BottomTile(
-              tileContent:
-                  "To give personalised food diet plans. Please share your Date of Birth",
-            ),
+            BottomTile(tileContent: dobModel.bottomTileContent),
             const DobSelector(),
             SizedBox(height: screenHeight(30)),
-            const ContinueElevatedButton(nextRoute: '/gender',),
+            ContinueElevatedButton(nextRoute: dobModel.nextRoute),
           ],
         ),
       ),

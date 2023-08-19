@@ -22,8 +22,8 @@ class RegionSlide extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              RegionTile(isSouth: true),
-              RegionTile(isSouth: false),
+              RegionTile(isSouthIndian: true),
+              RegionTile(isSouthIndian: false),
             ],
           ),
         ),

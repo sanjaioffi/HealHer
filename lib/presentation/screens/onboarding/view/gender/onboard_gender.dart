@@ -29,9 +29,7 @@ class OnBoardGenderScreen extends StatelessWidget {
               TopTile(tileContent: genderModel.topTitleContent),
               const GenderSlide(),
               BottomTile(tileContent: genderModel.bottomTileContent),
-              const SizedBox(
-                height: 50,
-              ),
+              const SizedBox(height: 50),
               GetX<GenderController>(builder: (controller) {
                 return ContinueElevatedButton(
                   nextRoute:

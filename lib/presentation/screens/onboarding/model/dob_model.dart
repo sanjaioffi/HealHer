@@ -5,4 +5,5 @@ OnboardingModel dobModel = OnboardingModel(
   topTitleContent: "What is your Date Of Birth",
   bottomTileContent:
       "To give personalised recommendation with respect to your age share your date of birth",
+  nextRoute: "/gender",
 );

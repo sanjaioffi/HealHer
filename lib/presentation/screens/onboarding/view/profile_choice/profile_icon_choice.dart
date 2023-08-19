@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
@@ -16,7 +17,17 @@ class ProfileChoice extends StatefulWidget {
 }
 
 class _ProfileChoiceState extends State<ProfileChoice> {
-  List data = ["🦊", "😍", "🤠", "👻", "🐹", "💀", "🐼", "🐶", "🦝"];
+  List data = [
+    "🦊",
+    "😍",
+    "🤠",
+    "👻",
+    "🐹",
+    "💀",
+    "🐼",
+    "🐶",
+    "🦝",
+  ];
   int _index = 0;
   Widget _buildListItem(BuildContext context, int index) {
     if (data.length == index) {
@@ -54,7 +65,6 @@ class _ProfileChoiceState extends State<ProfileChoice> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          
           const StepIndicator(step: 11),
           const TopTile(
             tileContent: "Choose your Profile Image",
@@ -79,12 +89,10 @@ class _ProfileChoiceState extends State<ProfileChoice> {
                   itemCount: data.length,
                   itemSize: 150,
                   dynamicItemSize: true,
-                  onReachEnd: () {
-                    // print("end");
-                  },
+                  onReachEnd: () {},
                   initialIndex: 0,
                   onItemFocus: (val) {
-                    // print(val.toString());
+                    userInfoModel.userProfileChoice = val;
                     setState(() {
                       _index = val;
                     });

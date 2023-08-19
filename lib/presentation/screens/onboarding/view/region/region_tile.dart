@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 
 import '../../../../utils/app_colors.dart';
 import '../../controller/region_controller.dart';
@@ -7,10 +8,10 @@ import '../../controller/region_controller.dart';
 class RegionTile extends StatelessWidget {
   const RegionTile({
     super.key,
-    required this.isSouth,
+    required this.isSouthIndian,
   });
 
-  final bool isSouth;
+  final bool isSouthIndian;
 
   static List<Color> unselectedLinearGradient = [
     AppColor.white,
@@ -29,7 +30,8 @@ class RegionTile extends StatelessWidget {
       builder: (controller) {
         return GestureDetector(
           onTap: () {
-            controller.updateGender(isSouth ? 0 : 1);
+            userInfoModel.isSouthIndian = isSouthIndian;
+            controller.updateGender(isSouthIndian ? 0 : 1);
           },
           child: Container(
             margin: const EdgeInsets.only(
@@ -41,9 +43,9 @@ class RegionTile extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
-                  colors: isSouth && controller.regionType[0] == 1
+                  colors: isSouthIndian && controller.regionType[0] == 1
                       ? selectedLinearGradient
-                      : !isSouth && controller.regionType[1] == 1
+                      : !isSouthIndian && controller.regionType[1] == 1
                           ? selectedLinearGradient
                           : unselectedLinearGradient),
               color: Colors.white,
@@ -70,18 +72,18 @@ class RegionTile extends StatelessWidget {
                   Image.asset(
                     height: 180,
                     fit: BoxFit.cover,
-                    isSouth
+                    isSouthIndian
                         ? "assets/images/onboard_north.png"
                         : "assets/images/onboard_south.png",
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    isSouth ? "North" : "South",
+                    isSouthIndian ? "North" : "South",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isSouth && controller.regionType[0] == 1
+                      color: isSouthIndian && controller.regionType[0] == 1
                           ? Colors.white
-                          : !isSouth && controller.regionType[1] == 1
+                          : !isSouthIndian && controller.regionType[1] == 1
                               ? Colors.white
                               : AppColor.heavyPurplyBlue,
                       fontSize: 18,
