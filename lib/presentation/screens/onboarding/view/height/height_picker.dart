@@ -18,66 +18,78 @@ class _HeightPickerState extends State<HeightPicker> {
   @override
   void initState() {
     super.initState();
-    _rulerPickerController = RulerPickerController(value: 120);
-    height = 120;
+    _rulerPickerController = RulerPickerController(value: 0);
+    height = 152;
   }
 
   @override
   void dispose() {
-    super.dispose();
     _rulerPickerController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          "${height - 3} cm",
-          style: TextStyle(
-            fontWeight: FontWeight.w800,
-            fontSize: screenHeight(20),
+    return Padding(
+      padding: EdgeInsets.only(
+        top: screenHeight(15),
+      ),
+      child: Column(
+        children: [
+          Text("${height - 2} cm",
+              style: TextStyle(
+                  fontWeight: FontWeight.w800, fontSize: screenHeight(20))),
+          SizedBox(
+            height: screenHeight(15),
           ),
-        ),
-        SizedBox(
-          height: screenHeight(15),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: screenWidth(25),
+          Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: screenWidth(20),
+            ),
+            child: RulerPicker(
+              controller: _rulerPickerController,
+              beginValue: 0,
+              endValue: 500,
+              initValue: height.toInt(),
+              scaleLineStyleList: [
+                ScaleLineStyle(
+                  color: AppColor.heavyPurplyBlue,
+                  width: screenWidth(1.5),
+                  height: screenHeight(30),
+                  scale: 0,
+                ),
+                ScaleLineStyle(
+                  color: AppColor.heavyPurplyBlue,
+                  width: screenWidth(1),
+                  height: screenHeight(25),
+                  scale: 5,
+                ),
+              ],
+              onValueChange: (value) {
+                userInfoModel.weight = value.toDouble();
+                setState(
+                  () {
+                    userInfoModel.weight = value.toDouble();
+                    setState(
+                      () {
+                        if (value > 2) {
+                          height = value;
+                        } else {
+                          height = 2;
+                        }
+                      },
+                    );
+                  },
+                );
+              },
+              width: MediaQuery.of(context).size.width,
+              height: screenHeight(100),
+              rulerMarginTop: 7,
+              rulerBackgroundColor: Colors.transparent,
+            ),
           ),
-          child: RulerPicker(
-            controller: _rulerPickerController,
-            beginValue: 0,
-            endValue: 300,
-            initValue: height,
-            scaleLineStyleList: [
-              ScaleLineStyle(
-                color: AppColor.heavyPurplyBlue,
-                width: screenWidth(1.5),
-                height: screenHeight(30),
-                scale: 0,
-              ),
-              ScaleLineStyle(
-                color: AppColor.purplyBlue,
-                width: screenWidth(1),
-                height: screenHeight(25),
-                scale: 5,
-              ),
-            ],
-            onValueChange: (value) {
-              userInfoModel.height = value.toDouble();
-              setState(() {
-                height = value;
-              });
-            },
-            width: MediaQuery.of(context).size.width,
-            height: screenHeight(80),
-            rulerMarginTop: screenHeight(7),
-            rulerBackgroundColor: Colors.transparent,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
