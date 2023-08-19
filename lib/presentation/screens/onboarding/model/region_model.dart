@@ -5,5 +5,5 @@ OnboardingModel stateTypeModel = OnboardingModel(
   topTitleContent: "Which part do you belong ?",
   bottomTileContent:
       "For personalised seasonal recommendations please choose your region",
-  nextRoute: '',
+  nextRoute: '/targets',
 );

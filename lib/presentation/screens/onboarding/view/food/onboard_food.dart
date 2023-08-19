@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/model/onboarding_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/model/food_type_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/food/food_slide.dart';
 
@@ -12,8 +11,6 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.d
 class OnboardFoodScreen extends StatelessWidget {
   const OnboardFoodScreen({super.key});
 
-  static OnboardingModel foodModel = foodTypeModel;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,16 +21,12 @@ class OnboardFoodScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              StepIndicator(step: foodModel.stepCount),
-              TopTile(tileContent: foodModel.topTitleContent),
+              StepIndicator(step: foodTypeModel.stepCount),
+              TopTile(tileContent: foodTypeModel.topTitleContent),
               const FoodSlide(),
-              BottomTile(tileContent: foodModel.bottomTileContent),
-              const SizedBox(
-                height: 50,
-              ),
-              const ContinueElevatedButton(
-                nextRoute: 'region',
-              ),
+              BottomTile(tileContent: foodTypeModel.bottomTileContent),
+              const SizedBox(height: 50),
+              ContinueElevatedButton(nextRoute: foodTypeModel.nextRoute),
             ],
           ),
         ),

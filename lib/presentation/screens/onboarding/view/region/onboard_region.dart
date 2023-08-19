@@ -11,8 +11,6 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.d
 class OnboardRegionScreen extends StatelessWidget {
   const OnboardRegionScreen({super.key});
 
-  static OnboardingModel regionModel = stateTypeModel;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,16 +21,12 @@ class OnboardRegionScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              StepIndicator(step: regionModel.stepCount),
-              TopTile(tileContent: regionModel.topTitleContent),
+              StepIndicator(step: stateTypeModel.stepCount),
+              TopTile(tileContent: stateTypeModel.topTitleContent),
               const RegionSlide(),
-              BottomTile(tileContent: regionModel.bottomTileContent),
-              const SizedBox(
-                height: 50,
-              ),
-              const ContinueElevatedButton(
-                nextRoute: '/targets',
-              ),
+              BottomTile(tileContent: stateTypeModel.bottomTileContent),
+              const SizedBox(height: 50),
+              ContinueElevatedButton(nextRoute: stateTypeModel.nextRoute),
             ],
           ),
         ),
