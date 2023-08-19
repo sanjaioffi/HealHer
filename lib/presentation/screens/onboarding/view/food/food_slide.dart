@@ -22,8 +22,8 @@ class FoodSlide extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FoodTile(isSouthIndian: true),
-              FoodTile(isSouthIndian: false),
+              FoodTile(isVegan: true),
+              FoodTile(isVegan: false),
             ],
           ),
         ),

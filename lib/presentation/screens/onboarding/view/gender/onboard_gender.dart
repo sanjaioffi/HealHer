@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/presentation/screens/onboarding/controller/gender_controller.dart';
-import 'package:heal_her/presentation/screens/onboarding/model/dual_choice_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/onboarding_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/gender_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/gender/gender_slide.dart';
@@ -12,7 +13,7 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.d
 class OnBoardGenderScreen extends StatelessWidget {
   const OnBoardGenderScreen({super.key});
 
-  static DualChoiceModel genderModel = genderTypeModel;
+  static OnboardingModel genderModel = genderTypeModel;
 
   @override
   Widget build(BuildContext context) {

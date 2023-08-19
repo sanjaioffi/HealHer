@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/model/dual_choice_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/onboarding_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/region_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/region/region_slide.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
@@ -10,7 +11,7 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.d
 class OnboardRegionScreen extends StatelessWidget {
   const OnboardRegionScreen({super.key});
 
-  static DualChoiceModel regionModel = stateTypeModel;
+  static OnboardingModel regionModel = stateTypeModel;
 
   @override
   Widget build(BuildContext context) {

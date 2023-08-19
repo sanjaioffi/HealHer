@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
@@ -40,9 +41,13 @@ class _OnBoardHeightState extends State<OnBoardHeight> {
               "assets/png/height.png",
             ),
           ),
-          Text("$height cm",
-              style: TextStyle(
-                  fontWeight: FontWeight.w800, fontSize: screenHeight(20))),
+          Text(
+            "$height cm",
+            style: TextStyle(
+              fontWeight: FontWeight.w800,
+              fontSize: screenHeight(20),
+            ),
+          ),
           SizedBox(
             height: screenHeight(15),
           ),
@@ -67,6 +72,7 @@ class _OnBoardHeightState extends State<OnBoardHeight> {
                     color: Colors.grey, width: 1, height: 15, scale: -1)
               ],
               onValueChange: (value) {
+                userInfoModel.height = value.toDouble();
                 setState(() {
                   height = value;
                 });
@@ -80,7 +86,9 @@ class _OnBoardHeightState extends State<OnBoardHeight> {
           SizedBox(
             height: screenHeight(50),
           ),
-          const ContinueElevatedButton(nextRoute: '/weight',),
+          const ContinueElevatedButton(
+            nextRoute: '/weight',
+          ),
         ],
       ),
     );

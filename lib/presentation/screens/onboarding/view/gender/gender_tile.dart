@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/presentation/screens/onboarding/controller/gender_controller.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 
 import '../../../../utils/app_colors.dart';
 
@@ -29,6 +30,7 @@ class GenderTile extends StatelessWidget {
       builder: (controller) {
         return GestureDetector(
           onTap: () {
+            userInfoModel.isMale = isMale;
             controller.isMale.value = isMale;
           },
           child: Container(

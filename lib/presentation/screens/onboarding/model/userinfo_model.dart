@@ -1,6 +1,7 @@
-class UserModel {
+class UserInfoModel {
   String userName = "Mitun Suresh";
   DateTime userDOB = DateTime(2003, 05, 20);
+  int age = 20;
   bool isMale = false;
   int userPeriodLength = 20;
   DateTime lastPeriodDate = DateTime.now();
@@ -13,3 +14,5 @@ class UserModel {
   List<String> userMediacalConditon = [];
   int userProfileChoice = 0;
 }
+
+UserInfoModel userInfoModel = UserInfoModel();

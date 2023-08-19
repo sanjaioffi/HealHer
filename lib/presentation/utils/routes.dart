@@ -14,7 +14,7 @@ import '../screens/onboarding/view/region/onboard_region.dart';
 import '../screens/onboarding/view/sign_process/login.dart';
 import '../screens/onboarding/view/sign_process/sign_up.dart';
 import '../screens/onboarding/view/targets/targets_screen.dart';
-import '../screens/onboarding/view/name/user_name.dart';
+import '../screens/onboarding/view/name/onboard_username.dart';
 import '../screens/onboarding/view/welcome/welcome_screen.dart';
 
 List<GetPage> routes = [

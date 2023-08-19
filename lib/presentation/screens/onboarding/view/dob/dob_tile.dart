@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
-
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/dob/calculate_age.dart';
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
 
@@ -16,7 +17,7 @@ class _DobSelectorState extends State<DobSelector> {
   @override
   void initState() {
     super.initState();
-    dateToday = DateTime.now();
+    dateToday = DateTime(2023, 05, 20);
   }
 
   @override
@@ -42,12 +43,12 @@ class _DobSelectorState extends State<DobSelector> {
                     fontWeight: FontWeight.bold,
                     fontSize: 16),
               ), onConfirm: (date) {
+            userInfoModel.userDOB = date;
             setState(() {
-              // print("rebuild Done");
               dateToday = date;
             });
-            // int age = calculateAge(date);
-          }, currentTime: DateTime(2000, 5, 5), locale: LocaleType.en);
+            userInfoModel.age = calculateAge(date);
+          }, currentTime: DateTime(2003, 05, 20), locale: LocaleType.en);
         },
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: screenWidth(20)),

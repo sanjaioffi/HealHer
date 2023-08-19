@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
@@ -69,6 +70,7 @@ class _OnboardWeightState extends State<OnboardWeight> {
                 ),
               ],
               onValueChange: (value) {
+                userInfoModel.weight = value.toDouble();
                 setState(() {
                   weight = value;
                 });
@@ -82,7 +84,9 @@ class _OnboardWeightState extends State<OnboardWeight> {
           SizedBox(
             height: screenHeight(50),
           ),
-          const ContinueElevatedButton(nextRoute: '/food_type',),
+          const ContinueElevatedButton(
+            nextRoute: '/food_type',
+          ),
         ],
       ),
     );

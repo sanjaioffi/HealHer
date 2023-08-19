@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 
 import '../../../../utils/app_colors.dart';
 import '../../controller/food_controller.dart';
@@ -7,10 +8,10 @@ import '../../controller/food_controller.dart';
 class FoodTile extends StatelessWidget {
   const FoodTile({
     super.key,
-    required this.isSouthIndian,
+    required this.isVegan,
   });
 
-  final bool isSouthIndian;
+  final bool isVegan;
 
   static List<Color> unselectedLinearGradient = [
     AppColor.white,
@@ -29,7 +30,8 @@ class FoodTile extends StatelessWidget {
       builder: (controller) {
         return GestureDetector(
           onTap: () {
-            controller.updateGender(isSouthIndian ? 0 : 1);
+            userInfoModel.isSouthIndian = isVegan;
+            controller.updateGender(isVegan ? 0 : 1);
           },
           child: Container(
             margin: const EdgeInsets.only(
@@ -41,9 +43,9 @@ class FoodTile extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
-                  colors: isSouthIndian && controller.foodType[0] == 1
+                  colors: isVegan && controller.foodType[0] == 1
                       ? selectedLinearGradient
-                      : !isSouthIndian && controller.foodType[1] == 1
+                      : !isVegan && controller.foodType[1] == 1
                           ? selectedLinearGradient
                           : unselectedLinearGradient),
               color: Colors.white,
@@ -70,18 +72,18 @@ class FoodTile extends StatelessWidget {
                   Image.asset(
                     height: 180,
                     fit: BoxFit.cover,
-                    isSouthIndian
+                    isVegan
                         ? "assets/images/onboard_vegan.png"
                         : "assets/images/onboard_non-vegan.png",
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    isSouthIndian ? "Vegan" : "Non Vegan",
+                    isVegan ? "Vegan" : "Non Vegan",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isSouthIndian && controller.foodType[0] == 1
+                      color: isVegan && controller.foodType[0] == 1
                           ? Colors.white
-                          : !isSouthIndian && controller.foodType[1] == 1
+                          : !isVegan && controller.foodType[1] == 1
                               ? Colors.white
                               : AppColor.heavyPurplyBlue,
                       fontSize: 18,

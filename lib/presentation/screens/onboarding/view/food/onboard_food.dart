@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/presentation/screens/onboarding/model/dual_choice_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/onboarding_model.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/food_type_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/food/food_slide.dart';
 
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
@@ -11,7 +12,7 @@ import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.d
 class OnboardFoodScreen extends StatelessWidget {
   const OnboardFoodScreen({super.key});
 
-  static DualChoiceModel foodModel = foodTypeModel;
+  static OnboardingModel foodModel = foodTypeModel;
 
   @override
   Widget build(BuildContext context) {
