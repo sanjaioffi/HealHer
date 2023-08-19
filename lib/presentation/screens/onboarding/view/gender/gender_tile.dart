@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
 import 'package:heal_her/presentation/screens/onboarding/controller/gender_controller.dart';
 import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 
@@ -34,12 +35,12 @@ class GenderTile extends StatelessWidget {
             controller.isMale.value = isMale;
           },
           child: Container(
-            margin: const EdgeInsets.only(
-              left: 15,
-              right: 10,
+            margin: EdgeInsets.only(
+              left: screenWidth(15),
+              right: screenWidth(10),
             ),
-            height: 250,
-            width: 170,
+            height: screenHeight(250),
+            width: screenHeight(170),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.bottomLeft,
@@ -65,19 +66,19 @@ class GenderTile extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.only(
-                top: 15,
+              padding: EdgeInsets.only(
+                top: screenHeight(15),
               ),
               child: Column(
                 children: [
                   Image.asset(
-                    height: 180,
+                    height: screenHeight(180),
                     fit: BoxFit.cover,
                     isMale
                         ? "assets/images/onboard_male.png"
                         : "assets/images/onboard_female.png",
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: screenHeight(10)),
                   Text(
                     isMale ? "Male" : "Female",
                     style: TextStyle(

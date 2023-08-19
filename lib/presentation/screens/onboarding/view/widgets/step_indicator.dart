@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
 
 import '../../../../utils/app_colors.dart';
 
@@ -13,7 +14,7 @@ class StepIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: EdgeInsets.symmetric(vertical: screenHeight(10.0)),
       child: Text(
         "STEP $step / 12",
         style: const TextStyle(

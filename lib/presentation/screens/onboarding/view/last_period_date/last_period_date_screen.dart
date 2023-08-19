@@ -1,10 +1,9 @@
-import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/onboarding/view/last_period_date/last_period_picker.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/top_tile.dart';
-import 'package:heal_her/presentation/utils/app_colors.dart';
 
 class LastPeriodDateScreen extends StatefulWidget {
   const LastPeriodDateScreen({super.key});
@@ -18,57 +17,14 @@ class _LastPeriodDateScreenState extends State<LastPeriodDateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildOnBoardNavBar(context, 3),
-      body: SafeArea(
+      body: const SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const StepIndicator(step: 3),
-              // SizedBox(
-              //     height: 250,
-              //     child: Image.asset('assets/images/onboard-period_date.png')),
-              const TopTile(tileContent: "When was the last day of your period?"),
-              const SizedBox(
-                height: 50,
-              ),
-              CalendarDatePicker2(
-                config: CalendarDatePicker2Config(
-                  controlsTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  weekdayLabelTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  yearTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  dayTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  currentDate: DateTime.now(),
-                  lastDate: DateTime.now(),
-                  selectedDayHighlightColor: AppColor.heavyPurplyBlue,
-                  calendarType: CalendarDatePicker2Type.single,
-                ),
-                value: const [],
-                // onValueChanged: (dates) => [] = dates,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const ContinueElevatedButton(
-                nextRoute: '/height',
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              StepIndicator(step: 3),
+              TopTile(tileContent: "When was the last day of your period?"),
+              LastPeriodDatePicker(),
+              ContinueElevatedButton(nextRoute: '/height'),
             ],
           ),
         ),

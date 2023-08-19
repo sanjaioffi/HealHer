@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/sign_process/login.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
@@ -16,11 +17,11 @@ class WelcomeScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: screenHeight(20),
               ),
               SizedBox(
-                width: 300,
+                width: screenWidth(300),
                 child: RichText(
                     textAlign: TextAlign.center,
                     text: const TextSpan(children: [

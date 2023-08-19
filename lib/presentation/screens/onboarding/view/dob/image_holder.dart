@@ -7,9 +7,8 @@ class ImageHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: screenHeight(20)),
       child: Center(
         child: Container(
           height: screenHeight(250),

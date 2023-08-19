@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
 import 'package:heal_her/presentation/screens/onboarding/model/height_model.dart';
-import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/height/height_picker.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
