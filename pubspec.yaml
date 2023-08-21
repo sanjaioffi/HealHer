@@ -5,12 +5,6 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.5 <4.0.0'
 
- 
- 
- 
- 
- 
- 
 dependencies:
   flutter:
     sdk: flutter
@@ -24,22 +18,15 @@ dependencies:
   scroll_snap_list: ^0.9.1
   flutter_datetime_picker_bdaya: ^3.0.2
   intl: ^0.18.1
+  fl_chart: ^0.63.0
+  syncfusion_flutter_charts: ^22.2.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-   
-   
-   
-   
-   
   flutter_lints: ^2.0.0
 
- 
- 
-
- 
 flutter:
   assets:
     - assets/images/
@@ -51,28 +38,8 @@ flutter:
     - assets/svg/
     - assets/
 
-
-   
-   
-   
   uses-material-design: true
 
-   
-   
-   
-   
-
-   
-   
-
-   
-   
-
-   
-   
-   
-   
-   
   fonts:
     - family: Poppins
       fonts:

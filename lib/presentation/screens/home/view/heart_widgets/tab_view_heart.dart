@@ -1,21 +1,23 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
 import 'back_ground.dart';
+import 'bar_chart_graph.dart';
 import 'date_container.dart';
 
 class TabViewBarHeart extends StatelessWidget {
-   TabViewBarHeart(
-      {super.key, required this.tabController, required this.days});
+  TabViewBarHeart({super.key, required this.tabController, required this.days});
 
   final TabController tabController;
   final List<DateTime> days;
 
-  var textStyle1=TextStyle(
+  var textStyle1 = TextStyle(
     color: AppColor.black,
-    fontWeight: FontWeight.w600,fontSize: screenHeight(16),
+    fontWeight: FontWeight.w600,
+    fontSize: screenHeight(16),
     wordSpacing: 2,
   );
 
@@ -65,22 +67,26 @@ class TabViewBarHeart extends StatelessWidget {
                             'assets/svg/heart.svg',
                             fit: BoxFit.contain,
                           )),
-                      SizedBox(width: screenWidth(5),),
+                      SizedBox(
+                        width: screenWidth(5),
+                      ),
                       RichText(
                         text: TextSpan(
                           children: [
                             TextSpan(
                               text: '34',
-                              style:textStyle1,
+                              style: textStyle1,
                             ),
                             TextSpan(
-                                text: ' : bpm',
-                                style:textStyle1,
-                            )],
+                              text: ' : bpm',
+                              style: textStyle1,
+                            )
+                          ],
                         ),
                       )
                     ],
-                  )
+                  ),
+                  HeartBarChart()
                 ],
               ))
             ],

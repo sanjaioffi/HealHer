@@ -22,7 +22,7 @@ Container backGroundContainer(
 Container graphBackGroundContainer({required Widget child}){
   return Container(
     height: screenHeight(300),
-    width: screenWidth(450),
+    width: screenWidth(500),
     margin: EdgeInsets.all(screenWidth(15)),
     padding: EdgeInsets.all(screenWidth(20)),
     decoration: BoxDecoration(
