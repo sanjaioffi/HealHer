@@ -9,6 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.2.0
+  flutter_svg: ^2.0.7
   get: ^4.6.5
   flutter_ruler_picker: ^1.0.3
   cupertino_icons: ^1.0.2
@@ -17,8 +18,6 @@ dependencies:
   scroll_snap_list: ^0.9.1
   flutter_datetime_picker_bdaya: ^3.0.2
   intl: ^0.18.1
-  percent_indicator: ^4.2.3
-  fl_chart: ^0.63.0
 
 dev_dependencies:
   flutter_test:
@@ -32,8 +31,12 @@ flutter:
     - assets/images/activity_images/
     - assets/images/targets_images/
     - assets/fonts/
-    - assets/png/
-    - assets/gif/
+    - assets/svg/
+    - assets/
+
+
+   
+   
    
   uses-material-design: true
 
@@ -41,3 +44,13 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/font.ttf
+
+        
+   
+   
+   
+   
+   
+   
+   
+   
