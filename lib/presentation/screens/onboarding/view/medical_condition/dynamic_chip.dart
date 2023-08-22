@@ -40,12 +40,18 @@ class _DynamicChipState extends State<DynamicChip> {
     return GestureDetector(
       onTap: _toggleColor,
       child: Chip(
-          shadowColor: AppColor.heavyPurplyBlue,
-          elevation: 2,
-          label: Text(widget.name),
+          shadowColor: isImage1Visible ? AppColor.white : AppColor.purplyBlue,
+          elevation: 3,
+          label: Text(
+            widget.name,
+            style: TextStyle(
+                color: isImage1Visible ? AppColor.white : AppColor.black),
+          ),
           backgroundColor:
               isImage1Visible ? AppColor.purplyBlue : AppColor.white,
-          avatar: isImage1Visible ? const Icon(Icons.check) : null),
+          avatar: isImage1Visible
+              ? const Icon(Icons.check, color: AppColor.white)
+              : null),
     );
   }
 }

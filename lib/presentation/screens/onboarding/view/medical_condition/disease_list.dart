@@ -36,6 +36,9 @@ class _DiseaseClassifictionsState extends State<DiseaseClassifictions> {
     "Stomach Issues",
     "Menstural Issues",
     "Physical Injuries",
+    "Mental Issues",
+    "Lung Diseaseas",
+    "Kidney Diseases"
   ];
 
   @override
@@ -45,24 +48,27 @@ class _DiseaseClassifictionsState extends State<DiseaseClassifictions> {
       child: Column(
         children: [
           for (int i = 0; i < issueClassifications.length; i++)
-            ExpansionTile(
-              textColor: Colors.black,
-              title: Text(
-                issueClassifications[i],
-                style: const TextStyle(fontWeight: FontWeight.w600),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 3),
+              child: ExpansionTile(
+                textColor: Colors.black,
+                title: Text(
+                  issueClassifications[i],
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                ),
+                children: [
+                  Center(
+                      child: Wrap(
+                    spacing: 5.0, // spacing between chips
+                    runSpacing: 10.0, // spacing between rows
+                    children: options.map((chipText) {
+                      return DynamicChip(
+                        name: chipText,
+                      );
+                    }).toList(),
+                  )),
+                ],
               ),
-              children: [
-                Center(
-                    child: Wrap(
-                  spacing: 8.0, // spacing between chips
-                  runSpacing: 8.0, // spacing between rows
-                  children: options.map((chipText) {
-                    return DynamicChip(
-                      name: chipText,
-                    );
-                  }).toList(),
-                )),
-              ],
             ),
         ],
       ),

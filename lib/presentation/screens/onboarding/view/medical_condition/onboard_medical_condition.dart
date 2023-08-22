@@ -19,6 +19,7 @@ class MedicalConditionScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: SafeArea(
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   StepIndicator(step: userMedicalIssueModel.stepCount),
@@ -26,7 +27,9 @@ class MedicalConditionScreen extends StatelessWidget {
                   const DiseaseClassifictions(),
                   BottomTile(
                       tileContent: userMedicalIssueModel.bottomTileContent),
-                  const ContinueElevatedButton(nextRoute: 'profile')
+                  const SizedBox(height: 20),
+                  const ContinueElevatedButton(nextRoute: 'profile'),
+                  const SizedBox(height: 50),
                 ],
               ),
             ),

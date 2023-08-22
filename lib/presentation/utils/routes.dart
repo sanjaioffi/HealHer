@@ -6,7 +6,7 @@ import '../screens/onboarding/view/dob/date_of_birth.dart';
 import '../screens/onboarding/view/food/onboard_food.dart';
 import '../screens/onboarding/view/gender/onboard_gender.dart';
 import '../screens/onboarding/view/last_period_date/last_period_date_screen.dart';
-import '../screens/onboarding/view/medical_condition/medical_condition.dart';
+import '../screens/onboarding/view/medical_condition/onboard_medical_condition.dart';
 import '../screens/onboarding/view/notification/onboard_notification.dart';
 import '../screens/onboarding/view/period_length/period_length_screen.dart';
 import '../screens/onboarding/view/profile_choice/profile_icon_choice.dart';
