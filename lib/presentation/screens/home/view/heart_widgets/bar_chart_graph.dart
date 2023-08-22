@@ -1,64 +1,153 @@
-import 'dart:math';
-
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
-
+import 'package:heal_her/presentation/screens/home/view/heart_widgets/widget/back_ground.dart';
 import '../../../../utils/app_colors.dart';
+import 'heart_bar_widgets/bar_widgets.dart';
 
-class _BarChart extends StatelessWidget {
-  _BarChart();
+class HeartBarChart extends StatefulWidget {
+  const HeartBarChart({super.key, required this.periodType});
 
-  final List<int> nums = List.generate(100, (index) => index);
+  final Period periodType;
+
+  @override
+  _HeartBarChartState createState() => _HeartBarChartState();
+}
+
+class _HeartBarChartState extends State<HeartBarChart> {
+  List<int> data = List.generate(100, (index) => random(60, 160));
+  List<int> monthData = List.generate(5, (index) => random(60, 160));
+
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  void _scrollListener() {
+    if (_scrollController.position.pixels ==
+        _scrollController.position.maxScrollExtent) {
+      // Load more data when reaching the end
+      _loadMoreData();
+    }
+  }
+
+  void _loadMoreData() async {
+    setState(() {
+      // Append new data to the existing list
+      data.addAll(List.generate(50, (index) => (random(60, 160))));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BarChart(
-      BarChartData(groupsSpace: 20,
-        barTouchData: barTouchData,
-        titlesData: titlesData,
-        borderData: borderData,
-        barGroups: barGroups,
-        gridData: const FlGridData(
-          show: false,
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      controller: _scrollController,
+      child: SizedBox(
+        width: data.length *
+            (widget.periodType == Period.month
+                ? screenWidth(60.0)
+                : (widget.periodType == Period.week
+                    ? screenWidth(45.0)
+                    : screenWidth(50.0))),
+        height: 300,
+        child: BarChart(
+          BarChartData(
+            barTouchData: barTouchData,
+            titlesData: titlesData,
+            borderData: borderData,
+            gridData: const FlGridData(
+              show: false,
+            ),
+            alignment: BarChartAlignment.spaceAround,
+            maxY: 200,
+            barGroups: data
+                .asMap()
+                .map((index, value) => MapEntry(
+                      index,
+                      BarChartGroupData(
+                        x: index,
+                        barRods: [
+                          BarChartRodData(
+                            width: barWidth,
+                            toY: value.toDouble(),
+                            gradient: barsGradient,
+                          )
+                        ],
+                        showingTooltipIndicators: [0],
+                      ),
+                    ))
+                .values
+                .toList(),
+          ),
         ),
-        alignment: BarChartAlignment.spaceAround,
-        maxY: 200,
       ),
     );
   }
 
-  BarTouchData get barTouchData => BarTouchData(
-        enabled: false,
-        touchTooltipData: BarTouchTooltipData(
-          tooltipBgColor: Colors.transparent,
-          tooltipPadding: EdgeInsets.zero,
-          tooltipMargin: 8,
-          getTooltipItem: (
-            BarChartGroupData group,
-            int groupIndex,
-            BarChartRodData rod,
-            int rodIndex,
-          ) {
-            return BarTooltipItem(
-              rod.toY.round().toString(),
-              const TextStyle(
-                color: AppColor.black,
-                fontWeight: FontWeight.bold,
-              ),
-            );
-          },
-        ),
-      );
-
   Widget getTitles(double value, TitleMeta meta) {
-    const style = TextStyle(
+    var style = TextStyle(
       color: AppColor.black,
       fontWeight: FontWeight.bold,
-      fontSize: 14,
+      fontSize: screenHeight(13),
     );
     String text;
-    text = nums[value.toInt()].toString();
+
+    if (widget.periodType == Period.day) {
+      text = value.toInt().toString();
+    } else if (widget.periodType == Period.week) {
+      switch (value.toInt()) {
+        case 0:
+          text = 'Mn';
+          break;
+        case 1:
+          text = 'Te';
+          break;
+        case 2:
+          text = 'Wd';
+          break;
+        case 3:
+          text = 'Tu';
+          break;
+        case 4:
+          text = 'Fr';
+          break;
+        case 5:
+          text = 'St';
+          break;
+        case 6:
+          text = 'Sn';
+          break;
+        default:
+          text = '';
+          break;
+      }
+    } else {
+      switch (value.toInt()) {
+        case 0:
+          text = 'Week1';
+          break;
+        case 1:
+          text = 'Week2';
+          break;
+        case 2:
+          text = 'Week3';
+          break;
+        case 3:
+          text = 'Week4';
+          break;
+        case 4:
+          text = 'Week5';
+          break;
+
+        default:
+          text = '';
+          break;
+      }
+    }
 
     return SideTitleWidget(
       axisSide: meta.axisSide,
@@ -86,53 +175,4 @@ class _BarChart extends StatelessWidget {
           sideTitles: SideTitles(showTitles: false),
         ),
       );
-
-  double get barWidth => screenWidth(10);
-
-  FlBorderData get borderData => FlBorderData(
-        show: false,
-      );
-
-  LinearGradient get _barsGradient => LinearGradient(
-        colors: [
-          AppColor.purplyBlue.withAlpha(20),
-          AppColor.heavyPurplyBlue.withGreen(4),
-        ],
-        begin: Alignment.bottomCenter,
-        end: Alignment.topCenter,
-      );
-
-  List<BarChartGroupData> get barGroups => List.generate(10, (index) {
-        return BarChartGroupData(barsSpace: 50,
-          x: index,
-          barRods: [
-            BarChartRodData(
-              width: barWidth,
-              toY: random(60, 160).toDouble(),
-              gradient: _barsGradient,
-            )
-          ],
-          showingTooltipIndicators: [0],
-        );
-      });
-}
-
-int random(int min, int max) {
-  return min + Random().nextInt(max - min);
-}
-
-class HeartBarChart extends StatefulWidget {
-  const HeartBarChart({super.key});
-
-  @override
-  State<StatefulWidget> createState() => HeartBarChartState();
-}
-
-class HeartBarChartState extends State<HeartBarChart> {
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-        child: _BarChart()
-    );
-  }
 }

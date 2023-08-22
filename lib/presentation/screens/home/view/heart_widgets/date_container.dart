@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
-import 'back_ground.dart';
+import 'widget/back_ground.dart';
 
 class DateContainer extends StatefulWidget {
-  const DateContainer({super.key, required this.days});
+  const DateContainer({super.key, required this.periodType});
 
-  final List days;
+  final Period periodType;
 
   @override
   State<DateContainer> createState() => _DateContainerState();
@@ -15,6 +15,11 @@ class DateContainer extends StatefulWidget {
 
 class _DateContainerState extends State<DateContainer> {
   int index = 0;
+
+  List<DateTime> days = List.generate(30, (index) {
+    return DateTime.now().subtract(Duration(days: index));
+  });
+
 
   @override
   void initState() {
@@ -35,19 +40,17 @@ class _DateContainerState extends State<DateContainer> {
               GestureDetector(
                   onTap: () {
                     setState(() {
-                      if (index < widget.days.length - 1) {
+                      if (index < days.length - 1) {
                         index++;
                       }
                     });
                   },
                   child: const Icon(Icons.arrow_back_ios)),
               Text(
-                '${widget.days[index].day}-${
-                    DateFormat('MMM').format(widget.days[index])
-                }-${widget.days[index].year}',
+                '${days[index].day}-${DateFormat('MMM').format(days[index])}-${days[index].year}',
                 style: const TextStyle(fontWeight: FontWeight.w600),
               ),
-              index!= 0
+              index != 0
                   ? GestureDetector(
                       onTap: () {
                         setState(() {

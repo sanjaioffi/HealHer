@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
-import 'package:heal_her/presentation/screens/home/view/heart_widgets/back_ground.dart';
+import 'package:heal_her/presentation/screens/home/view/heart_widgets/widget/back_ground.dart';
 import 'package:heal_her/presentation/screens/home/view/heart_widgets/tabBar.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
@@ -16,9 +16,6 @@ class Heart extends StatefulWidget {
 class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  List<DateTime> days = List.generate(30, (index) {
-    return DateTime.now().subtract(Duration(days: index));
-  });
 
   static const List<Tab> myTabs = <Tab>[
     Tab(text: 'Day'),
@@ -65,7 +62,9 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
             child: Tabs(tabController: _tabController, myTab: myTabs),
             horizontal: screenWidth(5),
             vertical: screenHeight(5)),
-        TabViewBarHeart(tabController: _tabController, days: days)
+        TabViewBarHeart(
+          tabController: _tabController,
+        ),
       ]),
     );
   }
