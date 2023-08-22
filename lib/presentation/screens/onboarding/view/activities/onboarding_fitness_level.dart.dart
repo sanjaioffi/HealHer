@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:heal_her/presentation/screens/onboarding/model/userinfo_model.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/step_indicator.dart';
@@ -21,7 +22,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   final fitnessLevel = [
     FitnessLevel(
         level: 0,
-        image: 'assets/images/activity_images/no_activity.png',
+        image: 'assets/images/activity_images/more_active.png',
         title: 'Little or No Activity',
         subtitle: 'Mostly sitting through the day (eg. Desk Job, Bank Teller)'),
     FitnessLevel(
@@ -66,9 +67,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
+                const SizedBox(height: 30),
                 CarouselSlider.builder(
                   itemCount: fitnessLevel.length,
                   itemBuilder: (BuildContext context, int itemIndex, int i) =>
@@ -120,7 +119,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                                   fontWeight: FontWeight.normal,
                                 )),
                             const SizedBox(
-                              height: 30,
+                              height: 45,
                             ),
                             const ContinueElevatedButton(
                               nextRoute: 'medical_condition',
@@ -140,13 +139,12 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                       enlargeCenterPage: true,
                       enableInfiniteScroll: false,
                       onPageChanged: (index, reason) {
+                        userInfoModel.userFitnessLevel = index;
                         _currentIndex = index;
                         setState(() {});
                       }),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
+                const SizedBox(height: 30),
                 DotIndicator(currentIndex: _currentIndex)
               ],
             ),

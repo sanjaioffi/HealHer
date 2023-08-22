@@ -5,11 +5,9 @@ class NotificationGIF extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       height: 250,
-      child: Image.asset(
-        "assets/gif/sample.gif",
-      ),
+      child: Placeholder(),
     );
   }
 }

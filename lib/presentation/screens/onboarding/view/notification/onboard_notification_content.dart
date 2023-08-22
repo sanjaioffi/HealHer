@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/notification/onboard_notification_slide.dart';
 
 class NotificationContent extends StatelessWidget {
@@ -8,16 +9,19 @@ class NotificationContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 25, bottom: 10),
-      child: Column(
+    return Padding(
+      padding: EdgeInsets.only(
+        top: screenHeight(25),
+        bottom: screenHeight(10),
+      ),
+      child: const Column(
         children: [
           NotificationSlide(
-            tileContent: "AI powered Live Recommendations",
+            tileContent: "Ai powered Health Recommendations",
             tileIcon: Icons.auto_awesome,
           ),
           NotificationSlide(
-            tileContent: "Food Diet Health Recommendation",
+            tileContent: "Food Diet Health Recommendation  ",
             tileIcon: Icons.whatshot,
           ),
           NotificationSlide(

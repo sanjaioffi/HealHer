@@ -23,9 +23,7 @@ class OnBoardNotificationScreen extends StatelessWidget {
               NotificationHeader(),
               NotificationGIF(),
               NotificationContent(),
-              ContinueElevatedButton(
-                nextRoute: '/welcome',
-              ),
+              ContinueElevatedButton(nextRoute: '/welcome'),
               SizedBox(height: 20),
             ],
           ),

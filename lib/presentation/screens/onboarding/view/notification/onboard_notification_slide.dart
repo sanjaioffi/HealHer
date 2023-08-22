@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:heal_her/presentation/common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
 
 class NotificationSlide extends StatelessWidget {
@@ -12,8 +12,8 @@ class NotificationSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
+      padding: EdgeInsets.symmetric(
+        horizontal: screenWidth(10),
       ),
       child: Column(
         children: [
@@ -22,31 +22,35 @@ class NotificationSlide extends StatelessWidget {
             children: [
               Icon(
                 tileIcon,
-                size: 28,
+                size: screenHeight(28),
                 color: AppColor.babyPurplyBlue,
               ),
-              const SizedBox(width: 20),
+              SizedBox(
+                width: screenWidth(20),
+              ),
               Text(
                 tileContent,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
-                style: const TextStyle(
+                style: TextStyle(
                   color: AppColor.black,
-                  fontSize: 17,
+                  fontSize: screenHeight(17),
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ],
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 25,
+              horizontal: screenWidth(25),
             ),
-            child: Divider(
+            child: const Divider(
               color: AppColor.bluishCyan,
             ),
           ),
-          const SizedBox(height: 15),
+          SizedBox(
+            height: screenHeight(15),
+          ),
         ],
       ),
     );

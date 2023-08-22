@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/height/onboard_height.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/weight/user_weight.dart';
-import '../screens/onboarding/view/activities/activities_screen.dart';
+import '../screens/onboarding/view/activities/onboarding_fitness_level.dart.dart';
 import '../screens/onboarding/view/dob/date_of_birth.dart';
 import '../screens/onboarding/view/food/onboard_food.dart';
 import '../screens/onboarding/view/gender/onboard_gender.dart';

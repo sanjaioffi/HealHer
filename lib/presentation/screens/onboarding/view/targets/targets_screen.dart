@@ -62,13 +62,9 @@ class _TargetsScreenState extends State<TargetsScreen> {
                         : selectedLevels.remove(4);
                   },
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 ContinueElevatedButton(nextRoute: userTargetsModel.nextRoute),
-                const SizedBox(
-                  height: 20,
-                )
+                const SizedBox(height: 20)
               ],
             ),
           ),
