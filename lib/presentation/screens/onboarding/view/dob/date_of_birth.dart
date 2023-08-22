@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/dob/dob_tile.dart';
-import 'package:heal_her/presentation/screens/onboarding/view/dob/image_holder.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/bottom_tile.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/continue_elevated_button.dart';
 import 'package:heal_her/presentation/screens/onboarding/view/widgets/onboard_appbar.dart';
