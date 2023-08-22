@@ -5,6 +5,7 @@ import 'package:heal_her/presentation/screens/home/view/heart_widgets/tabBar.dar
 import 'package:heal_her/presentation/utils/app_colors.dart';
 
 import 'heart_widgets/tab_view_heart.dart';
+import 'steps_screen/steps_insights.dart';
 
 class Heart extends StatefulWidget {
   const Heart({super.key});
@@ -65,6 +66,7 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
         TabViewBarHeart(
           tabController: _tabController,
         ),
+      
       ]),
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../common/screen_utils/screen_size.dart';
 import '../../../../utils/app_colors.dart';
+import '../steps_screen/steps_insights.dart';
 import 'widget/back_ground.dart';
 import 'bar_chart_graph.dart';
 import 'date_container.dart';
@@ -35,65 +36,77 @@ class TabViewBarHeart extends StatelessWidget {
        */
       child: Expanded(
         child: TabBarView(controller: tabController, children: [
-          Column(
-            children: [
-              /*
-              period changing button
-               */
-              const DateContainer(
-                periodType: Period.day,
-              ),
-              graphBackGroundContainer(
-                child: innerGraphWidget(
-                  text1: 'Average Heart Rate',
-                  text2: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '34',
-                          style: textStyle1,
-                        ),
-                        TextSpan(
-                          text: ' : bpm',
-                          style: textStyle1,
-                        )
-                      ],
-                    ),
-                  ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                /*
+                period changing button
+                 */
+                const DateContainer(
                   periodType: Period.day,
                 ),
-              )
-            ],
-          ),
-          Column(
-            children: [
-              const DateContainer(
-                periodType: Period.week,
-              ),
-              graphBackGroundContainer(
+                graphBackGroundContainer(
                   child: innerGraphWidget(
-                      text1: 'Weekly Data',
-                      text2: Text(
-                        "Heart Rate",
-                        style: textStyle1,
+                    text1: 'Average Heart Rate',
+                    text2: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: '34',
+                            style: textStyle1,
+                          ),
+                          TextSpan(
+                            text: ' : bpm',
+                            style: textStyle1,
+                          )
+                        ],
                       ),
-                      periodType: Period.week))
-            ],
+                    ),
+                    periodType: Period.day,
+                  ),
+                ),
+                dayHeartRate(),
+                DisclaimerText()
+              ],
+            ),
           ),
-          Column(
-            children: [
-              const DateContainer(
-                periodType: Period.month,
-              ),
-              graphBackGroundContainer(
-                  child: innerGraphWidget(
-                      text1: 'Monthly Data',
-                      text2: Text(
-                        "Heart Rate",
-                        style: textStyle1,
-                      ),
-                      periodType: Period.month))
-            ],
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                const DateContainer(
+                  periodType: Period.week,
+                ),
+                graphBackGroundContainer(
+                    child: innerGraphWidget(
+                        text1: 'Weekly Data',
+                        text2: Text(
+                          "Heart Rate",
+                          style: textStyle1,
+                        ),
+                        periodType: Period.week)),
+                DoubleWeekData(weekData: weekHeartData, suffix: 'bpm'),
+                DisclaimerText()
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                const DateContainer(
+                  periodType: Period.month,
+                ),
+                graphBackGroundContainer(
+                    child: innerGraphWidget(
+                        text1: 'Monthly Data',
+                        text2: Text(
+                          "Heart Rate",
+                          style: textStyle1,
+                        ),
+                        periodType: Period.month)),
+                DoubleMonthData(monthData: monthHeartData, suffix: 'bpm'),
+                DisclaimerText(),
+              ],
+            ),
           ),
         ]),
       ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/presentation/screens/home/view/heart_widgets/widget/back_ground.dart';
 import 'package:heal_her/presentation/utils/app_colors.dart';
 import 'package:intl/intl.dart';
+
+import '../../../../common/screen_utils/screen_size.dart';
 
 class HeartData {
   final String day;
@@ -39,6 +42,75 @@ class SleepData {
   SleepData(this.day, this.value);
 }
 
+final List<HeartData> weekHeartData = [
+  HeartData("Sun", 70, 70),
+  HeartData("Mon", 80, 80),
+  HeartData("Tue", 85, 85),
+  HeartData("Wed", 90, 90),
+  HeartData("Thu", 75, 75),
+  HeartData("Fri", 95, 95),
+  HeartData("Sat", 78, 78),
+];
+
+final List<HeartData> monthHeartData = [
+  HeartData("Week 1", 70, 70),
+  HeartData("Week 2", 80, 80),
+  HeartData("Week 3", 85, 85),
+  HeartData("Week 4", 90, 90),
+  // HeartData("Thu", 75, 75),
+  // HeartData("Fri", 95, 95),
+  // HeartData("Sat", 78, 78),
+];
+
+final List<Spo2Data> weekSpo2Data = [
+  Spo2Data("Sun", 90, 70),
+  Spo2Data("Mon", 85, 80),
+  Spo2Data("Tue", 85, 85),
+  Spo2Data("Wed", 90, 90),
+  Spo2Data("Thu", 75, 75),
+  Spo2Data("Fri", 95, 95),
+  Spo2Data("Sat", 78, 78),
+];
+
+final List<Spo2Data> monthSpo2Data = [
+  Spo2Data("Week 1", 90, 70),
+  Spo2Data("Week 2", 85, 80),
+  Spo2Data("Week 3", 85, 85),
+  Spo2Data("Week 4", 90, 90),
+];
+
+final List<StepData> weekStepData = [
+  StepData("Sun", 7000),
+  StepData("Mon", 8000),
+  StepData("Tue", 8500),
+  StepData("Wed", 9000),
+  StepData("Thu", 7500),
+  StepData("Fri", 9500),
+  StepData("Sat", 7800),
+];
+final List<StepData> monthStepData = [
+  StepData("Week 1", 7000),
+  StepData("Week 2", 8000),
+  StepData("Week 3", 8500),
+  StepData("Week 4", 9000),
+];
+
+final List<KcalData> weekKcalData = [
+  KcalData("Sun", 170),
+  KcalData("Mon", 180),
+  KcalData("Tue", 185),
+  KcalData("Wed", 190),
+  KcalData("Thu", 175),
+  KcalData("Fri", 195),
+  KcalData("Sat", 178),
+];
+final List<KcalData> monthKcalData = [
+  KcalData("Week 1", 170),
+  KcalData("Week 2", 180),
+  KcalData("Week 3", 185),
+  KcalData("Week 4", 190),
+];
+
 class StepInsightsScreen extends StatefulWidget {
   const StepInsightsScreen({super.key});
 
@@ -47,74 +119,6 @@ class StepInsightsScreen extends StatefulWidget {
 }
 
 class _StepInsightsScreenState extends State<StepInsightsScreen> {
-  final List<HeartData> weekHeartData = [
-    HeartData("Sun", 70, 70),
-    HeartData("Mon", 80, 80),
-    HeartData("Tue", 85, 85),
-    HeartData("Wed", 90, 90),
-    HeartData("Thu", 75, 75),
-    HeartData("Fri", 95, 95),
-    HeartData("Sat", 78, 78),
-  ];
-  final List<HeartData> monthHeartData = [
-    HeartData("Week 1", 70, 70),
-    HeartData("Week 2", 80, 80),
-    HeartData("Week 3", 85, 85),
-    HeartData("Week 4", 90, 90),
-    // HeartData("Thu", 75, 75),
-    // HeartData("Fri", 95, 95),
-    // HeartData("Sat", 78, 78),
-  ];
-
-  final List<Spo2Data> weekSpo2Data = [
-    Spo2Data("Sun", 90, 70),
-    Spo2Data("Mon", 85, 80),
-    Spo2Data("Tue", 85, 85),
-    Spo2Data("Wed", 90, 90),
-    Spo2Data("Thu", 75, 75),
-    Spo2Data("Fri", 95, 95),
-    Spo2Data("Sat", 78, 78),
-  ];
-
-  final List<Spo2Data> monthSpo2Data = [
-    Spo2Data("Week 1", 90, 70),
-    Spo2Data("Week 2", 85, 80),
-    Spo2Data("Week 3", 85, 85),
-    Spo2Data("Week 4", 90, 90),
-  ];
-
-  final List<StepData> weekStepData = [
-    StepData("Sun", 7000),
-    StepData("Mon", 8000),
-    StepData("Tue", 8500),
-    StepData("Wed", 9000),
-    StepData("Thu", 7500),
-    StepData("Fri", 9500),
-    StepData("Sat", 7800),
-  ];
-  final List<StepData> monthStepData = [
-    StepData("Week 1", 7000),
-    StepData("Week 2", 8000),
-    StepData("Week 3", 8500),
-    StepData("Week 4", 9000),
-  ];
-
-  final List<KcalData> weekKcalData = [
-    KcalData("Sun", 170),
-    KcalData("Mon", 180),
-    KcalData("Tue", 185),
-    KcalData("Wed", 190),
-    KcalData("Thu", 175),
-    KcalData("Fri", 195),
-    KcalData("Sat", 178),
-  ];
-  final List<KcalData> monthKcalData = [
-    KcalData("Week 1", 170),
-    KcalData("Week 2", 180),
-    KcalData("Week 3", 185),
-    KcalData("Week 4", 190),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -273,13 +277,21 @@ class dayHeartRate extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        margin: EdgeInsets.all(screenWidth(15)),
+        padding: EdgeInsets.all(screenWidth(20)),
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.black.withOpacity(0.2)),
-            color: AppColor.purplyBlue.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(15)),
+          borderRadius: BorderRadius.circular(screenWidth(25)),
+          border: Border.all(color: Colors.grey.shade300, width: 1.5),
+          gradient: const LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.centerRight,
+            colors: [AppColor.lightPurplrBlue, Colors.white60],
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
