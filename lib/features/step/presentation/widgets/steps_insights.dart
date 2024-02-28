@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
 
-import '../../../../config/theme/screen_size.dart';
-
 class HeartData {
   final String day;
   final int min;
@@ -127,7 +125,7 @@ class _StepInsightsScreenState extends State<StepInsightsScreen> {
           child: Column(
             children: [
               const DisclaimerText(),
-              const dayHeartRate(),
+              const DayHeartRate(),
               DoubleWeekData(weekData: weekHeartData, suffix: 'bpm'),
               DoubleMonthData(monthData: monthHeartData, suffix: 'bpm'),
               DoubleWeekData(weekData: weekSpo2Data, suffix: '%'),
@@ -269,8 +267,8 @@ class DisclaimerText extends StatelessWidget {
   }
 }
 
-class dayHeartRate extends StatelessWidget {
-  const dayHeartRate({super.key});
+class DayHeartRate extends StatelessWidget {
+  const DayHeartRate({super.key});
 
   @override
   Widget build(BuildContext context) {

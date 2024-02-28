@@ -63,7 +63,7 @@ class TabViewBarHeart extends StatelessWidget {
                     periodType: Period.day,
                   ),
                 ),
-                const dayHeartRate(),
+                const DayHeartRate(),
                 const DisclaimerText()
               ],
             ),

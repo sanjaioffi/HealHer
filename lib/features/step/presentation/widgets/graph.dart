@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class ScrollableBarChart extends StatefulWidget {
+  const ScrollableBarChart({super.key});
+
   @override
-  _ScrollableBarChartState createState() => _ScrollableBarChartState();
+  State createState() => _ScrollableBarChartState();
 }
 
 class _ScrollableBarChartState extends State<ScrollableBarChart> {
   List<double> data = List.generate(100, (index) => index * 10.0);
 
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   bool _isLoading = false;
 
   @override
@@ -47,9 +49,9 @@ class _ScrollableBarChartState extends State<ScrollableBarChart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Scrollable Bar Chart'),
+        title: const Text('Scrollable Bar Chart'),
       ),
-      body: Container(
+      body: SizedBox(
         height: 500,
         child: Column(
           children: [
@@ -57,7 +59,7 @@ class _ScrollableBarChartState extends State<ScrollableBarChart> {
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 controller: _scrollController,
-                child: Container(
+                child: SizedBox(
                   width: data.length * 50.0,
                   height: 300,
                   child: BarChart(
@@ -82,7 +84,9 @@ class _ScrollableBarChartState extends State<ScrollableBarChart> {
                 ),
               ),
             ),
-            _isLoading ? CircularProgressIndicator() : SizedBox.shrink(),
+            _isLoading
+                ? const CircularProgressIndicator()
+                : const SizedBox.shrink(),
           ],
         ),
       ),

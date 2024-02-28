@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/features/activity/presentation/activity.dart';
 import 'package:heal_her/features/device/presentation/device.dart';
 import 'package:heal_her/features/home/presentation/home.dart';
-import 'package:heal_her/features/onboard/presntation/pages/details/activities/activities_screen.dart';
 import 'package:heal_her/features/profile/presentation/profile.dart';
 
 class MainScreen extends StatefulWidget {

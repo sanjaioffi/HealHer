@@ -338,16 +338,16 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
 }
 
 class DataTile extends StatelessWidget {
-  DataTile({
+  const DataTile({
     super.key,
     required this.backgroundColor,
     required this.title,
     required this.body,
   });
 
-  Color backgroundColor;
-  String title;
-  Widget body;
+  final Color backgroundColor;
+  final String title;
+  final Widget body;
 
   @override
   Widget build(BuildContext context) {
