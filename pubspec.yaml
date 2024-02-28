@@ -14,6 +14,7 @@ dependencies:
     sdk: flutter
   flutter_datetime_picker_bdaya: ^3.0.2
   flutter_ruler_picker: ^1.0.3
+  flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.7
   get: ^4.6.5
   intl: ^0.18.1

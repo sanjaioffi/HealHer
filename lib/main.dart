@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/presentation/screens/home/view/heart.dart';
-import 'package:heal_her/presentation/screens/home/view/main_screen.dart';
-import 'package:heal_her/presentation/screens/home/view/steps_screen/graph.dart';
-import 'package:heal_her/presentation/screens/home/view/steps_screen/steps_screen.dart';
-import 'package:heal_her/presentation/utils/routes.dart';
-import 'package:heal_her/theme/build_theme.dart';
-
-import 'presentation/common/screen_utils/screen_size.dart';
+import 'package:heal_her/config/routes/routes.dart';
+import 'package:heal_her/config/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,19 +13,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
-    return GetMaterialApp(
-      
-      defaultTransition: Transition.cupertino,
-      transitionDuration: const Duration(seconds: 1),
-      getPages: routes,
-      debugShowCheckedModeBanner: false,
-      title: 'HealHer-SmartBand',
-      theme: buildTheme(
-        
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: GetMaterialApp(
+        defaultTransition: Transition.cupertino,
+        transitionDuration: const Duration(seconds: 1),
+        getPages: routes,
+        debugShowCheckedModeBanner: false,
+        title: 'HealHer-SmartBand',
+        theme: buildTheme(),
+        initialRoute: '/',
       ),
-      initialRoute: '/',
-      // home: MainScreen(),
     );
   }
 }
