@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import '../../features/activity/presentation/activity.dart';
 import '../../features/app/presentation/app.dart';
 import '../../features/onboard/presentation/onboard.dart';
+import '../../features/onboard/presentation/pages/details/user_activity.dart';
 import '../../features/onboard/presentation/pages/details/user_gender.dart';
 import '../../features/onboard/presentation/pages/details/user_weight.dart';
 import '../../features/step/presentation/step.dart';
@@ -33,7 +33,7 @@ List<GetPage> routes = [
   GetPage(name: '/food_type', page: () => const OnboardFoodScreen()),
   GetPage(name: '/region', page: () => const OnboardRegionScreen()),
   GetPage(name: '/targets', page: () => const OnboardTargetScreen()),
-  GetPage(name: '/activities', page: () => const ActivitiesScreen()),
+  GetPage(name: '/activities', page: () => UserActivitiesScreen()),
   GetPage(
       name: '/medical_condition', page: () => const MedicalConditionScreen()),
   GetPage(name: '/steps', page: () => const StepsScreen()),

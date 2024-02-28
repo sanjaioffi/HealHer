@@ -10,14 +10,14 @@ import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_
 import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
 
-class ActivitiesScreen extends StatefulWidget {
-  const ActivitiesScreen({super.key});
+class UserActivitiesScreen extends StatefulWidget {
+  const UserActivitiesScreen({super.key});
 
   @override
-  _ActivitiesScreenState createState() => _ActivitiesScreenState();
+  _UserActivitiesScreenState createState() => _UserActivitiesScreenState();
 }
 
-class _ActivitiesScreenState extends State<ActivitiesScreen> {
+class _UserActivitiesScreenState extends State<UserActivitiesScreen> {
   final fitnessLevel = [
     FitnessLevel(
         level: 0,
