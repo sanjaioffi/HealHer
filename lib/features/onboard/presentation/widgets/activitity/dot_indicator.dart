@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+
+import '../../../../../config/theme/app_colors.dart';
 
 class DotIndicator extends StatelessWidget {
   final int currentIndex;

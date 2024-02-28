@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/heart/presentation/widgets/back_ground.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import 'back_ground.dart';
+import '../../../../config/theme/app_colors.dart';
 import 'bar_widgets.dart';
 
 class HeartBarChart extends StatefulWidget {

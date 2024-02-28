@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../../../config/theme/app_colors.dart';
 
 class DobSelector extends StatefulWidget {
   const DobSelector({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_process/login.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/bottom_tile.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import 'pages/registration/sign_process/login.dart';
+import 'widgets/generic/bottom_tile.dart';
+import 'widgets/generic/continue_elevated_button.dart';
+import '../../../config/theme/app_colors.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/onboard/data/model/dual_choice_model.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/food/food_slide.dart';
+import '../../../data/model/dual_choice_model.dart';
+import 'food_slide.dart';
 
-import 'package:heal_her/features/onboard/presentation/widgets/generic/bottom_tile.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
+import '../generic/bottom_tile.dart';
+import '../generic/continue_elevated_button.dart';
+import '../generic/onboard_appbar.dart';
+import '../generic/step_indicator.dart';
+import '../generic/top_tile.dart';
 
 class OnboardFoodScreen extends StatelessWidget {
   const OnboardFoodScreen({super.key});

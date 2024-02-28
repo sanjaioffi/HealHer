@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/routes/routes.dart';
-import 'package:heal_her/config/theme/app_theme.dart';
+
+import 'config/routes/routes.dart';
+import 'config/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());

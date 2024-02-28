@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/onboard/presentation/controller/gender_controller.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../controller/gender_controller.dart';
+import '../../../../../config/theme/app_colors.dart';
 
 class GenderTile extends StatelessWidget {
   const GenderTile({

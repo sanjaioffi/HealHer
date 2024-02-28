@@ -1,4 +1,4 @@
-import 'package:heal_her/core/managers/interface/shared_preference_manager.dart';
+import '../interface/shared_preference_manager.dart';
 
 class SharedPreferencesManagerImpl implements SharedPreferencesManager {
   @override

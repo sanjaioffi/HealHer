@@ -1,9 +1,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/step/presentation/widgets/steps_insights.dart';
+import 'widgets/steps_insights.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../config/theme/app_colors.dart';
 
 class StepsScreen extends StatefulWidget {
   const StepsScreen({super.key});

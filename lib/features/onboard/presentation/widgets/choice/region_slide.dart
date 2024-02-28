@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/choice/region_tile.dart';
+
+import 'region_tile.dart';
 
 class RegionSlide extends StatelessWidget {
   const RegionSlide({

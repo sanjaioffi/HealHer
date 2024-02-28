@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/food/food_tile.dart';
+
+import 'food_tile.dart';
 
 class FoodSlide extends StatelessWidget {
   const FoodSlide({

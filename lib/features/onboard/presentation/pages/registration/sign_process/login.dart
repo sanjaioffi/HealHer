@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_up/quick_sign_up.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
+import 'sign_up.dart';
+import '../sign_up/quick_sign_up.dart';
+import '../../../widgets/generic/continue_elevated_button.dart';
 import '../../../../../../config/theme/screen_size.dart';
 import '../sign_up/common_access.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../../../../config/theme/app_colors.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

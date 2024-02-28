@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../../../config/theme/app_colors.dart';
 
 import '../../controller/food_controller.dart';
 

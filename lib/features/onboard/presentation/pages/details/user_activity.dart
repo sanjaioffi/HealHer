@@ -1,14 +1,14 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:heal_her/config/theme/app_colors.dart';
 import 'package:heal_her/features/onboard/data/model/fitness_model.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/active_icons.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/dot_indicator.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   const ActivitiesScreen({super.key});

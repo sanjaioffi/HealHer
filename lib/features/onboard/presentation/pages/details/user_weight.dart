@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
 import '../../../../../config/theme/screen_size.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../../../config/theme/app_colors.dart';
 
 class OnBoardWeightScreen extends StatefulWidget {
   const OnBoardWeightScreen({super.key});
