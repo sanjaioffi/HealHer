@@ -58,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                       ' Empowering Women\'s Safety & overall Wellness with HealHer SmartBand.'),
               Image.asset('assets/images/welcome.png'),
               const ContinueElevatedButton(
-                nextRoute: '/name',
+                nextRoute: '/signup',
               ),
               const SizedBox(
                 height: 20,

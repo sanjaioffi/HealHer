@@ -45,7 +45,7 @@ class _OnBoardLoginState extends State<OnBoardLogin> {
                 SizedBox(
                   height: screenHeight(40),
                 ),
-                const ContinueElevatedButton(nextRoute: '/notification',),
+                const ContinueElevatedButton(nextRoute: '/main',),
                 SizedBox(
                   height: screenHeight(18),
                 ),

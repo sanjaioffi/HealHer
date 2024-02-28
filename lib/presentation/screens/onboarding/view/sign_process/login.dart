@@ -42,7 +42,8 @@ class _LoginState extends State<Login> {
             passTextField(TextEditingController(), () {}),
             SizedBox(height: screenHeight(20)),
             const ContinueElevatedButton(
-              nextRoute: '/notification',
+              removeScreen: true,
+              nextRoute: '/main',
             ),
             SizedBox(height: screenHeight(20)),
             const CustomDivider(),

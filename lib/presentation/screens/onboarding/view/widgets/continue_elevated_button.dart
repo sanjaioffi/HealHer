@@ -5,9 +5,11 @@ class ContinueElevatedButton extends StatelessWidget {
   const ContinueElevatedButton({
     super.key,
     required this.nextRoute,
+    this.removeScreen = false,
   });
 
   final String nextRoute;
+  final bool removeScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +17,12 @@ class ContinueElevatedButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ElevatedButton(
         onPressed: () {
-          Get.toNamed(nextRoute);
+          removeScreen ? Get.offAllNamed(nextRoute) : Get.toNamed(nextRoute);
         },
         child: const Text(
           "Continue",
           style: TextStyle(
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),

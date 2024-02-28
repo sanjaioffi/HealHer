@@ -14,4 +14,10 @@ class AppColor {
   static const Color lightPurplrBlue = Color.fromARGB(255, 229, 223, 254);
   static const Color black = Colors.black;
   static const Color white = Colors.white;
+  static const Color steps =  Color(0xfff3e2dc);
+  static const Color stepsIndicator =  Color(0xffff3a37c);
+  static const Color heart =  Color(0xffffdbe2f5);
+  static const Color spo2 =  Color(0xfffcffaf3);
+  static const Color spo2Indicator =  Color(0xfff40dbc1);
+
 }

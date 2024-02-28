@@ -33,7 +33,9 @@ flutter:
     - assets/images/targets_images/
     - assets/fonts/
     - assets/svg/
+    - assets/png/
     - assets/
+    - assets/gif/
 
   uses-material-design: true
 
