@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/gender/gender_tile.dart';
 
 class GenderSlide extends StatelessWidget {
@@ -8,24 +9,17 @@ class GenderSlide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: 15,
-      ),
-      child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: 25,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GenderTile(isMale: false),
-              GenderTile(isMale: true),
-            ],
-          ),
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      scrollDirection: Axis.horizontal,
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 45.h),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GenderTile(isMale: false),
+            GenderTile(isMale: true),
+          ],
         ),
       ),
     );

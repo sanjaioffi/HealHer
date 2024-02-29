@@ -12,16 +12,6 @@ class RegionTile extends StatelessWidget {
 
   final bool isSouth;
 
-  static List<Color> unselectedLinearGradient = [
-    AppColor.white,
-    AppColor.white,
-  ];
-
-  static List<Color> selectedLinearGradient = [
-    AppColor.heavyPurplyBlue,
-    AppColor.heavyPurplyBlue,
-  ];
-
   @override
   Widget build(BuildContext context) {
     Get.put(RegionController());
@@ -42,10 +32,10 @@ class RegionTile extends StatelessWidget {
               gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
                   colors: isSouth && controller.regionType[0] == 1
-                      ? selectedLinearGradient
+                      ? AppColor.selectedLinearGradient
                       : !isSouth && controller.regionType[1] == 1
-                          ? selectedLinearGradient
-                          : unselectedLinearGradient),
+                          ? AppColor.selectedLinearGradient
+                          : AppColor.unselectedLinearGradient),
               color: Colors.white,
               borderRadius: const BorderRadius.all(
                 Radius.circular(

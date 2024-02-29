@@ -14,7 +14,7 @@ class StepIndicator extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Text(
-        "STEP $step / 12",
+        "STEP $step / 7",
         style: const TextStyle(
           color: AppColor.purplyBlue,
           fontSize: 18,

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:heal_her/features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
 import 'package:heal_her/features/onboard/presentation/pages/registration/sign_up/quick_sign_up.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import '../../../../../../config/theme/screen_size.dart';
 import '../sign_up/common_access.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
 
@@ -18,7 +17,6 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(

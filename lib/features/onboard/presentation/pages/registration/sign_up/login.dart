@@ -5,7 +5,6 @@ import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_
 import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
 
-import '../../../../../../config/theme/screen_size.dart';
 import 'common_access.dart';
 
 class OnBoardLogin extends StatefulWidget {
@@ -18,7 +17,6 @@ class OnBoardLogin extends StatefulWidget {
 class _OnBoardLoginState extends State<OnBoardLogin> {
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

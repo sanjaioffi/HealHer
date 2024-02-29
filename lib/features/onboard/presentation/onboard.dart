@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/features/onboard/presentation/pages/registration/sign_process/login.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/bottom_tile.dart';
@@ -16,42 +17,42 @@ class WelcomeScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                width: 300,
-                child: RichText(
-                    textAlign: TextAlign.center,
-                    text: const TextSpan(children: [
-                      TextSpan(
-                          text: 'Welcome to ',
-                          style: TextStyle(
-                            letterSpacing: 1,
-                            fontFamily: 'Poppins',
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: AppColor.black,
-                          )),
-                      TextSpan(
-                          text: 'HealHer',
-                          style: TextStyle(
-                            letterSpacing: 1,
-                            fontFamily: 'Poppins',
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: AppColor.heavyPurplyBlue,
-                          )),
-                      TextSpan(
-                          text: ' SmartApp',
-                          style: TextStyle(
-                            letterSpacing: 1,
-                            fontFamily: 'Poppins',
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: AppColor.black,
-                          )),
-                    ])),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.h),
+                child: SizedBox(
+                  width: 300.h,
+                  child: RichText(
+                      textAlign: TextAlign.center,
+                      text: const TextSpan(children: [
+                        TextSpan(
+                            text: 'Welcome to ',
+                            style: TextStyle(
+                              letterSpacing: 1,
+                              fontFamily: 'Poppins',
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.black,
+                            )),
+                        TextSpan(
+                            text: 'HealHer',
+                            style: TextStyle(
+                              letterSpacing: 1,
+                              fontFamily: 'Poppins',
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.heavyPurplyBlue,
+                            )),
+                        TextSpan(
+                            text: ' SmartApp',
+                            style: TextStyle(
+                              letterSpacing: 1,
+                              fontFamily: 'Poppins',
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.black,
+                            )),
+                      ])),
+                ),
               ),
               const BottomTile(
                   tileContent:

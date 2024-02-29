@@ -5,7 +5,6 @@ import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_
 import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
-import '../../../../../config/theme/screen_size.dart';
 
 class OnBoardHeightScreen extends StatefulWidget {
   const OnBoardHeightScreen({super.key});
@@ -27,35 +26,43 @@ class _OnBoardHeightScreenState extends State<OnBoardHeightScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       appBar: buildOnBoardNavBar(context, 4),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const StepIndicator(step: 4),
-          const TopTile(tileContent: "Tell us what's our hieght ?"),
-          SizedBox(
-            height: 280.h,
-            child: Image.asset(
-              "assets/png/height.png",
-            ),
-          ),
-          Text("$height cm",
-              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20.sp)),
-          SizedBox(
-            height: 15.h,
-          ),
+
+          //
+          const TopTile(tileContent: "Tell us what's your hieght ?"),
+
+          //
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
+            padding: EdgeInsets.only(top: 10.h),
+            child: SizedBox(
+              height: 260.h,
+              child: Image.asset(
+                "assets/images/onboard_height.png",
+              ),
             ),
+          ),
+
+          //
+          Text("${height - 2} cm",
+              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20.sp)),
+
+          //
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
             child: RulerPicker(
               controller: _rulerPickerController,
               beginValue: 0,
-              endValue: 300,
-              initValue: height + 1,
+              endValue: 240,
+              initValue: 120,
               scaleLineStyleList: [
+                //
+
+                //
                 ScaleLineStyle(
                     color: Colors.black.withOpacity(.6),
                     width: 1.5,
@@ -77,12 +84,18 @@ class _OnBoardHeightScreenState extends State<OnBoardHeightScreen> {
               rulerBackgroundColor: Colors.transparent,
             ),
           ),
+
+          //
           SizedBox(
             height: 50.h,
           ),
+
+          //
           const ContinueElevatedButton(
             nextRoute: '/weight',
           ),
+
+          //
         ],
       ),
     );

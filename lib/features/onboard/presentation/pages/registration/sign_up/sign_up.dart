@@ -4,7 +4,6 @@ import 'package:heal_her/features/onboard/presentation/pages/registration/sign_u
 import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
 
-import '../../../../../../config/theme/screen_size.dart';
 import 'common_access.dart';
 
 class OnBoardSignUpScreen extends StatefulWidget {
@@ -25,7 +24,6 @@ class _OnBoardSignUpScreenState extends State<OnBoardSignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

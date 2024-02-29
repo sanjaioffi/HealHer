@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/features/onboard/presentation/controller/gender_controller.dart';
 import 'package:heal_her/features/onboard/data/model/dual_choice_model.dart';
@@ -25,12 +26,20 @@ class OnBoardGenderScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               StepIndicator(step: genderModel.stepCount),
+
+              //
               TopTile(tileContent: genderModel.topTitleContent),
+
+              //
               const GenderSlide(),
-              BottomTile(tileContent: genderModel.bottomTileContent),
-              const SizedBox(
-                height: 50,
+
+              //
+              Padding(
+                padding: EdgeInsets.only(bottom: 50.h, top: 10.h),
+                child: BottomTile(tileContent: genderModel.bottomTileContent),
               ),
+
+              //
               GetX<GenderController>(builder: (controller) {
                 return ContinueElevatedButton(
                   nextRoute:

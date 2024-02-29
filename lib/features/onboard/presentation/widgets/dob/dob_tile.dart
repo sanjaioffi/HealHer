@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
+import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
+import 'package:heal_her/features/onboard/presentation/pages/details/calculate_age.dart';
 
 class DobSelector extends StatefulWidget {
   const DobSelector({super.key});
@@ -41,11 +45,15 @@ class _DobSelectorState extends State<DobSelector> {
                     fontWeight: FontWeight.bold,
                     fontSize: 16),
               ), onConfirm: (date) {
+            userEntity.userDob = date;
             setState(() {
               // print("rebuild Done");
               dateToday = date;
             });
-            // int age = calculateAge(date);
+            userEntity.userDob = date;
+            userEntity.userAge = calculateAge(date);
+            log(userEntity.userAge.toString());
+            log(userEntity.userDob.toString());
           }, currentTime: DateTime(2000, 5, 5), locale: LocaleType.en);
         },
         child: Container(
@@ -75,7 +83,6 @@ class _DobSelectorState extends State<DobSelector> {
                   fontSize: 16.h,
                 ),
               ),
-              const SizedBox(),
               const SizedBox(),
             ],
           ),

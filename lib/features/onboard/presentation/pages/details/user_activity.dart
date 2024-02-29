@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heal_her/features/onboard/data/model/fitness_model.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/active_icons.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/dot_indicator.dart';
@@ -10,14 +11,14 @@ import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_a
 import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
 
-class ActivitiesScreen extends StatefulWidget {
-  const ActivitiesScreen({super.key});
+class OnboardActivity extends StatefulWidget {
+  const OnboardActivity({super.key});
 
   @override
-  _ActivitiesScreenState createState() => _ActivitiesScreenState();
+  _OnboardActivityState createState() => _OnboardActivityState();
 }
 
-class _ActivitiesScreenState extends State<ActivitiesScreen> {
+class _OnboardActivityState extends State<OnboardActivity> {
   final fitnessLevel = [
     FitnessLevel(
         level: 0,
@@ -48,107 +49,112 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildOnBoardNavBar(context, 9),
+        appBar: buildOnBoardNavBar(context, 7),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const StepIndicator(step: 9),
-                const SizedBox(
-                  width: 350,
-                  child: Text(
-                    "What's your current fitness level?",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+                //
+
+                const StepIndicator(step: 7),
+
+                //
+                const Text(
+                  "What's your current fitness level?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                // Image.asset('assets/png/work.png'),
-                const SizedBox(
-                  height: 10,
-                ),
-                CarouselSlider.builder(
-                  itemCount: fitnessLevel.length,
-                  itemBuilder: (BuildContext context, int itemIndex, int i) =>
-                      Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 0.5),
-                    child: Container(
+
+                //
+                Padding(
+                  padding: EdgeInsets.only(top: 35.h),
+                  child: CarouselSlider.builder(
+                    itemCount: fitnessLevel.length,
+                    itemBuilder: (BuildContext context, int itemIndex, int i) =>
+                        Container(
                       decoration: BoxDecoration(
                         color: AppColor.lightPurplrBlue,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      width: 350,
+                      width: 350.w,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        //
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            const SizedBox(
-                              height: 20,
+                            //
+
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.h),
+                              child: ActiveIcons(
+                                  activityLevel: fitnessLevel[itemIndex].level),
                             ),
-                            ActiveIcons(
-                              activityLevel: fitnessLevel[itemIndex].level,
-                            ),
+
+                            //
                             Expanded(
                               child: Image.asset(
                                 fitnessLevel[itemIndex].image,
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: AppColor.purplyBlue,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                            ),
+
+                            //
+
+                            //
                             Text(
                               fitnessLevel[itemIndex].title,
-                              style: const TextStyle(
-                                fontSize: 20,
+                              style: TextStyle(
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(fitnessLevel[itemIndex].subtitle,
+
+                            //
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.h),
+                              child: Text(
+                                fitnessLevel[itemIndex].subtitle,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal,
-                                )),
-                            const SizedBox(
-                              height: 30,
+                                style: TextStyle(
+                                  fontSize: 12.sp,
+                                ),
+                              ),
                             ),
-                            const ContinueElevatedButton(
-                              nextRoute: 'medical_condition',
-                            ),
-                            const SizedBox(
-                              height: 30,
+
+                            //
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 20.h),
+                              child: const ContinueElevatedButton(
+                                nextRoute: 'main',
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
+                    options: CarouselOptions(
+                        viewportFraction: 0.7,
+                        height: 450,
+                        autoPlay: false,
+                        enlargeCenterPage: true,
+                        enableInfiniteScroll: false,
+                        onPageChanged: (index, reason) {
+                          _currentIndex = index;
+                          setState(() {});
+                        }),
                   ),
-                  options: CarouselOptions(
-                      viewportFraction: 0.7,
-                      height: 450,
-                      autoPlay: false,
-                      enlargeCenterPage: true,
-                      enableInfiniteScroll: false,
-                      onPageChanged: (index, reason) {
-                        _currentIndex = index;
-                        setState(() {});
-                      }),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
-                DotIndicator(currentIndex: _currentIndex)
+
+                //
+                Padding(
+                  padding: EdgeInsets.only(top: 50.h),
+                  child: DotIndicator(currentIndex: _currentIndex),
+                )
               ],
             ),
           ),

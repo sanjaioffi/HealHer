@@ -1,5 +1,6 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
@@ -25,53 +26,58 @@ class _OnboardLastPeriodDateScreenState
           child: Column(
             children: [
               const StepIndicator(step: 3),
-              // SizedBox(
-              //     height: 250,
-              //     child: Image.asset('assets/images/onboard-period_date.png')),
-              const TopTile(
-                  tileContent: "When was the last day of your period?"),
-              const SizedBox(
-                height: 50,
+
+              //
+              Padding(
+                padding: EdgeInsets.all(8.0.h),
+                child: const TopTile(
+                    tileContent: "When was the last day of your period?"),
               ),
-              CalendarDatePicker2(
-                config: CalendarDatePicker2Config(
-                  controlsTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
+
+              //
+              Padding(
+                padding: EdgeInsets.only(top: 40.h),
+                child: CalendarDatePicker2(
+                  config: CalendarDatePicker2Config(
+                    controlsTextStyle: TextStyle(
+                      color: AppColor.black,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    weekdayLabelTextStyle: TextStyle(
+                      color: AppColor.black,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    yearTextStyle: TextStyle(
+                      color: AppColor.black,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    dayTextStyle: TextStyle(
+                      color: AppColor.black,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    currentDate: DateTime.now(),
+                    lastDate: DateTime.now(),
+                    selectedDayHighlightColor: AppColor.heavyPurplyBlue,
+                    calendarType: CalendarDatePicker2Type.single,
                   ),
-                  weekdayLabelTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  yearTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  dayTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  currentDate: DateTime.now(),
-                  lastDate: DateTime.now(),
-                  selectedDayHighlightColor: AppColor.heavyPurplyBlue,
-                  calendarType: CalendarDatePicker2Type.single,
+                  value: const [],
+                  // onValueChanged: (dates) => [] = dates,
                 ),
-                value: const [],
-                // onValueChanged: (dates) => [] = dates,
               ),
-              const SizedBox(
-                height: 10,
+
+              //
+              Padding(
+                padding: EdgeInsets.only(top: 75.h),
+                child: const ContinueElevatedButton(
+                  nextRoute: '/height',
+                ),
               ),
-              const ContinueElevatedButton(
-                nextRoute: '/height',
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+
+              //
             ],
           ),
         ),
