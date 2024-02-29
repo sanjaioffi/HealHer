@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
-        initialRoute: '/',
+        initialRoute: '/workoutRecommendation',
       ),
     );
   }
