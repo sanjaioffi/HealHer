@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_up/quick_sign_up.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import 'quick_sign_up.dart';
+import '../../../widgets/generic/continue_elevated_button.dart';
+import '../../../widgets/generic/top_tile.dart';
+import '../../../../../../config/theme/app_colors.dart';
 
 import 'common_access.dart';
 
@@ -46,6 +46,8 @@ class _OnBoardLoginState extends State<OnBoardLogin> {
                 ),
                 const ContinueElevatedButton(
                   nextRoute: '/main',
+                  canSwitch: true,
+                  errorMessage: "",
                 ),
                 SizedBox(
                   height: 18.h,

@@ -1,21 +1,20 @@
 import 'package:get/get.dart';
-import 'package:heal_her/config/routes/route_names.dart';
-import 'package:heal_her/features/activity/presentation/activity.dart';
-import 'package:heal_her/features/app/presentation/app.dart';
-import 'package:heal_her/features/onboard/presentation/onboard.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_activity.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_gender.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_weight.dart';
-import 'package:heal_her/features/step/presentation/step.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_dob.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_height.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_period_date.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_condition.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_period_cycle.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_process/login.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
-import 'package:heal_her/features/onboard/presentation/pages/preferences/user_targets.dart';
-import 'package:heal_her/features/onboard/presentation/pages/details/user_name.dart';
+
+import '../../features/app/presentation/app.dart';
+import '../../features/onboard/presentation/onboard.dart';
+import '../../features/onboard/presentation/pages/details/user_activity.dart';
+import '../../features/onboard/presentation/pages/details/user_condition.dart';
+import '../../features/onboard/presentation/pages/details/user_dob.dart';
+import '../../features/onboard/presentation/pages/details/user_gender.dart';
+import '../../features/onboard/presentation/pages/details/user_height.dart';
+import '../../features/onboard/presentation/pages/details/user_name.dart';
+import '../../features/onboard/presentation/pages/details/user_period_cycle.dart';
+import '../../features/onboard/presentation/pages/details/user_period_date.dart';
+import '../../features/onboard/presentation/pages/details/user_weight.dart';
+import '../../features/onboard/presentation/pages/registration/sign_process/login.dart';
+import '../../features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
+import '../../features/step/presentation/step.dart';
+import 'route_names.dart';
 
 List<GetPage> routes = [
   //

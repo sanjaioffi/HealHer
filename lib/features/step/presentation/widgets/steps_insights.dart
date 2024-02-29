@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+
+import '../../../../config/theme/app_colors.dart';
 
 class HeartData {
   final String day;

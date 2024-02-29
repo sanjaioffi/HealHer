@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/onboard/presentation/controller/gender_controller.dart';
-import 'package:heal_her/features/onboard/data/model/dual_choice_model.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/bottom_tile.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/gender/gender_slide.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
+import '../../../../../config/routes/route_names.dart';
+import '../../controller/gender_controller.dart';
+import '../../../data/model/dual_choice_model.dart';
+import '../../widgets/generic/bottom_tile.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/gender/gender_slide.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
+import '../../widgets/generic/top_tile.dart';
 
 class OnBoardGenderScreen extends StatelessWidget {
   const OnBoardGenderScreen({super.key});
@@ -18,14 +19,14 @@ class OnBoardGenderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context, 3),
+      appBar: buildOnBoardNavBar(context, 5),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              StepIndicator(step: genderModel.stepCount),
+              const StepIndicator(step: 5),
 
               //
               TopTile(tileContent: genderModel.topTitleContent),
@@ -42,8 +43,11 @@ class OnBoardGenderScreen extends StatelessWidget {
               //
               GetX<GenderController>(builder: (controller) {
                 return ContinueElevatedButton(
-                  nextRoute:
-                      controller.isMale.value ? '/height' : '/period_length',
+                  nextRoute: controller.isMale.value
+                      ? AppRoute.onboardMedicalIssue
+                      : AppRoute.onboardPeriodLength,
+                  canSwitch: true,
+                  errorMessage: "",
                 );
               }),
             ],

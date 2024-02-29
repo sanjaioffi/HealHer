@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+
+import '../../../../../config/theme/app_colors.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
 
 class OnboardTargetScreen extends StatefulWidget {
   const OnboardTargetScreen({super.key});
@@ -81,6 +82,8 @@ class _OnboardTargetScreenState extends State<OnboardTargetScreen> {
                   padding: EdgeInsets.only(top: 40.h),
                   child: const ContinueElevatedButton(
                     nextRoute: '/medical_condition',
+                    canSwitch: true,
+                    errorMessage: "",
                   ),
                 ),
               ],

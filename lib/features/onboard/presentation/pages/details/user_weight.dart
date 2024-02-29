@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
+import '../../../../../config/routes/route_names.dart';
+import '../../../domain/entity/user_entity.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
+import '../../widgets/generic/top_tile.dart';
 
 class OnBoardWeightScreen extends StatefulWidget {
   const OnBoardWeightScreen({super.key});
@@ -26,16 +28,16 @@ class _OnBoardWeightScreenState extends State<OnBoardWeightScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context, 5),
+      appBar: buildOnBoardNavBar(context, 4),
       body: SizedBox(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const StepIndicator(step: 5),
+              const StepIndicator(step: 4),
 
               //
-              const TopTile(tileContent: "Tell us what's your hieght ?"),
+              const TopTile(tileContent: "Tell us what's your Wieght ?"),
 
               //
               Padding(
@@ -50,10 +52,15 @@ class _OnBoardWeightScreenState extends State<OnBoardWeightScreen> {
 
               //
               Padding(
-                padding: EdgeInsets.only(top: 20.h, bottom: 15.h),
+                padding: EdgeInsets.only(
+                  top: 20.h,
+                  bottom: 15.h,
+                ),
                 child: Text("${weight - 2} kg",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20.sp)),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.sp,
+                    )),
               ),
 
               //
@@ -64,13 +71,25 @@ class _OnBoardWeightScreenState extends State<OnBoardWeightScreen> {
                   beginValue: 0,
                   endValue: 120,
                   initValue: weight.toInt(),
-                  scaleLineStyleList: const [
+                  scaleLineStyleList: [
                     ScaleLineStyle(
-                        color: Colors.grey, width: 1.5, height: 30, scale: 0),
+                      color: Colors.grey,
+                      width: 1.5.w,
+                      height: 30.h,
+                      scale: 0,
+                    ),
                     ScaleLineStyle(
-                        color: Colors.grey, width: 1, height: 25, scale: 5),
+                      color: Colors.grey,
+                      width: 1.w,
+                      height: 25.h,
+                      scale: 5,
+                    ),
                     ScaleLineStyle(
-                        color: Colors.grey, width: 1, height: 15, scale: -1)
+                      color: Colors.grey,
+                      width: 1.w,
+                      height: 15.h,
+                      scale: -1,
+                    )
                   ],
                   onValueChange: (value) {
                     setState(() {
@@ -87,8 +106,10 @@ class _OnBoardWeightScreenState extends State<OnBoardWeightScreen> {
               //
               Padding(
                 padding: EdgeInsets.only(top: 60.h),
-                child: const ContinueElevatedButton(
-                  nextRoute: '/medical_condition',
+                child: ContinueElevatedButton(
+                  nextRoute: AppRoute.onboardGender,
+                  canSwitch: userEntity.userWeight != -1,
+                  errorMessage: "Kindly pick your weight",
                 ),
               )
             ],

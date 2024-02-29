@@ -1,11 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+
+import '../../../../../config/routes/route_names.dart';
+import '../../../../../config/theme/app_colors.dart';
+import '../../../domain/entity/user_entity.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
+import '../../widgets/generic/top_tile.dart';
 
 class OnboardPeriodScreen extends StatefulWidget {
   const OnboardPeriodScreen({super.key});
@@ -19,21 +22,27 @@ class _OnboardPeriodScreenState extends State<OnboardPeriodScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context, 3),
+      appBar: buildOnBoardNavBar(context, 5),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const StepIndicator(step: 3),
+              const StepIndicator(step: 5),
+
+              //
+              const TopTile(tileContent: "How long is your period cycle ?"),
+
+              //
               SizedBox(
-                height: 200.h,
-                child: Image.asset('assets/images/onboard-period.png'),
+                height: 300.h,
+                child: Image.asset(
+                  'assets/images/onboard_period.png',
+                ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 30.h),
-                child: const TopTile(
-                    tileContent: "How long is your period cycle?"),
-              ),
+
+              //
+
+              //
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 15.h),
                 child: CarouselSlider.builder(
@@ -46,6 +55,7 @@ class _OnboardPeriodScreenState extends State<OnboardPeriodScreen> {
                       scrollDirection: Axis.vertical,
                       onPageChanged: (index, reason) => setState(() {
                         selectedIndex = index;
+                        userEntity.periodCycle = index;
                       }),
                     ),
                     itemCount: 30,
@@ -92,10 +102,14 @@ class _OnboardPeriodScreenState extends State<OnboardPeriodScreen> {
                       );
                     }),
               ),
+
+              //
               Padding(
-                padding: EdgeInsets.only(top: 50.h),
-                child: const ContinueElevatedButton(
-                  nextRoute: '/last_period_date',
+                padding: EdgeInsets.only(top: 10.h),
+                child: ContinueElevatedButton(
+                  nextRoute: AppRoute.onboardPeriodDays,
+                  canSwitch: true,
+                  errorMessage: "",
                 ),
               ),
             ],

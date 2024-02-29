@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
 
+import '../../../../config/theme/app_colors.dart';
 import 'bar_chart_graph.dart';
 
 Container backGroundContainer(

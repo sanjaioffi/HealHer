@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heal_her/config/routes/route_names.dart';
 import 'package:heal_her/features/onboard/data/model/fitness_model.dart';
+import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/active_icons.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/dot_indicator.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
@@ -129,8 +131,10 @@ class _OnboardActivityState extends State<OnboardActivity> {
                             //
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 20.h),
-                              child: const ContinueElevatedButton(
-                                nextRoute: 'main',
+                              child: ContinueElevatedButton(
+                                nextRoute: AppRoute.homeScreen,
+                                canSwitch: true,
+                                errorMessage: "",
                               ),
                             ),
                           ],
@@ -144,6 +148,7 @@ class _OnboardActivityState extends State<OnboardActivity> {
                         enlargeCenterPage: true,
                         enableInfiniteScroll: false,
                         onPageChanged: (index, reason) {
+                          userEntity.activityIdx = index;
                           _currentIndex = index;
                           setState(() {});
                         }),

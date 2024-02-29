@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
-import 'package:heal_her/features/onboard/presentation/controller/gender_controller.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../domain/entity/user_entity.dart';
+import '../../controller/gender_controller.dart';
+import '../../../../../config/theme/app_colors.dart';
 
 class GenderTile extends StatelessWidget {
   const GenderTile({

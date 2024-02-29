@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_up/common_access.dart';
-import 'package:heal_her/features/onboard/presentation/pages/registration/sign_up/quick_sign_up.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
+import '../sign_up/common_access.dart';
+import '../sign_up/quick_sign_up.dart';
+import '../../../widgets/generic/continue_elevated_button.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -48,7 +48,9 @@ class _SignUpState extends State<SignUp> {
               passTextField(TextEditingController(), () {}),
               SizedBox(height: 20.w),
               const ContinueElevatedButton(
+                errorMessage: "",
                 nextRoute: 'name',
+                canSwitch: true,
               )
             ],
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../../../config/theme/app_colors.dart';
+import '../../../domain/entity/user_entity.dart';
 
 import '../../controller/medical_condition_controller.dart';
 
@@ -28,6 +29,7 @@ class _DynamicChipState extends State<DynamicChip> {
     } else {
       tags.add(widget.name);
     }
+    userEntity.userMedicalIssues = tags;
     setState(() {
       isImage1Visible = !isImage1Visible;
     });

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../config/theme/app_colors.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

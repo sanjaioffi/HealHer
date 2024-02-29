@@ -1,11 +1,13 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+import '../../../../../config/constants/constants.dart';
+import '../../../../../config/routes/route_names.dart';
+import '../../../domain/entity/user_entity.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
+import '../../widgets/generic/top_tile.dart';
 
 class OnboardLastPeriodDateScreen extends StatefulWidget {
   const OnboardLastPeriodDateScreen({super.key});
@@ -17,15 +19,26 @@ class OnboardLastPeriodDateScreen extends StatefulWidget {
 
 class _OnboardLastPeriodDateScreenState
     extends State<OnboardLastPeriodDateScreen> {
+  //
+  late List<DateTime> dateValues;
+
+  //
+  @override
+  void initState() {
+    dateValues = [];
+    super.initState();
+  }
+
+  //
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context, 3),
+      appBar: buildOnBoardNavBar(context, 5),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const StepIndicator(step: 3),
+              const StepIndicator(step: 5),
 
               //
               Padding(
@@ -36,44 +49,26 @@ class _OnboardLastPeriodDateScreenState
 
               //
               Padding(
-                padding: EdgeInsets.only(top: 40.h),
+                padding: EdgeInsets.only(top: 45.h),
                 child: CalendarDatePicker2(
-                  config: CalendarDatePicker2Config(
-                    controlsTextStyle: TextStyle(
-                      color: AppColor.black,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    weekdayLabelTextStyle: TextStyle(
-                      color: AppColor.black,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    yearTextStyle: TextStyle(
-                      color: AppColor.black,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    dayTextStyle: TextStyle(
-                      color: AppColor.black,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    currentDate: DateTime.now(),
-                    lastDate: DateTime.now(),
-                    selectedDayHighlightColor: AppColor.heavyPurplyBlue,
-                    calendarType: CalendarDatePicker2Type.single,
-                  ),
-                  value: const [],
-                  // onValueChanged: (dates) => [] = dates,
+                  config: calenderConfig,
+                  value: dateValues,
+                  onValueChanged: (value) {
+                    userEntity.lastPeriodDate = value[value.length - 1]!;
+                    setState(() {
+                      dateValues = [value[value.length - 1]!];
+                    });
+                  },
                 ),
               ),
 
               //
               Padding(
                 padding: EdgeInsets.only(top: 75.h),
-                child: const ContinueElevatedButton(
-                  nextRoute: '/height',
+                child: ContinueElevatedButton(
+                  nextRoute: AppRoute.onboardMedicalIssue,
+                  canSwitch: userEntity.lastPeriodDate != DateTime(1900),
+                  errorMessage: "Pick your last date of your period",
                 ),
               ),
 

@@ -1,4 +1,4 @@
-import 'package:heal_her/core/managers/interface/hive_manager.dart';
+import '../interface/hive_manager.dart';
 
 class HiveManagerImpl implements HiveManager {
   @override

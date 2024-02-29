@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
 
+import '../../../../config/theme/app_colors.dart';
 import '../../../step/presentation/widgets/steps_insights.dart';
 import 'back_ground.dart';
 import 'date_container.dart';

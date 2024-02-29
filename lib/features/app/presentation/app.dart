@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/activity/presentation/activity.dart';
-import 'package:heal_her/features/device/presentation/device.dart';
-import 'package:heal_her/features/home/presentation/home.dart';
-import 'package:heal_her/features/profile/presentation/profile.dart';
+
+import '../../activity/presentation/activity.dart';
+import '../../device/presentation/device.dart';
+import '../../home/presentation/home.dart';
+import '../../profile/presentation/profile.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

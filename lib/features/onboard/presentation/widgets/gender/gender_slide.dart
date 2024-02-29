@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/gender/gender_tile.dart';
+import 'gender_tile.dart';
 
 class GenderSlide extends StatelessWidget {
   const GenderSlide({
