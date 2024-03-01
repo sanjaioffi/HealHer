@@ -47,7 +47,8 @@ Container graphBackGroundContainer({required Widget child}) {
 Column innerGraphWidget(
     {required String text1,
     required Widget text2,
-    required Period periodType}) {
+    required Period periodType,
+    required List<int> data}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -75,7 +76,11 @@ Column innerGraphWidget(
           text2
         ],
       ),
-      Expanded(child: HeartBarChart(periodType: periodType))
+      Expanded(
+          child: HeartBarChart(
+        periodType: periodType,
+        data: data,
+      ))
     ],
   );
 }

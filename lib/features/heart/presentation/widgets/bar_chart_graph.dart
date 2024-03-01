@@ -6,48 +6,51 @@ import '../../../../config/theme/app_colors.dart';
 import 'bar_widgets.dart';
 
 class HeartBarChart extends StatefulWidget {
-  const HeartBarChart({super.key, required this.periodType});
+  const HeartBarChart(
+      {super.key, required this.periodType, required this.data});
 
   final Period periodType;
+  final List<int> data;
 
   @override
   State createState() => _HeartBarChartState();
 }
 
 class _HeartBarChartState extends State<HeartBarChart> {
-  List<int> data = List.generate(100, (index) => random(60, 160));
-  List<int> monthData = List.generate(5, (index) => random(60, 160));
+  // List<int> data = List.generate(7, (index) => random(60, 160));
+  // List<int> monthData = List.generate(5, (index) => random(60, 160));
+  // List<int> weekData = List.generate(7, (index) => random(60, 160));
 
-  final ScrollController _scrollController = ScrollController();
+  // final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(_scrollListener);
+    // _scrollController.addListener(_scrollListener);
   }
 
-  void _scrollListener() {
-    if (_scrollController.position.pixels ==
-        _scrollController.position.maxScrollExtent) {
-      // Load more data when reaching the end
-      _loadMoreData();
-    }
-  }
+  // void _scrollListener() {
+  //   if (_scrollController.position.pixels ==
+  //       _scrollController.position.maxScrollExtent) {
+  //     // Load more data when reaching the end
+  //     _loadMoreData();
+  //   }
+  // }
 
-  void _loadMoreData() async {
-    setState(() {
-      // Append new data to the existing list
-      data.addAll(List.generate(50, (index) => (random(60, 160))));
-    });
-  }
+  // void _loadMoreData() async {
+  //   setState(() {
+  //     // Append new data to the existing list
+  //     widget.data.addAll(List.generate(50, (index) => (random(60, 160))));
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      controller: _scrollController,
+      // controller: _scrollController,
       child: SizedBox(
-        width: data.length *
+        width: widget.data.length *
             (widget.periodType == Period.month
                 ? 60.w
                 : (widget.periodType == Period.week ? 45.w : 50.w)),
@@ -62,12 +65,12 @@ class _HeartBarChartState extends State<HeartBarChart> {
             ),
             alignment: BarChartAlignment.spaceAround,
             maxY: 200,
-            barGroups: data
+            barGroups: widget.data
                 .asMap()
                 .map((index, value) => MapEntry(
                       index,
                       BarChartGroupData(
-                        x: index,
+                        x: widget.periodType == Period.day ? index + 1 : index,
                         barRods: [
                           BarChartRodData(
                             width: barWidth,

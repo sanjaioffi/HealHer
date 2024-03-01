@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppColor {
   AppColor._();
+
   static const Color bgColor = Color.fromRGBO(245, 246, 250, 1);
+  static const Color gery = Color.fromRGBO(88, 90, 101, 1);
   static const Color purplyBlue = Color(0xFF8a81f8);
   static const Color heavyPurplyBlue = Color(0xFF7065e2);
   static const Color babyPurplyBlue = Color(0xff6af8dfe);
@@ -18,5 +20,6 @@ class AppColor {
   static const Color stepsIndicator = Color(0xffff3a37c);
   static const Color heart = Color(0xffffdbe2f5);
   static const Color spo2 = Color(0xfffcffaf3);
+  static const Color bloodPressure = Color(0xfffcf3e2);
   static const Color spo2Indicator = Color(0xfff40dbc1);
 }

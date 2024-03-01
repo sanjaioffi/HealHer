@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/features/app/presentation/app.dart';
+import 'package:heal_her/features/test_blue/main.dart';
 
 import 'config/routes/routes.dart';
 import 'config/theme/app_theme.dart';
+import 'features/test_blue/blue_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +28,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
-        initialRoute: '/',
+        home: MainScreen(),
+        // initialRoute: '/',
       ),
     );
   }
