@@ -1,16 +1,8 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
-import 'package:calendar_date_picker2/calendar_date_picker2.dart';
+import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
 
-
-final textStyle1 = TextStyle(
-    color: AppColor.black,
-    fontWeight: FontWeight.w600,
-    fontSize: 16.h,
-    wordSpacing: 2,
-  );
-
+import '../theme/app_colors.dart';
 
 List<String> activityOptions = [
   'Diabetes',
@@ -38,8 +30,6 @@ CalendarDatePicker2Config calenderConfig = CalendarDatePicker2Config(
     fontSize: 15.sp,
     fontWeight: FontWeight.bold,
   ),
-
-  //
   weekdayLabelTextStyle: TextStyle(
     color: AppColor.black,
     fontSize: 15.sp,
@@ -60,3 +50,9 @@ CalendarDatePicker2Config calenderConfig = CalendarDatePicker2Config(
   selectedDayHighlightColor: AppColor.heavyPurplyBlue,
   calendarType: CalendarDatePicker2Type.single,
 );
+
+UserEntity userEntity = UserEntity();
+
+const String userBoxReference = "user_details";
+
+const String userDataReference = "user_data";

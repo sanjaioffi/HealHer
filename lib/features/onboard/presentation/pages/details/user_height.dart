@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heal_her/config/constants/constants.dart';
 import '../../../../../config/routes/route_names.dart';
-import '../../../domain/entity/user_entity.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';

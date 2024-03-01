@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heal_her/config/constants/constants.dart';
 
 import '../../../../../config/routes/route_names.dart';
 import '../../../../../config/theme/app_colors.dart';
-import '../../../domain/entity/user_entity.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';
