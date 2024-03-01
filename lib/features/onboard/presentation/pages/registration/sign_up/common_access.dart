@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../../config/theme/app_colors.dart';
-import '../../../../../../config/theme/screen_size.dart';
 
 TextField passTextField(
     TextEditingController controller, Function forgetFunction) {
@@ -28,7 +26,6 @@ TextField passTextField(
 }
 
 Center signButton(Function function, String title, BuildContext context) {
-  ScreenSize().init(context);
   return Center(
     child: GestureDetector(
       onTap: () => function,

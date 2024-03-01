@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:heal_her/features/blood_pressure/presentation/blood_pressure.dart';
+import 'package:heal_her/features/heart/presentation/heart.dart';
+import 'package:heal_her/features/step/presentation/step.dart';
+import 'package:heal_her/features/step/presentation/widgets/steps_insights.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../../config/theme/app_colors.dart';
 
@@ -225,6 +230,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(8.0), // padding around the grid
                 children: [
                   DataTile(
+                    icon: Icon(
+                      Icons.water_drop,
+                      color: AppColor.spo2Indicator,
+                      size: 30,
+                    ),
+                    nextScreen: Heart(),
                     backgroundColor: AppColor.spo2,
                     title: 'Spo2',
                     body: CircularPercentIndicator(
@@ -244,6 +255,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   DataTile(
+                    icon: Icon(
+                      Icons.favorite,
+                      color: AppColor.heavyPurplyBlue,
+                      size: 30,
+                    ),
+                    nextScreen: Heart(),
                     backgroundColor: AppColor.heart,
                     title: 'Heart Rate',
                     body: Column(
@@ -280,24 +297,32 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   DataTile(
-                    backgroundColor: AppColor.heart,
-                    title: 'Heart Rate',
+                    icon: Icon(
+                      Icons.medical_information,
+                      color: AppColor.bloodPressure,
+                      size: 30,
+                    ),
+                    nextScreen: BloodPressure(),
+                    backgroundColor: AppColor.bloodPressure,
+                    title: 'Blood Pressure',
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/png/heart_rate.png',
-                          color: AppColor.heavyPurplyBlue,
-                          fit: BoxFit.cover,
-                          height: 60,
-                          width: 170,
+                        Align(
+                          alignment: Alignment.center,
+                          child: Image.asset(
+                            'assets/png/blood-pressure.png',
+                            fit: BoxFit.cover,
+                            height: 40,
+                            width: 40,
+                          ),
                         ),
                         const SizedBox(height: 10),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: RichText(
                               text: const TextSpan(
-                                  text: '120',
+                                  text: '120/80',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 20,
@@ -305,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Colors.black),
                                   children: [
                                 TextSpan(
-                                    text: ' bpm',
+                                    text: ' mmHg',
                                     style: TextStyle(
                                         fontFamily: 'Poppins',
                                         fontSize: 15,
@@ -315,7 +340,51 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
+                  // DataTile(
+                  //   nextScreen: Heart(),
+                  //   backgroundColor: AppColor.heart,
+                  //   title: 'ECG',
+                  //   body: Column(
+                  //     crossAxisAlignment: CrossAxisAlignment.start,
+                  //     children: [
+                  //       Image.asset(
+                  //         'assets/png/heart_rate.png',
+                  //         color: AppColor.heavyPurplyBlue,
+                  //         fit: BoxFit.cover,
+                  //         height: 60,
+                  //         width: 170,
+                  //       ),
+                  //       const SizedBox(height: 10),
+                  //       Padding(
+                  //         padding: const EdgeInsets.all(8.0),
+                  //         child: RichText(
+                  //             text: const TextSpan(
+                  //                 text: '120',
+                  //                 style: TextStyle(
+                  //                     fontFamily: 'Poppins',
+                  //                     fontSize: 17,
+                  //                     fontWeight: FontWeight.bold,
+                  //                     color: Colors.black),
+                  //                 children: [
+                  //               TextSpan(
+                  //                   text: ' bpm',
+                  //                   style: TextStyle(
+                  //                       fontFamily: 'Poppins',
+                  //                       fontSize: 12,
+                  //                       color: Colors.black54))
+                  //             ])),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+
                   DataTile(
+                    icon: Icon(
+                      Icons.directions_walk_rounded,
+                      color: AppColor.stepsIndicator,
+                      size: 30,
+                    ),
+                    nextScreen: StepsScreen(),
                     backgroundColor: AppColor.steps,
                     title: 'Steps',
                     body: CircularPercentIndicator(
@@ -346,44 +415,48 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class DataTile extends StatelessWidget {
-  const DataTile({
-    super.key,
-    required this.backgroundColor,
-    required this.title,
-    required this.body,
-  });
+  const DataTile(
+      {super.key,
+      required this.backgroundColor,
+      required this.title,
+      required this.body,
+      required this.nextScreen,
+      required this.icon});
 
   final Color backgroundColor;
   final String title;
   final Widget body;
+  final Widget nextScreen;
+  final Icon icon;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: backgroundColor,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(color: Colors.black, fontSize: 18),
-              ),
-              const Icon(
-                Icons.directions_walk_rounded,
-                color: AppColor.stepsIndicator,
-                size: 30,
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          body,
-        ],
+    return InkWell(
+      onTap: () {
+        Get.to(() => nextScreen);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: backgroundColor,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(color: Colors.black, fontSize: 18),
+                ),
+                icon
+              ],
+            ),
+            const SizedBox(height: 20),
+            body,
+          ],
+        ),
       ),
     );
   }

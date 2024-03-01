@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../../../config/routes/route_names.dart';
 import '../../controller/gender_controller.dart';
 import '../../../data/model/dual_choice_model.dart';
 import '../../widgets/generic/bottom_tile.dart';
@@ -17,24 +19,35 @@ class OnBoardGenderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context, 3),
+      appBar: buildOnBoardNavBar(context, 5),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              StepIndicator(step: genderModel.stepCount),
+              const StepIndicator(step: 5),
+
+              //
               TopTile(tileContent: genderModel.topTitleContent),
+
+              //
               const GenderSlide(),
-              BottomTile(tileContent: genderModel.bottomTileContent),
-              const SizedBox(
-                height: 50,
+
+              //
+              Padding(
+                padding: EdgeInsets.only(bottom: 50.h, top: 10.h),
+                child: BottomTile(tileContent: genderModel.bottomTileContent),
               ),
+
+              //
               GetX<GenderController>(builder: (controller) {
                 return ContinueElevatedButton(
-                  nextRoute:
-                      controller.isMale.value ? '/height' : '/period_length',
+                  nextRoute: controller.isMale.value
+                      ? AppRoute.onboardMedicalIssue
+                      : AppRoute.onboardPeriodLength,
+                  canSwitch: true,
+                  errorMessage: "",
                 );
               }),
             ],

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../config/theme/app_colors.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';
-import '../../../../../config/theme/app_colors.dart';
 
 class OnboardTargetScreen extends StatefulWidget {
   const OnboardTargetScreen({super.key});
@@ -23,25 +25,22 @@ class _OnboardTargetScreenState extends State<OnboardTargetScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const StepIndicator(step: 8),
-                const Text(
-                  "Let us know how we can help you",
+                Text(
+                  "Help Us know your goal !",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text('You always can change this later',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.normal,
-                    )),
-                const SizedBox(
-                  height: 20,
+                Padding(
+                  padding: EdgeInsets.only(top: 30.h, bottom: 20.h),
+                  child: const Text('You always can change this later',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.normal,
+                      )),
                 ),
                 CustomCard(
                   iconImage: 'assets/images/targets_images/food.png',
@@ -79,15 +78,14 @@ class _OnboardTargetScreenState extends State<OnboardTargetScreen> {
                         : selectedLevels.remove(4);
                   },
                 ),
-                const SizedBox(
-                  height: 20,
+                Padding(
+                  padding: EdgeInsets.only(top: 40.h),
+                  child: const ContinueElevatedButton(
+                    nextRoute: '/medical_condition',
+                    canSwitch: true,
+                    errorMessage: "",
+                  ),
                 ),
-                const ContinueElevatedButton(
-                  nextRoute: '/activities',
-                ),
-                const SizedBox(
-                  height: 20,
-                )
               ],
             ),
           ),

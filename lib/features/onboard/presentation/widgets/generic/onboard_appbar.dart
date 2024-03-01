@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../config/theme/app_colors.dart';
 
 AppBar buildOnBoardNavBar(BuildContext context, int index) {
@@ -17,16 +18,18 @@ AppBar buildOnBoardNavBar(BuildContext context, int index) {
     title: SizedBox(
       width: double.maxFinite,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10.r),
         child: LinearProgressIndicator(
           minHeight: 7,
           backgroundColor: AppColor.babyPurplyBlue,
           color: AppColor.heavyPurplyBlue,
-          value: index / 12,
+          value: index / 7,
         ),
       ),
     ),
-    actions: const [SizedBox(width: 50)],
+    actions: [
+      SizedBox(width: 50.w),
+    ],
     centerTitle: true,
   );
 }

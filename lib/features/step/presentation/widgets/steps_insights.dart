@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
@@ -126,7 +128,7 @@ class _StepInsightsScreenState extends State<StepInsightsScreen> {
           child: Column(
             children: [
               const DisclaimerText(),
-              const DayHeartRate(),
+              // const DayHeartRate(),
               DoubleWeekData(weekData: weekHeartData, suffix: 'bpm'),
               DoubleMonthData(monthData: monthHeartData, suffix: 'bpm'),
               DoubleWeekData(weekData: weekSpo2Data, suffix: '%'),
@@ -269,7 +271,15 @@ class DisclaimerText extends StatelessWidget {
 }
 
 class DayHeartRate extends StatelessWidget {
-  const DayHeartRate({super.key});
+  const DayHeartRate({super.key, required this.heartRates});
+  final List<int> heartRates;
+
+  int averageVal([List<int> heartRates = const []]) {
+    if (heartRates.isEmpty) {
+      return 0;
+    }
+    return heartRates.reduce((a, b) => a + b) ~/ heartRates.length;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -287,7 +297,7 @@ class DayHeartRate extends StatelessWidget {
             colors: [AppColor.lightPurplrBlue, Colors.white60],
           ),
         ),
-        child: const Padding(
+        child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -322,25 +332,41 @@ class DayHeartRate extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Text('70', style: TextStyle(fontSize: 15)),
+                      Text(
+                          heartRates.length == 0
+                              ? '--'
+                              : heartRates.last.toString(),
+                          style: TextStyle(fontSize: 15)),
                       Text('Latest', style: TextStyle(fontSize: 15)),
                     ],
                   ),
                   Column(
                     children: [
-                      Text('--', style: TextStyle(fontSize: 15)),
+                      Text(
+                          heartRates.length == 0
+                              ? '--'
+                              : heartRates.reduce(min).toString(),
+                          style: TextStyle(fontSize: 15)),
                       Text('Min.', style: TextStyle(fontSize: 15)),
                     ],
                   ),
                   Column(
                     children: [
-                      Text('--', style: TextStyle(fontSize: 15)),
+                      Text(
+                          heartRates.length == 0
+                              ? '--'
+                              : averageVal(heartRates).toString(),
+                          style: TextStyle(fontSize: 15)),
                       Text('Avg.', style: TextStyle(fontSize: 15)),
                     ],
                   ),
                   Column(
                     children: [
-                      Text('--', style: TextStyle(fontSize: 15)),
+                      Text(
+                          heartRates.length == 0
+                              ? '--'
+                              : heartRates.reduce(max).toString(),
+                          style: TextStyle(fontSize: 15)),
                       Text('Max.', style: TextStyle(fontSize: 15)),
                     ],
                   ),

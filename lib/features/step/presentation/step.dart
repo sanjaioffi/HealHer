@@ -35,26 +35,28 @@ class _StepsScreenState extends State<StepsScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Icon(Icons.arrow_back_ios_rounded),
-                    InkWell(
-                      onTap: () {
-                        Get.to(() => const StepInsightsScreen());
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: AppColor.lightPurplrBlue,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.0, vertical: 12),
-                          child: Text(
-                            'Insight',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 17.0),
-                          ),
-                        ),
-                      ),
-                    )
+                    IconButton(
+                        onPressed: () => Get.back(),
+                        icon: Icon(Icons.arrow_back_ios)),
+                    // InkWell(
+                    //   onTap: () {
+                    //     Get.to(() => const StepInsightsScreen());
+                    //   },
+                    //   child: Container(
+                    //     decoration: BoxDecoration(
+                    //         color: AppColor.lightPurplrBlue,
+                    //         borderRadius: BorderRadius.circular(10)),
+                    //     child: const Padding(
+                    //       padding: EdgeInsets.symmetric(
+                    //           horizontal: 20.0, vertical: 12),
+                    //       child: Text(
+                    //         'Insight',
+                    //         style: TextStyle(
+                    //             fontWeight: FontWeight.bold, fontSize: 17.0),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
