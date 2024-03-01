@@ -22,4 +22,14 @@ class AppColor {
   static const Color spo2 = Color(0xfffcffaf3);
   static const Color bloodPressure = Color(0xfffcf3e2);
   static const Color spo2Indicator = Color(0xfff40dbc1);
+
+  static List<Color> unselectedLinearGradient = [
+    AppColor.white,
+    AppColor.white,
+  ];
+
+  static List<Color> selectedLinearGradient = [
+    AppColor.heavyPurplyBlue,
+    AppColor.heavyPurplyBlue,
+  ];
 }

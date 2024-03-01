@@ -1,10 +1,13 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../config/constants/constants.dart';
+import '../../../../../config/routes/route_names.dart';
+import '../../../domain/entity/user_entity.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';
 import '../../widgets/generic/top_tile.dart';
-import '../../../../../config/theme/app_colors.dart';
 
 class OnboardLastPeriodDateScreen extends StatefulWidget {
   const OnboardLastPeriodDateScreen({super.key});
@@ -16,62 +19,60 @@ class OnboardLastPeriodDateScreen extends StatefulWidget {
 
 class _OnboardLastPeriodDateScreenState
     extends State<OnboardLastPeriodDateScreen> {
+  //
+  late List<DateTime> dateValues;
+
+  //
+  @override
+  void initState() {
+    dateValues = [];
+    super.initState();
+  }
+
+  //
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildOnBoardNavBar(context, 3),
+      appBar: buildOnBoardNavBar(context, 5),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const StepIndicator(step: 3),
-              // SizedBox(
-              //     height: 250,
-              //     child: Image.asset('assets/images/onboard-period_date.png')),
-              const TopTile(
-                  tileContent: "When was the last day of your period?"),
-              const SizedBox(
-                height: 50,
+              const StepIndicator(step: 5),
+
+              //
+              Padding(
+                padding: EdgeInsets.all(8.0.h),
+                child: const TopTile(
+                    tileContent: "When was the last day of your period?"),
               ),
-              CalendarDatePicker2(
-                config: CalendarDatePicker2Config(
-                  controlsTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  weekdayLabelTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  yearTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  dayTextStyle: const TextStyle(
-                    color: AppColor.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  currentDate: DateTime.now(),
-                  lastDate: DateTime.now(),
-                  selectedDayHighlightColor: AppColor.heavyPurplyBlue,
-                  calendarType: CalendarDatePicker2Type.single,
+
+              //
+              Padding(
+                padding: EdgeInsets.only(top: 45.h),
+                child: CalendarDatePicker2(
+                  config: calenderConfig,
+                  value: dateValues,
+                  onValueChanged: (value) {
+                    userEntity.lastPeriodDate = value[value.length - 1]!;
+                    setState(() {
+                      dateValues = [value[value.length - 1]!];
+                    });
+                  },
                 ),
-                value: const [],
-                // onValueChanged: (dates) => [] = dates,
               ),
-              const SizedBox(
-                height: 10,
+
+              //
+              Padding(
+                padding: EdgeInsets.only(top: 75.h),
+                child: ContinueElevatedButton(
+                  nextRoute: AppRoute.onboardMedicalIssue,
+                  canSwitch: userEntity.lastPeriodDate != DateTime(1900),
+                  errorMessage: "Pick your last date of your period",
+                ),
               ),
-              const ContinueElevatedButton(
-                nextRoute: '/height',
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+
+              //
             ],
           ),
         ),

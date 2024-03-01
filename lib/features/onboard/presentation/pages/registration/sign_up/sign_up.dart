@@ -4,7 +4,6 @@ import 'quick_sign_up.dart';
 import '../../../widgets/generic/continue_elevated_button.dart';
 import '../../../widgets/generic/top_tile.dart';
 
-import '../../../../../../config/theme/screen_size.dart';
 import 'common_access.dart';
 
 class OnBoardSignUpScreen extends StatefulWidget {
@@ -25,7 +24,6 @@ class _OnBoardSignUpScreenState extends State<OnBoardSignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -63,6 +61,8 @@ class _OnBoardSignUpScreenState extends State<OnBoardSignUpScreen> {
                 ),
                 const ContinueElevatedButton(
                   nextRoute: '/name',
+                  canSwitch: true,
+                  errorMessage: "",
                 ),
               ],
             ),

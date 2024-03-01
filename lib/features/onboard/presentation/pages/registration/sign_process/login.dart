@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'sign_up.dart';
 import '../sign_up/quick_sign_up.dart';
 import '../../../widgets/generic/continue_elevated_button.dart';
-import '../../../../../../config/theme/screen_size.dart';
 import '../sign_up/common_access.dart';
 import '../../../../../../config/theme/app_colors.dart';
 
@@ -18,7 +17,6 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -28,27 +26,51 @@ class _LoginState extends State<Login> {
             Image.asset(
               'assets/png/back.png',
             ),
+
+            //
             Text(
               'Login',
               style: TextStyle(fontSize: 25.w, fontWeight: FontWeight.w900),
             ),
+
+            //
             SizedBox(
               height: 25.w,
             ),
+
+            //
             emailTextField(TextEditingController()),
+
+            //
             SizedBox(
               height: 18.w,
             ),
             passTextField(TextEditingController(), () {}),
+
+            //
             SizedBox(height: 20.w),
+
+            //
             const ContinueElevatedButton(
               removeScreen: true,
               nextRoute: '/main',
+              canSwitch: true,
+              errorMessage: "",
             ),
-            SizedBox(height: 20.w),
+
+            //
+            SizedBox(height: 20.w), //
+
+            //
             const CustomDivider(),
+
+            //
             SizedBox(height: 35.w),
+
+            //
             const QuickSignUp(),
+
+            ///
             SizedBox(height: 50.w),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
