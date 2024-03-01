@@ -1,6 +1,8 @@
   import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
+import 'package:calendar_date_picker2/calendar_date_picker2.dart';
+
 
 final textStyle1 = TextStyle(
     color: AppColor.black,
@@ -8,11 +10,7 @@ final textStyle1 = TextStyle(
     fontSize: 16.h,
     wordSpacing: 2,
   );
-import 'package:calendar_date_picker2/calendar_date_picker2.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../theme/app_colors.dart';
 
 List<String> activityOptions = [
   'Diabetes',
