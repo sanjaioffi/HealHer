@@ -5,6 +5,7 @@ import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
 
 import '../theme/app_colors.dart';
 
+
 final textStyle1 = TextStyle(
     color: AppColor.black,
     fontWeight: FontWeight.w600,
