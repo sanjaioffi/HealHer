@@ -1,8 +1,17 @@
+import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
 
 import '../theme/app_colors.dart';
+
+final textStyle1 = TextStyle(
+    color: AppColor.black,
+    fontWeight: FontWeight.w600,
+    fontSize: 16.h,
+    wordSpacing: 2,
+  );
+
 
 List<String> activityOptions = [
   'Diabetes',
