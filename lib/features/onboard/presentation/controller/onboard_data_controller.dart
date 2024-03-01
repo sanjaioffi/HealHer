@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:heal_her/config/constants/constants.dart';
 import 'package:heal_her/core/managers/interface/hive_manager.dart';
@@ -11,7 +10,17 @@ class OnboardDataController extends GetxController {
 
   RxBool isUpdated = false.obs;
 
+  @override
+  void onInit() async {
+    super.onInit();
+
+    await updateUserDataToHive();
+  }
+
   Future<void> updateUserDataToHive() async {
+    //
+    await hiveManager.initialiseHiveBox(userBoxReference);
+
     await hiveManager.writeToHive(
         userBoxReference, userDataReference, userEntity.toMap());
 

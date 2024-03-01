@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/config/routes/route_names.dart';
+import 'package:heal_her/config/services/services.dart';
 import 'package:heal_her/features/onboard/presentation/controller/onboard_data_controller.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/bottom_tile.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
@@ -16,6 +17,9 @@ class OnboardStepsCompleteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final b = Get.put(serviceLocator<OnboardDataController>());
+
+    //
     return Scaffold(
       appBar: buildOnBoardNavBar(context, 7),
       body: SingleChildScrollView(
@@ -42,15 +46,10 @@ class OnboardStepsCompleteScreen extends StatelessWidget {
                 padding: EdgeInsets.only(top: 30.h),
                 child: GetBuilder<OnboardDataController>(
                   builder: (controller) {
-                    if (controller.isUpdated.value) {
-                      controller.updateUserDataToHive();
-                      log("Called the funtion");
-                    }
                     return ContinueElevatedButton(
                       nextRoute: AppRoute.homeScreen,
                       canSwitch: true,
                       errorMessage: "",
-                      removeScreen: true,
                       buttonText: "Get Started",
                     );
 
