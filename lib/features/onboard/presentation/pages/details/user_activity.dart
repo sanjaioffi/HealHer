@@ -1,10 +1,9 @@
-// ignore_for_file: library_private_types_in_public_api
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heal_her/config/constants/constants.dart';
 import 'package:heal_her/config/routes/route_names.dart';
 import 'package:heal_her/features/onboard/data/model/fitness_model.dart';
-import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/active_icons.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/activitity/dot_indicator.dart';
 import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
@@ -17,7 +16,7 @@ class OnboardActivity extends StatefulWidget {
   const OnboardActivity({super.key});
 
   @override
-  _OnboardActivityState createState() => _OnboardActivityState();
+  State createState() => _OnboardActivityState();
 }
 
 class _OnboardActivityState extends State<OnboardActivity> {
