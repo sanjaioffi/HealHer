@@ -17,6 +17,17 @@ class UserEntity {
   // Activity
   List<String> userMedicalIssues = [];
   int activityIdx = -1;
-}
 
-UserEntity userEntity = UserEntity();
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'userName': userName,
+      'userAge': userAge,
+      'userIsMale': userIsMale,
+      'userHeight': userHeight,
+      'userWeight': userWeight,
+      'periodCycle': periodCycle,
+      'userMedicalIssues': userMedicalIssues,
+      'activityIdx': activityIdx,
+    };
+  }
+}

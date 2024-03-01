@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heal_her/config/constants/constants.dart';
 import '../../../../../config/routes/route_names.dart';
 import '../../../domain/entity/user_entity.dart';
 import '../generic/bottom_tile.dart';
