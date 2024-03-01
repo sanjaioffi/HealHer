@@ -1,9 +1,11 @@
 import 'dart:io';
 import 'package:heal_her/config/services/services.dart';
+import 'package:heal_her/features/onboard/domain/usecase/auth_user.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
 class DependencyInjection {
+  //
   ServicesManager servicesManager = ServicesManager();
 
   Future<void> inject() async {
@@ -11,6 +13,7 @@ class DependencyInjection {
     final Directory documentDirectory =
         await getApplicationDocumentsDirectory();
 
+    // Hive Initialisation
     Hive.init(documentDirectory.path);
 
     // Managers
@@ -19,7 +22,7 @@ class DependencyInjection {
     // Controllers
     await servicesManager.registerGetControllers();
 
-    // Inject
-    await servicesManager.registerControllersInMemory();
+    // UseCase
+    await servicesManager.registerUseCases();
   }
 }
