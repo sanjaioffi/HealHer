@@ -63,14 +63,6 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
                   ),
                   const SizedBox(height: 20),
                   CircularPercentIndicator(
-                    // center: DottedBorder(
-                    //     borderType: BorderType.Circle,
-                    //     dashPattern: const [5, 10],
-                    //     child: Container(
-                    //       height: 150,
-                    //       width: 150,
-                    //       decoration: const BoxDecoration(shape: BoxShape.circle),
-                    //     )),
                     center: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -9,12 +9,14 @@ class ContinueElevatedButton extends StatefulWidget {
     required this.canSwitch,
     required this.errorMessage,
     this.removeScreen = false,
+    this.buttonText = "Continue",
   });
 
   final String nextRoute;
   final bool removeScreen;
   final bool canSwitch;
   final String errorMessage;
+  final String buttonText;
 
   @override
   State<ContinueElevatedButton> createState() => _ContinueElevatedButtonState();
@@ -40,9 +42,9 @@ class _ContinueElevatedButtonState extends State<ContinueElevatedButton> {
             );
           }
         },
-        child: const Text(
-          "Continue",
-          style: TextStyle(
+        child: Text(
+          widget.buttonText,
+          style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),

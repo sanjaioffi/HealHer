@@ -1,3 +1,16 @@
+import 'package:heal_her/config/services/services.dart';
+
 class DependencyInjection {
-  Future<void> inject() async {}
+  ServicesManager servicesManager = ServicesManager();
+
+  Future<void> inject() async {
+    // Managers
+    await servicesManager.resgisterManagers();
+
+    // Controllers
+    await servicesManager.registerGetControllers();
+
+    // Inject
+    await servicesManager.registerControllersInMemory();
+  }
 }

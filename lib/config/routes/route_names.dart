@@ -14,6 +14,7 @@ class AppRoute {
   static String onboardWeight = "/onboard-weight";
   static String onboardMedicalIssue = "/onboard-medical";
   static String onboardFitness = "/onboard-fitness";
+  static String onboardComplete = "/onboard-completed";
 
   // Main App
   static String homeScreen = "/home";
