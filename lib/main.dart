@@ -4,8 +4,12 @@ import 'package:get/get.dart';
 
 import 'config/routes/routes.dart';
 import 'config/theme/app_theme.dart';
+import 'features/onboard/data/source/source.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  DataSource source = DataSourceImp();
+  await  source.update();
   runApp(const MyApp());
 }
 

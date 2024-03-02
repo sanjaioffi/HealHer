@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../data/model/dual_choice_model.dart';
+import '../../../domain/model/dual_choice_model.dart';
 import '../../widgets/choice/region_slide.dart';
 import '../../widgets/generic/bottom_tile.dart';
 import '../../widgets/generic/continue_elevated_button.dart';

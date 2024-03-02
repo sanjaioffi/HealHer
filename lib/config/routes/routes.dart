@@ -17,6 +17,7 @@ import '../../features/onboard/presentation/pages/preferences/user_targets.dart'
 import '../../features/onboard/presentation/pages/registration/sign_process/login.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
 import '../../features/onboard/presentation/widgets/food/onboard_food.dart';
+import '../../features/recommendation/presentation/widgets/rec_detail_page.dart';
 import '../../features/step/presentation/step.dart';
 
 List<GetPage> routes = [
@@ -30,6 +31,9 @@ List<GetPage> routes = [
   GetPage(
       name: '/workoutRecommendation',
       page: () => const WorkoutRecommendationPage()),
+  GetPage(
+      name: '/RecommendationDetail',
+      page: () =>  RecommendationDetailPage()),
   GetPage(
       name: '/last_period_date',
       page: () => const OnboardLastPeriodDateScreen()),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../data/model/dual_choice_model.dart';
+import '../../../domain/model/dual_choice_model.dart';
 import 'food_slide.dart';
 
 import '../generic/bottom_tile.dart';

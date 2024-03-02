@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/gender_controller.dart';
-import '../../../data/model/dual_choice_model.dart';
+import '../../../domain/model/dual_choice_model.dart';
 import '../../widgets/generic/bottom_tile.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
 import '../../widgets/gender/gender_slide.dart';

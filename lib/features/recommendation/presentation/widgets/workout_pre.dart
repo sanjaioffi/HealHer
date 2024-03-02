@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:heal_her/features/recommendation/domain/entities.dart';
 
 import '../../../../config/theme/app_colors.dart';
@@ -15,14 +16,10 @@ class WorkoutPreviewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => WorkoutDetailPage(
-        //       workout: workouts,
-        //     ),
-        //   ),
-        // );
+        Get.toNamed(
+          '/RecommendationDetail',
+          arguments: workouts.workoutDetails,
+        );
       },
       child: Container(
         child: Stack(
