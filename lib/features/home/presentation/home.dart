@@ -63,14 +63,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const SizedBox(height: 20),
                   CircularPercentIndicator(
-                    // center: DottedBorder(
-                    //     borderType: BorderType.Circle,
-                    //     dashPattern: const [5, 10],
-                    //     child: Container(
-                    //       height: 150,
-                    //       width: 150,
-                    //       decoration: const BoxDecoration(shape: BoxShape.circle),
-                    //     )),
                     center: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -125,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             SizedBox(height: 10),
                             Text(
-                              '8000',
+                              '8K',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
