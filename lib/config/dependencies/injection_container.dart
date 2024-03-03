@@ -1,10 +1,14 @@
+import 'dart:developer';
 import 'dart:io';
+import 'package:heal_her/config/routes/route_names.dart';
 import 'package:heal_her/config/services/services.dart';
 import 'package:heal_her/features/onboard/domain/usecase/auth_user.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
 class DependencyInjection {
+  String initialRoute = AppRoute.onboardWelcome;
+
   //
   ServicesManager servicesManager = ServicesManager();
 
@@ -19,10 +23,20 @@ class DependencyInjection {
     // Managers
     await servicesManager.resgisterManagers();
 
+    // UseCase
+    await servicesManager.registerUseCases();
+
     // Controllers
     await servicesManager.registerGetControllers();
 
-    // UseCase
-    await servicesManager.registerUseCases();
+    Future<void> checkRoute() async {
+      final result = await serviceLocator<AuthenticateUser>()();
+
+      if (result == true) {
+        initialRoute = AppRoute.homeScreen;
+      }
+    }
+
+    await checkRoute();
   }
 }

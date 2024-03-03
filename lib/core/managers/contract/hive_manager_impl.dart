@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 
 import '../interface/hive_manager.dart';
@@ -15,8 +17,16 @@ class HiveManagerImpl implements HiveManager {
 
   @override
   Future readFromHive(String boxName, key) async {
-    final Box boxReference = _hiveBoxes[boxName]!;
-    return await boxReference.get(key);
+    if (!_hiveBoxes.containsKey(boxName)) {
+      await initialiseHiveBox(boxName);
+    }
+
+    final Box? boxReference = _hiveBoxes[boxName];
+
+    if (boxReference != null) {
+      return boxReference.get(key);
+    }
+    return null;
   }
 
   @override

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -8,10 +6,12 @@ import 'config/routes/route_names.dart';
 import 'config/routes/routes.dart';
 import 'config/theme/app_theme.dart';
 
+final DependencyInjection dependencyInjection = DependencyInjection();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await DependencyInjection().inject();
+  await dependencyInjection.inject();
 
   runApp(const MyApp());
 }
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
-        initialRoute: AppRoute.onboardWelcome,
+        initialRoute: dependencyInjection.initialRoute,
       ),
     );
   }

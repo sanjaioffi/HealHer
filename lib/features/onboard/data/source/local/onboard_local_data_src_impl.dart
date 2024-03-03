@@ -9,7 +9,10 @@ class OnboardLocalDataSrcImpl implements OnboardLocalDataSrc {
 
   @override
   Future<void> writeUserDataToHive(Map<String, dynamic> userDataMap) async {
+    //
     await hiveManager.initialiseHiveBox(userBoxReference);
+
+    //
     await hiveManager.writeToHive(
         userBoxReference, userDataReference, userDataMap);
   }
