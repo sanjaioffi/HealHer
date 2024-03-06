@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:heal_her/features/food/presentation/food.dart';
 import 'package:heal_her/features/onboard/presentation/pages/general/onboard_complete.dart';
 
 import '../../features/app/presentation/app.dart';
@@ -69,9 +70,11 @@ List<GetPage> routes = [
 
   //
   GetPage(name: AppRoute.stepScreen, page: () => const StepsScreen()),
+
   //
-  //
-  //
-  //
-  GetPage(name: AppRoute.homeScreen, page: () => const MainScreen())
+  GetPage(name: AppRoute.homeScreen, page: () => const MainScreen()),
+
+  GetPage(
+      name: AppRoute.foodRecommendationScreen,
+      page: () => const FoodRecommendationScreen())
 ];
