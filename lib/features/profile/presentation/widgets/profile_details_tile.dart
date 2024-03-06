@@ -29,26 +29,29 @@ class ProfileTileData extends StatelessWidget {
                 letterSpacing: 2,
               ),
             ),
-            RichText(
-              text: TextSpan(
-                text: profileTileData,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22.sp,
-                ),
-                children: [
-                  TextSpan(
-                    text: ' $profileTileSuffix',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.sp,
-                    ),
+            Padding(
+              padding: EdgeInsets.only(top: 8.h),
+              child: RichText(
+                text: TextSpan(
+                  text: profileTileData,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22.sp,
                   ),
-                ],
+                  children: [
+                    TextSpan(
+                      text: ' $profileTileSuffix',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -63,8 +66,6 @@ class ProfileTileData extends StatelessWidget {
                 ),
               )
             : const SizedBox(),
-
-        //
       ],
     );
   }

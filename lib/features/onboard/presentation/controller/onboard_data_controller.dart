@@ -1,12 +1,11 @@
-import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/core/managers/interface/hive_manager.dart';
+import 'package:heal_her/config/services/services.dart';
+import 'package:heal_her/core/managers/params/hive/hive_params.dart';
+import 'package:heal_her/core/managers/usecase/hive/write_to_hive_use_case.dart';
 
 class OnboardDataController extends GetxController {
-  final HiveManager hiveManager;
-
-  OnboardDataController({required this.hiveManager});
+  OnboardDataController();
 
   RxBool isUpdated = false.obs;
 
@@ -19,22 +18,15 @@ class OnboardDataController extends GetxController {
 
   Future<void> updateUserDataToHive() async {
     //
-    await hiveManager.initialiseHiveBox(userBoxReference);
+    await serviceLocator<WriteToHiveUseCase>().call(
+      params: HiveAddParams(
+        hiveBoxName: userBoxReference,
+        hiveKey: userDataReference,
+        data: userEntity.toMap(),
+      ),
+    );
 
-    await hiveManager.writeToHive(
-        userBoxReference, userDataReference, userEntity.toMap());
-
-    log("Verifyinh Write");
-
-    await verifyData();
     isUpdated.value = true;
     update();
-  }
-
-  Future<void> verifyData() async {
-    final result =
-        await hiveManager.readFromHive(userBoxReference, userDataReference);
-
-    log(result.toString());
   }
 }

@@ -29,14 +29,18 @@ class DependencyInjection {
     // Controllers
     await servicesManager.registerGetControllers();
 
-    Future<void> checkRoute() async {
-      final result = await serviceLocator<AuthenticateUser>()();
+    //Controller Register in Memory
 
+    Future<void> checkRoute() async {
+      final result = await serviceLocator<AuthenticateUserCase>()();
       if (result == true) {
         initialRoute = AppRoute.homeScreen;
       }
     }
 
     await checkRoute();
+
+    //
+    await servicesManager.registerControllersInMemory();
   }
 }

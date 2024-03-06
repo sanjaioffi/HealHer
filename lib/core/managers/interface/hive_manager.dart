@@ -7,4 +7,7 @@ abstract class HiveManager {
 
   // Write to Hive
   Future<void> writeToHive(String boxName, key, dynamic value);
+
+  //
+  Future<void> deleteFromHive(String boxName, key);
 }
