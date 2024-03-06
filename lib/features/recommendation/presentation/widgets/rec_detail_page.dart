@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
-import 'package:heal_her/features/recommendation/domain/entities.dart';
+import 'package:heal_her/features/recommendation/domain/entities/entities.dart';
 import 'package:heal_her/features/recommendation/presentation/widgets/video_player.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

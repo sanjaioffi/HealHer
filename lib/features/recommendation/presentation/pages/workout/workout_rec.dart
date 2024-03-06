@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/recommendation/domain/entities.dart';
+import 'package:heal_her/features/recommendation/domain/entities/entities.dart';
 import 'package:heal_her/features/recommendation/presentation/widgets/workout_appbar.dart';
 import 'package:heal_her/features/recommendation/presentation/widgets/workout_pre.dart';
 
