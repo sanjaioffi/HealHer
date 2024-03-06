@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -17,7 +15,7 @@ class OnboardStepsCompleteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final b = Get.put(serviceLocator<OnboardDataController>());
+    Get.put(serviceLocator<OnboardDataController>());
 
     //
     return Scaffold(

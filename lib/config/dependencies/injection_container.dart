@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 import 'package:heal_her/config/routes/route_names.dart';
 import 'package:heal_her/config/services/services.dart';

@@ -1,3 +1,5 @@
+import 'package:heal_her/core/managers/contract/hive_manager_impl.dart';
+
 class UserEntity {
   // Empty Constructor
   UserEntity();
@@ -59,27 +61,29 @@ class UserEntity {
 
   //
   double calculateBmi() {
-    return userWeight / (userHeight * userHeight);
+    double height = userHeight / 100;
+
+    return userWeight / (height * height);
   }
 
   double caloriesNeeded() {
     final double bmr =
         calculateBMR(userWeight, userHeight, userAge, userIsMale);
 
-    final double calorieRequired = calculateCaloriesNeeded(bmr, activityIdx);
+    final double calorieRequired = calculateCaloriesNeeded(bmr, 1.2);
     return calorieRequired;
   }
 
   //
   double calculateBMR(double weight, double height, int age, bool userIsMale) {
     if (userIsMale) {
-      return 10 * weight + 6.25 * height - 5 * age + 5;
+      return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
     } else {
-      return 10 * weight + 6.25 * height - 5 * age - 161;
+      return 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
     }
   }
 
-  double calculateCaloriesNeeded(double bmr, int activityFactor) {
+  double calculateCaloriesNeeded(double bmr, double activityFactor) {
     return bmr * activityFactor;
   }
 }
