@@ -13,26 +13,6 @@ class WorkoutRecommendationPage extends StatelessWidget {
       videoUrl:
           "https://player.vimeo.com/progressive_redirect/playback/907581242/rendition/360p/file.mp4?loc=external&oauth2_token_id=1747418641&signature=371b165bd4e058486034721b3150cbacbfd0e0e557c7abd1c7349f2941a21615",
       workoutSets: "3X5");
-  final workout = const WorkoutEntity(
-    workoutType: "Cardio",
-    workoutLevel: "Intermediate",
-    workoutItemCount: 10,
-    workoutImageUrl:
-        "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    workoutDuration: 16,
-    workoutDetails: [
-      w,
-      w,
-      w,
-      w,
-      w,
-      w,
-      w,
-      w,
-      w,
-      w,
-    ],
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -44,20 +24,13 @@ class WorkoutRecommendationPage extends StatelessWidget {
           children: [
             const WorkoutAppBar(),
             SizedBox(height: 10.h),
-            Text("Practice",
+            Text("Today Practice",
                 style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700)),
             SizedBox(height: 10.h),
-            Column(
+            const Column(
               children: [
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
-                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: w),
+                WorkoutPreviewWidget(workouts: w),
               ],
             ),
           ],

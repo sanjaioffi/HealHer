@@ -11,7 +11,7 @@ class WorkoutPreviewWidget extends StatelessWidget {
     super.key,
     required this.workouts,
   });
-  final WorkoutEntity workouts;
+  final WorkoutDetailEntity workouts;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class WorkoutPreviewWidget extends StatelessWidget {
       onTap: () {
         Get.toNamed(
           '/RecommendationDetail',
-          arguments: workouts.workoutDetails,
+          arguments: [workouts],
         );
       },
       child: Container(
@@ -51,7 +51,7 @@ class WorkoutPreviewWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        workouts.workoutType,
+                        workouts.workoutName,
                         style: TextStyle(
                             fontSize: 16.sp, fontWeight: FontWeight.w700),
                       ),
@@ -63,7 +63,7 @@ class WorkoutPreviewWidget extends StatelessWidget {
                       ),
                       // SizedBox(height: 5.h),
                       Text(
-                        "${workouts.workoutItemCount} Workouts",
+                        "${workouts.workoutSets} Workouts",
                         style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w600,
@@ -71,11 +71,11 @@ class WorkoutPreviewWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Image.network(
-                    workouts.workoutImageUrl,
-                    height: 100.h,
-                    width: 200.w,
-                  )
+                  // Image.network(
+                  //   workouts.,
+                  //   height: 100.h,
+                  //   width: 200.w,
+                  // )
                 ],
               ),
             ),
