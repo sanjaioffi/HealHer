@@ -4,8 +4,6 @@ import '../sign_up/common_access.dart';
 import '../sign_up/quick_sign_up.dart';
 import '../../../widgets/generic/continue_elevated_button.dart';
 
-import '../../../../../../config/theme/screen_size.dart';
-
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
@@ -18,7 +16,6 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -51,7 +48,9 @@ class _SignUpState extends State<SignUp> {
               passTextField(TextEditingController(), () {}),
               SizedBox(height: 20.w),
               const ContinueElevatedButton(
+                errorMessage: "",
                 nextRoute: 'name',
+                canSwitch: true,
               )
             ],
           ),

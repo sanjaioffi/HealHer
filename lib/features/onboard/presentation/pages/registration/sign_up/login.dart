@@ -5,7 +5,6 @@ import '../../../widgets/generic/continue_elevated_button.dart';
 import '../../../widgets/generic/top_tile.dart';
 import '../../../../../../config/theme/app_colors.dart';
 
-import '../../../../../../config/theme/screen_size.dart';
 import 'common_access.dart';
 
 class OnBoardLogin extends StatefulWidget {
@@ -18,7 +17,6 @@ class OnBoardLogin extends StatefulWidget {
 class _OnBoardLoginState extends State<OnBoardLogin> {
   @override
   Widget build(BuildContext context) {
-    ScreenSize().init(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -48,6 +46,8 @@ class _OnBoardLoginState extends State<OnBoardLogin> {
                 ),
                 const ContinueElevatedButton(
                   nextRoute: '/main',
+                  canSwitch: true,
+                  errorMessage: "",
                 ),
                 SizedBox(
                   height: 18.h,

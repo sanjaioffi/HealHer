@@ -21,8 +21,9 @@ class Tabs extends StatelessWidget {
       labelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 15.h),
       splashBorderRadius: BorderRadius.circular(50.w),
       indicator: BoxDecoration(
+          shape: BoxShape.rectangle,
           color: AppColor.purplyBlue,
-          borderRadius: BorderRadius.circular(30.w)),
+          borderRadius: BorderRadius.circular(5.w)),
       tabs: myTab,
       controller: tabController,
     );

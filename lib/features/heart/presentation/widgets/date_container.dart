@@ -16,7 +16,7 @@ class DateContainer extends StatefulWidget {
 class _DateContainerState extends State<DateContainer> {
   int index = 0;
 
-  List<DateTime> days = List.generate(30, (index) {
+  List<DateTime> days = List.generate(7, (index) {
     return DateTime.now().subtract(Duration(days: index));
   });
 

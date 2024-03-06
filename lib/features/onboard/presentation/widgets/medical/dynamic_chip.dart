@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/config/constants/constants.dart';
+import '../../../../../config/theme/app_colors.dart';
+import '../../../domain/entity/user_entity.dart';
 
 import '../../../../../config/theme/app_colors.dart';
 import '../../controller/medical_condition_controller.dart';
@@ -28,6 +31,7 @@ class _DynamicChipState extends State<DynamicChip> {
     } else {
       tags.add(widget.name);
     }
+    userEntity.userMedicalIssues = tags;
     setState(() {
       isImage1Visible = !isImage1Visible;
     });
@@ -40,12 +44,23 @@ class _DynamicChipState extends State<DynamicChip> {
     return GestureDetector(
       onTap: _toggleColor,
       child: Chip(
-          shadowColor: AppColor.heavyPurplyBlue,
+          shadowColor: isImage1Visible ? AppColor.purplyBlue : AppColor.white,
           elevation: 2,
-          label: Text(widget.name),
+          label: Text(
+            widget.name,
+            style: TextStyle(
+              color: !isImage1Visible ? AppColor.purplyBlue : AppColor.white,
+            ),
+          ),
           backgroundColor:
               isImage1Visible ? AppColor.purplyBlue : AppColor.white,
-          avatar: isImage1Visible ? const Icon(Icons.check) : null),
+          avatar: isImage1Visible
+              ? Icon(
+                  Icons.check,
+                  color:
+                      !isImage1Visible ? AppColor.purplyBlue : AppColor.white,
+                )
+              : null),
     );
   }
 }
