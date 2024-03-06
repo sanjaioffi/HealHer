@@ -4,152 +4,127 @@ import 'package:get/get.dart';
 import 'package:heal_her/config/theme/app_colors.dart';
 import 'package:heal_her/features/recommendation/domain/entities.dart';
 import 'package:heal_her/features/recommendation/presentation/widgets/video_player.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'start_button.dart';
 
 class RecommendationDetailPage extends StatelessWidget {
   RecommendationDetailPage({super.key});
 
   final List<WorkoutDetailEntity> workout = Get.arguments;
+  final controller = PageController(keepPage: true);
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          scrolledUnderElevation: 0,
-          backgroundColor: Colors.transparent,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Colors.black,
-            ),
-          ),
-          title: Text('Workouts',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.0.sp,
-                  fontWeight: FontWeight.w600)),
-          centerTitle: true,
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(1.h),
-            child: Container(
-              color: Colors.grey.shade300,
-              height: 1.5.h,
-            ),
-          ),
-          titleSpacing: 0.0,
-        ),
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // frame with player
-              Container(
-                margin: EdgeInsets.all(10.sp),
-                height: 180.h,
-                width: double.infinity,
-                padding: EdgeInsets.all(5.sp),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(
-                    color: AppColor.santaGrey.withOpacity(0.5),
-                    width: 1.0,
-                  ),
-                ),
-                child: const VideoPlayerWidget(
-                    videoUrl:
-                        'https://cdn.pixabay.com/vimeo/563974349/treadmill-77916.mp4?width=640&hash=c2faefbcc7a16350715a4b505dad4397d4627314'),
-              ),
-              Text(
-                workout[0].workoutName,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              SizedBox(height: 4.h),
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(6.sp),
-                    decoration: BoxDecoration(
-                      color: AppColor.santaGrey.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(5.r),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.av_timer_outlined),
-                        Text('${workout[0].duration} mins')
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Container(
-                    padding: EdgeInsets.all(6.sp),
-                    decoration: BoxDecoration(
-                      color: AppColor.santaGrey.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(5.r),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.local_fire_department_outlined),
-                        Text('${workout[0].kcal} kcal')
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                'Description',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                workout[0].description,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(height: 10.h),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10.h),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColor.purplyBlue,
-                    padding: EdgeInsets.symmetric(vertical: 10.h),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                  ),
-                  child: Text(
-                    'Start Workout',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
-              Text("Next Workouts",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600)),
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColor.bgColor,
+        title: const Text(
+          'Exercises',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
           ),
         ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 30.h,
+          ),
+          SmoothPageIndicator(
+              controller: controller,
+              count: workout.length,
+              effect: ScrollingDotsEffect(
+                activeStrokeWidth: 2.6,
+                activeDotScale: 1.3,
+                maxVisibleDots: 5,
+                radius: 8.r,
+                spacing: 10,
+                dotHeight: 6.h,
+                dotWidth: 7.w,
+              )),
+          SizedBox(
+            height: 555.h,
+            child: PageView(
+              controller: controller,
+              scrollDirection: Axis.horizontal,
+              children: workout
+                  .map((e) => Expanded(
+                        child: Container(
+                          // margin: const EdgeInsets.all(17),
+                          width: 300.w,
+                          height: double.maxFinite,
+                          color: AppColor.bgColor,
+                          child: Column(
+                            children: [
+                              Container(
+                                  width: 360.w,
+                                  height: 200.h,
+                                  margin: EdgeInsets.only(top: 50.h),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 10.w),
+                                  child:
+                                      VideoPlayerWidget(videoUrl: e.videoUrl)),
+                              SizedBox(
+                                height: 15.h,
+                              ),
+                              Text(
+                                e.workoutName,
+                                style: TextStyle(
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                              SizedBox(
+                                height: 15.h,
+                              ),
+                              Text(
+                                e.workoutSets,
+                                style: TextStyle(
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                e.description,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.normal,
+                                  color: AppColor.black.withOpacity(.4),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15.h,
+                              ),
+                              SizedBox(height: 50.h, child: TimerButton())
+                              // Text(
+                              //   "Duration: ${e.} minutes",
+                              //   style: TextStyle(
+                              //     fontSize: 13.sp,
+                              //     fontWeight: FontWeight.w600,
+                              //   ),
+                              // ),
+                            ],
+                          ),
+                        ),
+                      ))
+                  .toList(),
+            ),
+          ),
+        ],
       ),
     );
   }

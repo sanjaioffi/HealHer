@@ -5,36 +5,42 @@ class WorkoutDetailEntity extends Equatable {
   final String workoutName;
   final String description;
   final String videoUrl;
-  final String kcal;
-  final String duration;
-  final List<String> equipment;
+  final String workoutSets;
 
-  const WorkoutDetailEntity(
-      {required this.workoutName,
-      required this.description,
-      required this.videoUrl,
-      required this.kcal,
-      required this.duration,
-      required this.equipment});
+  const WorkoutDetailEntity({
+    required this.workoutName,
+    required this.description,
+    required this.videoUrl,
+    required this.workoutSets,
+  });
 
   @override
-  List<Object?> get props =>
-      [workoutName, description, videoUrl, kcal, duration, equipment];
+  List<Object?> get props => [workoutName, description, videoUrl, workoutSets];
 }
 
 class WorkoutEntity extends Equatable {
   final String workoutType;
-  final int workoutCount;
+  final String workoutLevel;
+
+  final int workoutItemCount;
   final String workoutImageUrl;
+  final int workoutDuration;
   final List<WorkoutDetailEntity> workoutDetails;
   const WorkoutEntity({
     required this.workoutType,
-    required this.workoutCount,
+    required this.workoutLevel,
+    required this.workoutItemCount,
     required this.workoutImageUrl,
+    required this.workoutDuration,
     required this.workoutDetails,
   });
-
   @override
-  List<Object?> get props =>
-      [workoutType, workoutCount, workoutDetails, workoutImageUrl];
+  List<Object?> get props => [
+        workoutType,
+        workoutLevel,
+        workoutItemCount,
+        workoutImageUrl,
+        workoutDuration,
+        workoutDetails
+      ];
 }

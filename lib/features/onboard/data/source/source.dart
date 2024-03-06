@@ -12,13 +12,10 @@ class DataSourceImp implements DataSource {
   Future update() async {
     var collectionName = "userData";
     var db = await Db.create(MONGO_URL);
-    await db.open();
-    inspect(db);
-    var collection = db.collection(collectionName);
-    collection.insertMany([
-      {'login': 'jdoe', 'name': 'John Doe', 'email': 'john@doe.com'},
-      {'login': 'lsmith', 'name': 'Lucy Smith', 'email': 'lucy@smith.com'}
-    ]);
+    await db.open();var collection = db.collection(collectionName);
+    collection.find().forEach((element) {
+      inspect(element);
+    });
   }
 }
 

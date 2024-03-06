@@ -1,9 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/config/theme/app_colors.dart';
 import 'package:heal_her/features/recommendation/domain/entities.dart';
-
-import '../../../../config/theme/app_colors.dart';
 
 class WorkoutPreviewWidget extends StatelessWidget {
   const WorkoutPreviewWidget({
@@ -22,58 +23,60 @@ class WorkoutPreviewWidget extends StatelessWidget {
         );
       },
       child: Container(
-        child: Stack(
+        height: 150.h,
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+        margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+        decoration: BoxDecoration(
+          color: AppColor.bluishCyanLight,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.only(top: 10.h),
-              height: 180.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
-                image: DecorationImage(
-                  image: NetworkImage(workouts.workoutImageUrl),
-                  fit: BoxFit.cover,
-                ),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text('55 Min',
+                    style: TextStyle(
+                        fontSize: 13.sp, fontWeight: FontWeight.w600)),
+              ],
             ),
-            Positioned(
-              bottom: .1.h,
-              left: 0.1,
-              child: Container(
-                width: 330.w,
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                decoration: BoxDecoration(
-                  color: AppColor.santaGrey.withOpacity(0.5),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10.r),
-                      bottomRight: Radius.circular(10.r)),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Fitness',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15.sp,
-                              color: AppColor.white),
-                        ),
-                        const Icon(Icons.arrow_forward_ios_rounded,
-                            color: AppColor.white)
-                      ],
-                    ),
-                    Text(
-                      '100 Workouts',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12.sp,
-                          color: AppColor.santaGrey.withOpacity(.4)),
-                    ),
-                  ],
-                ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        workouts.workoutType,
+                        style: TextStyle(
+                            fontSize: 16.sp, fontWeight: FontWeight.w700),
+                      ),
+                      // SizedBox(height: 5.h),
+                      Text(
+                        "Amateur Level",
+                        style: TextStyle(
+                            fontSize: 12.sp, fontWeight: FontWeight.w600),
+                      ),
+                      // SizedBox(height: 5.h),
+                      Text(
+                        "${workouts.workoutItemCount} Workouts",
+                        style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: AppColor.santaGrey.withOpacity(.4)),
+                      ),
+                    ],
+                  ),
+                  Image.network(
+                    workouts.workoutImageUrl,
+                    height: 100.h,
+                    width: 200.w,
+                  )
+                ],
               ),
             ),
           ],

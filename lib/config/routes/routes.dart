@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:heal_her/features/recommendation/presentation/pages/food/food_rec.dart';
 import 'package:heal_her/features/recommendation/presentation/pages/workout/workout_rec.dart';
 
 import '../../features/activity/presentation/activity.dart';
@@ -21,6 +22,8 @@ import '../../features/recommendation/presentation/widgets/rec_detail_page.dart'
 import '../../features/step/presentation/step.dart';
 
 List<GetPage> routes = [
+  GetPage(
+      name: "/foodRecommendation", page: () => const FoodRecommendationPage()),
   GetPage(name: '/', page: () => const WelcomeScreen()),
   GetPage(name: '/signup', page: () => const SignUp()),
   GetPage(name: '/signin', page: () => const Login()),
@@ -32,8 +35,7 @@ List<GetPage> routes = [
       name: '/workoutRecommendation',
       page: () => const WorkoutRecommendationPage()),
   GetPage(
-      name: '/RecommendationDetail',
-      page: () =>  RecommendationDetailPage()),
+      name: '/RecommendationDetail', page: () => RecommendationDetailPage()),
   GetPage(
       name: '/last_period_date',
       page: () => const OnboardLastPeriodDateScreen()),

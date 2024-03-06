@@ -1,193 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
 import 'package:heal_her/features/recommendation/domain/entities.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-
-import '../../widgets/workout_pre.dart';
+import 'package:heal_her/features/recommendation/presentation/widgets/workout_appbar.dart';
+import 'package:heal_her/features/recommendation/presentation/widgets/workout_pre.dart';
 
 class WorkoutRecommendationPage extends StatelessWidget {
   const WorkoutRecommendationPage({super.key});
-
-  final WorkoutEntity workouts = const WorkoutEntity(
-    workoutCount: 100,
+  static const w = WorkoutDetailEntity(
+      workoutName: "Jumping Jacks  🦘",
+      description:
+          "Jumping jacks are a great total-body workout you can do at home. They increase your heart rate to help you burn fat and improve your cardiovascular fitness. They also help you warm up for other exercises or sports.",
+      videoUrl:
+          "https://player.vimeo.com/progressive_redirect/playback/907581242/rendition/360p/file.mp4?loc=external&oauth2_token_id=1747418641&signature=371b165bd4e058486034721b3150cbacbfd0e0e557c7abd1c7349f2941a21615",
+      workoutSets: "3X5");
+  final workout = const WorkoutEntity(
     workoutType: "Cardio",
+    workoutLevel: "Intermediate",
+    workoutItemCount: 10,
     workoutImageUrl:
-        "https://www.shutterstock.com/image-photo/young-man-sportswear-running-on-600nw-428663329.jpg",
+        "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    workoutDuration: 16,
     workoutDetails: [
-      WorkoutDetailEntity(
-          workoutName: "Cardio",
-          description:
-              "Cardio is a type of exercise that gets your heart rate up and makes you breathe harder. It is a great way to keep your heart healthy and to burn calories.",
-          videoUrl: "https://www.youtube.com/watch?v=IrA9dvgRKR0",
-          kcal: "200",
-          duration: "30",
-          equipment: ["Treadmill", "Elliptical", "Stationary bike"]),
-    ],
-  );
-  final WorkoutEntity workouts2 = const WorkoutEntity(
-    workoutCount: 100,
-    workoutType: "Cardio",
-    workoutImageUrl:
-        "https://origympersonaltrainercourses.co.uk/files/img_cache/6797/570_400_1_1595248240_homeworkout-image.jpg?1701183962",
-    workoutDetails: [
-      WorkoutDetailEntity(
-          workoutName: "Cardio",
-          description:
-              "Cardio is a type of exercise that gets your heart rate up and makes you breathe harder. It is a great way to keep your heart healthy and to burn calories.",
-          videoUrl: "https://www.youtube.com/watch?v=IrA9dvgRKR0",
-          kcal: "200",
-          duration: "30",
-          equipment: ["Treadmill", "Elliptical", "Stationary bike"]),
-    ],
-  );
-  final WorkoutEntity workouts3 = const WorkoutEntity(
-    workoutCount: 100,
-    workoutType: "Cardio",
-    workoutImageUrl:
-        "https://luna-askmen-images.askmen.com/fitness/workout/what-are-the-disadvantages-of-cardiovascular-exercise/askmen-lead-image-template-1-1692801598.png",
-    workoutDetails: [
-      WorkoutDetailEntity(
-          workoutName: "Cardio",
-          description:
-              "Cardio is a type of exercise that gets your heart rate up and makes you breathe harder. It is a great way to keep your heart healthy and to burn calories.",
-          videoUrl: "https://www.youtube.com/watch?v=IrA9dvgRKR0",
-          kcal: "200",
-          duration: "30",
-          equipment: ["Treadmill", "Elliptical", "Stationary bike"]),
-    ],
-  );
-  final WorkoutEntity workouts4 = const WorkoutEntity(
-    workoutCount: 100,
-    workoutType: "Cardio",
-    workoutImageUrl:
-        "https://www.mensjournal.com/.image/t_share/MTk2MTM3MjczNzM4Mjc0MzA5/take-your-cardio-performance-to-the-next-level.jpg",
-    workoutDetails: [
-      WorkoutDetailEntity(
-          workoutName: "Cardio",
-          description:
-              "Cardio is a type of exercise that gets your heart rate up and makes you breathe harder. It is a great way to keep your heart healthy and to burn calories.",
-          videoUrl: "https://www.youtube.com/watch?v=IrA9dvgRKR0",
-          kcal: "200",
-          duration: "30",
-          equipment: ["Treadmill", "Elliptical", "Stationary bike"]),
-    ],
-  );
-  final WorkoutEntity workouts5 = const WorkoutEntity(
-    workoutCount: 100,
-    workoutType: "Cardio",
-    workoutImageUrl:
-        "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    workoutDetails: [
-      WorkoutDetailEntity(
-          workoutName: "Cardio",
-          description:
-              "Cardio is a type of exercise that gets your heart rate up and makes you breathe harder. It is a great way to keep your heart healthy and to burn calories.",
-          videoUrl: "https://www.youtube.com/watch?v=IrA9dvgRKR0",
-          kcal: "200",
-          duration: "30",
-          equipment: ["Treadmill", "Elliptical", "Stationary bike"]),
+      w,
+      w,
+      w,
+      w,
+      w,
+      w,
+      w,
+      w,
+      w,
+      w,
     ],
   );
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: workoutAppBar(context),
-        body: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const WorkoutAppBar(),
+            SizedBox(height: 10.h),
+            Text("Practice",
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700)),
+            SizedBox(height: 10.h),
+            Column(
               children: [
-                Center(
-                  child: SizedBox(
-                    height: 150.h,
-                    width: 150.w,
-                    child: CircularPercentIndicator(
-                      radius: 70.r,
-                      lineWidth: 13.0,
-                      animation: true,
-                      percent: 0.35,
-                      center: Text(
-                        "2 workouts",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15.5.sp),
-                      ),
-                      circularStrokeCap: CircularStrokeCap.round,
-                      progressColor: AppColor.purplyBlue,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Text(
-                  'Available Workouts',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18.sp,
-                      color: AppColor.black),
-                ),
-                // video preview
-                WorkoutPreviewWidget(
-                  workouts: workouts,
-                ),
-                WorkoutPreviewWidget(
-                  workouts: workouts2,
-                ),
-                WorkoutPreviewWidget(
-                  workouts: workouts3,
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Text(
-                  'Completed Workouts',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18.sp,
-                      color: AppColor.black),
-                ),
-                WorkoutPreviewWidget(
-                  workouts: workouts4,
-                ),
-                WorkoutPreviewWidget(
-                  workouts: workouts5,
-                ),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
+                WorkoutPreviewWidget(workouts: workout),
               ],
             ),
-          ),
+          ],
         ),
       ),
-    );
-  }
-
-  AppBar workoutAppBar(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      centerTitle: true,
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back_ios,
-          color: AppColor.black,
-        ),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-      title: Text(
-        'Workout Recommendation',
-        style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18.sp),
-      ),
-      bottom: PreferredSize(
-          preferredSize: Size.fromHeight(1.0.h),
-          child: Container(
-            color: AppColor.santaGrey.withOpacity(0.3),
-            height: 2.0.h,
-          )),
     );
   }
 }
