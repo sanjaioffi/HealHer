@@ -7,6 +7,11 @@ import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';
 import '../../widgets/generic/top_tile.dart';
 
+import '../../widgets/generic/bottom_tile.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
+import '../../widgets/generic/top_tile.dart';
 import '../../widgets/medical/dynamic_chip.dart';
 
 class MedicalConditionScreen extends StatelessWidget {

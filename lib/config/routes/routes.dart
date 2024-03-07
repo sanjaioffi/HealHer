@@ -58,9 +58,8 @@ List<GetPage> routes = [
   GetPage(name: AppRoute.onboardFitness, page: () => const OnboardActivity()),
 
   //
-  GetPage(
-      name: AppRoute.onboardComplete,
-      page: () => const OnboardStepsCompleteScreen()),
+  //
+  GetPage(name: AppRoute.onboardFitness, page: () => const OnboardActivity()),
 
   //
   GetPage(

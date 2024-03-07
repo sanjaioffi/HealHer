@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../config/theme/app_colors.dart';
 
 import '../../../../config/theme/app_colors.dart';
 import 'bar_chart_graph.dart';
@@ -47,7 +48,8 @@ Container graphBackGroundContainer({required Widget child}) {
 Column innerGraphWidget(
     {required String text1,
     required Widget text2,
-    required Period periodType}) {
+    required Period periodType,
+    required List<int> data}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -75,7 +77,11 @@ Column innerGraphWidget(
           text2
         ],
       ),
-      Expanded(child: HeartBarChart(periodType: periodType))
+      Expanded(
+          child: HeartBarChart(
+        periodType: periodType,
+        data: data,
+      ))
     ],
   );
 }
