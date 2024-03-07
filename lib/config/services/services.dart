@@ -8,6 +8,13 @@ import 'package:heal_her/core/managers/usecase/cache/read_from_cache_use_case.da
 import 'package:heal_her/core/managers/usecase/cache/write_to_cache_use_case.dart';
 import 'package:heal_her/core/managers/usecase/hive/delete_from_hive_use_case.dart';
 import 'package:heal_her/core/managers/usecase/hive/read_from_hive_use_case.dart';
+import 'package:heal_her/features/food/data/repo/diet_repo_impl.dart';
+import 'package:heal_her/features/food/data/src/local/diet_local_data_src.dart';
+import 'package:heal_her/features/food/data/src/local/diet_local_data_src_impl.dart';
+import 'package:heal_her/features/food/data/src/remote/diet_remote_data_src.dart';
+import 'package:heal_her/features/food/data/src/remote/diet_remote_data_src_impl.dart';
+import 'package:heal_her/features/food/domain/repo/diet_repo.dart';
+import 'package:heal_her/features/food/domain/usecase/fetch_diet_local.dart';
 import 'package:heal_her/features/onboard/domain/usecase/auth_user.dart';
 import 'package:heal_her/features/onboard/presentation/controller/onboard_data_controller.dart';
 import 'package:heal_her/features/profile/presentation/controller/profile_controller.dart';
@@ -25,6 +32,25 @@ class ServicesManager {
     // Runtime Manager Injection
     serviceLocator
         .registerSingleton<RunTimeStorageCache>(RunTimeStorageCacheImpl());
+  }
+
+  Future<void> registerDataSrc() async {
+    // Diet Local Src
+    serviceLocator.registerSingleton<DietLocalDataSrc>(DietLocalDataSrcImpl());
+
+    // Remote Local Src
+    serviceLocator
+        .registerSingleton<DietRemoteDataSrc>(DietRemoteDataSrcImpl());
+  }
+
+  // Repository Injection
+  Future<void> resgisterRepositories() async {
+    serviceLocator.registerSingleton<DietRepo>(
+      DietRepoImpl(
+        serviceLocator(),
+        serviceLocator(),
+      ),
+    );
   }
 
   // Get Controllers

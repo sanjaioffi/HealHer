@@ -20,7 +20,7 @@ class CalorieInfo extends StatelessWidget {
           //
 
           const DietTile(
-            dietStatValue: "1140 Kcal",
+            dietStatValue: "1.1K Kcal",
             dietStatTitle: "Required",
           ),
 
@@ -70,7 +70,7 @@ class CalorieInfo extends StatelessWidget {
           //
 
           const DietTile(
-            dietStatValue: "1140 Kcal",
+            dietStatValue: "1K cal",
             dietStatTitle: "Minimum",
             isRightToLeft: true,
           ),

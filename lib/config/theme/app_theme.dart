@@ -5,6 +5,7 @@ import 'app_colors.dart';
 ThemeData buildTheme() {
   return ThemeData(
     fontFamily: 'Poppins',
+    dividerColor: Colors.transparent,
     iconTheme: const IconThemeData(size: 20, color: Colors.black),
     elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(

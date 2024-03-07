@@ -58,9 +58,6 @@ class DietOverView extends StatelessWidget {
             )
           ],
         ),
-        const ListTile(
-          title: Text("hjj"),
-        ),
       ],
     );
   }

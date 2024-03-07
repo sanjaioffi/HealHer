@@ -18,7 +18,6 @@ class FoodRecommendationScreen extends StatelessWidget {
             SizedBox(
               height: 900,
             ),
-            Text("Hi"),
           ],
         ),
       ),

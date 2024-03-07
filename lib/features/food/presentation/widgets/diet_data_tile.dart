@@ -8,12 +8,14 @@ class DietTileData extends StatelessWidget {
     required this.profileTileData,
     required this.profileTileSuffix,
     this.isLastTile = false,
+    this.isWhiteColor = true,
   });
 
   final String profileTileTitle;
   final String profileTileData;
   final String profileTileSuffix;
   final bool isLastTile;
+  final bool isWhiteColor;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class DietTileData extends StatelessWidget {
             Text(
               profileTileTitle,
               style: TextStyle(
-                color: Colors.white,
+                color: isWhiteColor ? Colors.white : Colors.black,
                 fontSize: 15.sp,
                 letterSpacing: 2,
                 fontWeight: FontWeight.bold,
@@ -36,7 +38,7 @@ class DietTileData extends StatelessWidget {
                 text: TextSpan(
                   text: profileTileData,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: isWhiteColor ? Colors.white : Colors.black,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w300,
                     fontSize: 15.sp,
@@ -46,7 +48,7 @@ class DietTileData extends StatelessWidget {
                       text: ' $profileTileSuffix',
                       style: TextStyle(
                         fontFamily: 'Poppins',
-                        color: Colors.white,
+                        color: isWhiteColor ? Colors.white : Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 18.sp,
                       ),
@@ -61,7 +63,7 @@ class DietTileData extends StatelessWidget {
             ? SizedBox(
                 height: 50.h,
                 child: VerticalDivider(
-                  color: Colors.white,
+                  color: isWhiteColor ? Colors.white : Colors.black,
                   thickness: 1,
                   width: 45.w,
                 ),
