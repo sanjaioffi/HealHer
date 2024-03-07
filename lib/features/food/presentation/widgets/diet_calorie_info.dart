@@ -25,7 +25,7 @@ class CalorieInfo extends StatelessWidget {
             //
 
             DietTile(
-              dietStatValue: "${(controller.caloriesRequired)}K Cal",
+              dietStatValue: "${(controller.caloriesRequired.value)} KCal",
               dietStatTitle: "Required",
             ),
 
@@ -41,7 +41,7 @@ class CalorieInfo extends StatelessWidget {
                       color: AppColor.white,
                     ),
                     Text(
-                      "2100",
+                      controller.caloriesRequired.value.toString(),
                       style: TextStyle(
                         color: AppColor.white,
                         fontSize: 35.sp,
@@ -63,7 +63,7 @@ class CalorieInfo extends StatelessWidget {
               animation: true,
               animationDuration: 500,
               lineWidth: 12.0,
-              percent: 0.9,
+              percent: controller.currentCalories.value,
               reverse: false,
               arcType: ArcType.FULL,
               startAngle: 0.0,
@@ -73,7 +73,7 @@ class CalorieInfo extends StatelessWidget {
             ),
 
             const DietTile(
-              dietStatValue: "1K cal",
+              dietStatValue: "1000 Kcal",
               dietStatTitle: "Minimum",
               isRightToLeft: true,
             ),

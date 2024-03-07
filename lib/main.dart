@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
-        initialRoute: AppRoute.foodRecommendationScreen,
+        initialRoute: dependencyInjection.initialRoute,
       ),
     );
   }

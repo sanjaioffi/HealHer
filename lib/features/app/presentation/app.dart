@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heal_her/features/food/presentation/food.dart';
 
 import '../../activity/presentation/activity.dart';
 import '../../device/presentation/device.dart';
@@ -15,7 +16,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   var screens = [
     const HomeScreen(),
-    const ActivitiesScreen(),
+    const FoodRecommendationScreen(),
     const DeviceScreen(),
     const ProfileScreen()
   ];

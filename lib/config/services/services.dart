@@ -116,5 +116,6 @@ class ServicesManager {
   Future<void> registerControllersInMemory() async {
     // Register Profile  Controller
     Get.put(serviceLocator<ProfileController>());
+    Get.put(serviceLocator<DietController>());
   }
 }

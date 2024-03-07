@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:get/get_rx/get_rx.dart';
 import 'package:heal_her/config/constants/constants.dart';
 import 'package:heal_her/config/services/services.dart';
 import 'package:heal_her/core/managers/params/hive/hive_params.dart';
@@ -17,7 +18,7 @@ class DietController extends GetxController {
 
   RxDouble caloriesRequired = 1000.0.obs;
 
-  RxInt currentCalories = 0.obs;
+  RxDouble currentCalories = 0.1.obs;
 
   RxDouble carbsRequired = 1000.0.obs;
 
@@ -48,7 +49,7 @@ class DietController extends GetxController {
       fatTotal += dietEntity.sessionFat;
     }
 
-    caloriesRequired.value = (caloriesTotal / 1000).roundToDouble();
+    caloriesRequired.value = caloriesTotal.roundToDouble();
 
     //
     carbsRequired.value = carbTotal.roundToDouble();
@@ -62,11 +63,12 @@ class DietController extends GetxController {
     final int hour = now.hour;
 
     if (hour < 12) {
-      currentCalories.value = 0;
+      currentCalories.value = .3;
     } else if (hour > 12 && hour < 18) {
-      currentCalories.value = 1;
+      currentCalories.value = .6;
+    } else {
+      currentCalories.value = 1.0;
     }
-    currentCalories.value = 2;
   }
 
   //
@@ -97,6 +99,7 @@ class DietController extends GetxController {
       dietList = result;
     }
     calculateDietDetails();
+    determineTimeOfDay();
     update();
   }
 }

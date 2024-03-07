@@ -50,7 +50,7 @@ class DietTileData extends StatelessWidget {
                         fontFamily: 'Poppins',
                         color: isWhiteColor ? Colors.white : Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18.sp,
+                        fontSize: 14.sp,
                       ),
                     ),
                   ],
