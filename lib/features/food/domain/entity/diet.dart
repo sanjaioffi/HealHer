@@ -26,4 +26,28 @@ class Diet {
       sessionMsg: dietModel.sessionMsg,
     );
   }
+
+  // Return Diet from Map<String, dynamic>
+  factory Diet.fromMap(Map<String, dynamic> map) {
+    return Diet(
+      sessionName: map['sessionName'],
+      sessionCalories: map['sessionCalories'],
+      sessionCarbs: map['sessionCarbs'],
+      sessionFat: map['sessionFat'],
+      sessionProtein: map['sessionProtein'],
+      sessionMsg: map['sessionMsg'],
+    );
+  }
+
+  // Return Diet to Map<String, dynamic>
+  Map<String, dynamic> toMap() {
+    return {
+      'sessionName': sessionName,
+      'sessionCalories': sessionCalories,
+      'sessionCarbs': sessionCarbs,
+      'sessionFat': sessionFat,
+      'sessionProtein': sessionProtein,
+      'sessionMsg': sessionMsg,
+    };
+  }
 }

@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class DietModel {
   final String sessionName;
   final double sessionCalories;
@@ -15,34 +14,33 @@ class DietModel {
     required this.sessionMsg,
   });
 
-  factory DietModel.fromJson(
-      Map<String, dynamic> jsonResponse, String sessionName) {
-    // convert json response to DietModel object
+  // from Map
+  factory DietModel.fromMap(dynamic map, String sessionName) {
     return DietModel(
       sessionName: sessionName,
-      sessionCalories: jsonResponse['sessionCalories'],
-      sessionCarbs: jsonResponse['sessionCarbs'],
-      sessionFat: jsonResponse['sessionFat'],
-      sessionProtein: jsonResponse['sessionProtein'],
-      sessionMsg: jsonResponse['sessionMsg'],
+      sessionCalories: map['calorie'],
+      sessionCarbs: map['carbs'],
+      sessionFat: map['fibre'] ?? -1,
+      sessionProtein: map['protien'],
+      sessionMsg: map['msg'],
     );
   }
 
-  // from Map
-  factory DietModel.fromMap(dynamic map) {
+  // return Diet Model from Dictionary
+  factory DietModel.fromDictionary(dynamic dictionary) {
     return DietModel(
-      sessionName: map['sessionName'],
-      sessionCalories: map['sessionCalories'],
-      sessionCarbs: map['sessionCarbs'],
-      sessionFat: map['sessionFat'],
-      sessionProtein: map['sessionProtein'],
-      sessionMsg: map['sessionMsg'],
+      sessionName: dictionary['sessionName'],
+      sessionCalories: dictionary['sessionCalories'],
+      sessionCarbs: dictionary['sessionCarbs'],
+      sessionProtein: dictionary['sessionProtein'],
+      sessionFat: dictionary['sessionFat'],
+      sessionMsg: dictionary['sessionMsg'],
     );
   }
 }
 
 
-
+  
 //  "morning": {
 //         "calorie": 840,
 //         "carbs": 336,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/food/presentation/widgets/diet_data_tile.dart';
+import 'package:get/get.dart';
+import 'package:heal_her/config/constants/constants.dart';
+import 'package:heal_her/features/food/presentation/controller/diet_controller.dart';
+import 'package:heal_her/features/food/presentation/widgets/diet_break_down_widget.dart';
 
 class DietBreakDown extends StatelessWidget {
   const DietBreakDown({
@@ -9,67 +11,22 @@ class DietBreakDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
-      width: double.maxFinite.w,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black,
-          )
-        ],
-      ),
-      child: Column(
+    return GetBuilder<DietController>(builder: (controller) {
+      return Column(
         children: [
-          ExpansionTile(
-            leading: Icon(
-              Icons.sunny,
-              size: 25.sp,
-              color: Colors.amber,
+          for (int i = 0; i < controller.dietList.length; i++)
+            DietBreakDownWidget(
+              sessionName: controller.dietList[i].sessionName,
+              sessionMsg: controller.dietList[i].sessionMsg,
+              sessionCarbs: controller.dietList[i].sessionCarbs,
+              sessionVitamins: controller.dietList[i].sessionProtein,
+              sessionCalories: controller.dietList[i].sessionCalories,
+              sessionFats: controller.dietList[i].sessionFat,
+              sessionTileIcon: tileIconData[i],
+              sessionTileColor: tileColorData[i],
             ),
-            title: const Text(
-              'Morning Breakdown',
-            ),
-            trailing: CircleAvatar(backgroundColor: Colors.green, radius: 3.r),
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 10.h),
-                child: const Row(
-                  children: [
-                    DietTileData(
-                      profileTileTitle: "Carbs",
-                      profileTileData: "200/300",
-                      profileTileSuffix: "g",
-                      isWhiteColor: false,
-                    ),
-                    DietTileData(
-                      profileTileTitle: "Vitamins",
-                      profileTileData: "200/300",
-                      profileTileSuffix: "g",
-                      isWhiteColor: false,
-                    ),
-                    DietTileData(
-                      profileTileTitle: "Fats",
-                      profileTileData: "200/300",
-                      profileTileSuffix: "g",
-                      isWhiteColor: false,
-                      isLastTile: true,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-
-          //
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w),
-            child: const Text(
-                "It is recommended to use the  debwejwejewbjed ewenwdewk ewk knk"),
-          )
         ],
-      ),
-    );
+      );
+    });
   }
 }

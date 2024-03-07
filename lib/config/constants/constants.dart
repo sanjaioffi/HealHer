@@ -59,3 +59,15 @@ const String userBoxReference = "user_details";
 const String userDataReference = "user_data";
 
 const String userDietReference = "user_diet";
+
+const List<IconData> tileIconData = [
+  Icons.sunny,
+  Icons.cloud_outlined,
+  Icons.nightlight_outlined
+];
+
+const List<MaterialColor> tileColorData = [
+  Colors.amber,
+  Colors.grey,
+  Colors.blue,
+];

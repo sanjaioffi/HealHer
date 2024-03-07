@@ -1,28 +1,17 @@
+import 'dart:developer';
+
 import 'package:heal_her/config/constants/constants.dart';
 import 'package:heal_her/config/services/services.dart';
 import 'package:heal_her/core/managers/params/hive/hive_params.dart';
 import 'package:heal_her/core/managers/usecase/hive/read_from_hive_use_case.dart';
-import 'package:heal_her/core/managers/usecase/hive/write_to_hive_use_case.dart';
 import 'package:heal_her/features/food/data/model/diet_model.dart';
 import 'package:heal_her/features/food/data/src/local/diet_local_data_src.dart';
 
 class DietLocalDataSrcImpl implements DietLocalDataSrc {
   @override
-  Future<void> cacheDietPlan(Map dietData) async {
-    await serviceLocator<WriteToHiveUseCase>().call(
-      params: HiveAddParams(
-        hiveBoxName: userBoxReference,
-        hiveKey: userDietReference,
-        data: dietData,
-      ),
-    );
-  }
-
-  @override
   Future<List<DietModel>> retrieveDietPlan() async {
     //
-
-    final List<DietModel> dietModel = [];
+    final List<DietModel> dietModels = [];
 
     final respone = await serviceLocator<ReadFromHiveUseCase>().call(
       params: HiveRetrieveParams(
@@ -31,10 +20,14 @@ class DietLocalDataSrcImpl implements DietLocalDataSrc {
       ),
     );
 
-    if (respone != null) {
-      return respone;
+    log("DOne");
+
+    for (dynamic dietMap in respone) {
+      dietModels.add(DietModel.fromDictionary(dietMap));
     }
 
-    return dietModel;
+    log("DOne");
+
+    return dietModels;
   }
 }

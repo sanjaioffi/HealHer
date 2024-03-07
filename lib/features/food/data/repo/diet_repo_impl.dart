@@ -17,9 +17,9 @@ class DietRepoImpl implements DietRepo {
   Future<List<Diet>> getDietPlanFromRemote(double calories) async {
     final List<Diet> dietEntity = [];
 
-    //
-    final List<DietModel> dietModels =
-        await dietRemoteDataSrc.fetchDiet(calories);
+    final dietModels = await dietRemoteDataSrc.fetchDiet(calories);
+
+    if (dietModels.isEmpty) return dietEntity;
 
     for (DietModel dietModel in dietModels) {
       dietEntity.add(Diet.fromDietModel(dietModel));
@@ -29,8 +29,15 @@ class DietRepoImpl implements DietRepo {
   }
 
   @override
-  Future<List<Diet>> getDietPlanFromLocal() {
-    // TODO: implement getDietPlanFromLocal
-    throw UnimplementedError();
+  Future<List<Diet>> getDietPlanFromLocal() async {
+    final List<Diet> dietEntity = [];
+
+    final result = await dietLocalDataSrc.retrieveDietPlan();
+
+    for (DietModel dietModel in result) {
+      dietEntity.add(Diet.fromDietModel(dietModel));
+    }
+
+    return dietEntity;
   }
 }

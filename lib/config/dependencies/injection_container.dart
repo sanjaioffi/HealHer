@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:heal_her/config/routes/route_names.dart';
 import 'package:heal_her/config/services/services.dart';
@@ -21,6 +22,18 @@ class DependencyInjection {
 
     // Managers
     await servicesManager.resgisterManagers();
+
+    log("Completed Managers");
+
+    // Data Src
+    await servicesManager.registerDataSrc();
+
+    log("Completed Data Src");
+
+    //Repository
+    await servicesManager.resgisterRepositories();
+
+    log("Completed Repository");
 
     // UseCase
     await servicesManager.registerUseCases();

@@ -20,6 +20,7 @@ import 'package:heal_her/features/onboard/presentation/controller/onboard_data_c
 import 'package:heal_her/features/profile/presentation/controller/profile_controller.dart';
 
 import '../../core/managers/usecase/hive/write_to_hive_use_case.dart';
+import '../../features/food/presentation/controller/diet_controller.dart';
 
 final GetIt serviceLocator = GetIt.instance;
 
@@ -45,6 +46,7 @@ class ServicesManager {
 
   // Repository Injection
   Future<void> resgisterRepositories() async {
+    //
     serviceLocator.registerSingleton<DietRepo>(
       DietRepoImpl(
         serviceLocator(),
@@ -60,9 +62,15 @@ class ServicesManager {
       OnboardDataController(),
     );
 
+    // Profile Controller
     serviceLocator.registerSingleton<ProfileController>(
       ProfileController(),
     );
+
+    // Diet Controller
+    serviceLocator.registerSingleton<DietController>(DietController(
+      serviceLocator(),
+    ));
   }
 
   // UseCase Registrations
