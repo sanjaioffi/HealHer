@@ -1,11 +1,9 @@
 import 'dart:developer';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:heal_her/config/constants/constants.dart';
 import 'package:heal_her/config/services/services.dart';
 import 'package:heal_her/core/managers/params/hive/hive_params.dart';
-import 'package:heal_her/core/managers/usecase/hive/read_from_hive_use_case.dart';
 import 'package:heal_her/core/managers/usecase/hive/write_to_hive_use_case.dart';
 import 'package:heal_her/features/food/domain/entity/diet.dart';
 import 'package:heal_her/features/food/domain/repo/diet_repo.dart';
@@ -19,7 +17,7 @@ class DietController extends GetxController {
 
   RxDouble caloriesRequired = 1000.0.obs;
 
-  RxDouble currentCalories = 333.0.obs;
+  RxInt currentCalories = 0.obs;
 
   RxDouble carbsRequired = 1000.0.obs;
 
@@ -50,14 +48,25 @@ class DietController extends GetxController {
       fatTotal += dietEntity.sessionFat;
     }
 
-    caloriesRequired.value = double.parse(
-        (caloriesRequired.value / 1000).toString().substring(0, 3));
+    caloriesRequired.value = (caloriesTotal / 1000).roundToDouble();
 
     //
     carbsRequired.value = carbTotal.roundToDouble();
     proteinRequired.value = proteinTotal.roundToDouble();
     fatRequired.value = fatTotal.roundToDouble();
-    currentCalories.value = caloriesTotal.roundToDouble();
+  }
+
+  void determineTimeOfDay() {
+    final DateTime now = DateTime.now();
+
+    final int hour = now.hour;
+
+    if (hour < 12) {
+      currentCalories.value = 0;
+    } else if (hour > 12 && hour < 18) {
+      currentCalories.value = 1;
+    }
+    currentCalories.value = 2;
   }
 
   //
