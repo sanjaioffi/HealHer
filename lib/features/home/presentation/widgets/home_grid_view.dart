@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
-import 'package:heal_her/features/home/presentation/widgets/home_data_tile.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+
+import '../../../../config/theme/app_colors.dart';
+import 'home_data_tile.dart';
 
 class HomeGridView extends StatelessWidget {
   const HomeGridView({super.key});

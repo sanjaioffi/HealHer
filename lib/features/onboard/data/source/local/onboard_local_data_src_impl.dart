@@ -1,6 +1,6 @@
-import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/core/managers/interface/hive_manager.dart';
-import 'package:heal_her/features/onboard/data/source/local/onboard_local_data_src.dart';
+import '../../../../../config/constants/constants.dart';
+import '../../../../../core/managers/interface/hive_manager.dart';
+import 'onboard_local_data_src.dart';
 
 class OnboardLocalDataSrcImpl implements OnboardLocalDataSrc {
   final HiveManager hiveManager;

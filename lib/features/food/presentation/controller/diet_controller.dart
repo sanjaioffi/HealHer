@@ -1,13 +1,13 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
-import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/core/managers/params/hive/hive_params.dart';
-import 'package:heal_her/core/managers/usecase/hive/write_to_hive_use_case.dart';
-import 'package:heal_her/features/food/domain/entity/diet.dart';
-import 'package:heal_her/features/food/domain/repo/diet_repo.dart';
+
+import '../../../../config/constants/constants.dart';
+import '../../../../config/services/services.dart';
+import '../../../../core/managers/params/hive/hive_params.dart';
+import '../../../../core/managers/usecase/hive/write_to_hive_use_case.dart';
+import '../../domain/entity/diet.dart';
+import '../../domain/repo/diet_repo.dart';
 
 class DietController extends GetxController {
   //

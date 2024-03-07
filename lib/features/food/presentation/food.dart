@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/food/presentation/widgets/diet_details.dart';
-import 'package:heal_her/features/food/presentation/widgets/diet_stat.dart';
+import 'widgets/diet_details.dart';
+import 'widgets/diet_stat.dart';
 
 class FoodRecommendationScreen extends StatelessWidget {
   const FoodRecommendationScreen({super.key});

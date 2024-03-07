@@ -1,10 +1,12 @@
 import 'dart:developer';
 import 'dart:io';
-import 'package:heal_her/config/routes/route_names.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/features/onboard/domain/usecase/auth_user.dart';
+
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
+
+import '../../features/onboard/domain/usecase/auth_user.dart';
+import '../routes/route_names.dart';
+import '../services/services.dart';
 
 class DependencyInjection {
   String initialRoute = AppRoute.onboardWelcome;

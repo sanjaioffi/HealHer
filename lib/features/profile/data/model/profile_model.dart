@@ -1,4 +1,4 @@
-import 'package:heal_her/features/profile/domain/entity/profile_entity.dart';
+import '../../domain/entity/profile_entity.dart';
 
 class ProfileModel {
   final double profileHeight;

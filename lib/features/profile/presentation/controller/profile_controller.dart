@@ -1,9 +1,10 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/core/managers/params/cache/cache_params.dart';
-import 'package:heal_her/core/managers/usecase/cache/read_from_cache_use_case.dart';
+
+import '../../../../config/services/services.dart';
+import '../../../../core/managers/params/cache/cache_params.dart';
+import '../../../../core/managers/usecase/cache/read_from_cache_use_case.dart';
 
 class ProfileController extends GetxController {
   //

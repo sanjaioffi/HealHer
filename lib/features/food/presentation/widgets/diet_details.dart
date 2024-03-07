@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/features/food/presentation/controller/diet_controller.dart';
-import 'package:heal_her/features/food/presentation/widgets/diet_break_down_widget.dart';
+
+import '../../../../config/constants/constants.dart';
+import '../controller/diet_controller.dart';
+import 'diet_break_down_widget.dart';
 
 class DietBreakDown extends StatelessWidget {
   const DietBreakDown({

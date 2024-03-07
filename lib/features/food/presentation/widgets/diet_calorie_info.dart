@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
-import 'package:heal_her/features/food/presentation/controller/diet_controller.dart';
-import 'package:heal_her/features/food/presentation/widgets/diet_tile.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+
+import '../../../../config/theme/app_colors.dart';
+import '../controller/diet_controller.dart';
+import 'diet_tile.dart';
 
 class CalorieInfo extends StatelessWidget {
   const CalorieInfo({

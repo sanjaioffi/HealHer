@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:heal_her/features/food/data/model/diet_model.dart';
-import 'package:heal_her/features/food/data/src/remote/diet_remote_data_src.dart';
+import '../../model/diet_model.dart';
+import 'diet_remote_data_src.dart';
 import 'package:http/http.dart' as http;
 
 class DietRemoteDataSrcImpl implements DietRemoteDataSrc {

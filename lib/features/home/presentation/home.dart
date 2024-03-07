@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/home/presentation/widgets/home_grid_view.dart';
-import 'package:heal_her/features/home/presentation/widgets/home_stats.dart';
-import 'package:heal_her/features/home/presentation/widgets/home_topbar.dart';
-import 'package:heal_her/features/home/presentation/widgets/step_progress_indicator.dart';
 
 import '../../../config/theme/app_colors.dart';
+import 'widgets/home_grid_view.dart';
+import 'widgets/home_stats.dart';
+import 'widgets/home_topbar.dart';
+import 'widgets/step_progress_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

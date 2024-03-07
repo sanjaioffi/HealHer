@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
-import 'package:heal_her/features/profile/presentation/controller/profile_controller.dart';
+import '../../../../config/services/services.dart';
+import '../../../../config/theme/app_colors.dart';
+import '../controller/profile_controller.dart';
 
-import 'package:heal_her/features/profile/presentation/widgets/profile_details_tile.dart';
-import 'package:heal_her/features/profile/presentation/widgets/profile_user_info.dart';
+import 'profile_details_tile.dart';
+import 'profile_user_info.dart';
 
 final ProfileController profileController = serviceLocator<ProfileController>();
 

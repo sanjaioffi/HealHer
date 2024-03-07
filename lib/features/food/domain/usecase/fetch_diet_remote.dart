@@ -1,5 +1,5 @@
-import 'package:heal_her/core/usecase/use_case.dart';
-import 'package:heal_her/features/food/domain/entity/diet.dart';
+import '../../../../core/usecase/use_case.dart';
+import '../entity/diet.dart';
 
 import '../repo/diet_repo.dart';
 

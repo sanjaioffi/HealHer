@@ -1,6 +1,6 @@
-import 'package:heal_her/core/managers/interface/hive_manager.dart';
-import 'package:heal_her/core/managers/params/hive/hive_params.dart';
-import 'package:heal_her/core/usecase/use_case.dart';
+import '../../../usecase/use_case.dart';
+import '../../interface/hive_manager.dart';
+import '../../params/hive/hive_params.dart';
 
 class ReadFromHiveUseCase extends UseCase<dynamic, HiveRetrieveParams> {
   final HiveManager hiveManager;

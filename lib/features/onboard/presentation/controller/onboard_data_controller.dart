@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/core/managers/params/cache/cache_params.dart';
-import 'package:heal_her/core/managers/params/hive/hive_params.dart';
-import 'package:heal_her/core/managers/usecase/cache/write_to_cache_use_case.dart';
-import 'package:heal_her/core/managers/usecase/hive/write_to_hive_use_case.dart';
+import '../../../../config/constants/constants.dart';
+import '../../../../config/services/services.dart';
+import '../../../../core/managers/params/cache/cache_params.dart';
+import '../../../../core/managers/params/hive/hive_params.dart';
+import '../../../../core/managers/usecase/cache/write_to_cache_use_case.dart';
+import '../../../../core/managers/usecase/hive/write_to_hive_use_case.dart';
 
 class OnboardDataController extends GetxController {
   RxBool isUpdated = false.obs;

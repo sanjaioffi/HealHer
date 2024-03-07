@@ -1,5 +1,3 @@
-import 'package:heal_her/core/managers/contract/hive_manager_impl.dart';
-
 class UserEntity {
   // Empty Constructor
   UserEntity();

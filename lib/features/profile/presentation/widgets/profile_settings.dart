@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/profile/presentation/widgets/profile_settings_tile.dart';
+
+import 'profile_settings_tile.dart';
 
 class ProfileSettingsSection extends StatelessWidget {
   const ProfileSettingsSection({super.key});

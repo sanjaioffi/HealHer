@@ -1,8 +1,7 @@
 import 'package:get/get.dart';
-import 'package:heal_her/features/food/presentation/food.dart';
-import 'package:heal_her/features/onboard/presentation/pages/general/onboard_complete.dart';
 
 import '../../features/app/presentation/app.dart';
+import '../../features/food/presentation/food.dart';
 import '../../features/onboard/presentation/onboard.dart';
 import '../../features/onboard/presentation/pages/details/user_activity.dart';
 import '../../features/onboard/presentation/pages/details/user_condition.dart';
@@ -13,6 +12,7 @@ import '../../features/onboard/presentation/pages/details/user_name.dart';
 import '../../features/onboard/presentation/pages/details/user_period_cycle.dart';
 import '../../features/onboard/presentation/pages/details/user_period_date.dart';
 import '../../features/onboard/presentation/pages/details/user_weight.dart';
+import '../../features/onboard/presentation/pages/general/onboard_complete.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/login.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
 import '../../features/step/presentation/step.dart';

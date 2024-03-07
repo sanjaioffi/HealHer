@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+
+import '../../../../config/theme/app_colors.dart';
 
 class HomeDataTile extends StatelessWidget {
   const HomeDataTile({

@@ -1,4 +1,4 @@
-import 'package:heal_her/features/food/data/model/diet_model.dart';
+import '../../data/model/diet_model.dart';
 
 class Diet {
   final String sessionName;

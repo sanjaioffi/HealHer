@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/dependencies/injection_container.dart';
-import 'package:heal_her/config/routes/route_names.dart';
+
+import 'config/dependencies/injection_container.dart';
 import 'config/routes/routes.dart';
 import 'config/theme/app_theme.dart';
 

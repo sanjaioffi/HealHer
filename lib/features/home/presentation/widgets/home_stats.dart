@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/home/presentation/widgets/home_stat_tile.dart';
+
+import 'home_stat_tile.dart';
 
 class HomeHealthStat extends StatelessWidget {
   const HomeHealthStat({super.key});

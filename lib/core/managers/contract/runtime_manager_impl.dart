@@ -1,4 +1,4 @@
-import 'package:heal_her/core/managers/interface/runtime_manager.dart';
+import '../interface/runtime_manager.dart';
 
 class RunTimeStorageCacheImpl implements RunTimeStorageCache {
   final Map<String, dynamic> _cache;

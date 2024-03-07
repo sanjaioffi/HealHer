@@ -1,8 +1,8 @@
-import 'package:heal_her/features/food/data/model/diet_model.dart';
-import 'package:heal_her/features/food/data/src/local/diet_local_data_src.dart';
-import 'package:heal_her/features/food/data/src/remote/diet_remote_data_src.dart';
-import 'package:heal_her/features/food/domain/entity/diet.dart';
-import 'package:heal_her/features/food/domain/repo/diet_repo.dart';
+import '../../domain/entity/diet.dart';
+import '../../domain/repo/diet_repo.dart';
+import '../model/diet_model.dart';
+import '../src/local/diet_local_data_src.dart';
+import '../src/remote/diet_remote_data_src.dart';
 
 class DietRepoImpl implements DietRepo {
   final DietRemoteDataSrc dietRemoteDataSrc;

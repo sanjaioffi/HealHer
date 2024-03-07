@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/food/presentation/widgets/diet_data_tile.dart';
+
+import 'diet_data_tile.dart';
 
 class DietBreakDownWidget extends StatelessWidget {
   const DietBreakDownWidget({

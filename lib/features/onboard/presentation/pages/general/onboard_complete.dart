@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/routes/route_names.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/features/onboard/presentation/controller/onboard_data_controller.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/bottom_tile.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/step_indicator.dart';
-import 'package:heal_her/features/onboard/presentation/widgets/generic/top_tile.dart';
+import '../../../../../config/routes/route_names.dart';
+import '../../../../../config/services/services.dart';
+import '../../controller/onboard_data_controller.dart';
+import '../../widgets/generic/bottom_tile.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
+import '../../widgets/generic/top_tile.dart';
 
 class OnboardStepsCompleteScreen extends StatelessWidget {
   const OnboardStepsCompleteScreen({super.key});
