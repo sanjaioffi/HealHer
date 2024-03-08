@@ -12,6 +12,7 @@ dependencies:
   fl_chart: ^0.63.0
   flutter:
     sdk: flutter
+  flutter_blue: ^0.8.0
   flutter_blue_plus: ^1.31.15
   flutter_datetime_picker_bdaya: ^3.0.2
   flutter_ruler_picker: 1.0.3
