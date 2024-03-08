@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../config/services/services.dart';
 import '../../../../config/theme/app_colors.dart';
 import '../controller/profile_controller.dart';
-
 import 'profile_details_tile.dart';
 import 'profile_user_info.dart';
 

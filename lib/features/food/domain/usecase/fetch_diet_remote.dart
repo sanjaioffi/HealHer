@@ -1,6 +1,5 @@
 import '../../../../core/usecase/use_case.dart';
 import '../entity/diet.dart';
-
 import '../repo/diet_repo.dart';
 
 class FetchDiet implements UseCase<List<Diet>, DietParams> {

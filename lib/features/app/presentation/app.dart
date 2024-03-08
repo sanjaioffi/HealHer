@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/food/presentation/food.dart';
+
 import '../../device/presentation/device.dart';
+import '../../food/presentation/food.dart';
 import '../../home/presentation/home.dart';
 import '../../profile/presentation/profile.dart';
 

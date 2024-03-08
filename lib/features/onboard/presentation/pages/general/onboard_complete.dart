@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import '../../../../../config/routes/route_names.dart';
 import '../../../../../config/services/services.dart';
 import '../../controller/onboard_data_controller.dart';

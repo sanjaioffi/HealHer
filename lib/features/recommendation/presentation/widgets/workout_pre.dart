@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
-import 'package:heal_her/features/recommendation/domain/entities.dart';
+
+import '../../../../config/theme/app_colors.dart';
+import '../../domain/entities.dart';
 
 class WorkoutPreviewWidget extends StatelessWidget {
   const WorkoutPreviewWidget({

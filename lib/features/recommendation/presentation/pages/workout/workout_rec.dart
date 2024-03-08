@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/recommendation/domain/entities.dart';
-import 'package:heal_her/features/recommendation/presentation/widgets/workout_appbar.dart';
-import 'package:heal_her/features/recommendation/presentation/widgets/workout_pre.dart';
+
+import '../../../domain/entities.dart';
+import '../../widgets/workout_appbar.dart';
+import '../../widgets/workout_pre.dart';
 
 class WorkoutRecommendationPage extends StatelessWidget {
   const WorkoutRecommendationPage({super.key});

@@ -34,6 +34,8 @@ class DietRepoImpl implements DietRepo {
 
     final result = await dietLocalDataSrc.retrieveDietPlan();
 
+    if (result.isEmpty) return dietEntity;
+
     for (DietModel dietModel in result) {
       dietEntity.add(Diet.fromDietModel(dietModel));
     }

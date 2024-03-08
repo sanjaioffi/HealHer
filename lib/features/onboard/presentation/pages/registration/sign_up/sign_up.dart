@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'quick_sign_up.dart';
+
 import '../../../widgets/generic/continue_elevated_button.dart';
 import '../../../widgets/generic/top_tile.dart';
-
 import 'common_access.dart';
+import 'quick_sign_up.dart';
 
 class OnBoardSignUpScreen extends StatefulWidget {
   const OnBoardSignUpScreen({super.key});

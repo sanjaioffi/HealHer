@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+
+import '../../../../config/theme/app_colors.dart';
 
 class TimerButton extends StatefulWidget {
   const TimerButton({Key? key}) : super(key: key);
 
   @override
-  _TimerButtonState createState() => _TimerButtonState();
+  State createState() => _TimerButtonState();
 }
 
 class _TimerButtonState extends State<TimerButton> {
