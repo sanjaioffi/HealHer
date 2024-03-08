@@ -1,9 +1,10 @@
 import 'dart:convert';
 
-import 'package:get/get.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
-import 'scan_controller.dart';
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+
+import 'scan_controller.dart';
 
 class DataController extends GetxController {
   final RxString heartRate = '0'.obs;

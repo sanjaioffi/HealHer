@@ -1,9 +1,9 @@
-import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/core/managers/params/hive/hive_params.dart';
-import 'package:heal_her/core/managers/usecase/hive/read_from_hive_use_case.dart';
-import 'package:heal_her/features/health/data/model/health_model.dart';
-import 'package:heal_her/features/health/data/src/local/health_local_data.dart';
+import '../../../../../config/constants/constants.dart';
+import '../../../../../config/services/services.dart';
+import '../../../../../core/managers/params/hive/hive_params.dart';
+import '../../../../../core/managers/usecase/hive/read_from_hive_use_case.dart';
+import '../../model/health_model.dart';
+import 'health_local_data.dart';
 
 class HealthLocalDataImpl extends HealthLocalDataSrc {
   @override

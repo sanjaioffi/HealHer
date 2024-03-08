@@ -1,7 +1,16 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 
+import '../../domain/entities/exercise.dart';
+import '../../domain/usecase/fetch_exercise_use_case.dart';
+
 class ExerciseController extends GetxController {
-  ExerciseController();
+  final FetchExerciseUseCase fetchExerciseUseCase;
+
+  ExerciseController(this.fetchExerciseUseCase);
+
+  RxList exercises = <Exercise>[].obs;
 
   @override
   void onInit() async {
@@ -10,5 +19,9 @@ class ExerciseController extends GetxController {
   }
 
   //
-  Future<void> getExercises() async {}
+  Future<void> getExercises() async {
+    log("Fetching");
+    exercises.value = await fetchExerciseUseCase.call();
+    update();
+  }
 }

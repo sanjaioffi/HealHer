@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
-import 'package:heal_her/features/health/presentation/controller/health_controller.dart';
 
+import '../../../config/services/services.dart';
+import '../../../config/theme/app_colors.dart';
+import 'controller/health_controller.dart';
 import 'widgets/health_expansion_tile.dart';
 
 class HealthRecommendationScreen extends StatelessWidget {

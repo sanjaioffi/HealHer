@@ -1,40 +1,69 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../domain/entities/exercise.dart';
-import 'widgets/workout_appbar.dart';
-import 'widgets/workout_pre.dart';
+import 'package:get/get.dart';
+import '../../../config/services/services.dart';
+import 'controller/exercise_controller.dart';
+import 'widgets/rec_detail_page.dart';
 
 class WorkoutRecommendationPage extends StatelessWidget {
   const WorkoutRecommendationPage({super.key});
-  static const w = Exercise(
-      workoutName: "Jumping Jacks  🦘",
-      description:
-          "Jumping jacks are a great total-body workout you can do at home. They increase your heart rate to help you burn fat and improve your cardiovascular fitness. They also help you warm up for other exercises or sports.",
-      videoUrl:
-          "https://player.vimeo.com/progressive_redirect/playback/907581242/rendition/360p/file.mp4?loc=external&oauth2_token_id=1747418641&signature=371b165bd4e058486034721b3150cbacbfd0e0e557c7abd1c7349f2941a21615",
-      workoutSets: "3X5");
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const WorkoutAppBar(),
-            SizedBox(height: 10.h),
-            Text("Today Practice",
-                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700)),
-            SizedBox(height: 10.h),
-            const Column(
-              children: [
-                WorkoutPreviewWidget(workouts: w),
-                WorkoutPreviewWidget(workouts: w),
-              ],
-            ),
-          ],
+    Get.put(serviceLocator<ExerciseController>());
+
+    //
+    return GetBuilder<ExerciseController>(builder: (controller) {
+      return Scaffold(
+        floatingActionButton: controller.exercises.isNotEmpty
+            ? FloatingActionButton(
+                onPressed: () {
+                  Get.to(
+                    () => RecommendationDetailPage(
+                      exercise: controller.exercises,
+                    ),
+                  );
+                },
+                child: const Icon(Icons.start),
+              )
+            : const SizedBox(),
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+            child: controller.exercises.isNotEmpty
+                ? Column(
+                    children: [
+                      Column(
+                        children: [
+                          // Place a image instead of
+                          // place holder
+                          const Placeholder(),
+                          Text(
+                            "Start Exercising",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.sp,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  )
+                : const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Column(
+                          children: [
+                            CircularProgressIndicator(),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

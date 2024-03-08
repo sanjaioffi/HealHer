@@ -1,4 +1,6 @@
+import '../../model/exercise_model.dart';
+
 abstract class ExerciseLocalDataSrc {
   //
-  Future getExercisesFromLocalDataBase();
+  Future<List<ExerciseModel>> getExercisesFromLocalDataBase();
 }

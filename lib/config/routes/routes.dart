@@ -54,7 +54,10 @@ List<GetPage> routes = [
 
   //
   GetPage(
-      name: '/RecommendationDetail', page: () => RecommendationDetailPage()),
+      name: '/RecommendationDetail',
+      page: () => RecommendationDetailPage(
+            exercise: const [],
+          )),
 
   //
   GetPage(

@@ -1,8 +1,9 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:heal_her/features/health/domain/entity/health_entity.dart';
-import 'package:heal_her/features/health/domain/repo/health_repo.dart';
+
+import '../../domain/entity/health_entity.dart';
+import '../../domain/repo/health_repo.dart';
 
 class HealthController extends GetxController {
   final HealthRepo repository;

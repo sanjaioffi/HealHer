@@ -65,6 +65,8 @@ const String userExerciseReference = "user_exercises";
 
 const String userHealthReference = "user_health";
 
+const String userExerciseTrackerReference = "user_exercise_tracker";
+
 const List<IconData> tileIconData = [
   Icons.sunny,
   Icons.cloud_outlined,

@@ -1,10 +1,11 @@
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:heal_her/features/health/data/repo/health_repo_impl.dart';
-import 'package:heal_her/features/health/data/src/local/health_local_data_impl.dart';
-import 'package:heal_her/features/health/data/src/remote/health_remote_data_src_impl.dart';
-import 'package:heal_her/features/health/domain/repo/health_repo.dart';
-import 'package:heal_her/features/health/presentation/controller/health_controller.dart';
+import '../../features/exercise/presentation/controller/exercise_controller.dart';
+import '../../features/health/data/repo/health_repo_impl.dart';
+import '../../features/health/data/src/local/health_local_data_impl.dart';
+import '../../features/health/data/src/remote/health_remote_data_src_impl.dart';
+import '../../features/health/domain/repo/health_repo.dart';
+import '../../features/health/presentation/controller/health_controller.dart';
 
 import '../../core/managers/contract/hive_manager_impl.dart';
 import '../../core/managers/contract/runtime_manager_impl.dart';
@@ -127,6 +128,11 @@ class ServicesManager {
     serviceLocator.registerSingleton<HealthController>(HealthController(
       serviceLocator(),
     ));
+
+    // Exercise Controller
+    serviceLocator.registerSingleton<ExerciseController>(ExerciseController(
+      serviceLocator(),
+    ));
   }
 
   // UseCase Registrations
@@ -169,8 +175,8 @@ class ServicesManager {
     );
 
     // To Get Workout from cloud
-    serviceLocator.registerSingleton<FetchExerciseFromRemote>(
-      FetchExerciseFromRemote(
+    serviceLocator.registerSingleton<FetchExerciseUseCase>(
+      FetchExerciseUseCase(
         serviceLocator(),
       ),
     );

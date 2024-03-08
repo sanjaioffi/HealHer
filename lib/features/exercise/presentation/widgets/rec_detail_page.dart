@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../config/theme/app_colors.dart';
-import '../../domain/entities/exercise.dart';
 import 'start_button.dart';
 import 'video_player.dart';
 
 class RecommendationDetailPage extends StatelessWidget {
-  RecommendationDetailPage({super.key});
+  RecommendationDetailPage({
+    Key? key,
+    required this.exercise,
+  }) : super(key: key);
 
-  final List<Exercise> workout = Get.arguments;
+  final List exercise;
+
+  //
   final controller = PageController(keepPage: true);
   @override
   Widget build(BuildContext context) {
@@ -42,23 +45,24 @@ class RecommendationDetailPage extends StatelessWidget {
             height: 30.h,
           ),
           SmoothPageIndicator(
-              controller: controller,
-              count: workout.length,
-              effect: ScrollingDotsEffect(
-                activeStrokeWidth: 2.6,
-                activeDotScale: 1.3,
-                maxVisibleDots: 5,
-                radius: 8.r,
-                spacing: 10,
-                dotHeight: 6.h,
-                dotWidth: 7.w,
-              )),
+            controller: controller,
+            count: exercise.length,
+            effect: ScrollingDotsEffect(
+              activeStrokeWidth: 2.6,
+              activeDotScale: 1.3,
+              maxVisibleDots: 5,
+              radius: 8.r,
+              spacing: 10,
+              dotHeight: 6.h,
+              dotWidth: 7.w,
+            ),
+          ),
           SizedBox(
             height: 555.h,
             child: PageView(
               controller: controller,
               scrollDirection: Axis.horizontal,
-              children: workout
+              children: exercise
                   .map((e) => Expanded(
                         child: Container(
                           // margin: const EdgeInsets.all(17),
@@ -110,13 +114,6 @@ class RecommendationDetailPage extends StatelessWidget {
                                 height: 15.h,
                               ),
                               SizedBox(height: 50.h, child: const TimerButton())
-                              // Text(
-                              //   "Duration: ${e.} minutes",
-                              //   style: TextStyle(
-                              //     fontSize: 13.sp,
-                              //     fontWeight: FontWeight.w600,
-                              //   ),
-                              // ),
                             ],
                           ),
                         ),

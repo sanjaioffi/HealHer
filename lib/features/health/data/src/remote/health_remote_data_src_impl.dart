@@ -1,13 +1,14 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/core/managers/params/hive/hive_params.dart';
-import 'package:heal_her/core/managers/usecase/hive/read_from_hive_use_case.dart';
-import 'package:heal_her/features/health/data/model/health_model.dart';
-import 'package:heal_her/features/health/data/src/remote/health_remote_data_src.dart';
 import 'package:http/http.dart' as http;
+
+import '../../../../../config/constants/constants.dart';
+import '../../../../../config/services/services.dart';
+import '../../../../../core/managers/params/hive/hive_params.dart';
+import '../../../../../core/managers/usecase/hive/read_from_hive_use_case.dart';
+import '../../model/health_model.dart';
+import 'health_remote_data_src.dart';
 
 class HealthRemoteDataSrcImpl implements HealthRemoteDataSrc {
   @override

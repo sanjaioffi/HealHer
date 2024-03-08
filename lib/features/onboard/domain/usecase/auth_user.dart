@@ -1,5 +1,4 @@
 import '../../../../config/constants/constants.dart';
-import '../../../../core/managers/params/cache/cache_params.dart';
 import '../../../../core/managers/params/hive/hive_params.dart';
 import '../../../../core/managers/usecase/cache/write_to_cache_use_case.dart';
 import '../../../../core/managers/usecase/hive/read_from_hive_use_case.dart';

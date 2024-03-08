@@ -31,7 +31,7 @@ class ExerciseModel {
   }
 
   // map from json
-  factory ExerciseModel.fromMap(Map<String, dynamic> map) {
+  factory ExerciseModel.fromMap(dynamic map) {
     return ExerciseModel(
       workoutName: map['exercise_name'].toString(),
       description: "map['description']",

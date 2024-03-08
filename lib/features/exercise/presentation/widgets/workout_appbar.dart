@@ -32,12 +32,14 @@ class WorkoutAppBar extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     appBarIconWidget(context, Icons.arrow_back_ios),
-                    Text("Burn Calories Points",
-                        style: TextStyle(
-                          color: AppColor.white,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w600,
-                        )),
+                    Text(
+                      "Burn Calories Points",
+                      style: TextStyle(
+                        color: AppColor.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                     appBarIconWidget(context, Icons.star),
                   ],
                 ),
@@ -68,12 +70,14 @@ class WorkoutAppBar extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Burn shop",
-                            style: TextStyle(
-                              color: AppColor.white,
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w600,
-                            )),
+                        Text(
+                          "Burn shop",
+                          style: TextStyle(
+                            color: AppColor.white,
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                         Container(
                           margin: EdgeInsets.only(left: 7.w),
                           padding: EdgeInsets.all(5.r),
@@ -92,8 +96,6 @@ class WorkoutAppBar extends StatelessWidget {
                   ],
                 ),
 
-                // SizedBox(height: 20.h),
-                // widget 3
                 Column(
                   children: [
                     Row(
@@ -105,12 +107,14 @@ class WorkoutAppBar extends StatelessWidget {
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
                             )),
-                        Text("level 2(50/100)",
-                            style: TextStyle(
-                              color: AppColor.white,
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w500,
-                            )),
+                        Text(
+                          "level 2(50/100)",
+                          style: TextStyle(
+                            color: AppColor.white,
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ],
                     ),
                     // SizedBox(height: 6.1.h),
