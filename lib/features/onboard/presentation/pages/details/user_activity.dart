@@ -10,6 +10,7 @@ import '../../widgets/generic/continue_elevated_button.dart';
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';
 import '../../../../../config/theme/app_colors.dart';
+import '../../../domain/model/fitness_model.dart';
 
 class OnboardActivity extends StatefulWidget {
   const OnboardActivity({super.key});

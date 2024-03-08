@@ -5,14 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../features/onboard/domain/entity/user_entity.dart';
 import '../theme/app_colors.dart';
 
-
 final textStyle1 = TextStyle(
-    color: AppColor.black,
-    fontWeight: FontWeight.w600,
-    fontSize: 16.h,
-    wordSpacing: 2,
-  );
-
+  color: AppColor.black,
+  fontWeight: FontWeight.w600,
+  fontSize: 16.h,
+  wordSpacing: 2,
+);
 
 List<String> activityOptions = [
   'Diabetes',
@@ -80,3 +78,10 @@ const List<MaterialColor> tileColorData = [
   Colors.grey,
   Colors.blue,
 ];
+
+var MONGO_PASS = "mohanasundharam";
+var MONGO_USER = "mohanasundharam";
+var MONGO_DATABASE = "HealHerDataBase";
+
+var MONGO_URL =
+    "mongodb+srv://$MONGO_USER:$MONGO_PASS@cluster0.vmuahl9.mongodb.net/$MONGO_DATABASE?retryWrites=true&w=majority&appName=Cluster0";
