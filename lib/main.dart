@@ -20,13 +20,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   FlutterBluePlus.setLogLevel(LogLevel.verbose, color: true);
-  Directory path = await getApplicationDocumentsDirectory();
-  Hive.init(path.path);
+ 
   await Hive.openBox('device');
   await Hive.openBox('data');
+  await Hive.openBox('day ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}');
   ScanController().checkConnnetedDevices();
-  Get.put(ScanController());
-  Get.put(DataController());
+ 
 
   await dependencyInjection.inject();
 

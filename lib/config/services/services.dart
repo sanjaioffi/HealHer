@@ -10,6 +10,8 @@ import '../../core/managers/usecase/cache/write_to_cache_use_case.dart';
 import '../../core/managers/usecase/hive/delete_from_hive_use_case.dart';
 import '../../core/managers/usecase/hive/read_from_hive_use_case.dart';
 import '../../core/managers/usecase/hive/write_to_hive_use_case.dart';
+import '../../features/device/controller/data_controller.dart';
+import '../../features/device/controller/scan_controller.dart';
 import '../../features/diet/data/repo/diet_repo_impl.dart';
 import '../../features/diet/data/src/local/diet_local_data_src.dart';
 import '../../features/diet/data/src/local/diet_local_data_src_impl.dart';
@@ -114,5 +116,7 @@ class ServicesManager {
 
   Future<void> registerControllersInMemory() async {
     Get.put(serviceLocator<ProfileController>());
+    Get.put(ScanController());
+    Get.put(DataController());
   }
 }

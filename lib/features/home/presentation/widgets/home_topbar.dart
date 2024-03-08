@@ -28,11 +28,12 @@ class _HomeAppBarState extends State<HomeAppBar> {
             });
 
             isPressed
-                ? Get.find<DataController>().sendCommand('hrps')
-                : Get.find<DataController>().sendCommand('stop');
+                ? {Get.find<DataController>().sendCommand('hrps')}
+                : Get.find<DataController>().sendCommand('stop', data: 'hrps');
             isPressed
                 ? Get.snackbar('Measuring', 'Requesting Data...')
                 : Get.snackbar('Stopped', 'Requesting Data Stopped');
+            
           },
           icon: isPressed
               ? const Icon(
