@@ -24,7 +24,6 @@ dependencies:
   http: ^1.2.1
   intl: ^0.18.1
   mongo_dart: ^0.10.0
-  mongo_dart: ^0.10.0
   path_provider: ^2.1.2
   percent_indicator: ^4.2.3
   scroll_snap_list: ^0.9.1

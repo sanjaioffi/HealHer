@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../config/constants/constants.dart';
 import '../../../../../config/routes/route_names.dart';
-import '../../../data/model/fitness_model.dart';
 import '../../widgets/activitity/active_icons.dart';
 import '../../widgets/activitity/dot_indicator.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
