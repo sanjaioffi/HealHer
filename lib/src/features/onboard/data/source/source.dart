@@ -1,7 +1,8 @@
 import 'dart:developer';
 
-import 'package:heal_her/src/core/config/constants/constants.dart';
 import 'package:mongo_dart/mongo_dart.dart';
+
+import '../../../../core/config/constants/constants.dart';
 
 abstract class DataSource {
   Future update();

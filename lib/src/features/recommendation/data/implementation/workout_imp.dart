@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:heal_her/src/core/error/error.dart';
-import 'package:heal_her/src/features/recommendation/data/source/workout_source.dart';
-import 'package:heal_her/src/features/recommendation/domain/entities/entities.dart';
-import 'package:heal_her/src/features/recommendation/domain/repository/workout_repo.dart';
+import '../../../../core/error/error.dart';
+import '../source/workout_source.dart';
+import '../../domain/entities/entities.dart';
+import '../../domain/repository/workout_repo.dart';
 
 import '../model/workout_model.dart';
 

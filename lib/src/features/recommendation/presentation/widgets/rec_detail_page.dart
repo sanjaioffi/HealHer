@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/src/core/config/theme/app_colors.dart';
-import 'package:heal_her/src/features/recommendation/domain/entities/entities.dart';
-import 'package:heal_her/src/features/recommendation/presentation/widgets/video_player.dart';
+import '../../../../core/config/theme/app_colors.dart';
+import '../../domain/entities/entities.dart';
+import 'video_player.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'start_button.dart';

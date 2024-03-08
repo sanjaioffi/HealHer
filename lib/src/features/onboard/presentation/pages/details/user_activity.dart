@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/src/core/config/constants/constants.dart';
-import 'package:heal_her/src/core/config/routes/route_names.dart';
-import 'package:heal_her/src/features/onboard/presentation/widgets/activitity/active_icons.dart';
-import 'package:heal_her/src/features/onboard/presentation/widgets/activitity/dot_indicator.dart';
-import 'package:heal_her/src/features/onboard/presentation/widgets/generic/continue_elevated_button.dart';
-import 'package:heal_her/src/features/onboard/presentation/widgets/generic/onboard_appbar.dart';
-import 'package:heal_her/src/features/onboard/presentation/widgets/generic/step_indicator.dart';
+import '../../../../../core/config/constants/constants.dart';
+import '../../../../../core/config/routes/route_names.dart';
+import '../../widgets/activitity/active_icons.dart';
+import '../../widgets/activitity/dot_indicator.dart';
+import '../../widgets/generic/continue_elevated_button.dart';
+import '../../widgets/generic/onboard_appbar.dart';
+import '../../widgets/generic/step_indicator.dart';
 
 import '../../../../../core/config/theme/app_colors.dart';
 import '../../../domain/model/fitness_model.dart';

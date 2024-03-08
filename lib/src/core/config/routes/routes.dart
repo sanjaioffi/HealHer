@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:heal_her/src/features/recommendation/presentation/pages/food/food_rec.dart';
-import 'package:heal_her/src/features/recommendation/presentation/pages/workout/workout_rec.dart';
+import '../../../features/recommendation/presentation/pages/food/food_rec.dart';
+import '../../../features/recommendation/presentation/pages/workout/workout_rec.dart';
 
 import '../../../features/app/presentation/app.dart';
 import '../../../features/onboard/presentation/onboard.dart';

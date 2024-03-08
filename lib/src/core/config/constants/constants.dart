@@ -1,7 +1,7 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/src/features/onboard/domain/entity/user_entity.dart';
+import '../../../features/onboard/domain/entity/user_entity.dart';
 
 import '../theme/app_colors.dart';
 

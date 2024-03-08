@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:heal_her/src/core/error/error.dart';
-import 'package:heal_her/src/features/recommendation/domain/entities/entities.dart';
+import '../../../../core/error/error.dart';
+import '../entities/entities.dart';
 
 import '../repository/workout_repo.dart';
 

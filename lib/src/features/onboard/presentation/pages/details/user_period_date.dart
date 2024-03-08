@@ -1,9 +1,9 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../../core/config/constants/constants.dart';
 import '../../../../../core/config/routes/route_names.dart';
-import '../../../domain/entity/user_entity.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';

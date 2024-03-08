@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/src/core/injection/dp_injection.dart';
 
 import 'src/core/config/routes/routes.dart';
 import 'src/core/config/theme/app_theme.dart';
+import 'src/core/injection/dp_injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:heal_her/src/features/recommendation/data/model/workout_model.dart';
+import '../model/workout_model.dart';
 import 'package:http/http.dart' as http;
 
 abstract class WorkoutSource {

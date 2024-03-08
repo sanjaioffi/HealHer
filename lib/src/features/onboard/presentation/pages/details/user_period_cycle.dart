@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/src/core/config/constants/constants.dart';
+import '../../../../../core/config/constants/constants.dart';
 
 import '../../../../../core/config/routes/route_names.dart';
 import '../../../../../core/config/theme/app_colors.dart';

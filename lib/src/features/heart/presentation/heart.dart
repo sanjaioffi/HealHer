@@ -13,6 +13,7 @@ class Heart extends StatefulWidget {
   State<Heart> createState() => _HeartState();
 }
 
+
 class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -53,6 +54,7 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
         backgroundColor: Colors.transparent,
         title: const Text(
           'Heart Rate',
+          
           style: TextStyle(color: AppColor.black, fontWeight: FontWeight.w800),
         ),
       ),

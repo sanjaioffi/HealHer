@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/src/core/config/theme/app_colors.dart';
+import '../../../../../core/config/theme/app_colors.dart';
 
 class FoodRecommendationPage extends StatelessWidget {
   const FoodRecommendationPage({super.key});

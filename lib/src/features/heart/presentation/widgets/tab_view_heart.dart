@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:heal_her/src/features/heart/presentation/widgets/bar_widgets.dart';
+import 'bar_widgets.dart';
 import '../../../../core/config/constants/constants.dart';
 
 import '../../../../core/config/theme/app_colors.dart';

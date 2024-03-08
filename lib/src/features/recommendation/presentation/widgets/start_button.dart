@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/src/core/config/theme/app_colors.dart';
+import '../../../../core/config/theme/app_colors.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class TimerButton extends StatefulWidget {

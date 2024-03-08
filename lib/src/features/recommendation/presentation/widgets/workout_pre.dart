@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/src/core/config/theme/app_colors.dart';
-import 'package:heal_her/src/core/injection/dp_injection.dart';
-import 'package:heal_her/src/features/recommendation/domain/entities/entities.dart';
-import 'package:heal_her/src/features/recommendation/domain/usecase/workout.dart';
+import '../../../../core/config/theme/app_colors.dart';
+import '../../../../core/injection/dp_injection.dart';
+import '../../domain/entities/entities.dart';
+import '../../domain/usecase/workout.dart';
 
 class WorkoutPreviewWidget extends StatelessWidget {
   const WorkoutPreviewWidget({

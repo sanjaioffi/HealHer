@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/src/core/config/constants/constants.dart';
+import '../../../../../core/config/constants/constants.dart';
 import '../../../../../core/config/theme/app_colors.dart';
 import '../../../domain/entity/user_entity.dart';
 

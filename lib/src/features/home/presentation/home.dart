@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/src/features/blood_pressure/presentation/blood_pressure.dart';
-import 'package:heal_her/src/features/heart/presentation/heart.dart';
-import 'package:heal_her/src/features/step/presentation/step.dart';
-import 'package:heal_her/src/features/step/presentation/widgets/steps_insights.dart';
+import '../../blood_pressure/presentation/blood_pressure.dart';
+import '../../heart/presentation/heart.dart';
+import '../../step/presentation/step.dart';
+import '../../step/presentation/widgets/steps_insights.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../../core/config/theme/app_colors.dart';
 
