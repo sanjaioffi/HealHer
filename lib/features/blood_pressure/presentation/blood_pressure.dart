@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../../../config/theme/app_colors.dart';
 import '../../device/controller/data_controller.dart';
@@ -13,11 +14,11 @@ class BloodPressure extends StatefulWidget {
 }
 
 class _BloodPressureState extends State<BloodPressure> {
-  
   final DataController dataController = Get.find();
   @override
   Widget build(BuildContext context) {
-    return Obx( () => Scaffold(
+    return Obx(
+      () => Scaffold(
         backgroundColor: AppColor.white,
         appBar: AppBar(
           leading: IconButton(
@@ -46,10 +47,10 @@ class _BloodPressureState extends State<BloodPressure> {
                       fontSize: 20,
                       color: AppColor.black,
                       fontWeight: FontWeight.w700)),
-              const Row(
+              Row(
                 children: [
                   Icon(Icons.timelapse, color: AppColor.gery, size: 14),
-                  Text(' 04 Feb, 09:00 AM',
+                  Text(DateFormat(' dd MMM, hh:mm a').format(DateTime.now()),
                       style: TextStyle(fontSize: 14, color: AppColor.gery)),
                 ],
               ),
@@ -71,7 +72,7 @@ class _BloodPressureState extends State<BloodPressure> {
                     shape: BoxShape.circle,
                     color: AppColor.white,
                   ),
-                  child:  Center(
+                  child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -121,7 +122,7 @@ class _BloodPressureState extends State<BloodPressure> {
                     borderRadius: BorderRadius.circular(30),
                     color: AppColor.white,
                   ),
-                  child:  Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text('PULSE',
