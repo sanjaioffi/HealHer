@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../domain/entities.dart';
+import '../../../domain/entities/entities.dart';
 import '../../widgets/workout_appbar.dart';
 import '../../widgets/workout_pre.dart';
 
 class WorkoutRecommendationPage extends StatelessWidget {
   const WorkoutRecommendationPage({super.key});
-
-  //
-  static const w = WorkoutDetailEntity(
+  static const w = WorkoutEntity(
       workoutName: "Jumping Jacks  🦘",
       description:
           "Jumping jacks are a great total-body workout you can do at home. They increase your heart rate to help you burn fat and improve your cardiovascular fitness. They also help you warm up for other exercises or sports.",

@@ -19,13 +19,13 @@ class _TimerButtonState extends State<TimerButton> {
   void _startTimer() {
     setState(() {
       _isTimerStarted = true;
-      _seconds = 60;
+      _seconds = const Duration(minutes: 3).inSeconds;
     });
 
     Future.doWhile(() async {
       await Future.delayed(const Duration(seconds: 1));
       setState(() {
-        _percent = (_seconds / 60);
+        _percent = (_seconds / const Duration(minutes: 3).inSeconds);
         _seconds--;
       });
       return _seconds >= 0;
