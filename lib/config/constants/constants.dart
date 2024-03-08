@@ -2,6 +2,7 @@ import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../features/exercise/domain/entities/exercise.dart';
 import '../../features/onboard/domain/entity/user_entity.dart';
 import '../routes/route_names.dart';
 import '../theme/app_colors.dart';
@@ -125,3 +126,5 @@ List<String> recommendationAppRoutes = [
   AppRoute.healthRecommendationScreen,
   AppRoute.foodRecommendationScreen,
 ];
+
+List<Exercise> exerciseEntity = [];

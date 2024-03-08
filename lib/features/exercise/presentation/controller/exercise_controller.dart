@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:get/get.dart';
 
+import '../../../../config/constants/constants.dart';
 import '../../domain/entities/exercise.dart';
 import '../../domain/usecase/fetch_exercise_use_case.dart';
 
@@ -22,6 +23,11 @@ class ExerciseController extends GetxController {
   Future<void> getExercises() async {
     log("Fetching");
     exercises.value = await fetchExerciseUseCase.call();
+
+    exerciseEntity = exercises as List<Exercise>;
+
+    log(exercises.toString());
+
     update();
   }
 }

@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 import '../../features/app/presentation/app.dart';
 import '../../features/diet/presentation/diet.dart';
-import '../../features/exercise/presentation/exercise.dart';
 import '../../features/exercise/presentation/widgets/rec_detail_page.dart';
 import '../../features/health/presentation/health.dart';
 import '../../features/meditation/presentation/meditation.dart';
@@ -49,15 +48,10 @@ List<GetPage> routes = [
   //
   GetPage(
     name: AppRoute.exerciseRecommendationScreen,
-    page: () => const WorkoutRecommendationPage(),
+    page: () => RecommendationDetailPage(),
   ),
 
   //
-  GetPage(
-      name: '/RecommendationDetail',
-      page: () => RecommendationDetailPage(
-            exercise: const [],
-          )),
 
   //
   GetPage(
