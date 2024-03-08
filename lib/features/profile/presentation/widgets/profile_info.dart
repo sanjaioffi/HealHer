@@ -33,7 +33,7 @@ class ProfileInfo extends StatelessWidget {
             children: [
               // Profile User Data
               ProfileUserData(
-                userName: profileController.userProfileData['userName'],
+                userName: profileController.userProfileData['userName'] ?? '',
                 userMailId: "mitun-suresh@gmail.com",
               ),
 

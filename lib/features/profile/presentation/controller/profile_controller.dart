@@ -1,16 +1,14 @@
-import 'dart:developer';
-
 import 'package:get/get.dart';
 
+import '../../../../config/constants/constants.dart';
 import '../../../../config/services/services.dart';
-import '../../../../core/managers/params/cache/cache_params.dart';
-import '../../../../core/managers/usecase/cache/read_from_cache_use_case.dart';
+import '../../../../core/managers/params/hive/hive_params.dart';
+import '../../../../core/managers/usecase/hive/read_from_hive_use_case.dart';
 
 class ProfileController extends GetxController {
   //
   @override
   void onInit() async {
-    log("Fetching Profile Data...");
     await fetchUserProfile();
     super.onInit();
   }
@@ -20,10 +18,14 @@ class ProfileController extends GetxController {
 
   // Load the user profile
   Future<void> fetchUserProfile() async {
-    userProfileData = await serviceLocator<ReadFromCacheUseCase>().call(
-      params: CacheFetchParams(cacheKey: "user_data"),
+    //
+    userProfileData = await serviceLocator<ReadFromHiveUseCase>().call(
+      params: HiveRetrieveParams(
+        hiveBoxName: userBoxReference,
+        hiveKey: userDataReference,
+      ),
     );
 
-    log(userProfileData.toString());
+    update();
   }
 }

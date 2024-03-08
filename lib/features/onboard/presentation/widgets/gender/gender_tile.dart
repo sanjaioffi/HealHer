@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import '../../../../../config/constants/constants.dart';
-import '../../controller/gender_controller.dart';
 import '../../../../../config/theme/app_colors.dart';
+import '../../controller/gender_controller.dart';
 
 class GenderTile extends StatelessWidget {
   const GenderTile({

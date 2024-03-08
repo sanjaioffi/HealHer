@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 
 import '../../features/app/presentation/app.dart';
-import '../../features/food/presentation/food.dart';
+import '../../features/diet/presentation/diet.dart';
+import '../../features/meditation/presentation/meditation.dart';
 import '../../features/onboard/presentation/onboard.dart';
 import '../../features/onboard/presentation/pages/details/user_activity.dart';
 import '../../features/onboard/presentation/pages/details/user_condition.dart';
@@ -43,11 +44,15 @@ List<GetPage> routes = [
   GetPage(
       name: AppRoute.onboardPeriodLength,
       page: () => const OnboardPeriodScreen()),
+
+  //
   GetPage(
-      name: '/workoutRecommendation',
-      page: () => const WorkoutRecommendationPage()),
-  GetPage(
-      name: '/RecommendationDetail', page: () => RecommendationDetailPage()),
+    name: AppRoute.exerciseRecommendation,
+    page: () => const WorkoutRecommendationPage(),
+  ),
+
+  //
+  GetPage(name: '/RecommendationDetail', page: () => ExerciseDetailPage()),
 
   //
   GetPage(
@@ -87,5 +92,9 @@ List<GetPage> routes = [
   GetPage(
     name: AppRoute.foodRecommendationScreen,
     page: () => const FoodRecommendationScreen(),
-  )
+  ),
+
+  //
+
+  GetPage(name: AppRoute.meditationScreen, page: () => const MeditationScreen())
 ];
