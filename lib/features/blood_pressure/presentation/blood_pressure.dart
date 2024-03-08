@@ -71,27 +71,27 @@ class _BloodPressureState extends State<BloodPressure> {
                     shape: BoxShape.circle,
                     color: AppColor.white,
                   ),
-                  child: const Center(
+                  child:  Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('120',
-                            style: TextStyle(
+                        Text(dataController.bpSys.value.toString(),
+                            style: const TextStyle(
                                 fontSize: 40,
                                 color: AppColor.heavyPurplyBlue,
                                 fontWeight: FontWeight.w700)),
-                        Text('Systolic',
+                        const Text('Systolic',
                             style: TextStyle(
                                 fontSize: 20,
                                 color: AppColor.gery,
                                 fontWeight: FontWeight.w700)),
-                        SizedBox(height: 20),
-                        Text('80',
-                            style: TextStyle(
+                        const SizedBox(height: 20),
+                        Text(dataController.bpDys.value.toString(),
+                            style: const TextStyle(
                                 fontSize: 40,
                                 color: AppColor.heavyPurplyBlue,
                                 fontWeight: FontWeight.w700)),
-                        Text('Diastolic',
+                        const Text('Diastolic',
                             style: TextStyle(
                                 fontSize: 20,
                                 color: AppColor.gery,
@@ -121,24 +121,24 @@ class _BloodPressureState extends State<BloodPressure> {
                     borderRadius: BorderRadius.circular(30),
                     color: AppColor.white,
                   ),
-                  child: const Row(
+                  child:  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('PULSE',
+                      const Text('PULSE',
                           style: TextStyle(
                               fontSize: 15,
                               color: AppColor.gery,
                               fontWeight: FontWeight.w700)),
-                      SizedBox(width: 10),
-                      Icon(Icons.favorite,
+                      const SizedBox(width: 10),
+                      const Icon(Icons.favorite,
                           color: AppColor.heavyPurplyBlue, size: 20),
-                      SizedBox(width: 10),
-                      Text('80',
-                          style: TextStyle(
+                      const SizedBox(width: 10),
+                      Text(dataController.heartRate.value.toString(),
+                          style: const TextStyle(
                               fontSize: 25,
                               color: AppColor.heavyPurplyBlue,
                               fontWeight: FontWeight.w700)),
-                      Text(
+                      const Text(
                         ' Bpm',
                         style: TextStyle(
                             fontSize: 15,

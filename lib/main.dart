@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/features/app/presentation/app.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -17,17 +18,15 @@ final DependencyInjection dependencyInjection = DependencyInjection();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  setUpInjection();
 
   FlutterBluePlus.setLogLevel(LogLevel.verbose, color: true);
  
+
+  await dependencyInjection.inject();
   await Hive.openBox('device');
   await Hive.openBox('data');
   await Hive.openBox('day ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}');
   ScanController().checkConnnetedDevices();
- 
-
-  await dependencyInjection.inject();
 
   runApp(const MyApp());
 }
@@ -49,7 +48,11 @@ class MyApp extends StatelessWidget {
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
         initialRoute: dependencyInjection.initialRoute,
+        
       ),
     );
   }
 }
+
+
+
