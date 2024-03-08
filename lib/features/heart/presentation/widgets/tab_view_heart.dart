@@ -1,13 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/heart/presentation/widgets/bar_widgets.dart';
-import '../../../../config/constants/constants.dart';
 
-import '../../../../config/theme/app_colors.dart';
+import '../../../../config/constants/constants.dart';
 import '../../../step/presentation/widgets/steps_insights.dart';
 import 'back_ground.dart';
-import 'date_container.dart';
+import 'bar_widgets.dart';
 
 class TabViewBarHeart extends StatefulWidget {
   TabViewBarHeart({super.key, required this.tabController});

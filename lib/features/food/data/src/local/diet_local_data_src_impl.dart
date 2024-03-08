@@ -20,13 +20,16 @@ class DietLocalDataSrcImpl implements DietLocalDataSrc {
       ),
     );
 
-    log("DOne");
+    if (respone == null) {
+      log('No diet plan found');
+      return dietModels;
+    }
+
+    log(respone.toString());
 
     for (dynamic dietMap in respone) {
       dietModels.add(DietModel.fromDictionary(dietMap));
     }
-
-    log("DOne");
 
     return dietModels;
   }

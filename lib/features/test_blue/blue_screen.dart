@@ -1,7 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:heal_her/config/theme/app_colors.dart';
+
+import '../../config/theme/app_colors.dart';
 
 class BlueScreen extends StatefulWidget {
   const BlueScreen({super.key});

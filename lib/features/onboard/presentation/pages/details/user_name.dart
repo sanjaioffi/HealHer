@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';
 import '../../widgets/generic/top_tile.dart';

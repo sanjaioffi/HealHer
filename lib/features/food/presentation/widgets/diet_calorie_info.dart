@@ -74,7 +74,7 @@ class CalorieInfo extends StatelessWidget {
             ),
 
             const DietTile(
-              dietStatValue: "1000 Kcal",
+              dietStatValue: "28g Fibre",
               dietStatTitle: "Minimum",
               isRightToLeft: true,
             ),

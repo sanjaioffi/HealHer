@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+
 import '../interface/hive_manager.dart';
 
 class HiveManagerImpl implements HiveManager {

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 import "../utils/snackbar.dart";
-
 import "descriptor_tile.dart";
 
 class CharacteristicTile extends StatefulWidget {

@@ -15,6 +15,8 @@ import '../../features/onboard/presentation/pages/details/user_weight.dart';
 import '../../features/onboard/presentation/pages/general/onboard_complete.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/login.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
+import '../../features/recommendation/presentation/pages/workout/workout_rec.dart';
+import '../../features/recommendation/presentation/widgets/rec_detail_page.dart';
 import '../../features/step/presentation/step.dart';
 import 'route_names.dart';
 
@@ -41,6 +43,11 @@ List<GetPage> routes = [
   GetPage(
       name: AppRoute.onboardPeriodLength,
       page: () => const OnboardPeriodScreen()),
+  GetPage(
+      name: '/workoutRecommendation',
+      page: () => const WorkoutRecommendationPage()),
+  GetPage(
+      name: '/RecommendationDetail', page: () => RecommendationDetailPage()),
 
   //
   GetPage(
@@ -61,6 +68,10 @@ List<GetPage> routes = [
   //
   GetPage(name: AppRoute.onboardFitness, page: () => const OnboardActivity()),
 
+  GetPage(
+      name: AppRoute.onboardComplete,
+      page: () => const OnboardStepsCompleteScreen()),
+
   //
   GetPage(
       //
@@ -74,6 +85,7 @@ List<GetPage> routes = [
   GetPage(name: AppRoute.homeScreen, page: () => const MainScreen()),
 
   GetPage(
-      name: AppRoute.foodRecommendationScreen,
-      page: () => const FoodRecommendationScreen())
+    name: AppRoute.foodRecommendationScreen,
+    page: () => const FoodRecommendationScreen(),
+  )
 ];

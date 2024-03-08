@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import '../../../../config/constants/constants.dart';
 import '../../../../config/services/services.dart';
 import '../../../../core/managers/params/cache/cache_params.dart';

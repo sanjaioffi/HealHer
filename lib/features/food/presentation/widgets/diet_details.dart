@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../config/constants/constants.dart';
@@ -13,21 +14,36 @@ class DietBreakDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DietController>(builder: (controller) {
-      return Column(
-        children: [
-          for (int i = 0; i < controller.dietList.length; i++)
-            DietBreakDownWidget(
-              sessionName: controller.dietList[i].sessionName,
-              sessionMsg: controller.dietList[i].sessionMsg,
-              sessionCarbs: controller.dietList[i].sessionCarbs,
-              sessionVitamins: controller.dietList[i].sessionProtein,
-              sessionCalories: controller.dietList[i].sessionCalories,
-              sessionFats: controller.dietList[i].sessionFat,
-              sessionTileIcon: tileIconData[i],
-              sessionTileColor: tileColorData[i],
-            ),
-        ],
-      );
+      return controller.dietList.isEmpty
+          ? Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.h),
+                child: Column(
+                  children: [
+                    const CircularProgressIndicator(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20.h),
+                      child: const Text("Loading Diet Plans"),
+                    )
+                  ],
+                ),
+              ),
+            )
+          : Column(
+              children: [
+                for (int i = 0; i < controller.dietList.length; i++)
+                  DietBreakDownWidget(
+                    sessionName: controller.dietList[i].sessionName,
+                    sessionMsg: controller.dietList[i].sessionMsg,
+                    sessionCarbs: controller.dietList[i].sessionCarbs,
+                    sessionVitamins: controller.dietList[i].sessionProtein,
+                    sessionCalories: controller.dietList[i].sessionCalories,
+                    sessionFats: controller.dietList[i].sessionFat,
+                    sessionTileIcon: tileIconData[i],
+                    sessionTileColor: tileColorData[i],
+                  ),
+              ],
+            );
     });
   }
 }

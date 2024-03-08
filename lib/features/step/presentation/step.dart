@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'widgets/steps_insights.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+
 import '../../../config/theme/app_colors.dart';
 
 class StepsScreen extends StatefulWidget {
@@ -37,7 +37,7 @@ class _StepsScreenState extends State<StepsScreen> {
                   children: [
                     IconButton(
                         onPressed: () => Get.back(),
-                        icon: Icon(Icons.arrow_back_ios)),
+                        icon: const Icon(Icons.arrow_back_ios)),
                     // InkWell(
                     //   onTap: () {
                     //     Get.to(() => const StepInsightsScreen());
