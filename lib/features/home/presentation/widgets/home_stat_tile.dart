@@ -20,6 +20,8 @@ class HomeTileData extends StatelessWidget {
     return Row(
       children: <Widget>[
         Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               profileTileTitle,

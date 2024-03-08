@@ -7,6 +7,8 @@ import '../../widgets/workout_pre.dart';
 
 class WorkoutRecommendationPage extends StatelessWidget {
   const WorkoutRecommendationPage({super.key});
+
+  //
   static const w = WorkoutDetailEntity(
       workoutName: "Jumping Jacks  🦘",
       description:

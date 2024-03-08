@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../../config/theme/app_colors.dart';
-import '../../domain/entities.dart';
-import 'video_player.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../../config/theme/app_colors.dart';
+import '../../domain/entities.dart';
 import 'start_button.dart';
+import 'video_player.dart';
 
-class RecommendationDetailPage extends StatelessWidget {
-  RecommendationDetailPage({super.key});
+class ExerciseDetailPage extends StatelessWidget {
+  ExerciseDetailPage({super.key});
 
   final List<WorkoutDetailEntity> workout = Get.arguments;
   final controller = PageController(keepPage: true);

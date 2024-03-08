@@ -66,7 +66,7 @@ class DietController extends GetxController {
 
     if (hour < 12) {
       currentCalories.value = .3;
-    } else if (hour > 12 && hour < 18) {
+    } else if (hour >= 12 && hour < 18) {
       currentCalories.value = .6;
     } else {
       currentCalories.value = 1.0;

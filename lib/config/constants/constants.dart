@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../features/onboard/domain/entity/user_entity.dart';
+import '../routes/route_names.dart';
 import '../theme/app_colors.dart';
 
 final textStyle1 = TextStyle(
@@ -79,9 +80,49 @@ const List<MaterialColor> tileColorData = [
   Colors.blue,
 ];
 
-var MONGO_PASS = "mohanasundharam";
-var MONGO_USER = "mohanasundharam";
-var MONGO_DATABASE = "HealHerDataBase";
+const MONGO_PASS = "mohanasundharam";
+const MONGO_USER = "mohanasundharam";
+const MONGO_DATABASE = "HealHerDataBase";
 
-var MONGO_URL =
+const MONGO_URL =
     "mongodb+srv://$MONGO_USER:$MONGO_PASS@cluster0.vmuahl9.mongodb.net/$MONGO_DATABASE?retryWrites=true&w=majority&appName=Cluster0";
+
+const List<String> recommendationTileStrings = [
+  "Exercises",
+  "Meditation",
+  "Diet",
+  "Ayurvedic",
+  "Menstrual",
+];
+
+const List<String> recommendationTileSubStrings = [
+  "Yoga, Cardio, Strength",
+  "Mindfulness, Relaxation",
+  "Nutrition, Recipes",
+  "Herbs, Remedies",
+  "Cycle, Periods",
+];
+
+const List<IconData> recommendationTileIcons = [
+  Icons.extension,
+  Icons.self_improvement,
+  Icons.restaurant_menu,
+  Icons.healing,
+  Icons.wc,
+];
+
+const List<MaterialColor> recommendationTileColors = [
+  Colors.green,
+  Colors.blue,
+  Colors.orange,
+  Colors.purple,
+  Colors.pink,
+];
+
+List<String> recommendationAppRoutes = [
+  AppRoute.exerciseRecommendation,
+  AppRoute.meditationScreen,
+  AppRoute.foodRecommendationScreen,
+  AppRoute.foodRecommendationScreen,
+  AppRoute.foodRecommendationScreen,
+];

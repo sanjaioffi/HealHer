@@ -10,13 +10,13 @@ import '../../core/managers/usecase/cache/write_to_cache_use_case.dart';
 import '../../core/managers/usecase/hive/delete_from_hive_use_case.dart';
 import '../../core/managers/usecase/hive/read_from_hive_use_case.dart';
 import '../../core/managers/usecase/hive/write_to_hive_use_case.dart';
-import '../../features/food/data/repo/diet_repo_impl.dart';
-import '../../features/food/data/src/local/diet_local_data_src.dart';
-import '../../features/food/data/src/local/diet_local_data_src_impl.dart';
-import '../../features/food/data/src/remote/diet_remote_data_src.dart';
-import '../../features/food/data/src/remote/diet_remote_data_src_impl.dart';
-import '../../features/food/domain/repo/diet_repo.dart';
-import '../../features/food/presentation/controller/diet_controller.dart';
+import '../../features/diet/data/repo/diet_repo_impl.dart';
+import '../../features/diet/data/src/local/diet_local_data_src.dart';
+import '../../features/diet/data/src/local/diet_local_data_src_impl.dart';
+import '../../features/diet/data/src/remote/diet_remote_data_src.dart';
+import '../../features/diet/data/src/remote/diet_remote_data_src_impl.dart';
+import '../../features/diet/domain/repo/diet_repo.dart';
+import '../../features/diet/presentation/controller/diet_controller.dart';
 import '../../features/onboard/domain/usecase/auth_user.dart';
 import '../../features/onboard/presentation/controller/onboard_data_controller.dart';
 import '../../features/profile/presentation/controller/profile_controller.dart';
@@ -113,7 +113,6 @@ class ServicesManager {
   }
 
   Future<void> registerControllersInMemory() async {
-    // Register Profile  Controller
     Get.put(serviceLocator<ProfileController>());
   }
 }
