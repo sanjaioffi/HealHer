@@ -4,24 +4,31 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../../config/dependencies/injection_container.dart';
 import '../../../../config/theme/app_colors.dart';
-import '../../domain/entities.dart';
+import '../../domain/entities/entities.dart';
+import '../../domain/usecase/workout_usecase.dart';
 
 class WorkoutPreviewWidget extends StatelessWidget {
   const WorkoutPreviewWidget({
     super.key,
     required this.workouts,
   });
-  final WorkoutDetailEntity workouts;
+  final WorkoutEntity workouts;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Get.toNamed(
-          '/RecommendationDetail',
-          arguments: [workouts],
-        );
+      onTap: () async {
+        var r = await WorkoutUseCase(injection()).getWorkouts();
+        r.fold((l) {
+          print(l.message);
+        }, (r) {
+          Get.toNamed(
+            '/RecommendationDetail',
+            arguments: r,
+          );
+        });
       },
       child: Container(
         height: 150.h,
