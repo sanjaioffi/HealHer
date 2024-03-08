@@ -17,18 +17,11 @@ List<String> activityOptions = [
   'Diabetes',
   'Heart Patient',
   'Blood Pressure',
-  'Cholesterol',
-  'Stress',
-  'Sleep issues',
+  'Insomnia',
   'Depression',
-  'Anger issues',
   'Hypertension',
-  'PCOS',
   'Thyroid',
-  'Physical Injury',
-  'Excessive stress/anxiety',
-  'Lonliness',
-  'Relationship stress',
+  'Obesity',
 ];
 
 DateTime checkTime = DateTime(1900);

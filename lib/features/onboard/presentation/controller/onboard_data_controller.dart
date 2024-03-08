@@ -18,7 +18,6 @@ class OnboardDataController extends GetxController {
 
   Future<void> updateUserDataToHive() async {
     //
-
     Map<String, dynamic> userEntityData = userEntity.toMap();
 
     await serviceLocator<WriteToHiveUseCase>().call(
