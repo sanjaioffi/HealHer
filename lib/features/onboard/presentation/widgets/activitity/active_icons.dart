@@ -18,47 +18,35 @@ class ActiveIcons extends StatelessWidget {
                   ? Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Image.asset(
-                            'assets/images/activity_images/flame_active.png'),
-                        Image.asset(
-                            'assets/images/activity_images/flame_inactive.png'),
-                        Image.asset(
-                            'assets/images/activity_images/flame_inactive.png')
+                        Image.asset('assets/images/flame_active.png'),
+                        Image.asset('assets/images/flame_inactive.png'),
+                        Image.asset('assets/images/flame_inactive.png')
                       ],
                     )
                   : activityLevel == 2
                       ? Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Image.asset(
-                                'assets/images/activity_images/flame_active.png'),
-                            Image.asset(
-                                'assets/images/activity_images/flame_active.png'),
-                            Image.asset(
-                                'assets/images/activity_images/flame_inactive.png')
+                            Image.asset('assets/images/flame_active.png'),
+                            Image.asset('assets/images/flame_active.png'),
+                            Image.asset('assets/images/flame_inactive.png')
                           ],
                         )
                       : activityLevel == 3
                           ? Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Image.asset(
-                                    'assets/images/activity_images/flame_active.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_active.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_active.png'),
+                                Image.asset('assets/images/flame_active.png'),
+                                Image.asset('assets/images/flame_active.png'),
+                                Image.asset('assets/images/flame_active.png'),
                               ],
                             )
                           : Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Image.asset(
-                                    'assets/images/activity_images/flame_inactive.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_inactive.png'),
-                                Image.asset(
-                                    'assets/images/activity_images/flame_inactive.png')
+                                Image.asset('assets/images/flame_inactive.png'),
+                                Image.asset('assets/images/flame_inactive.png'),
+                                Image.asset('assets/images/flame_inactive.png')
                               ],
                             ))),
     );

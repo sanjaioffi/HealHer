@@ -1,8 +1,8 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heal_her/features/onboard/domain/entity/user_entity.dart';
 
+import '../../features/onboard/domain/entity/user_entity.dart';
 import '../theme/app_colors.dart';
 
 
@@ -66,3 +66,17 @@ UserEntity userEntity = UserEntity();
 const String userBoxReference = "user_details";
 
 const String userDataReference = "user_data";
+
+const String userDietReference = "user_diet";
+
+const List<IconData> tileIconData = [
+  Icons.sunny,
+  Icons.cloud_outlined,
+  Icons.nightlight_outlined
+];
+
+const List<MaterialColor> tileColorData = [
+  Colors.amber,
+  Colors.grey,
+  Colors.blue,
+];

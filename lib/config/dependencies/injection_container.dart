@@ -1,3 +1,60 @@
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
+
+import '../../features/onboard/domain/usecase/auth_user.dart';
+import '../routes/route_names.dart';
+import '../services/services.dart';
+
 class DependencyInjection {
-  Future<void> inject() async {}
+  String initialRoute = AppRoute.onboardWelcome;
+
+  //
+  ServicesManager servicesManager = ServicesManager();
+
+  Future<void> inject() async {
+    //
+    final Directory documentDirectory =
+        await getApplicationDocumentsDirectory();
+
+    // Hive Initialisation
+    Hive.init(documentDirectory.path);
+
+    // Managers
+    await servicesManager.resgisterManagers();
+
+    log("Completed Managers");
+
+    // Data Src
+    await servicesManager.registerDataSrc();
+
+    log("Completed Data Src");
+
+    //Repository
+    await servicesManager.resgisterRepositories();
+
+    log("Completed Repository");
+
+    // UseCase
+    await servicesManager.registerUseCases();
+
+    // Controllers
+    await servicesManager.registerGetControllers();
+
+    //Controller Register in Memory
+
+    Future<void> checkRoute() async {
+      final result = await serviceLocator<AuthenticateUserCase>()();
+      if (result == true) {
+        initialRoute = AppRoute.homeScreen;
+      }
+    }
+
+    await checkRoute();
+
+    //
+    await servicesManager.registerControllersInMemory();
+  }
 }

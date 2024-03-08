@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../features/app/presentation/app.dart';
+import '../../features/food/presentation/food.dart';
 import '../../features/onboard/presentation/onboard.dart';
 import '../../features/onboard/presentation/pages/details/user_activity.dart';
 import '../../features/onboard/presentation/pages/details/user_condition.dart';
@@ -11,6 +12,7 @@ import '../../features/onboard/presentation/pages/details/user_name.dart';
 import '../../features/onboard/presentation/pages/details/user_period_cycle.dart';
 import '../../features/onboard/presentation/pages/details/user_period_date.dart';
 import '../../features/onboard/presentation/pages/details/user_weight.dart';
+import '../../features/onboard/presentation/pages/general/onboard_complete.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/login.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
 import '../../features/step/presentation/step.dart';
@@ -49,16 +51,15 @@ List<GetPage> routes = [
   GetPage(
       name: AppRoute.onboardHeight, page: () => const OnBoardHeightScreen()),
   //
-  //
   GetPage(
       name: AppRoute.onboardWeight, page: () => const OnBoardWeightScreen()),
 
   //
-  // GetPage(name: AppRoute., page: () => const OnboardTargetScreen()),
+  GetPage(name: AppRoute.onboardFitness, page: () => const OnboardActivity()),
 
   //
   //
-  GetPage(name: AppRoute.onboardFitness, page: () =>  OnboardActivity()),
+  GetPage(name: AppRoute.onboardFitness, page: () => const OnboardActivity()),
 
   //
   GetPage(
@@ -67,15 +68,12 @@ List<GetPage> routes = [
       page: () => const MedicalConditionScreen()),
 
   //
+  GetPage(name: AppRoute.stepScreen, page: () => const StepsScreen()),
 
   //
-  //
-  //
-  //
-  GetPage(name: AppRoute.stepScreen, page: () => const StepsScreen()),
-  //
-  //
-  //
-  //
-  GetPage(name: AppRoute.homeScreen, page: () => const MainScreen())
+  GetPage(name: AppRoute.homeScreen, page: () => const MainScreen()),
+
+  GetPage(
+      name: AppRoute.foodRecommendationScreen,
+      page: () => const FoodRecommendationScreen())
 ];

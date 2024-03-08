@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../config/theme/app_colors.dart';
 
 class DotIndicator extends StatelessWidget {

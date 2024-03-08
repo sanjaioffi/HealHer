@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'sign_up.dart';
-import '../sign_up/quick_sign_up.dart';
+
+import '../../../../../../config/theme/app_colors.dart';
 import '../../../widgets/generic/continue_elevated_button.dart';
 import '../sign_up/common_access.dart';
-import '../../../../../../config/theme/app_colors.dart';
+import '../sign_up/quick_sign_up.dart';
+import 'sign_up.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
