@@ -52,7 +52,7 @@ List<GetPage> routes = [
   ),
 
   //
-  GetPage(name: '/RecommendationDetail', page: () => ExerciseDetailPage()),
+  GetPage(name: '/RecommendationDetail', page: () => RecommendationDetailPage()),
 
   //
   GetPage(
