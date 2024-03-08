@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:heal_her/features/recommendation/presentation/pages/food/food_rec.dart';
 import 'package:heal_her/features/recommendation/presentation/pages/workout/workout_rec.dart';
 
 import '../../features/app/presentation/app.dart';
@@ -14,7 +13,6 @@ import '../../features/onboard/presentation/pages/details/user_name.dart';
 import '../../features/onboard/presentation/pages/details/user_period_cycle.dart';
 import '../../features/onboard/presentation/pages/details/user_period_date.dart';
 import '../../features/onboard/presentation/pages/details/user_weight.dart';
-import '../../features/onboard/presentation/pages/general/onboard_complete.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/login.dart';
 import '../../features/onboard/presentation/pages/registration/sign_process/sign_up.dart';
 import '../../features/recommendation/presentation/widgets/rec_detail_page.dart';
@@ -22,8 +20,6 @@ import '../../features/step/presentation/step.dart';
 import 'route_names.dart';
 
 List<GetPage> routes = [
-  GetPage(
-      name: "/foodRecommendation", page: () => const FoodRecommendationPage()),
   //
   GetPage(name: AppRoute.onboardWelcome, page: () => const WelcomeScreen()),
 
@@ -84,6 +80,7 @@ List<GetPage> routes = [
   GetPage(name: AppRoute.homeScreen, page: () => const MainScreen()),
 
   GetPage(
-      name: AppRoute.foodRecommendationScreen,
-      page: () => const FoodRecommendationScreen())
+    name: AppRoute.foodRecommendationScreen,
+    page: () => const FoodRecommendationScreen(),
+  )
 ];

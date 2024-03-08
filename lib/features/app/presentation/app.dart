@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:heal_her/features/recommendation/presentation/pages/food/food_rec.dart';
-
+import 'package:heal_her/features/food/presentation/food.dart';
 import '../../device/presentation/device.dart';
 import '../../home/presentation/home.dart';
 import '../../profile/presentation/profile.dart';
-import '../../recommendation/presentation/pages/workout/workout_rec.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -16,7 +14,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   var screens = [
     const HomeScreen(),
-    const FoodRecommendationPage(),
+    const FoodRecommendationScreen(),
     const DeviceScreen(),
     const ProfileScreen()
   ];

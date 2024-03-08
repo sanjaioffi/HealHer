@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:heal_her/features/recommendation/presentation/pages/meditation/mditation.dart';
 
 import 'config/dependencies/injection_container.dart';
 import 'config/routes/routes.dart';
@@ -11,7 +12,7 @@ final DependencyInjection dependencyInjection = DependencyInjection();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await dependencyInjection.inject();
+  // await dependencyInjection.inject();
 
   runApp(const MyApp());
 }
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
-        initialRoute: dependencyInjection.initialRoute,
+        // initialRoute: dependencyInjection.initialRoute,
+        home: const MeditationScreen(),
       ),
     );
   }
