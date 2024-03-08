@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../device/presentation/device.dart';
-import '../../food/presentation/food.dart';
 import '../../home/presentation/home.dart';
 import '../../profile/presentation/profile.dart';
+import '../../suggestions/presentation/sugestions.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -15,7 +15,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   var screens = [
     const HomeScreen(),
-    const FoodRecommendationScreen(),
+    const SuggestionsScreen(),
      DeviceScreen(),
     const ProfileScreen()
   ];
@@ -34,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.local_activity), label: 'Activities'),
+                icon: Icon(Icons.local_activity), label: 'Suggestions'),
             BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Device'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],

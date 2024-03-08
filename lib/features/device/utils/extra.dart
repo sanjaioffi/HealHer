@@ -1,6 +1,6 @@
-import 'utils.dart';
-
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+
+import 'utils.dart';
 
 final Map<DeviceIdentifier, StreamControllerReemit<bool>> _cglobal = {};
 final Map<DeviceIdentifier, StreamControllerReemit<bool>> _dglobal = {};

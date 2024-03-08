@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import '../../../../../config/routes/route_names.dart';
+import '../../../domain/model/dual_choice_model.dart';
 import '../../controller/gender_controller.dart';
-import '../../../data/model/dual_choice_model.dart';
+import '../../widgets/gender/gender_slide.dart';
 import '../../widgets/generic/bottom_tile.dart';
 import '../../widgets/generic/continue_elevated_button.dart';
-import '../../widgets/gender/gender_slide.dart';
 import '../../widgets/generic/onboard_appbar.dart';
 import '../../widgets/generic/step_indicator.dart';
 import '../../widgets/generic/top_tile.dart';

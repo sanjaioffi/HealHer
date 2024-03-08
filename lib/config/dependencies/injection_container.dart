@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
+import '../../core/managers/params/cache/cache_params.dart';
+import '../../core/managers/usecase/cache/write_to_cache_use_case.dart';
 import '../../features/onboard/domain/usecase/auth_user.dart';
 import '../routes/route_names.dart';
 import '../services/services.dart';
@@ -47,7 +49,16 @@ class DependencyInjection {
 
     Future<void> checkRoute() async {
       final result = await serviceLocator<AuthenticateUserCase>()();
+
+      //
       if (result == true) {
+        serviceLocator<WriteToCacheUseCase>().call(
+          params: CacheWriteParams(
+            cacheKey: 'user_data',
+            cacheValue: result,
+          ),
+        );
+
         initialRoute = AppRoute.homeScreen;
       }
     }
