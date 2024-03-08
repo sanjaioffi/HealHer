@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'quick_sign_up.dart';
+
+import '../../../../../../config/theme/app_colors.dart';
 import '../../../widgets/generic/continue_elevated_button.dart';
 import '../../../widgets/generic/top_tile.dart';
-import '../../../../../../config/theme/app_colors.dart';
-
 import 'common_access.dart';
+import 'quick_sign_up.dart';
 
 class OnBoardLogin extends StatefulWidget {
   const OnBoardLogin({super.key});

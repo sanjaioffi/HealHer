@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../activity/presentation/activity.dart';
 import '../../device/presentation/device.dart';
+import '../../food/presentation/food.dart';
 import '../../home/presentation/home.dart';
 import '../../profile/presentation/profile.dart';
 
@@ -15,7 +15,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   var screens = [
     const HomeScreen(),
-    const ActivitiesScreen(),
+    const FoodRecommendationScreen(),
     const DeviceScreen(),
     const ProfileScreen()
   ];

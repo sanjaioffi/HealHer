@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_bdaya/flutter_datetime_picker_bdaya.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../../config/constants/constants.dart';
 import '../../../../../config/routes/route_names.dart';
 import '../../../../../config/theme/app_colors.dart';
-import '../../../domain/entity/user_entity.dart';
 import '../../pages/details/calculate_age.dart';
 import '../generic/continue_elevated_button.dart';
 
