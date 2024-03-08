@@ -7,5 +7,4 @@ class Failure {
   String toString() {
     return message;
   }
-  
 }

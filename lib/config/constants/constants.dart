@@ -61,6 +61,10 @@ const String userDataReference = "user_data";
 
 const String userDietReference = "user_diet";
 
+const String userExerciseReference = "user_exercises";
+
+const String userHealthReference = "user_health";
+
 const List<IconData> tileIconData = [
   Icons.sunny,
   Icons.cloud_outlined,
@@ -113,9 +117,9 @@ const List<MaterialColor> recommendationTileColors = [
 ];
 
 List<String> recommendationAppRoutes = [
-  AppRoute.exerciseRecommendation,
+  AppRoute.exerciseRecommendationScreen,
   AppRoute.meditationScreen,
   AppRoute.foodRecommendationScreen,
-  AppRoute.foodRecommendationScreen,
+  AppRoute.healthRecommendationScreen,
   AppRoute.foodRecommendationScreen,
 ];

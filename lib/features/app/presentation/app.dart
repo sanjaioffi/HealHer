@@ -16,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   var screens = [
     const HomeScreen(),
     const SuggestionsScreen(),
-     DeviceScreen(),
+    const DeviceScreen(),
     const ProfileScreen()
   ];
   int _selectedIndex = 0;

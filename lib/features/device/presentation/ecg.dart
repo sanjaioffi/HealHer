@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_time_chart/real_time_chart.dart';
@@ -14,7 +12,6 @@ class ECGGraph extends StatefulWidget {
 
 class _ECGGraphState extends State<ECGGraph> {
   final DataController dataController = Get.find();
-  
 
   @override
   void initState() {

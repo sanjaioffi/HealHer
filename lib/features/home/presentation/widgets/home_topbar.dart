@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/device/controller/data_controller.dart';
+
+import '../../../device/controller/data_controller.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({super.key});

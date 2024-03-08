@@ -90,8 +90,7 @@ class DietController extends GetxController {
       final List<Map<String, dynamic>> dietMapList = [];
 
       final userData = await serviceLocator<ReadFromCacheUseCase>()
-              .call(params: CacheFetchParams(cacheKey: "user_data"))
-          as Map<String, dynamic>;
+          .call(params: CacheFetchParams(cacheKey: "user_data"));
 
       //
 
