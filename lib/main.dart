@@ -49,8 +49,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
-        // initialRoute: dependencyInjection.initialRoute,
-        home: MainScreen()
+        initialRoute: dependencyInjection.initialRoute,
+        
       ),
     );
   }
