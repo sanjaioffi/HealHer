@@ -53,15 +53,15 @@ class DependencyInjection {
     Future<void> checkRoute() async {
       final result = await serviceLocator<AuthenticateUserCase>().call();
 
-      //
-      if (result != null) {
+      if (result == false) {
+        return;
+      } else {
         serviceLocator<WriteToCacheUseCase>().call(
           params: CacheWriteParams(
             cacheKey: 'user_data',
             cacheValue: result,
           ),
         );
-
         initialRoute = AppRoute.homeScreen;
       }
     }

@@ -12,6 +12,7 @@ class AuthenticateUserCase implements UseCase<dynamic, void> {
 
   @override
   Future call({void params}) async {
+    //
     final result = await readFromHiveUseCase.call(
       params: HiveRetrieveParams(
         hiveBoxName: userBoxReference,
