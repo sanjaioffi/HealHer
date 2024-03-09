@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import '../../domain/entities/exercise.dart';
 
 class ExerciseModel {
@@ -12,32 +14,31 @@ class ExerciseModel {
     required this.workoutSets,
   });
 
-  @override
-  List<Object?> get props => [
-        workoutName,
-        description,
-        videoUrl,
-        workoutSets,
-      ];
-
 // map to  json
   Map<String, dynamic> toMap() {
     return {
-      'workoutName': workoutName,
+      'exercise_name': workoutName,
       'description': description,
-      'videoUrl': videoUrl,
-      'workoutSets': workoutSets,
+      'exercise_video': videoUrl,
+      'exercise_reps': workoutSets,
     };
   }
 
   // map from json
   factory ExerciseModel.fromMap(dynamic map) {
-    return ExerciseModel(
-      workoutName: map['exercise_name'].toString(),
-      description: "map['description']",
-      videoUrl: map['exercie_video'].toString(),
-      workoutSets: "${map['exercise_reps']}X5",
+    log("Recieved Map : ${map.toString()}");
+
+    //
+    final ExerciseModel exerciseModel = ExerciseModel(
+      workoutName: map['exercise_name'] ?? "No Name ",
+      description: map['description'] ?? "No Description",
+      videoUrl: map['exercise_video'] ?? "No Video Url",
+      workoutSets: "${map['exercise_reps']} Reps",
     );
+
+    log("Converted : ${exerciseModel.toMap().toString()}");
+
+    return exerciseModel;
   }
 
   Exercise toEntity() {

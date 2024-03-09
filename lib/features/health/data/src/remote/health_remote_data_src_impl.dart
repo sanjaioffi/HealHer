@@ -25,16 +25,23 @@ class HealthRemoteDataSrcImpl implements HealthRemoteDataSrc {
 
     final userIssues = userDataMap['userMedicalIssues'];
 
+    log(userIssues.toString());
+
     String issueString = "";
 
     for (String userIssue in userIssues) {
-      issueString = '$issueString$userIssue,';
+      issueString = '$issueString$userIssue ,';
     }
 
+    log("The issue string is : $issueString");
+
+    //
     issueString = issueString.substring(0, issueString.length - 1);
 
     String apiLink =
         "https://recommendation-endpoint.onrender.com/v1/recommend/ayurveda/$issueString";
+
+    log("The Link Generated : $apiLink");
 
     await http.get(Uri.parse(apiLink)).then(
       (response) {

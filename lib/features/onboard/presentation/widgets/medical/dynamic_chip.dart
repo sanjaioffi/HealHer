@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,18 +20,18 @@ class _DynamicChipState extends State<DynamicChip> {
   final MedicalIssuesController medicalIssuesController =
       Get.put(MedicalIssuesController());
 
-  // list of string options
-
   List<String> tags = [];
 
   void _toggleColor() {
-    medicalIssuesController.addMedicalIssue(widget.name);
+    //
+    medicalIssuesController.checkIsAvailable(widget.name);
+
+    //
     if (tags.contains(widget.name)) {
       tags.remove(widget.name);
     } else {
       tags.add(widget.name);
     }
-    userEntity.userMedicalIssues = tags;
     setState(() {
       isImage1Visible = !isImage1Visible;
     });
