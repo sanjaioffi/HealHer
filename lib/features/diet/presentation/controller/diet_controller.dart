@@ -4,9 +4,8 @@ import 'package:get/get.dart';
 
 import '../../../../config/constants/constants.dart';
 import '../../../../config/services/services.dart';
-import '../../../../core/managers/params/cache/cache_params.dart';
 import '../../../../core/managers/params/hive/hive_params.dart';
-import '../../../../core/managers/usecase/cache/read_from_cache_use_case.dart';
+import '../../../../core/managers/usecase/hive/read_from_hive_use_case.dart';
 import '../../../../core/managers/usecase/hive/write_to_hive_use_case.dart';
 import '../../domain/entity/diet.dart';
 import '../../domain/repo/diet_repo.dart';
@@ -89,9 +88,12 @@ class DietController extends GetxController {
 
       final List<Map<String, dynamic>> dietMapList = [];
 
-      final userData = await serviceLocator<ReadFromCacheUseCase>()
-              .call(params: CacheFetchParams(cacheKey: "user_data"))
-          as Map<String, dynamic>;
+      final userData = await serviceLocator<ReadFromHiveUseCase>().call(
+        params: HiveRetrieveParams(
+          hiveBoxName: userBoxReference,
+          hiveKey: userDataReference,
+        ),
+      );
 
       //
 

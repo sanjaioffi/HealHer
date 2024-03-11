@@ -1,17 +1,12 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../../core/managers/params/cache/cache_params.dart';
 import '../../core/managers/usecase/cache/write_to_cache_use_case.dart';
 import '../../features/onboard/domain/usecase/auth_user.dart';
-import '../../features/recommendation/data/implementation/workout_impl.dart';
-import '../../features/recommendation/data/source/workout_source.dart';
-import '../../features/recommendation/domain/repository/workout_repo.dart';
-import '../../features/recommendation/domain/usecase/workout_usecase.dart';
 import '../routes/route_names.dart';
 import '../services/services.dart';
 
@@ -28,6 +23,9 @@ class DependencyInjection {
 
     // Hive Initialisation
     Hive.init(documentDirectory.path);
+
+    await Hive.openBox('device');
+    await Hive.openBox('data');
 
     // Managers
     await servicesManager.resgisterManagers();
@@ -53,17 +51,17 @@ class DependencyInjection {
     //Controller Register in Memory
 
     Future<void> checkRoute() async {
-      final result = await serviceLocator<AuthenticateUserCase>()();
+      final result = await serviceLocator<AuthenticateUserCase>().call();
 
-      //
-      if (result == true) {
+      if (result == false) {
+        return;
+      } else {
         serviceLocator<WriteToCacheUseCase>().call(
           params: CacheWriteParams(
             cacheKey: 'user_data',
             cacheValue: result,
           ),
         );
-
         initialRoute = AppRoute.homeScreen;
       }
     }
@@ -73,28 +71,4 @@ class DependencyInjection {
     //
     await servicesManager.registerControllersInMemory();
   }
-
-}
-
-  final injection = GetIt.instance;
-
-void setUpInjection() {
-  // Repository
-  injection.registerLazySingleton<WorkoutRepository>(
-    () => WorkoutImplementation(
-      source: injection(),
-    ),
-  );
-
-  // Data Source
-  injection.registerLazySingleton<WorkoutSource>(
-    () => WorkoutSourceImpl(),
-  );
-
-  // Use Case
-  injection.registerLazySingleton<WorkoutUseCase>(
-    () => WorkoutUseCase(
-      injection(),
-    ),
-  );
 }

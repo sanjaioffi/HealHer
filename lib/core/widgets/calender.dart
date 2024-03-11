@@ -20,7 +20,8 @@ class HorizontalCalendar extends StatefulWidget {
     this.backgroundColor,
     this.selectedColor,
     this.showMonth = false,
-    required this.onDateSelected, this.dateBackgroundColor,
+    required this.onDateSelected,
+    this.dateBackgroundColor,
   }) : super(key: key);
 
   final DateTime date;
@@ -88,7 +89,9 @@ class _CalendarState extends State<HorizontalCalendar> {
                         widget.selectedColor ?? Theme.of(context).primaryColor,
                     backgroundColor: widget.backgroundColor ?? Colors.white,
                     onDatePressed: () =>
-                        onDatePressed(index, widget.initialDate), dateBackgroundColor:widget.dateBackgroundColor ?? Colors.white,
+                        onDatePressed(index, widget.initialDate),
+                    dateBackgroundColor:
+                        widget.dateBackgroundColor ?? Colors.white,
                   );
                 },
               ),
@@ -109,8 +112,6 @@ class _CalendarState extends State<HorizontalCalendar> {
       ),
     );
   }
-
-
 
   Future<DateTime?> selectDate() async {
     return await showDatePicker(

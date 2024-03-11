@@ -1,9 +1,10 @@
 import 'dart:convert';
 
-import 'package:get/get.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
-import 'package:heal_her/features/device/controller/scan_controller.dart';
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+
+import 'scan_controller.dart';
 
 class DataController extends GetxController {
   final RxString heartRate = '0'.obs;
@@ -25,9 +26,6 @@ class DataController extends GetxController {
 
   final String hrpsServiceUUID = 'f2f9a4de-ef95-4fe1-9c2e-ab5ef6f0d6e9';
   final String hrpsCharacteristicUUID = '9e8fafe1-8966-4276-a3a3-d0b00269541e';
-
-
-
 
   void getData() {
     var box = Hive.box('data');
@@ -122,7 +120,6 @@ class DataController extends GetxController {
     box.put('spo2', spo2.toStringAsFixed(0));
     box.put('sys', sys.toString());
     box.put('dia', dia.toString());
-    
   }
 
   // void updateHeartRate() {
@@ -230,6 +227,4 @@ class DataController extends GetxController {
         break;
     }
   }
-
-
 }

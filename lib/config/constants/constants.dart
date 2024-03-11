@@ -2,6 +2,7 @@ import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../features/exercise/domain/entities/exercise.dart';
 import '../../features/onboard/domain/entity/user_entity.dart';
 import '../routes/route_names.dart';
 import '../theme/app_colors.dart';
@@ -17,18 +18,11 @@ List<String> activityOptions = [
   'Diabetes',
   'Heart Patient',
   'Blood Pressure',
-  'Cholesterol',
-  'Stress',
-  'Sleep issues',
+  'Insomnia',
   'Depression',
-  'Anger issues',
   'Hypertension',
-  'PCOS',
   'Thyroid',
-  'Physical Injury',
-  'Excessive stress/anxiety',
-  'Lonliness',
-  'Relationship stress',
+  'Obesity',
 ];
 
 DateTime checkTime = DateTime(1900);
@@ -67,6 +61,12 @@ const String userBoxReference = "user_details";
 const String userDataReference = "user_data";
 
 const String userDietReference = "user_diet";
+
+const String userExerciseReference = "user_exercises";
+
+const String userHealthReference = "user_health";
+
+const String userExerciseTrackerReference = "user_exercise_tracker";
 
 const List<IconData> tileIconData = [
   Icons.sunny,
@@ -120,9 +120,11 @@ const List<MaterialColor> recommendationTileColors = [
 ];
 
 List<String> recommendationAppRoutes = [
-  AppRoute.exerciseRecommendation,
+  AppRoute.exerciseRecommendationScreen,
   AppRoute.meditationScreen,
   AppRoute.foodRecommendationScreen,
-  AppRoute.foodRecommendationScreen,
+  AppRoute.healthRecommendationScreen,
   AppRoute.foodRecommendationScreen,
 ];
+
+List<Exercise> exerciseEntity = [];

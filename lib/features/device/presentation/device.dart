@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
 import '../../../config/theme/app_colors.dart';
@@ -9,7 +9,7 @@ import '../controller/scan_controller.dart';
 import 'available_devices.dart';
 
 class DeviceScreen extends StatefulWidget {
-  DeviceScreen({Key? key}) : super(key: key);
+  const DeviceScreen({Key? key}) : super(key: key);
 
   @override
   State<DeviceScreen> createState() => _DeviceScreenState();

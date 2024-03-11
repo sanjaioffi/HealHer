@@ -27,6 +27,7 @@ class AppRoute {
   static String ecgScreen = "/ecg";
   static String bpScreen = "/bp";
   static String foodRecommendationScreen = "/food-recommendations";
-  static String exerciseRecommendation = "/exercise-recommendations";
+  static String exerciseRecommendationScreen = "/exercise-recommendations";
   static String meditationScreen = "/meditation";
+  static String healthRecommendationScreen = "/health-recommendations";
 }
