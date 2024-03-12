@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../../../config/constants/constants.dart';
@@ -25,16 +26,20 @@ class HealthRemoteDataSrcImpl implements HealthRemoteDataSrc {
 
     final userIssues = userDataMap['userMedicalIssues'];
 
+    log(userIssues.toString());
+
     String issueString = "";
 
     for (String userIssue in userIssues) {
-      issueString = '$issueString$userIssue,';
+      issueString = '$issueString${userIssue.removeAllWhitespace},';
     }
 
-    issueString = issueString.substring(0, issueString.length - 1);
+    log("The issue string is : $issueString");
 
     String apiLink =
-        "https://recommendation-endpoint.onrender.com/v1/recommend/ayurveda/$issueString";
+        "https://recommendation-endpoint.onrender.com/v1/recommend/ayurveda/'$issueString'";
+
+    log("The Link Generated : $apiLink");
 
     await http.get(Uri.parse(apiLink)).then(
       (response) {
@@ -57,12 +62,8 @@ class HealthRemoteDataSrcImpl implements HealthRemoteDataSrc {
                   healthRecommendations: model[element],
                 ),
               );
-
-              log("Sucessfully Added");
             }
           }
-
-          log(healthModels[0].toString());
 
           return healthModels;
 

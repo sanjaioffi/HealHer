@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -27,12 +29,18 @@ class HealthRecommendationScreen extends StatelessWidget {
               return ListView.builder(
                 itemCount: controller.healthRecommendaions.length,
                 itemBuilder: (context, index) {
-                  return HealthExpansionTile(
-                    healthIssue:
-                        controller.healthRecommendaions[index].healthIssue,
-                    healthRemedies: controller
-                        .healthRecommendaions[index].healthRecommendations,
-                  );
+                  try {
+                    return HealthExpansionTile(
+                      healthIssue:
+                          controller.healthRecommendaions[index].healthIssue ??
+                              "Health Issues",
+                      healthRemedies: controller.healthRecommendaions[index]
+                              .healthRecommendations ??
+                          "Go Die",
+                    );
+                  } catch (e) {
+                    return const SizedBox();
+                  }
                 },
               );
             } else {

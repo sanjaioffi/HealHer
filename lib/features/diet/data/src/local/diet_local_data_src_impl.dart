@@ -11,6 +11,9 @@ class DietLocalDataSrcImpl implements DietLocalDataSrc {
   @override
   Future<List<DietModel>> retrieveDietPlan() async {
     //
+
+    log("Local Impl Called");
+
     final List<DietModel> dietModels = [];
 
     final respone = await serviceLocator<ReadFromHiveUseCase>().call(
@@ -25,7 +28,7 @@ class DietLocalDataSrcImpl implements DietLocalDataSrc {
       return dietModels;
     }
 
-    log(respone.toString());
+    log(" The response in impl : ${respone.toString()}");
 
     for (dynamic dietMap in respone) {
       dietModels.add(DietModel.fromDictionary(dietMap));
