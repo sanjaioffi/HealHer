@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,6 +17,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
   late Timer _timer;
   bool isRunning = false;
   int _start = 120;
+  final player = AudioPlayer();
 
   void startTimer() {
     _timer = Timer.periodic(
@@ -41,6 +43,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.white,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h),
@@ -52,10 +55,14 @@ class _MeditationScreenState extends State<MeditationScreen> {
               });
               _timer.cancel();
               isRunning = false;
+              player.pause();
             } else {
               startTimer();
-              setState(() {
+              setState(() async {
                 isRunning = true;
+
+                await player
+                    .play(UrlSource('https://example.com/my-audio.wav'));
               });
             }
           },
@@ -66,19 +73,43 @@ class _MeditationScreenState extends State<MeditationScreen> {
       ),
       //
       appBar: AppBar(
-        backgroundColor: AppColor.babyPurplyBlue,
-        title: const Text(
-          'Mediation Time',
-          style: TextStyle(
-            color: AppColor.white,
-          ),
-        ),
-        centerTitle: true,
+        backgroundColor: AppColor.white,
+        // title: const Text(
+        //   'Mediation Time',
+        //   style: TextStyle(
+        //     color: AppColor.white,
+        //   ),
+        // ),
+        // centerTitle: true,
       ),
+      // https://cdn.pixabay.com/download/audio/2022/06/10/audio_1b76478b26.mp3?filename=frequency-of-sleep-meditation-113050.mp3
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+            Text(
+              'Meditation',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 35.sp,
+                decoration: TextDecoration.underline,
+                decorationColor: AppColor.heavyPurplyBlue,
+                decorationThickness: 2.h,
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Text(
+              "Guided by a short introductory sound,\n start trying to focus on your breath. follow for 40 minutes.",
+              style: TextStyle(
+                fontSize: 13.sp,
+                color: AppColor.santaGrey.withOpacity(0.7),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Image.network(
+                "https://i.pngimg.me/thumb/f/720/fcb30b0873184adcb292.jpg"),
             Text(
               '$_start',
               style: Theme.of(context).textTheme.headlineMedium,
