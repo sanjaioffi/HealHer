@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:heal_her/features/blood_pressure/presentation/blood_pressure.dart';
-import 'package:heal_her/features/heart/presentation/heart.dart';
+import '../../../blood_pressure/presentation/blood_pressure.dart';
+import '../../../heart/presentation/heart.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../../../config/theme/app_colors.dart';

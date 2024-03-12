@@ -1,11 +1,5 @@
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import '../../features/exercise/presentation/controller/exercise_controller.dart';
-import '../../features/health/data/repo/health_repo_impl.dart';
-import '../../features/health/data/src/local/health_local_data_impl.dart';
-import '../../features/health/data/src/remote/health_remote_data_src_impl.dart';
-import '../../features/health/domain/repo/health_repo.dart';
-import '../../features/health/presentation/controller/health_controller.dart';
 
 import '../../core/managers/contract/hive_manager_impl.dart';
 import '../../core/managers/contract/runtime_manager_impl.dart';
@@ -32,8 +26,14 @@ import '../../features/exercise/data/source/remote/exercise_remote_data_src.dart
 import '../../features/exercise/data/source/remote/exercise_remote_data_src_impl.dart';
 import '../../features/exercise/domain/repository/exercise_repo.dart';
 import '../../features/exercise/domain/usecase/fetch_exercise_use_case.dart';
+import '../../features/exercise/presentation/controller/exercise_controller.dart';
+import '../../features/health/data/repo/health_repo_impl.dart';
 import '../../features/health/data/src/local/health_local_data.dart';
+import '../../features/health/data/src/local/health_local_data_impl.dart';
 import '../../features/health/data/src/remote/health_remote_data_src.dart';
+import '../../features/health/data/src/remote/health_remote_data_src_impl.dart';
+import '../../features/health/domain/repo/health_repo.dart';
+import '../../features/health/presentation/controller/health_controller.dart';
 import '../../features/onboard/domain/usecase/auth_user.dart';
 import '../../features/onboard/presentation/controller/onboard_data_controller.dart';
 import '../../features/profile/presentation/controller/profile_controller.dart';

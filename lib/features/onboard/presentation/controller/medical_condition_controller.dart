@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:heal_her/config/constants/constants.dart';
+import '../../../../config/constants/constants.dart';
 
 class MedicalIssuesController extends GetxController {
   // Observable list to store medical issues

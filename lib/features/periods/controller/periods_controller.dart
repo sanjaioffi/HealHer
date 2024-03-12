@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:heal_her/config/constants/constants.dart';
-import 'package:heal_her/config/services/services.dart';
-import 'package:heal_her/core/managers/params/hive/hive_params.dart';
-import 'package:heal_her/core/managers/usecase/hive/read_from_hive_use_case.dart';
+import '../../../config/constants/constants.dart';
+import '../../../config/services/services.dart';
+import '../../../core/managers/params/hive/hive_params.dart';
+import '../../../core/managers/usecase/hive/read_from_hive_use_case.dart';
 
 class PeriodTrackerController extends GetxController {
   var lastPeriodData = DateTime(1900).obs;
