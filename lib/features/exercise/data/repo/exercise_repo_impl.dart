@@ -24,6 +24,8 @@ class ExerciseRepoImpl extends ExerciseRepo {
     final List<ExerciseModel> localResponse =
         await exerciseLocalDataSrc.getExercisesFromLocalDataBase();
 
+    log("The local response is :${localResponse.toString()}");
+
     // Verifying Local Db to retrieve Data
     if (localResponse.isNotEmpty) {
       log("Exercise Cached & retrieved");
@@ -40,7 +42,7 @@ class ExerciseRepoImpl extends ExerciseRepo {
 //
     List<ExerciseModel> response = await exerciseRemoteDataSrc.getWorkouts();
 
-    log("Exercise Retrieved from CLoud");
+    log("Exercise Retrieved from Cloud");
 
     for (ExerciseModel exerciseModel in response) {
       //

@@ -23,7 +23,7 @@ class ExerciseController extends GetxController {
     log("Fetching");
     exercises.value = await fetchExerciseUseCase.call();
 
-    log(exercises[0].workoutName);
+    log("The exercise lenght is : ${exercises.length.toString()}");
 
     update();
   }
