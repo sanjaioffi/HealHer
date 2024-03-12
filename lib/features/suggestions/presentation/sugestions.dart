@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heal_her/config/services/services.dart';
+import 'package:heal_her/features/profile/presentation/controller/profile_controller.dart';
 
 import '../../../config/constants/constants.dart';
 import '../../../config/theme/app_colors.dart';
@@ -47,7 +49,10 @@ class SuggestionsScreen extends StatelessWidget {
             child: GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 5,
+              itemCount: serviceLocator<ProfileController>()
+                      .userProfileData['userIsMale']
+                  ? 4
+                  : 5,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 2,

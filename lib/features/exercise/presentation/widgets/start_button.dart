@@ -39,37 +39,38 @@ class _TimerButtonState extends State<TimerButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: _isTimerStarted ? null : _startTimer,
-        child: SizedBox(
-          width: 100.h,
-          height: 350.w,
-          child: _isTimerStarted
-              ? Center(
-                  child: CircularPercentIndicator(
-                    radius: 30.r,
-                    lineWidth: 10.0.w,
-                    percent: _percent,
-                    center: Text('$_seconds'),
-                    progressColor: Colors.green,
-                    reverse: true,
-                  ),
-                )
-              : Container(
-                  decoration: const BoxDecoration(
-                    color: AppColor.purplyBlue,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Start',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold,
-                      ),
+      onTap: _isTimerStarted ? null : _startTimer,
+      child: SizedBox(
+        width: 100.h,
+        height: 350.w,
+        child: _isTimerStarted
+            ? Center(
+                child: CircularPercentIndicator(
+                  radius: 30.r,
+                  lineWidth: 10.0.w,
+                  percent: _percent,
+                  center: Text('$_seconds'),
+                  progressColor: Colors.green,
+                  reverse: true,
+                ),
+              )
+            : Container(
+                decoration: const BoxDecoration(
+                  color: AppColor.purplyBlue,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    'Start',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-        ));
+              ),
+      ),
+    );
   }
 }
