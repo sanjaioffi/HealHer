@@ -18,7 +18,7 @@ class ExerciseModel {
   Map<String, dynamic> toMap() {
     return {
       'exercise_name': workoutName,
-      'description': description,
+      'exercie_description': description,
       'exercise_video': videoUrl,
       'exercise_reps': workoutSets,
     };
@@ -31,7 +31,7 @@ class ExerciseModel {
     //
     final ExerciseModel exerciseModel = ExerciseModel(
       workoutName: map['exercise_name'] ?? "No Name ",
-      description: map['description'] ?? "No Description",
+      description: map['exercie_description'] ?? "No Description",
       videoUrl: map['exercise_video'] ?? "No Video Url",
       workoutSets: "${map['exercise_reps']} Reps",
     );

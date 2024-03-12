@@ -15,6 +15,7 @@ class MedicalIssuesController extends GetxController {
     }
 
     userEntity.userMedicalIssues = medicalIssues;
+
     return;
   }
 

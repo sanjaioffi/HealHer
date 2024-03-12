@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../config/constants/constants.dart';
 import '../../../../../config/theme/app_colors.dart';
 import '../../controller/medical_condition_controller.dart';
 
