@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 20),
                     Text(
-                        " Place your finger on the plate near the display. Ensure proper contact and relax.",
+                        " 🛈 Place your finger on the plate near the display. Ensure proper contact and relax.",
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 12,
