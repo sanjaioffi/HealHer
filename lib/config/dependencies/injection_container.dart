@@ -26,6 +26,9 @@ class DependencyInjection {
 
     await Hive.openBox('device');
     await Hive.openBox('data');
+    
+  await Hive.openBox(
+      'day ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}');
 
     // Managers
     await servicesManager.resgisterManagers();

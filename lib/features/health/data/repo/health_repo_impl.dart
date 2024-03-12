@@ -4,11 +4,11 @@ import '../../../../config/constants/constants.dart';
 import '../../../../config/services/services.dart';
 import '../../../../core/managers/params/hive/hive_params.dart';
 import '../../../../core/managers/usecase/hive/write_to_hive_use_case.dart';
+import '../../domain/entity/health_entity.dart';
+import '../../domain/repo/health_repo.dart';
 import '../model/health_model.dart';
 import '../src/local/health_local_data.dart';
 import '../src/remote/health_remote_data_src.dart';
-import '../../domain/entity/health_entity.dart';
-import '../../domain/repo/health_repo.dart';
 
 class HealthRepoImpl implements HealthRepo {
   //
