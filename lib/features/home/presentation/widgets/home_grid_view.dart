@@ -43,6 +43,7 @@ class _HomeGridViewState extends State<HomeGridView> {
                 padding: const EdgeInsets.all(8.0), // padding around the grid
                 children: [
                   HomeDataTile(
+                    isEnabled: true,
                     nextScreen: const Heart(),
                     backgroundColor: AppColor.heart,
                     title: 'Heart Rate',
@@ -80,6 +81,7 @@ class _HomeGridViewState extends State<HomeGridView> {
                     ),
                   ),
                   HomeDataTile(
+                    isEnabled: false,
                     nextScreen: const Text('Spo2'),
                     backgroundColor: AppColor.spo2,
                     title: 'Spo2',
@@ -105,6 +107,7 @@ class _HomeGridViewState extends State<HomeGridView> {
                   ),
 
                   HomeDataTile(
+                    isEnabled: true,
                     nextScreen: const BloodPressure(),
                     backgroundColor: Colors.red.shade100,
                     title: 'Blood Pressure',
@@ -143,6 +146,7 @@ class _HomeGridViewState extends State<HomeGridView> {
                     ),
                   ),
                   HomeDataTile(
+                    isEnabled: false,
                     nextScreen: const Text('Steps'),
                     backgroundColor: AppColor.steps,
                     title: 'Steps',

@@ -13,24 +13,19 @@ class ECGGraph extends StatefulWidget {
 class _ECGGraphState extends State<ECGGraph> {
   final DataController dataController = Get.find();
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: AppColor.heavyPurplyBlue, actions: [
-        IconButton(
-            onPressed: () {
-              dataController.sendCommand('stop');
-            },
-            icon: const Icon(Icons.stop_circle_outlined)),
-        IconButton(
-          onPressed: () {
-            dataController.updateEcg();
-          },
-          icon: const Icon(Icons.refresh),
-        )
-      ]),
+      backgroundColor: AppColor.white,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: AppColor.white),
+          onPressed: () => Get.back(),
+        ),
+        centerTitle: true,
+        title: const Text('ECG Graph', style: TextStyle(color: Colors.white)),
+        backgroundColor: AppColor.heavyPurplyBlue,
+      ),
       body: SizedBox(
         width: double.maxFinite,
         child: SingleChildScrollView(
@@ -49,6 +44,57 @@ class _ECGGraphState extends State<ECGGraph> {
                           return RealTimeGraph(stream: positiveDataStream());
                         },
                       )),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('ECG Instructions',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 10),
+                    Text(
+                        'Before taking ECG reading, please follow these instructions:'),
+                    const SizedBox(height: 20),
+                    Text(
+                        'Step 1: Place your finger on the plate near the display.'),
+                    const SizedBox(height: 10),
+                    Text(
+                        'Step 2: Ensure that your finger is in proper contact with the plate.'),
+                    const SizedBox(height: 10),
+                    Text(
+                        'Step 3: Relax and try to keep your finger still during the reading.'),
+                    const SizedBox(height: 40),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            dataController.sendCommand('ecg_stop');
+                            Get.dialog(
+                              AlertDialog(
+                                title: const Text("ECG Stopped"),
+                                content: const Text(
+                                    "ECG reading has been stopped successfully."),
+                                actions: <Widget>[
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Get.back();
+                                      Get.back();
+                                    },
+                                    child: const Text('Close',
+                                        style: TextStyle(color: Colors.white)),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          child: Text('Stop ECG',
+                              style: TextStyle(color: Colors.white))),
+                    ),
+                  ],
                 ),
               ),
             ],

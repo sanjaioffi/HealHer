@@ -41,7 +41,7 @@ class HomeTileData extends StatelessWidget {
                     color: Colors.white,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold,
-                    fontSize: 22.sp,
+                    fontSize: 12.sp,
                   ),
                   children: [
                     TextSpan(
@@ -50,7 +50,7 @@ class HomeTileData extends StatelessWidget {
                         fontFamily: 'Poppins',
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 12.sp,
+                        fontSize: 8.sp,
                       ),
                     ),
                   ],

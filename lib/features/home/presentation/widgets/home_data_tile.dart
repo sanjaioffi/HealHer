@@ -6,6 +6,7 @@ import '../../../../config/theme/app_colors.dart';
 class HomeDataTile extends StatelessWidget {
   const HomeDataTile({
     super.key,
+    required this.isEnabled,
     required this.backgroundColor,
     required this.nextScreen,
     required this.title,
@@ -16,12 +17,13 @@ class HomeDataTile extends StatelessWidget {
   final String title;
   final Widget body;
   final Widget nextScreen;
+  final bool isEnabled;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(() => nextScreen);
+        isEnabled ? Get.to(() => nextScreen) : null;
       },
       child: Container(
         decoration: BoxDecoration(
