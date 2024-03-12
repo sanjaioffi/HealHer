@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.symmetric(
                     vertical: 45.h,
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
                       HomeAppBar(),
                       HomeStepsIndicator(),
@@ -58,11 +58,46 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
               onTap: () {
-                Get.find<DataController>().sendCommand('ecg');
-                Get.snackbar('Measuring ECG', 'Requesting Data...');
-                Get.to(() => ECGGraph());
+                Get.dialog(
+                  AlertDialog(
+                    title: Text("ECG Instructions"),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Text(
+                            "Before taking ECG reading, please follow these instructions:"),
+                        SizedBox(height: 10),
+                        Text(
+                            "- Place your finger on the plate near the display."),
+                        Text(
+                            "- Ensure that your finger is in proper contact with the plate."),
+                        Text(
+                            "- Relax and try to keep your finger still during the reading."),
+                      ],
+                    ),
+                    actions: <Widget>[
+                      ElevatedButton(
+                        onPressed: () {
+                          Get.find<DataController>().sendCommand('ecg');
+                          Get.snackbar('Measuring ECG', 'Requesting Data...');
+                          Get.to(() => ECGGraph());
+                        },
+                        child: Text('Start ECG',
+                            style: TextStyle(color: Colors.white)),
+                      ),
+                    ],
+                  ),
+                );
               },
               child: Container(
+                height: 150.h,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                  color: AppColor.purplyBlue,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -70,29 +105,32 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Text(
                             'ECG',
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 18),
+                            style: TextStyle(color: Colors.black, fontSize: 18),
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
-                    const Text(
+                    SizedBox(height: 20),
+                    Text(
+                        " 🛈 Place your finger on the plate near the display. Ensure proper contact and relax.",
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 12,
+                        )),
+                    Text(
                       'Measure ECG',
-                      style: TextStyle(color: Colors.black, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ],
                 ),
-                height: 100.h,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: AppColor.steps,
-                ),
               ),
             ),
+          ),
+          SizedBox(
+            height: 20.h,
           )
         ],
       ),

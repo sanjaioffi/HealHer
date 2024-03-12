@@ -17,19 +17,19 @@ class HomeStepsIndicator extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.directions_walk_rounded,
-                size: 50.sp,
-                color: AppColor.white,
-              ),
-              const Text("7254",
+              // Icon(
+              //   Icons.directions_walk_rounded,
+              //   size: 50.sp,
+              //   color: AppColor.white,
+              // ),
+              const Text("ECG",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                   )),
               const Text(
-                'steps',
+                'Measure your ECG',
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

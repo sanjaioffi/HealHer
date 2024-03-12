@@ -27,7 +27,8 @@ class HomeTileData extends StatelessWidget {
               profileTileTitle,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 15.sp,
+                fontSize: 12.sp,
+                fontWeight: FontWeight.bold,
                 letterSpacing: 2,
               ),
             ),

@@ -38,11 +38,25 @@ class HomeDataTile extends StatelessWidget {
                   title,
                   style: const TextStyle(color: Colors.black, fontSize: 18),
                 ),
-                const Icon(
-                  Icons.directions_walk_rounded,
-                  color: AppColor.stepsIndicator,
-                  size: 30,
-                ),
+                title == 'Heart Rate'
+                    ? const Icon(
+                        Icons.favorite,
+                        color: AppColor.babyPurplyBlue,
+                      )
+                    : title == 'Blood Pressure'
+                        ? const Icon(
+                            Icons.timelapse,
+                            color: AppColor.babyPurplyBlue,
+                          )
+                        : title == 'Spo2'
+                            ? const Icon(
+                                Icons.water_damage,
+                                color: AppColor.babyPurplyBlue,
+                              )
+                            : const Icon(
+                                Icons.healing,
+                                color: AppColor.babyPurplyBlue,
+                              ),
               ],
             ),
             const SizedBox(height: 20),

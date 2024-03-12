@@ -14,7 +14,10 @@ class DataController extends GetxController {
   final RxList spo2List = [].obs;
 
   final RxString bpSys = '0'.obs;
+  final RxList bpSysList = [].obs;
+
   final RxString bpDys = '0'.obs;
+  final RxList bpDysList = [].obs;
 
   final RxString ecg = '0'.obs;
 
@@ -62,6 +65,11 @@ class DataController extends GetxController {
   }
 
   void updateHrps() {
+    Get.find<DataController>().heartRateList.clear();
+    Get.find<DataController>().spo2List.clear();
+    Get.find<DataController>().bpSysList.clear();
+    Get.find<DataController>().bpDysList.clear();
+
     Get.find<ScanController>()
         .selectedDevice
         .value!
@@ -115,91 +123,106 @@ class DataController extends GetxController {
     Get.find<DataController>().bpSys.value = sys.toString();
     Get.find<DataController>().bpDys.value = dia.toString();
 
-    var box = Hive.box('data');
-    box.put('heartRate', hr.toString());
-    box.put('spo2', spo2.toStringAsFixed(0));
-    box.put('sys', sys.toString());
-    box.put('dia', dia.toString());
+    Get.find<DataController>().heartRateList.add(int.parse(hr.toString()));
+    Get.find<DataController>().spo2List.add(int.parse(spo2.toStringAsFixed(0)));
+    Get.find<DataController>().bpSysList.add(int.parse(sys.toString()));
+    Get.find<DataController>().bpDysList.add(int.parse(dia.toString()));
   }
 
-  // void updateHeartRate() {
-  //   Get.find<DataController>().heartRateList.value = [];
+ 
 
-  //   for (BluetoothService service in Get.find<ScanController>().services) {
-  //     if (service.uuid.toString() == heartRateServiceUUID) {
-  //       for (BluetoothCharacteristic characteristic
-  //           in service.characteristics) {
-  //         if (characteristic.uuid.toString() == heartRateCharacteristicUUID) {
-  //           characteristic.setNotifyValue(true);
-  //           characteristic.read().then((value) {
-  //             Get.find<DataController>().heartRate.value =
-  //                 utf8.decode(value).toString();
-  //             Get.find<DataController>().heartRateList.add(utf8.decode(value));
-  //           });
-  //         }
-  //       }
-  //     }
-  //   }
+  void findAvgHeartRate() {
+    List<int> heartRates = Get.find<DataController>()
+        .heartRateList
+        .map((rate) => int.parse(rate))
+        .toList();
 
-  //   findAvgHeartRate();
-  // }
+    List<int> filteredHeartRates =
+        heartRates.where((rate) => rate >= 40 && rate <= 180).toList();
 
-  // void findAvgHeartRate() {
-  //   List<int> heartRates = Get.find<DataController>()
-  //       .heartRateList
-  //       .map((rate) => int.parse(rate))
-  //       .toList();
+    double averageHeartRate =
+        filteredHeartRates.reduce((a, b) => a + b) / filteredHeartRates.length;
 
-  //   List<int> filteredHeartRates =
-  //       heartRates.where((rate) => rate >= 40 && rate <= 180).toList();
+    Get.find<DataController>().heartRate.value =
+        averageHeartRate.toStringAsFixed(0);
+    var box = Hive.box('data');
+    box.put('heartRate', averageHeartRate.toStringAsFixed(0));
+  }
 
-  //   double averageHeartRate =
-  //       filteredHeartRates.reduce((a, b) => a + b) / filteredHeartRates.length;
+  
+  void findAvgSpo2() {
+    List<int> spo2s = Get.find<DataController>()
+        .spo2List
+        .map((rate) => int.parse(rate))
+        .toList();
 
-  //   Get.find<DataController>().heartRate.value =
-  //       averageHeartRate.toStringAsFixed(0);
-  //   var box = Hive.box('data');
-  //   box.put('heartRate', averageHeartRate.toStringAsFixed(0));
-  // }
+    List<int> filteredSpo2s =
+        spo2s.where((rate) => rate >= 90 && rate <= 100).toList();
 
-  // void updateSpo2() {
-  //   Get.find<DataController>().spo2List.value = [];
-  //   for (BluetoothService service in Get.find<ScanController>().services) {
-  //     if (service.uuid.toString() == spo2ServiceUUID) {
-  //       for (BluetoothCharacteristic characteristic
-  //           in service.characteristics) {
-  //         if (characteristic.uuid.toString() == spo2CharacteristicUUID) {
-  //           characteristic.setNotifyValue(true);
-  //           characteristic.read().then((value) {
-  //             Get.find<DataController>().spo2.value =
-  //                 utf8.decode(value).toString();
-  //           });
-  //         }
-  //       }
-  //     }
-  //   }
+    double averageSpo2 =
+        filteredSpo2s.reduce((a, b) => a + b) / filteredSpo2s.length;
 
-  //   findAvgSpo2();
-  // }
+    Get.find<DataController>().spo2.value = averageSpo2.toStringAsFixed(0);
+    var box = Hive.box('data');
+    box.put('spo2', averageSpo2.toStringAsFixed(0));
+  }
 
-  // void findAvgSpo2() {
-  //   List<int> spo2s = Get.find<DataController>()
-  //       .spo2List
-  //       .map((rate) => int.parse(rate))
-  //       .toList();
+  void findAvgBpSys() {
+    List<int> bpSys = Get.find<DataController>()
+        .bpSysList
+        .map((rate) => int.parse(rate))
+        .toList();
 
-  //   List<int> filteredSpo2s =
-  //       spo2s.where((rate) => rate >= 90 && rate <= 100).toList();
+    List<int> filteredBpSys =
+        bpSys.where((rate) => rate >= 90 && rate <= 140).toList();
 
-  //   double averageSpo2 =
-  //       filteredSpo2s.reduce((a, b) => a + b) / filteredSpo2s.length;
+    double averageBpSys =
+        filteredBpSys.reduce((a, b) => a + b) / filteredBpSys.length;
 
-  //   Get.find<DataController>().spo2.value = averageSpo2.toStringAsFixed(0);
-  //   var box = Hive.box('data');
-  //   box.put('spo2', averageSpo2.toStringAsFixed(0));
-  // }
+    Get.find<DataController>().bpSys.value = averageBpSys.toStringAsFixed(0);
+    var box = Hive.box('data');
+    box.put('sys', averageBpSys.toStringAsFixed(0));
+  }
 
-  void sendCommand(String command) {
+  void findAvgBpDys() {
+    List<int> bpDys = Get.find<DataController>()
+        .bpDysList
+        .map((rate) => int.parse(rate))
+        .toList();
+
+    List<int> filteredBpDys =
+        bpDys.where((rate) => rate >= 60 && rate <= 90).toList();
+
+    double averageBpDys =
+        filteredBpDys.reduce((a, b) => a + b) / filteredBpDys.length;
+
+    Get.find<DataController>().bpDys.value = averageBpDys.toStringAsFixed(0);
+    var box = Hive.box('data');
+    box.put('dia', averageBpDys.toStringAsFixed(0));
+  }
+
+  void saveAvgInLocalDay(){
+    var box = Hive.box('day ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}');
+    List<int> heartRates = box.get('heartRates', defaultValue: []);
+    List<int> spo2s = box.get('spo2s', defaultValue: []);
+    List<int> syss = box.get('syss', defaultValue: []);
+    List<int> dias = box.get('dias', defaultValue: []);
+
+    heartRates.add(int.parse(heartRate.value));
+    spo2s.add(int.parse(spo2.value));
+    syss.add(int.parse(bpSys.value));
+    dias.add(int.parse(bpDys.value));
+
+    box.put('heartRates', heartRates);
+    box.put('spo2s', spo2s);
+    box.put('syss',syss);
+    box.put('dias', dias);
+  }
+
+
+
+  void sendCommand(String command, {String? data}) {
+
     Get.find<ScanController>()
         .selectedDevice
         .value!
@@ -225,6 +248,18 @@ class DataController extends GetxController {
       case 'ecg':
         updateEcg();
         break;
+  
+
+    }
+
+    if (data == 'hrps') {
+        findAvgHeartRate();
+        findAvgSpo2();
+        findAvgBpSys();
+        findAvgBpDys();
+
+
+      
     }
   }
 }

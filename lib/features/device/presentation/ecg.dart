@@ -13,11 +13,7 @@ class ECGGraph extends StatefulWidget {
 class _ECGGraphState extends State<ECGGraph> {
   final DataController dataController = Get.find();
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +23,7 @@ class _ECGGraphState extends State<ECGGraph> {
             onPressed: () {
               dataController.sendCommand('stop');
             },
-            icon: Icon(Icons.stop_circle_outlined)),
+            icon: const Icon(Icons.stop_circle_outlined)),
         IconButton(
           onPressed: () {
             dataController.updateEcg();

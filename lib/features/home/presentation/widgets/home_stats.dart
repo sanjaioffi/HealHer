@@ -18,17 +18,17 @@ class HomeHealthStat extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           HomeTileData(
-            profileTileTitle: "Steps",
+            profileTileTitle: "AVG - HR",
             profileTileData: "8",
             profileTileSuffix: "K",
           ),
           HomeTileData(
-            profileTileTitle: "Distance",
+            profileTileTitle: "AVG - BP",
             profileTileData: "5.2",
             profileTileSuffix: "Km",
           ),
           HomeTileData(
-            profileTileTitle: "Calories",
+            profileTileTitle: "AVG - SpO2",
             profileTileData: "1.5",
             profileTileSuffix: "Cal",
             isLastTile: true,
