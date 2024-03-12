@@ -124,7 +124,7 @@ List<String> recommendationAppRoutes = [
   AppRoute.meditationScreen,
   AppRoute.foodRecommendationScreen,
   AppRoute.healthRecommendationScreen,
-  AppRoute.foodRecommendationScreen,
+  AppRoute.periodRecommendationScreen,
 ];
 
 List<Exercise> exerciseEntity = [];

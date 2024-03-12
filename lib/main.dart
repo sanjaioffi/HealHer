@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import 'config/dependencies/injection_container.dart';
 import 'config/routes/routes.dart';
 import 'config/theme/app_theme.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         title: 'HealHer-SmartBand',
         theme: buildTheme(),
         initialRoute: dependencyInjection.initialRoute,
+        // home: const PeriodsRecommendationPage(),
       ),
     );
   }

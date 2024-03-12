@@ -3,6 +3,7 @@ class AppRoute {
   static String login = "/login";
   static String signin = "/sign-in";
 
+
   // Onboard Screen
   static String onboardWelcome = '/onboard-welcome';
   static String onboardName = "/onboard-name";
@@ -30,4 +31,5 @@ class AppRoute {
   static String exerciseRecommendationScreen = "/exercise-recommendations";
   static String meditationScreen = "/meditation";
   static String healthRecommendationScreen = "/health-recommendations";
+  static String periodRecommendationScreen = "/period-recommendations";
 }

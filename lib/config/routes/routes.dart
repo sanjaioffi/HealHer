@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:heal_her/features/periods/presentation/periods.dart';
 
 import '../../features/app/presentation/app.dart';
 import '../../features/diet/presentation/diet.dart';
@@ -94,6 +95,11 @@ List<GetPage> routes = [
   ),
 
   //
+
+  GetPage(
+    name: AppRoute.periodRecommendationScreen,
+    page: () => const PeriodsRecommendationPage(),
+  ),
 
   GetPage(
       name: AppRoute.meditationScreen, page: () => const MeditationScreen()),
