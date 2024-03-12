@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import '../../../../config/constants/constants.dart';
 import '../../../step/presentation/widgets/steps_insights.dart';
@@ -55,8 +56,12 @@ class _MonthHeartWidgetState extends State<MonthHeartWidget> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    var box = Hive.box(
+        'day ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}');
     setState(() {
-      data = List.generate(5, (index) => (random(60, 160)));
+      data = box.get('heart',
+          defaultValue: List.generate(5, (index) => (random(60, 160))));
+      data = data.sublist(0, 5);
     });
   }
 
@@ -100,8 +105,12 @@ class _WeekHeartGraphState extends State<WeekHeartGraph> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    var box = Hive.box(
+        'day ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}');
     setState(() {
-      data = List.generate(7, (index) => (random(60, 160)));
+      data = box.get('heart',
+          defaultValue: List.generate(7, (index) => (random(60, 160))));
+      data = data.sublist(0, 7);
     });
   }
 
@@ -145,8 +154,11 @@ class _DayHeartGraphState extends State<DayHeartGraph> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    var box = Hive.box(
+        'day ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}');
     setState(() {
-      data = List.generate(50, (index) => (random(60, 160)));
+      data = box.get('heart',
+          defaultValue: List.generate(20, (index) => (random(60, 160))));
     });
   }
 

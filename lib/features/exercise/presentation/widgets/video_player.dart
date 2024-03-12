@@ -4,17 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 const List<String> _videoIds = [
-  'tcodrIK2P_I',
-  'H5v3kku4y6Q',
-  'nPt8bK2gbaU',
-  'K18cpp_-gP8',
-  'iLnmTe5Q2Qw',
-  '_WoCV4c6XOE',
-  'KmzdUe0RSJo',
-  '6jZDSSZZxjQ',
-  'p2lYr3vM_1w',
-  '7QUtEmBT_-w',
-  '34_PXCzGw1M'
+  '1sFIqecJphU ',
 ];
 
 class VideoPlayerWidget extends StatefulWidget {
@@ -30,7 +20,6 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
   @override
   void initState() {
-    print('Video URL: ${widget.videoUrl}');
     super.initState();
     _controller = YoutubePlayerController(
       params: const YoutubePlayerParams(

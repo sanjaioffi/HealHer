@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:heal_her/features/periods/presentation/periods.dart';
+import '../../features/periods/presentation/periods.dart';
 
 import '../../features/app/presentation/app.dart';
 import '../../features/diet/presentation/diet.dart';

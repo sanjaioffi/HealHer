@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../blood_pressure/presentation/blood_pressure.dart';
+import '../../../heart/presentation/heart.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../../../config/theme/app_colors.dart';
@@ -31,7 +33,7 @@ class _HomeGridViewState extends State<HomeGridView> {
     return Obx(() => Padding(
           padding: EdgeInsets.only(top: 25.h),
           child: SizedBox(
-            height: 380.h,
+            height: 320.h,
             child: GridView.extent(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -41,7 +43,8 @@ class _HomeGridViewState extends State<HomeGridView> {
                 padding: const EdgeInsets.all(8.0), // padding around the grid
                 children: [
                   HomeDataTile(
-                    nextScreen: const Text('Heart Rate'),
+                    isEnabled: true,
+                    nextScreen: const Heart(),
                     backgroundColor: AppColor.heart,
                     title: 'Heart Rate',
                     body: Column(
@@ -60,12 +63,12 @@ class _HomeGridViewState extends State<HomeGridView> {
                           child: RichText(
                               text: TextSpan(
                                   text: dataController.heartRate.value,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 17,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black),
-                                  children: [
+                                  children: const [
                                 TextSpan(
                                     text: ' bpm',
                                     style: TextStyle(
@@ -78,7 +81,8 @@ class _HomeGridViewState extends State<HomeGridView> {
                     ),
                   ),
                   HomeDataTile(
-                    nextScreen: Text('Spo2'),
+                    isEnabled: false,
+                    nextScreen: const Text('Spo2'),
                     backgroundColor: AppColor.spo2,
                     title: 'Spo2',
                     body: CircularPercentIndicator(
@@ -103,7 +107,8 @@ class _HomeGridViewState extends State<HomeGridView> {
                   ),
 
                   HomeDataTile(
-                    nextScreen: Text('Blood Pressure'),
+                    isEnabled: true,
+                    nextScreen: const BloodPressure(),
                     backgroundColor: Colors.red.shade100,
                     title: 'Blood Pressure',
                     body: Column(
@@ -123,12 +128,12 @@ class _HomeGridViewState extends State<HomeGridView> {
                               text: TextSpan(
                                   text:
                                       '${dataController.bpSys.value}/${dataController.bpDys.value}',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black),
-                                  children: [
+                                  children: const [
                                 TextSpan(
                                     text: ' mmHg',
                                     style: TextStyle(
@@ -141,6 +146,7 @@ class _HomeGridViewState extends State<HomeGridView> {
                     ),
                   ),
                   HomeDataTile(
+                    isEnabled: false,
                     nextScreen: const Text('Steps'),
                     backgroundColor: AppColor.steps,
                     title: 'Steps',
